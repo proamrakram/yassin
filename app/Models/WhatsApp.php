@@ -15,4 +15,9 @@ class WhatsApp extends Model
         'entry_changes_value_object',
         'entry_changes_field_object'
     ];
+
+    protected $casts = [
+        'entry_changes_value_object' => 'array',
+        'entry_changes_field_object' => 'array'
+    ];
 }
