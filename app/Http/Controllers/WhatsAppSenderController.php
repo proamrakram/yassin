@@ -41,6 +41,8 @@ class WhatsAppSenderController extends Controller
             'name' => $contact->profile->name,
             'phone_number' => $contact->wa_id,
         ]);
+
+        return $whats_app_sender;
     }
 
     /**
