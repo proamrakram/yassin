@@ -36,7 +36,7 @@ class WhatsAppSenderController extends Controller
      */
     public function store(StoreWhatsAppSenderRequest $request, $bot_id, $contact)
     {
-        $whats_app_sender = WhatsAppSender::creaate([
+        $whats_app_sender = WhatsAppSender::create([
             'bot_id' => $bot_id,
             'name' => $contact->profile->name,
             'phone_number' => $contact->wa_id,
