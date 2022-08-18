@@ -14,12 +14,13 @@ class WebhooksController extends Controller
     protected $request;
     protected $whatsAppController;
 
-    public function __construct(Request $request , WhatsAppController $whatsAppController)
+    public function __construct(Request $request, WhatsAppController $whatsAppController)
     {
         $this->whatsAppController = $whatsAppController;
         $this->request = $request;
-        $this->hub_verify_token = $request->hub_verify_token;
         $this->hub_mode = $request->hub_mode;
+        $this->hub_challenge = $request->hub_challenge;
+        $this->hub_verify_token = $request->hub_verify_token;
         $this->verify_token = 'amrakram';
     }
 
@@ -43,8 +44,5 @@ class WebhooksController extends Controller
     public function handleMessage($data = null)
     {
         Storage::disk('local')->put('data.txt', print_r($data, true));
-
-
     }
-
 }
