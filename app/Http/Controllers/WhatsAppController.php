@@ -30,7 +30,7 @@ class WhatsAppController extends Controller
     {
         $message = WhatsApp::find(1)->entry_changes_value_object;
 
-        dd($message->entry);
+        dd($message);
         dd(WhatsApp::find(7)->entry_changes_value_object);
 
     }
