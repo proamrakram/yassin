@@ -41,7 +41,7 @@ class SenderTextMessagesController extends Controller
             'message_id' => $message->id,
             'message_type' => (int)$message->type,
             'from_phone_number' => $sender->from,
-            'message_timestamp' => $message->timestamp,
+            'message_timestamp' =>  date('Y/m/d H:i:s', (int)$message->timestamp),
             'sender_message_id' => $sender->id,
         ]);
     }
