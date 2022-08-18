@@ -48,17 +48,17 @@ class WhatsAppController extends Controller
             }
         }
 
-        if ($this->value->contacts) {
+        // if ($this->value->contacts) {
 
-            $contact = WhatsAppSender::where('phone_number', (int)$this->value->contacts[0]->wa_id)->first();
+        //     $contact = WhatsAppSender::where('phone_number', (int)$this->value->contacts[0]->wa_id)->first();
 
-            if (!$contact) {
+        //     if (!$contact) {
 
-                $request = new StoreWhatsAppSenderRequest();
+        //         $request = new StoreWhatsAppSenderRequest();
 
-                $this->whatsAppSender->store($request, $bot->id, $this->value->contacts[0]);
-            }
-        }
+        //         $this->whatsAppSender->store($request, $bot->id, $this->value->contacts[0]);
+        //     }
+        // }
 
     }
 }
