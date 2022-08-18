@@ -22,9 +22,11 @@ Route::post('/subscribe', [SubscriberController::class, 'newSubscribtion'])->nam
 
 
 Route::get('/privacy', function () {
+    return true;
     dd('ok privacy');
 });
 
 Route::get('/terms', function () {
+    return true;
     dd('ok terms');
 });
