@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::any('/webhook', [WebhooksController::class, 'handle']);
+Route::any('/whatsapp', [WebhooksController::class, 'handle']);
 // Route::any('/webhook/{id}', [WebhooksController::class, 'handle']);
 
 

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('whats_apps', function (Blueprint $table) {
             $table->id();
+
             $table->timestamps();
         });
     }

@@ -19,3 +19,12 @@ Route::get('/', function () {
 });
 
 Route::post('/subscribe', [SubscriberController::class, 'newSubscribtion'])->name('subscribe');
+
+
+Route::get('/privacy', function () {
+    dd('ok privacy');
+});
+
+Route::get('/terms', function () {
+    dd('ok terms');
+});

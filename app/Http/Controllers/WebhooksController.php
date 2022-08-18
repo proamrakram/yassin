@@ -12,30 +12,37 @@ class WebhooksController extends Controller
     protected $hub_mode;
     protected $verify_token;
     protected $request;
+    protected $whatsAppController;
 
-    public function __construct(Request $request)
+    public function __construct(Request $request , WhatsAppController $whatsAppController)
     {
-        $this->$request = $request;
-        $this->hub_verify_token = $request->input('hub_verify_token');
-        $this->hub_mode = $request->input('hub_mode');
+        $this->whatsAppController = $whatsAppController;
+        $this->request = $request;
+        $this->hub_verify_token = $request->hub_verify_token;
+        $this->hub_mode = $request->hub_mode;
         $this->verify_token = 'amrakram';
     }
 
     public function handle()
     {
-        dd('Handle Webhooks');
-        if ($this->request->isMethod('get') && $this->request->get('hub_challenge')) {
+        if ($this->request->isMethod('get') && $this->request->hub_challenge) {
 
             if ($this->hub_mode == 'subscribe' && $this->hub_verify_token == $this->verify_token) {
-
-                Storage::disk('local')->put('whatsapp.txt', $this->request);
-                Storage::disk('local')->append('whatsapp.txt', $this->hub_challenge);
-                Storage::disk('local')->append('whatsapp.txt', $this->hub_mode);
-                Storage::disk('local')->append('whatsapp.txt', $this->hub_verify_token);
-
                 echo $this->hub_challenge;
                 exit;
             }
         }
+
+        if ($this->request->isMethod('post')) {
+            $input = json_decode(file_get_contents('php://input'), true);
+            $this->handleMessage($input);
+            $this->whatsAppController->handleMessage($input);
+        }
     }
+
+    public function handleMessage($data = null)
+    {
+        Storage::disk('local')->put('data.txt', print_r($data, true));
+    }
+
 }
