@@ -2,37 +2,63 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreBotRequest;
 use App\Models\WhatsApp;
-use App\Http\Requests\StoreWhatsAppRequest;
-use App\Http\Requests\UpdateWhatsAppRequest;
+use App\Http\Requests\StoreWhatsAppSenderRequest;
+use App\Models\Bot;
+use App\Models\WhatsAppSender;
 
 class WhatsAppController extends Controller
 {
-    public function handleMessage($data)
+    private $value;
+    private $field;
+    private $bot;
+    private $whatsAppSender;
+
+    public function __construct(BotController $bot, WhatsAppSenderController $whatsAppSender)
     {
-        $whatsapp_message = WhatsApp::where('entry_object_id', (int)$data->entry[0]->id)->first();
-        if (!$whatsapp_message) {
-            $whatsapp_message = WhatsApp::create([
-                'entry_object_id' => (int)$data->entry[0]->id,
-                'object_entry_changes_value' => $data->entry[0]->changes[0]->value,
-                'object_entry_changes_field' => $data->entry[0]->changes[0]->field,
-            ]);
-        }
+        $this->bot = $bot;
+        $this->whatsAppSender = $whatsAppSender;
+
+        $this->bot = $bot;
+        $this->value = 'whatsapp';
+        $this->field = 'messages';
     }
 
-    public function tester()
+    public function handleMessage($data)
     {
-        $message = WhatsApp::find(1);
-        dd($message->entry_object_id, $message->object_entry_changes_value, $message->object_entry_changes_field);
-        $object_type = $message->object_type;
-        $entry_object_id = $message->entry_object_id;
-        $entry_changes_value_object = $message->entry_changes_value_object;
-        $entry_changes_field_object = $message->entry_changes_field_object;
-        dd(
-            $object_type,
-            $entry_object_id,
-            $entry_changes_value_object,
-            $entry_changes_field_object,
-        );
+        $this->value = $data->entry[0]->changes[0]->value;
+        $this->field = $data->entry[0]->changes[0]->field;
+
+        if ($this->value) {
+
+            $bot = Bot::where('whats_app_business_account_id', (int)$data->entry[0]->id)->first();
+
+            if (!$bot) {
+                $request = new StoreBotRequest();
+
+                $bot = $this->bot->store(
+                    $request,
+                    $data->object,
+                    $data->entry[0]->id,
+                    $this->value->metadata->display_phone_number,
+                    $this->value->metadata->phone_number_id,
+                    $this->value->messaging_product
+                );
+            }
+        }
+
+        if ($this->value->contacts) {
+
+            $contact = WhatsAppSender::where('phone_number', (int)$this->value->contacts[0]->wa_id)->first();
+
+            if (!$contact) {
+
+                $request = new StoreWhatsAppSenderRequest();
+
+                $this->whatsAppSender->store($request, $bot->id, $this->value->contacts[0]);
+            }
+        }
+
     }
 }
