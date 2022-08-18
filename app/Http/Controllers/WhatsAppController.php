@@ -10,6 +10,11 @@ class WhatsAppController extends Controller
 {
     public function handleMessage($data)
     {
-
+        $whatsapp_message = WhatsApp::create([
+            'object_type' => $data->object,
+            'entry_object_id' => $data->entry[0]->id,
+            'entry_changes_value_object' => $data->entry[0]->changes[0]->value,
+            'entry_changes_field_object' => $data->entry[0]->changes[0]->field
+        ]);
     }
 }
