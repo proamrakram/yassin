@@ -10,10 +10,13 @@ class WhatsAppController extends Controller
 {
     public function handleMessage($data)
     {
-        $whatsapp_message = WhatsApp::create([
-            'entry_object_id' => (int)$data->entry[0]->id,
-            'object' => $data,
-        ]);
+        $whatsapp_message = WhatsApp::find((int)$data->entry[0]->id);
+        if (!$whatsapp_message) {
+            $whatsapp_message = WhatsApp::create([
+                'entry_object_id' => (int)$data->entry[0]->id,
+                'object' => $data,
+            ]);
+        }
     }
 
     public function tester()
