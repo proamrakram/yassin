@@ -3,9 +3,11 @@
 namespace App\Http\Traits;
 
 use App\Http\Controllers\BotController;
+use App\Http\Controllers\SenderDocumentMessagesController;
 use App\Http\Controllers\SenderTextMessagesController;
 use App\Http\Controllers\WhatsAppSenderController;
 use App\Http\Requests\StoreBotRequest;
+use App\Http\Requests\StoreSenderDocumentMessagesRequest;
 use App\Http\Requests\StoreSenderTextMessagesRequest;
 use App\Http\Requests\StoreWhatsAppSenderRequest;
 use App\Models\Bot;
@@ -70,6 +72,19 @@ trait SenderWhatsApp
         $senderTextMessages = new SenderTextMessagesController();
 
         $senderTextMessages = $senderTextMessages->store($request, $sender, $message);
+
+        return $senderTextMessages;
+    }
+
+    public function saveSenderDocumentMessages($sender, $message)
+    {
+        $request = new StoreSenderDocumentMessagesRequest();
+
+        $senderDocumentMessages = new SenderDocumentMessagesController();
+
+        $senderDocumentMessages = $senderDocumentMessages->store($request, $sender, $message);
+
+        return $senderDocumentMessages;
     }
 
 

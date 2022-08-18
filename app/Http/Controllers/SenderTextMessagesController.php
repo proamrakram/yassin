@@ -36,7 +36,7 @@ class SenderTextMessagesController extends Controller
      */
     public function store(StoreSenderTextMessagesRequest $request, $sender, $message)
     {
-        SenderTextMessages::create([
+        return SenderTextMessages::create([
             'body' => $message->text->body,
             'message_id' => $message->id,
             'message_type' => $message->type,

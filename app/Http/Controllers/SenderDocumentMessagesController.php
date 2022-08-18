@@ -34,9 +34,20 @@ class SenderDocumentMessagesController extends Controller
      * @param  \App\Http\Requests\StoreSenderDocumentMessagesRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSenderDocumentMessagesRequest $request)
+    public function store(StoreSenderDocumentMessagesRequest $request, $sender, $message)
     {
-        //
+        return SenderDocumentMessages::create([
+            'from_phone_number' => $message->from,
+            'message_timestamp' => date('Y/m/d H:i:s', (int)$message->timestamp),
+            'message_id' => $message->id,
+            'message_type' => $message->type,
+            'caption' => $message->document->caption,
+            'file_name' => $message->document->file_name,
+            'mime_type' => $message->document->mime_type,
+            'hash_sha_256' => $message->document->sha256,
+            'document_id' => $message->document->id,
+            'sender_message_id' => $sender->id,
+        ]);
     }
 
     /**
