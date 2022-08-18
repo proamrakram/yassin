@@ -15,12 +15,14 @@ return new class extends Migration
     {
         Schema::create('sender_text_messages', function (Blueprint $table) {
             $table->id();
-            $table->longText('body')->nullable();
+            $table->foreignId('sender_message_id')->constrained('whats_app_senders');
             $table->string('from_phone_number')->nullable();
-            $table->timestamp('message_timestamp')->nullable();
+            $table->longText('body')->nullable();
+
             $table->longText('message_id')->nullable();
             $table->string('message_type')->nullable();
-            $table->foreignId('sender_message_id')->constrained('whats_app_senders');
+
+            $table->timestamp('message_timestamp')->nullable();
             $table->timestamps();
         });
     }
