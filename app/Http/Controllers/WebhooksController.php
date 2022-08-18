@@ -23,6 +23,7 @@ class WebhooksController extends Controller
 
     public function handle()
     {
+        dd('Handle Webhooks');
         if ($this->request->isMethod('get') && $this->request->get('hub_challenge')) {
 
             if ($this->hub_mode == 'subscribe' && $this->hub_verify_token == $this->verify_token) {
