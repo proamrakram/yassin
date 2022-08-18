@@ -10,14 +10,12 @@ class SenderTextMessages extends Model
     use HasFactory;
 
     protected $fillable = [
-
-        #Relation with Sender Message Table
-        'sender_message_id',
         'body',
         'from_phone_number',
         'message_timestamp',
         'message_id',
         'message_type',
+        'sender_message_id',
     ];
 
     public function senderMessage()

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->longText('body')->nullable();
             $table->string('from_phone_number')->nullable();
-            $table->dateTime('message_timestamp')->nullable();
+            $table->timestamp('message_timestamp')->nullable();
             $table->longText('message_id')->nullable();
             $table->string('message_type')->nullable();
             $table->foreignId('sender_message_id')->constrained('whats_app_senders');
