@@ -18,12 +18,11 @@ class WhatsAppController extends Controller
         // ]);
 
         $whatsapp_message = WhatsApp::create([
-            'object_type' => "nano",
+            'object_type' => $data->object,
             'entry_object_id' => 23456789,
-            'entry_changes_value_object' => [],
+            'entry_changes_value_object' => $data->entry,
             'entry_changes_field_object' => []
         ]);
-
 
     }
 }
