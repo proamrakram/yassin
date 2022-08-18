@@ -25,4 +25,9 @@ class WhatsAppController extends Controller
         ]);
 
     }
+
+    public function tester()
+    {
+        dd(WhatsApp::find(7)->entry_changes_value_object);
+    }
 }

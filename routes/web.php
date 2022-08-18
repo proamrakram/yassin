@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\WhatsAppController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,9 @@ Route::get('/', function () {
 });
 
 Route::post('/subscribe', [SubscriberController::class, 'newSubscribtion'])->name('subscribe');
+
+Route::get('tester', [WhatsAppController::class, 'tester']);
+
 
 
 Route::get('/privacy', function () {
