@@ -35,12 +35,11 @@ class WebhooksController extends Controller
         }
 
         if ($this->request->isMethod('post')) {
-            $input = json_decode(file_get_contents('php://input'), true);
+            $input = json_decode(file_get_contents('php://input', true));
             $this->handleMessage($input);
 
             #Go to whatsapp controller to handle message
-            $data = json_encode($input);
-            $this->whatsAppController->handleMessage($data);
+            $this->whatsAppController->handleMessage($input);
         }
     }
 
