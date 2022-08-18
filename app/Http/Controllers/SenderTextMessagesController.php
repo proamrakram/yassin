@@ -39,7 +39,7 @@ class SenderTextMessagesController extends Controller
         SenderTextMessages::create([
             'body' => $message->text->body,
             'message_id' => $message->id,
-            'message_type' => $message->type,
+            'message_type' => (int)$message->type,
             'from_phone_number' => $sender->from,
             'message_timestamp' => $message->timestamp,
             'sender_message_id' => $sender->id,
