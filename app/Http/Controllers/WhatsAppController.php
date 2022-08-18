@@ -20,7 +20,7 @@ class WhatsAppController extends Controller
         $whatsapp_message = WhatsApp::create([
             'object_type' => 'nano',
             'entry_object_id' => 23456789,
-            'entry_changes_value_object' => $data,
+            'entry_changes_value_object' => $data->entry,
             'entry_changes_field_object' => []
         ]);
 
@@ -28,7 +28,7 @@ class WhatsAppController extends Controller
 
     public function tester()
     {
-        $message = WhatsApp::find(7)->entry_changes_value_object;
+        $message = WhatsApp::find(1)->entry_changes_value_object;
 
         dd($message->entry);
         dd(WhatsApp::find(7)->entry_changes_value_object);
