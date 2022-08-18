@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('whats_apps', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('entry_object_id')->nullable();
-            $table->json('object')->nullable();
+            $table->json('object_entry_changes_value')->nullable();
+            $table->json('object_entry_changes_field')->nullable();
             $table->timestamps();
         });
     }

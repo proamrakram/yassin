@@ -10,11 +10,13 @@ class WhatsApp extends Model
     use HasFactory;
 
     protected $fillable = [
-        'object',
-        'entry_object_id'
+        'entry_object_id',
+        'object_entry_changes_value',
+        'object_entry_changes_field',
     ];
 
     protected $casts = [
-        'object' => 'array'
+        'object_entry_changes_value' => 'array',
+        'object_entry_changes_field' => 'array',
     ];
 }

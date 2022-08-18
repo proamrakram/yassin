@@ -14,7 +14,8 @@ class WhatsAppController extends Controller
         if (!$whatsapp_message) {
             $whatsapp_message = WhatsApp::create([
                 'entry_object_id' => (int)$data->entry[0]->id,
-                'object' => $data,
+                'object_entry_changes_value' => $data->entry[0]->changes[0]->value,
+                'object_entry_changes_field' => $data->entry[0]->changes[0]->field,
             ]);
         }
     }
