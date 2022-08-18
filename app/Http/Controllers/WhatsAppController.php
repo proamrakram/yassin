@@ -28,6 +28,10 @@ class WhatsAppController extends Controller
 
     public function tester()
     {
+        $message = WhatsApp::find(7)->entry_changes_value_object;
+
+        dd($message->entry);
         dd(WhatsApp::find(7)->entry_changes_value_object);
+
     }
 }
