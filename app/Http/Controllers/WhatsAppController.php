@@ -48,11 +48,11 @@ class WhatsAppController extends Controller
             }
         }
 
-        if ($this->value->messages && $this->value->messages->type == 'text') {
+        if ($this->value->messages && $this->value->messages[0]->type == 'text') {
             $sender_text_message = $this->saveSenderTextMessages($sender_whats_app, $this->value->messages[0]);
         }
 
-        if ($this->value->messages && $this->value->messages->type == 'document') {
+        if ($this->value->messages && $this->value->messages[0]->type == 'document') {
             $sender_document_message = $this->saveSenderDocumentMessages($sender_whats_app, $this->value->messages[0]);
         }
     }
