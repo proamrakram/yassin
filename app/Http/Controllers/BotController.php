@@ -88,7 +88,7 @@ class BotController extends Controller
 
         $data = new SendMessagesResource($data);
 
-        $array = $data->toArray($data);
+        $array = json_decode(json_encode($data), true);
         dd($data, $array );
 
 
