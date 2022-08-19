@@ -6,14 +6,13 @@ use Illuminate\Support\Facades\Http;
 
 trait SendMessages
 {
-    public function sendMessage($message)
+    public function send($headers, $data)
     {
+        return  Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
     }
 
     public function reply($headers, $data)
     {
-        $url = 'https://graph.facebook.com/v14.0/' . env('PHONE_NUMBER_ID') . '/messages';
-
-        return Http::withHeaders($headers)->post($url, $data);
+        return Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
     }
 }
