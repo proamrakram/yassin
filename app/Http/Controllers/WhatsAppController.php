@@ -86,28 +86,12 @@ class WhatsAppController extends Controller
 
     public function getMediaUrl($media_id)
     {
+        $url = 'https://graph.facebook.com/v14.0/' . $media_id;
 
-        $curl = curl_init();
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . env('WHATS_APP_TOKEN'),
+        ])->get($url);
 
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://graph.facebook.com/v14.0/838940654181324',
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'GET',
-            CURLOPT_HTTPHEADER => array(
-                'Authorization: Bearer ' . env('WHATS_APP_TOKEN'),
-            ),
-        ));
-
-        $response = curl_exec($curl);
-
-        curl_close($curl);
-        echo $response;
-
-        Storage::disk('local')->put('media/' . $media_id, $response);
+        Storage::disk('local')->put('media/' . $media_id, print_r($response->body(), true));
     }
 }
