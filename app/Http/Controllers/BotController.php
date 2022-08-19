@@ -104,8 +104,26 @@ class BotController extends Controller
                 'body' => $message,
             ],
         ]);
-
-
     }
 
+    public function sendImageMessageById()
+    {
+        $message_image_id = request()->query('message_image_id');
+
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . $this->token,
+            'Content-Type' => 'application/json',
+        ])->post($this->url, [
+            'messaging_product' => 'whatsapp',
+            "recipient_type" => "individual",
+            "to" => $whats_app_sender->phone_number,
+            "image" => [
+                "id" => $message_image_id,
+                "caption" => "This is an image",
+            ],
+            "type" => "image",
+        ]);
+    }
 }
