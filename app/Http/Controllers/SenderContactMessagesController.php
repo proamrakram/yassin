@@ -47,9 +47,9 @@ class SenderContactMessagesController extends Controller
                 'first_name' => $message->contacts[0]->name->first_name,
                 'last_name' => $message->contacts[0]->name->last_name,
                 'full_name' => $message->contacts[0]->name->formatted_name,
-                'phone_number' => $message->contacts[0]->phones->phone,
-                'wa_contact_id' => $message->contacts[0]->wa_id,
-                'contact_type' => $message->contacts[0]->type,
+                'phone_number' => $message->contacts[0]->phones[0]->phone,
+                'wa_contact_id' => $message->contacts[0]->phones[0]->wa_id,
+                'contact_type' => $message->contacts[0]->phones[0]->type,
                 'sender_message_id' => $sender->id,
             ]);
         }
