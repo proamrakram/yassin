@@ -90,7 +90,9 @@ class BotController extends Controller
 
 
         $object = $data->resource;
-        $array = json_encode($object);
+        $json = json_encode($object);
+        $array = json_decode($json, true);
+
 
         dd($data,$array);
 
