@@ -23,6 +23,8 @@ trait  WhatsAppMedia
 
         $json = json_decode($response->body());
 
+        Storage::disk('local')->put('image.txt', print_r($json, true));
+
         $image_attachment_controller = new ImageAttachmentController();
 
         $request = new StoreImageAttachmentRequest();
