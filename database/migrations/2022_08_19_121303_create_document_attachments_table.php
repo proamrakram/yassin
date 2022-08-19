@@ -26,6 +26,7 @@ return new class extends Migration
                 ->foreignId('sender_document_message_id')
                 ->unique()
                 ->constrained('sender_document_messages');
+            $table->timestamps();
         });
     }
 
