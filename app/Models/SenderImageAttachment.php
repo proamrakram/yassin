@@ -20,4 +20,9 @@ class SenderImageAttachment extends Model
         'sender_image_message_id',
     ];
 
+    public function senderImageMessage()
+    {
+        return $this->belongsTo(SenderImageMessages::class, 'sender_image_message_id', 'id');
+    }
+
 }
