@@ -41,7 +41,7 @@ class BotController extends Controller
         return $bot;
     }
 
-    public function sendTextMessage($message)
+    public function sendTextMessage($message = "Hello World")
     {
         $message = "Hello I am Amr Akram From Gaza Strip";
 
