@@ -47,41 +47,6 @@ class BotController extends Controller
 
         $whats_app_sender = WhatsAppSender::find(1);
 
-
-
-        // $curl = curl_init();
-
-        // curl_setopt_array($curl, array(
-        //     CURLOPT_URL => 'https://graph.facebook.com/v14.0/111278218357261/messages',
-        //     CURLOPT_RETURNTRANSFER => true,
-        //     CURLOPT_ENCODING => '',
-        //     CURLOPT_MAXREDIRS => 10,
-        //     CURLOPT_TIMEOUT => 0,
-        //     CURLOPT_FOLLOWLOCATION => true,
-        //     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        //     CURLOPT_CUSTOMREQUEST => 'POST',
-        //     CURLOPT_POSTFIELDS => '{
-        //     "messaging_product": "whatsapp",
-        //     "recipient_type": "individual",
-        //     "to": "972599916672",
-        //     "type": "text",
-        //     "text": {
-        //         "preview_url": false,
-        //         "body": "text-message-content"
-        //     }
-        // }',
-        //     CURLOPT_HTTPHEADER => array(
-        //         'Content-Type: application/json',
-        //         'Authorization: Bearer ' . $this->token,
-        //     ),
-        // ));
-
-        // $response = curl_exec($curl);
-
-        // curl_close($curl);
-        // echo $response;
-
-
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $this->token,
             'Content-Type' => 'application/json',
@@ -93,6 +58,30 @@ class BotController extends Controller
             'text' => [
                 'preview_url' => false,
                 'body' => $message,
+            ],
+        ]);
+    }
+
+    public function sendReplyToTextMessage()
+    {
+        $message_id = request()->query('message_id');
+
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . $this->token,
+            'Content-Type' => 'application/json',
+        ])->post($this->url, [
+            'messaging_product' => 'whatsapp',
+            "recipient_type" => "individual",
+            "to" => $whats_app_sender->phone_number,
+            "context" => [
+                "message_id" => $message_id,
+            ],
+            "type" => "text",
+            "text" => [
+                "preview_url" => false,
+                "body" => "I am sorry for replying you in this time, Hello World",
             ],
         ]);
     }
