@@ -27,6 +27,6 @@ class SenderImageMessages extends Model
 
     public function images()
     {
-        return $this->hasMany(SenderImageAttachment::class, 'sender_image_message_id', 'id');
+        return $this->hasMany(ImageAttachment::class, 'sender_image_message_id', 'id');
     }
 }

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('image_attachments', function (Blueprint $table) {
             $table->id();
-            $table->longText('image_url');
+            $table->text('image_url');
             $table->string('mime_type');
             $table->string('hash_sha256');
             $table->string('file_size');
