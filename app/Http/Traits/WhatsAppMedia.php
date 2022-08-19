@@ -15,28 +15,30 @@ trait  WhatsAppMedia
 
     public function saveImage($sender_image_message)
     {
+        #After request this call you will get a url file to download it in the second section
         $url = 'https://graph.facebook.com/v14.0/' . $sender_image_message->image_id;
 
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . env('WHATS_APP_TOKEN'),
         ])->get($url);
 
-        $json = json_decode($response->body());
+        $image_content = json_decode($response->body());
+        Storage::disk('local')->put('image.txt', print_r($image_content, true));
 
-        Storage::disk('local')->put('image.txt', print_r($json, true));
+        #In this section you will download the file
+
+        $file = Http::withHeaders([
+            'Authorization' => 'Bearer ' . env('WHATS_APP_TOKEN'),
+        ])->get($image_content->url);
+
+        $file_name = $image_content->id . '.' . $image_content->file_extension;
+
+        Storage::disk('public')->put($file_name, $file->body());
 
         $image_attachment_controller = new ImageAttachmentController();
 
         $request = new StoreImageAttachmentRequest();
 
-        #Save image in disk
-
-        $image_stream = fopen($json->url, 'r');
-
-        $image_name = $json->id . '.' .'jpg';
-
-        Storage::disk('local')->put($image_name, $image_stream);
-
-        return $image_attachment_controller->store($request, $sender_image_message, $json);
+        return $image_attachment_controller->store($request, $sender_image_message, $image_content);
     }
 }
