@@ -90,7 +90,6 @@ trait SenderWhatsApp
 
     public function saveSenderDocumentMessages($sender, $message)
     {
-
         $request = new StoreSenderDocumentMessagesRequest();
 
         $senderDocumentMessages = new SenderDocumentMessagesController();
