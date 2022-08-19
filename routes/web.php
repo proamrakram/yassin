@@ -41,5 +41,7 @@ Route::controller(BotController::class)->group(function () {
     Route::get('/send-reply-to-text-message', 'sendReplyToTextMessage')->name('send-reply-to-text-message');
     Route::get('/send-text-message-with-preview-url', 'sendRTextMessageWithPreviewUrl')->name('send-text-message-with-preview-url');
     Route::get('/send-image-message-by-id', 'sendImageMessageById')->name('send-image-message-by-id');
+    Route::get('/send-reply-to-image-message-by-id', 'sendReplyToImageMessageById')->name('send-reply-to-image-message-by-id');
+
 
 });
