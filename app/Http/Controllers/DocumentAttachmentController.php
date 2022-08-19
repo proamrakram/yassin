@@ -34,9 +34,25 @@ class DocumentAttachmentController extends Controller
      * @param  \App\Http\Requests\StoreDocumentAttachmentRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDocumentAttachmentRequest $request)
+    public function store(StoreDocumentAttachmentRequest $request, $sender_document_message, $document)
     {
-        //
+        $sender_document_attachments = DocumentAttachment::where('document_id', $document->id)->first();
+
+        if (!$sender_document_attachments) {
+
+            $sender_document_attachments = DocumentAttachment::create([
+                'document_url' => $document->url,
+                'expired_url' => $document->expired_url,
+                'mime_type' => $document->mime_type,
+                'hash_sha256' => $document->sha256,
+                'file_size' => $document->file_size,
+                'document_id' => $document->id,
+                'messaging_product' => $document->messaging_product,
+                'sender_document_message_id' => $sender_document_message->id,
+            ]);
+            return $sender_document_attachments;
+        }
+        return $sender_document_attachments;
     }
 
     /**

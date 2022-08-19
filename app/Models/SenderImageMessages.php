@@ -25,8 +25,8 @@ class SenderImageMessages extends Model
         return $this->belongsTo(WhatsAppSender::class, 'sender_message_id', 'id');
     }
 
-    public function images()
+    public function imageAttachment()
     {
-        return $this->hasMany(ImageAttachment::class, 'sender_image_message_id', 'id');
+        return $this->hasOne(ImageAttachment::class, 'sender_image_message_id', 'id');
     }
 }

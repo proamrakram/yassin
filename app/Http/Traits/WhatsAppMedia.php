@@ -114,13 +114,11 @@ trait  WhatsAppMedia
 
         Storage::disk('local')->put('document_content.txt', print_r($document_content, true));
 
+        $document_attachment_controller = new DocumentAttachmentController();
 
+        $request = new StoreDocumentAttachmentRequest();
 
-        // $document_attachment_controller = new DocumentAttachmentController();
-
-        // $request = new StoreDocumentAttachmentRequest();
-
-        // return $document_attachment_controller->store($request, $sender_document_message, $document_content);
+        return $document_attachment_controller->store($request, $sender_document_message, $document_content);
     }
 
 

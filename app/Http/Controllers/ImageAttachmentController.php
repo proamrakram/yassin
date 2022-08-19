@@ -34,17 +34,24 @@ class ImageAttachmentController extends Controller
      * @param  \App\Http\Requests\StoreImageAttachmentRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreImageAttachmentRequest $request, $sender_image_message, $json)
+    public function store(StoreImageAttachmentRequest $request, $sender_image_message, $image)
     {
-        $sender_images_attachments = ImageAttachment::create([
-            'image_url' => $json->url,
-            'mime_type' => $json->mime_type,
-            'hash_sha256' => $json->sha256,
-            'file_size' => $json->file_size,
-            'image_id' => $json->id,
-            'messaging_product' => $json->messaging_product,
-            'sender_image_message_id' => $sender_image_message->id,
-        ]);
+        $sender_images_attachments = ImageAttachment::where('image_id', $image->id)->first();
+
+        if (!$sender_images_attachments) {
+
+            $sender_images_attachments = ImageAttachment::create([
+                'image_url' => $image->url,
+                'mime_type' => $image->mime_type,
+                'hash_sha256' => $image->sha256,
+                'file_size' => $image->file_size,
+                'image_id' => $image->id,
+                'messaging_product' => $image->messaging_product,
+                'sender_image_message_id' => $sender_image_message->id,
+            ]);
+
+            return $sender_images_attachments;
+        }
 
         return  $sender_images_attachments;
     }

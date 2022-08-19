@@ -11,6 +11,7 @@ class ImageAttachment extends Model
 
     protected $fillable = [
         'image_url',
+        'expired_url',
         'mime_type',
         'hash_sha256',
         'file_size',

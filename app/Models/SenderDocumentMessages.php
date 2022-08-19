@@ -27,4 +27,9 @@ class SenderDocumentMessages extends Model
         return $this->belongsTo(WhatsAppSender::class, 'sender_message_id', 'id');
     }
 
+    public function documentAttachment()
+    {
+        return $this->hasOne(DocumentAttachment::class, 'sender_document_message_id', 'id');
+    }
+
 }
