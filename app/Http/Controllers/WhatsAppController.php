@@ -72,7 +72,7 @@ class WhatsAppController extends Controller
             $sender_location_message = $this->saveSenderLocationMessages($sender_whats_app, $this->value->messages[0]);
         }
 
-        if ($this->value->messages && $this->value->messages[0]->type == 'contact') {
+        if ($this->value->messages && $this->value->messages[0]->type == 'contacts') {
             $sender_contact_message = $this->saveSenderContactMessages($sender_whats_app, $this->value->messages[0]);
         }
 
