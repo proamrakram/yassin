@@ -5,11 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Bot;
 use App\Http\Requests\StoreBotRequest;
 use App\Http\Requests\UpdateBotRequest;
+use App\Http\Resources\SendMessagesResource;
+use App\Http\Traits\SendMessages;
 use App\Models\WhatsAppSender;
 use Illuminate\Support\Facades\Http;
+use stdClass;
 
 class BotController extends Controller
 {
+    use SendMessages;
+
     private $url;
     private $token;
     private $bot;
@@ -62,34 +67,67 @@ class BotController extends Controller
         ]);
     }
 
+    public function replyToMessage($message_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $headers = [
+            'Authorization' => "Bearer "  . env('WHATS_APP_TOKEN'),
+            'Content-Type' => 'application/json',
+        ];
+
+        $data = new stdClass();
+
+        $data->messaging_product = 'whatsapp';
+        $data->recipient_type = 'individual';
+        $data->to = $whats_app_sender->phone_number;
+        $data->message_id = $message_id;
+        $data->type = 'text';
+        $data->preview_url = false;
+        $data->body = 'I am sorry for replying you in this time, Hello World';
+
+        $data = new SendMessagesResource($data);
+        dd($data);
+        $this->replyToMessage($message_id, $headers, $data);
+    }
+
+
+
+
+
     public function sendReplyToTextMessage()
     {
         $message_id = request()->query('message_id');
 
         $whats_app_sender = WhatsAppSender::find(1);
 
-        $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $this->token,
+        $headers = [
+            'Authorization' => "Bearer "  . env('WHATS_APP_TOKEN'),
             'Content-Type' => 'application/json',
-        ])->post($this->url, [
-            'messaging_product' => 'whatsapp',
-            "recipient_type" => "individual",
-            "to" => $whats_app_sender->phone_number,
-            "context" => [
-                "message_id" => $message_id,
-            ],
-            "type" => "text",
-            "text" => [
-                "preview_url" => false,
-                "body" => "I am sorry for replying you in this time, Hello World",
-            ],
-        ]);
+        ];
+
+        $data = new stdClass();
+
+        $data->messaging_product = 'whatsapp';
+        $data->recipient_type = 'individual';
+        $data->to = $whats_app_sender->phone_number;
+        $data->message_id = $message_id;
+        $data->type = 'text';
+        $data->preview_url = false;
+        $data->body = 'I am sorry for replying you in this time, Hello World';
+
+        $data = new SendMessagesResource($data);
+        dd($data);
+        $this->replyToMessage($message_id, $headers, $data);
     }
 
     public function sendRTextMessageWithPreviewUrl()
     {
         $message = "Hello I am Amr Akram https://www.youtube.com/watch?v=Mi696rhyvYI&list=RDMM&index=10";
         $whats_app_sender = WhatsAppSender::find(1);
+
+
+
 
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $this->token,
