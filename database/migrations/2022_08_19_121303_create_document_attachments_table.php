@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('document_attachments', function (Blueprint $table) {
             $table->id();
             $table->text('document_url');
-            $table->boolean('expired_url')->default(true);
+            $table->boolean('is_url_expired')->default(true);
             $table->string('mime_type');
             $table->string('hash_sha256');
             $table->string('file_size');
