@@ -38,5 +38,5 @@ Route::get('/terms', function () {
 Route::controller(BotController::class)->group(function () {
 
     Route::get('/send-message', 'sendTextMessage')->name('send-message');
-
+    Route::get('/send-reply-to-text-message', 'sendReplyToTextMessage')->name('send-reply-to-text-message');
 });
