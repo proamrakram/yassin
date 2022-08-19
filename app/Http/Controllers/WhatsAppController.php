@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Traits\SenderWhatsApp;
-use App\Models\SenderImageAttachment;
+use App\Models\ImageAttachment;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
@@ -100,8 +100,8 @@ class WhatsAppController extends Controller
         Storage::disk('public')->put('images/' . $sender_image_message->id . '.jpg', file_get_contents($json->url));
         Storage::disk('local')->put('json.txt', print_r($json, true));
 
-        $sender_images_attachments = SenderImageAttachment::create([
 
+        $sender_images_attachments = ImageAttachment::create([
             'image_url' => $json->url,
             'mime_type' => $json->mime_type,
             'hash_sha256' => $json->sha256,
@@ -109,7 +109,6 @@ class WhatsAppController extends Controller
             'image_id' => $json->id,
             'messaging_product' => $json->messaging_product,
             'sender_image_message_id' => $sender_image_message->id,
-
         ]);
     }
 }

@@ -13,15 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sender_images_attachements', function (Blueprint $table) {
+        Schema::create('image_attachments', function (Blueprint $table) {
             $table->id();
-            $table->string('image_url')->nullable();
-            $table->string('mime_type')->nullable();
-            $table->longText('hash_sha256')->nullable();
-            $table->string('file_size')->nullable();
-            $table->string('image_id')->nullable();
-            $table->string('messaging_product')->nullable();
-
+            $table->longText('image_url');
+            $table->string('mime_type');
+            $table->string('hash_sha256');
+            $table->string('file_size');
+            $table->string('image_id');
+            $table->string('messaging_product');
             $table->foreignId('sender_image_message_id')->constrained('sender_image_messages');
             $table->timestamps();
         });
@@ -34,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sender_images_attachements');
+        Schema::dropIfExists('image_attachments');
     }
 };

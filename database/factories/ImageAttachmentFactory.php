@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\SenderImagesAttachements>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ImageAttachment>
  */
-class SenderImageAttachmentFactory extends Factory
+class ImageAttachmentFactory extends Factory
 {
     /**
      * Define the model's default state.
