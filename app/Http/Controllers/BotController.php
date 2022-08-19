@@ -14,13 +14,18 @@ class BotController extends Controller
     private $token;
     private $bot;
 
-    private $url_message;
-
     public function __construct()
     {
-        $this->bot = Bot::find(1);
+        $this->initialization();
+    }
+
+    public function initialization($phone_number_id = 111278218357261)
+    {
+        $this->bot = Bot::where('phone_number_id', $phone_number_id)->first();
+        if ($this->bot) {
+            $this->url = 'https://graph.facebook.com/v14.0/' . $this->bot->phone_number_id . '/messages';
+        }
         $this->token = env('WHATS_APP_TOKEN');
-        $this->url = 'https://graph.facebook.com/v14.0/' . $this->bot->phone_number_id . '/messages';
     }
 
     public function store(StoreBotRequest $request, $name = "whatsapp_business_account", $whats_app_business_account_id = null,  $phone_number = null, $phone_number_id = null, $messaging_product = "whatsapp")
