@@ -165,7 +165,7 @@ class BotController extends Controller
             "recipient_type" => "individual",
             "to" => $whats_app_sender->phone_number,
             "image" => [
-                "link" => "https://lookaside.fbsbx.com/whatsapp_business/attachments/?mid=803527020859955&ext=1660941934&hash=ATuGcSKLP8jTsFAvO3JTV4qJ1Vt7jZJagv6A4HVz7WD2dA",
+                "link" => "https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg",
                 "caption" => "Testing",
             ],
             "type" => "image",
