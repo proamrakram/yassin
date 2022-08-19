@@ -72,7 +72,7 @@ class BotController extends Controller
         }',
             CURLOPT_HTTPHEADER => array(
                 'Content-Type: application/json',
-                'Authorization: Bearer EAAFJigKvv6cBAETPslNSQcj8jYTkeaYwIiPcg7PEbkPvs79ztXKWSUlZCrCZCt2qxjcAe2kZAFOABciv88zkpZCq4F5UzfixiTphZBu7kWpFNZC5qKtjDSbIKWhmlsRyJHZAui8Pf5MOx3hbef6trYFnrzbT0ZA6TpfRhGLkl4KRNxALY56nb5EY7eibzlbIZA48gfudQGY3gh305rpUPcJ3b'
+                'Authorization: Bearer ' . $this->token,
             ),
         ));
 
