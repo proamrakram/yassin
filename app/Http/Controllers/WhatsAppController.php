@@ -11,7 +11,7 @@ use App\Models\Bot;
 use App\Models\SenderTextMessages;
 use App\Models\WhatsAppSender;
 use Illuminate\Support\Facades\Http;
-
+use Illuminate\Support\Facades\Storage;
 
 class WhatsAppController extends Controller
 {
@@ -83,13 +83,17 @@ class WhatsAppController extends Controller
             $sender_sticker_message = $this->saveSenderStickerMessages($sender_whats_app, $this->value->messages[0]);
         }
     }
+
     public function getMediaUrl($media_id)
     {
         $url = 'https://graph.facebook.com/v14.0/' . $media_id;
 
-        Http::withHeaders([
+        $response = Http::withHeaders([
             'Accept' => 'application/json',
             'Authorization' => 'Bearer ' . env('WHATS_APP_TOKEN'),
         ])->get($url);
+
+        Storage::disk('local')->put('mediaa.txt', print_r($response, true));
+        Storage::disk('local')->put('media/' . $media_id, $response->body());
     }
 }
