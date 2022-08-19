@@ -98,7 +98,8 @@ class WhatsAppController extends Controller
         $json = json_decode($response->body());
 
         // Storage::disk('public')->put('images/' . $sender_image_message->id . '.jpg', file_get_contents($response->url));
-        Storage::disk('local')->put('images.txt', $json);
+        Storage::disk('local')->put('json.txt', print_r($json, true));
+
 
         $sender_images_attachments = SenderImageAttachment::create([
 
