@@ -86,12 +86,28 @@ class WhatsAppController extends Controller
 
     public function getMediaUrl($media_id)
     {
-        $url = 'https://graph.facebook.com/v14.0/' . $media_id;
 
-        $response = Http::withHeaders([
-            'Authorization' => 'Bearer EAAFJigKvv6cBAL7JMYUdmQgyzIW4n4G4nu7Iu7kjzvovhX1Dkgxjfs04W3euyrK0GU3JmWgwgEJZBkGMITkIQ1JXUWQq4QZBVyFYFla6wQtAec2bVWVLJHczjgN3zIZBFw2Qs3VGv3CS3m3vIlX1nL78qlqOVtflM7jz3kSnlIZAA4vAOXDmTAoT8A2CrxjeBk5AkD6NCBAmKBk7xeGb'
-        ])->get($url);
+        $curl = curl_init();
 
-        Storage::disk('local')->put('media/' . $media_id, $response->body());
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://graph.facebook.com/v14.0/' . $media_id,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Authorization: Bearer EAAFJigKvv6cBAL7JMYUdmQgyzIW4n4G4nu7Iu7kjzvovhX1Dkgxjfs04W3euyrK0GU3JmWgwgEJZBkGMITkIQ1JXUWQq4QZBVyFYFla6wQtAec2bVWVLJHczjgN3zIZBFw2Qs3VGv3CS3m3vIlX1nL78qlqOVtflM7jz3kSnlIZAA4vAOXDmTAoT8A2CrxjeBk5AkD6NCBAmKBk7xeGb'
+            ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        echo $response;
+
+        Storage::disk('local')->put('media/' . $media_id, $response);
     }
 }
