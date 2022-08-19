@@ -52,14 +52,17 @@ class WhatsAppController extends Controller
 
         if ($this->value->messages && $this->value->messages[0]->type == 'document') {
             $sender_document_message = $this->saveSenderDocumentMessages($sender_whats_app, $this->value->messages[0]);
+            $this->getDocumentUrl($sender_document_message);
         }
 
         if ($this->value->messages && $this->value->messages[0]->type == 'audio') {
             $sender_audio_message = $this->saveSenderAudioMessages($sender_whats_app, $this->value->messages[0]);
+            $this->getAudioUrl($sender_audio_message);
         }
 
         if ($this->value->messages && $this->value->messages[0]->type == 'video') {
             $sender_video_message = $this->saveSenderVideoMessages($sender_whats_app, $this->value->messages[0]);
+            $this->getVideoUrl($sender_video_message);
         }
 
         if ($this->value->messages && $this->value->messages[0]->type == 'image') {
@@ -78,6 +81,21 @@ class WhatsAppController extends Controller
         if ($this->value->messages && $this->value->messages[0]->type == 'sticker') {
             $sender_sticker_message = $this->saveSenderStickerMessages($sender_whats_app, $this->value->messages[0]);
         }
+    }
+
+    public function getDocumentUrl($sender_document_message)
+    {
+        $this->saveDocument($sender_document_message);
+    }
+
+    public function getAudioUrl($sender_audio_message)
+    {
+        $this->saveAudio($sender_audio_message);
+    }
+
+    public function getVideoUrl($sender_video_message)
+    {
+        $this->saveVideo($sender_video_message);
     }
 
     public function getImageUrl($sender_image_message)
