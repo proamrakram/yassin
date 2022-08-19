@@ -90,7 +90,7 @@ class WhatsAppController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://graph.facebook.com/v14.0/1734170476947037',
+            CURLOPT_URL => 'https://graph.facebook.com/v14.0/838940654181324',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -99,7 +99,7 @@ class WhatsAppController extends Controller
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'GET',
             CURLOPT_HTTPHEADER => array(
-                'Authorization: Bearer EAAFJigKvv6cBAJieYJiuB7Wc09h8Fy14ZByw8ZBgdBXg8TFoGGuY1y9FAuwu6jHuZBeABW7LQ6TwiGoSZALW348YfCk8ddka5UeZCFN44c91SMHCtNgLh6My2JmIKEx1czGwoGPOtZBOkpnkV9Al6cQNTTv3entB9P8YxiZAhA4yuiCjoi5G0lFfqj4YtvUVBnVpcfbXeUVxe4oVQjaKGt5'
+                'Authorization: Bearer ' . env('WHATS_APP_TOKEN'),
             ),
         ));
 
