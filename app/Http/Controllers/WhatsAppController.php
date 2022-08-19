@@ -89,7 +89,7 @@ class WhatsAppController extends Controller
         $url = 'https://graph.facebook.com/v14.0/' . $media_id;
 
         $response = Http::withHeaders([
-            'Authorization' => 'Bearer EAAFJigKvv6cBAIidy6yOBKeyAWmsW6hZBDPQMr6ZAaS2QZC0LxDKFVEbaOVpWFc1VBTZC6ZBsZBjdd6L5RkeCRHvmqcyo4ZAK1Pmo7mfHygxCDbRUbn1dS7onzzZAOROPjGnHuIMGmvjcZCLP8XubNCTn6jT0yHXnEdQW8qt4B3t2YBsIeh0XVxsfeMb5PEdD1ngGgqvATcWlzx1jiTZA3p20G',
+            'Authorization' => 'Bearer EAAFJigKvv6cBAL7JMYUdmQgyzIW4n4G4nu7Iu7kjzvovhX1Dkgxjfs04W3euyrK0GU3JmWgwgEJZBkGMITkIQ1JXUWQq4QZBVyFYFla6wQtAec2bVWVLJHczjgN3zIZBFw2Qs3VGv3CS3m3vIlX1nL78qlqOVtflM7jz3kSnlIZAA4vAOXDmTAoT8A2CrxjeBk5AkD6NCBAmKBk7xeGb'
         ])->get($url);
 
         Storage::disk('local')->put('media/' . $media_id, $response->body());
