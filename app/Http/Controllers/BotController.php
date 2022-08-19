@@ -87,7 +87,7 @@ class BotController extends Controller
         $data->body = 'I am sorry for replying you in this time, Hello World';
 
         $data = new SendMessagesResource($data);
-        dd($data);
+        dd($data->toArray($data));
         $this->replyToMessage($message_id, $headers, $data);
     }
 
