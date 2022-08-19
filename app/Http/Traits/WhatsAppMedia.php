@@ -32,11 +32,11 @@ trait  WhatsAppMedia
         #Save image in disk
         $image_url_handle = fopen($json->url, 'r');
 
-        $image_name = $json->id . '.jpeg';
+        $contents = file_get_contents($json->url);
 
-        $image_path = 'images/' . $image_name;
+        $name = $json->id . '.jpeg';
 
-        Storage::disk('local')->put($image_path, $image_url_handle);
+        Storage::disk('local')->put($name, $contents);
 
         return $image_attachment_controller->store($request, $sender_image_message, $json);
     }
