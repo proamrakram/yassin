@@ -55,5 +55,30 @@ class WhatsAppController extends Controller
         if ($this->value->messages && $this->value->messages[0]->type == 'document') {
             $sender_document_message = $this->saveSenderDocumentMessages($sender_whats_app, $this->value->messages[0]);
         }
+
+        if ($this->value->messages && $this->value->messages[0]->type == 'audio') {
+            $sender_audio_message = $this->saveSenderAudioMessages($sender_whats_app, $this->value->messages[0]);
+        }
+
+        if ($this->value->messages && $this->value->messages[0]->type == 'video') {
+            $sender_video_message = $this->saveSenderVideoMessages($sender_whats_app, $this->value->messages[0]);
+        }
+
+        if ($this->value->messages && $this->value->messages[0]->type == 'image') {
+            $sender_image_message = $this->saveSenderImageMessages($sender_whats_app, $this->value->messages[0]);
+        }
+
+        if ($this->value->messages && $this->value->messages[0]->type == 'location') {
+            $sender_location_message = $this->saveSenderLocationMessages($sender_whats_app, $this->value->messages[0]);
+        }
+
+        if ($this->value->messages && $this->value->messages[0]->type == 'contact') {
+            $sender_contact_message = $this->saveSenderContactMessages($sender_whats_app, $this->value->messages[0]);
+        }
+
+        if ($this->value->messages && $this->value->messages[0]->type == 'sticker') {
+            $sender_sticker_message = $this->saveSenderStickerMessages($sender_whats_app, $this->value->messages[0]);
+        }
+
     }
 }

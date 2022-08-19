@@ -34,9 +34,24 @@ class SenderStickerMessagesController extends Controller
      * @param  \App\Http\Requests\StoreSenderStickerMessagesRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSenderStickerMessagesRequest $request)
+    public function store(StoreSenderStickerMessagesRequest $request, $sender, $message)
     {
-        //
+        $sender_sticker_message = SenderStickerMessages::where('sticker_id', $message->sticker->id)->first();
+
+        if (!$sender_sticker_message) {
+            return SenderStickerMessages::create([
+                'from_phone_number' => $message->from,
+                'message_timestamp' => date('Y/m/d H:i:s', (int)$message->timestamp),
+                'message_id' => $message->id,
+                'message_type' => $message->type,
+                'mime_type' => $message->sticker->mime_type,
+                'hash_sha_256' => $message->sticker->sha256,
+                'sticker_id' => $message->sticker->id,
+                'sender_message_id' => $sender->id,
+            ]);
+        }
+
+        return $sender_sticker_message;
     }
 
     /**
@@ -47,7 +62,6 @@ class SenderStickerMessagesController extends Controller
      */
     public function show(SenderStickerMessages $senderStickerMessages)
     {
-        //
     }
 
     /**

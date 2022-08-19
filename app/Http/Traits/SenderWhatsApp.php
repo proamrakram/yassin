@@ -4,10 +4,12 @@ namespace App\Http\Traits;
 
 use App\Http\Controllers\BotController;
 use App\Http\Controllers\SenderDocumentMessagesController;
+use App\Http\Controllers\SenderStickerMessagesController;
 use App\Http\Controllers\SenderTextMessagesController;
 use App\Http\Controllers\WhatsAppSenderController;
 use App\Http\Requests\StoreBotRequest;
 use App\Http\Requests\StoreSenderDocumentMessagesRequest;
+use App\Http\Requests\StoreSenderStickerMessagesRequest;
 use App\Http\Requests\StoreSenderTextMessagesRequest;
 use App\Http\Requests\StoreWhatsAppSenderRequest;
 use App\Models\Bot;
@@ -78,6 +80,7 @@ trait SenderWhatsApp
 
     public function saveSenderDocumentMessages($sender, $message)
     {
+
         $request = new StoreSenderDocumentMessagesRequest();
 
         $senderDocumentMessages = new SenderDocumentMessagesController();
@@ -87,5 +90,19 @@ trait SenderWhatsApp
         return $senderDocumentMessages;
     }
 
+    public function saveSenderStickerMessages($sender, $message)
+    {
+        $request = new StoreSenderStickerMessagesRequest();
+
+        $senderStickerMessages = new SenderStickerMessagesController();
+
+        $senderStickerMessages = $senderStickerMessages->store($request, $sender, $message);
+    }
+
+
+    public function saveSenderVideoMessages($sender, $message)
+    {
+
+    }
 
 }

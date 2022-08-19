@@ -36,18 +36,26 @@ class SenderDocumentMessagesController extends Controller
      */
     public function store(StoreSenderDocumentMessagesRequest $request, $sender, $message)
     {
-        return SenderDocumentMessages::create([
-            'from_phone_number' => $message->from,
-            'message_timestamp' => date('Y/m/d H:i:s', (int)$message->timestamp),
-            'message_id' => $message->id,
-            'message_type' => $message->type,
-            'caption' => $message->document->caption,
-            'file_name' => $message->document->filename,
-            'mime_type' => $message->document->mime_type,
-            'hash_sha_256' => $message->document->sha256,
-            'document_id' => $message->document->id,
-            'sender_message_id' => $sender->id,
-        ]);
+
+        $sender_docuement_message = SenderDocumentMessages::where('document_id', $message->document->id)->first();
+
+        if (!$sender_docuement_message) {
+
+            return SenderDocumentMessages::create([
+                'from_phone_number' => $message->from,
+                'message_timestamp' => date('Y/m/d H:i:s', (int)$message->timestamp),
+                'message_id' => $message->id,
+                'message_type' => $message->type,
+                'caption' => $message->document->caption,
+                'file_name' => $message->document->filename,
+                'mime_type' => $message->document->mime_type,
+                'hash_sha_256' => $message->document->sha256,
+                'document_id' => $message->document->id,
+                'sender_message_id' => $sender->id,
+            ]);
+        }
+
+        return $sender_docuement_message;
     }
 
     /**
