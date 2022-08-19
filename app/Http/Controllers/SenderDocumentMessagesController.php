@@ -37,7 +37,7 @@ class SenderDocumentMessagesController extends Controller
     public function store(StoreSenderDocumentMessagesRequest $request, $sender, $message)
     {
 
-        $sender_docuement_message = SenderDocumentMessages::where('document_id', $message->document->id)->first();
+        $sender_docuement_message = SenderDocumentMessages::where('caption', $message->document->caption)->first();
 
         if (!$sender_docuement_message) {
 
