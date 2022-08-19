@@ -92,6 +92,19 @@ class WhatsAppController extends Controller
             'Authorization' => 'Bearer ' . env('WHATS_APP_TOKEN'),
         ])->get($url);
 
-        Storage::disk('local')->put('media/' . $media_id, print_r($response->body(), true));
+        // {
+        //     "url": "https:\/\/lookaside.fbsbx.com\/whatsapp_business\/attachments\/?mid=735292130900654&ext=1660879838&hash=ATs2dy19-dJB_4_so6uf_J9Jqbn8OkW_Ney_iszTsUHWEg",
+        //     "mime_type": "image\/jpeg",
+        //     "sha256": "bcb7a2022e3985b816f90739f950ad8ee5891bd433e713bb1b4cad324f182677",
+        //     "file_size": 210577,
+        //     "id": "735292130900654",
+        //     "messaging_product": "whatsapp"
+        // }
+
+        $response = $response->json();
+
+        $response = json_decode($response);
+
+        Storage::disk('local')->put('media/' . $media_id, print_r($response, true));
     }
 }
