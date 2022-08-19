@@ -101,11 +101,11 @@ class WhatsAppController extends Controller
         //     "messaging_product": "whatsapp"
         // }
 
-        $response = json_decode(json_encode($response->body()));
-        $response2 = json_decode($response->body());
+        $response = json_decode($response->body());
+        $json = json_encode($response);
 
         Storage::disk('local')->put('media/' . $media_id, print_r($response, true));
-        Storage::disk('local')->put('medi/' . $media_id, print_r($response2, true));
+        Storage::disk('local')->put('json/' . $media_id, print_r($json, true));
 
     }
 }
