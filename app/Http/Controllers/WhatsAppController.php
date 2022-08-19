@@ -95,7 +95,10 @@ class WhatsAppController extends Controller
         //     "messaging_product": "whatsapp"
         // }
 
-        $response = json_decode($response->body());
+        $json = json_decode($response->body());
+
+        // Storage::disk('public')->put('images/' . $sender_image_message->id . '.jpg', file_get_contents($response->url));
+        Storage::disk('local')->put('images.txt', $json);
 
         $sender_images_attachments = SenderImageAttachment::create([
 
@@ -109,6 +112,5 @@ class WhatsAppController extends Controller
             'sender_image_message_id' => $sender_image_message->id,
 
         ]);
-
     }
 }
