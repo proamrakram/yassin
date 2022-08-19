@@ -11,7 +11,7 @@ class DocumentAttachment extends Model
 
     protected $fillable = [
         'document_url',
-        'expired_url',
+        'is_url_expired',
         'mime_type',
         'hash_sha256',
         'file_size',

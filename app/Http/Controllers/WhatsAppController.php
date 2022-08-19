@@ -87,22 +87,22 @@ class WhatsAppController extends Controller
     {
         if ($type == 'document') {
             $url = $url = 'https://graph.facebook.com/v14.0/' . $sender_file->document_id;
-            $this->saveFile($sender_file, $url, $type);
+            return $this->saveFile($sender_file, $url, $type);
         }
 
         if ($type == 'audio') {
             $url = $url = 'https://graph.facebook.com/v14.0/' . $sender_file->audio_id;
-            $this->saveFile($sender_file, $url, $type);
+            return $this->saveFile($sender_file, $url, $type);
         }
 
         if ($type == 'video') {
             $url = $url = 'https://graph.facebook.com/v14.0/' . $sender_file->video_id;
-            $this->saveFile($sender_file, $url, $type);
+            return $this->saveFile($sender_file, $url, $type);
         }
 
         if ($type == 'image') {
             $url = $url = 'https://graph.facebook.com/v14.0/' . $sender_file->image_id;
-            $this->saveFile($sender_file, $url, $type);
+            return $this->saveFile($sender_file, $url, $type);
         }
     }
 }

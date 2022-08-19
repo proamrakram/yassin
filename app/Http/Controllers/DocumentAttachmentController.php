@@ -42,7 +42,7 @@ class DocumentAttachmentController extends Controller
 
             $sender_document_attachments = DocumentAttachment::create([
                 'document_url' => $document->url,
-                'expired_url' => true,
+                'is_url_expired' => true,
                 'mime_type' => $document->mime_type,
                 'hash_sha256' => $document->sha256,
                 'file_size' => $document->file_size,

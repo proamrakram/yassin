@@ -26,4 +26,9 @@ class SenderAudioMessages extends Model
         return $this->belongsTo(WhatsAppSender::class, 'sender_message_id', 'id');
     }
 
+    public function audio()
+    {
+        return $this->hasOne(AudioAttachment::class, 'sender_audio_message_id', 'id');
+    }
+
 }

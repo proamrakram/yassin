@@ -3,10 +3,14 @@
 
 namespace App\Http\Traits;
 
+use App\Http\Controllers\AudioAttachmentController;
 use App\Http\Controllers\DocumentAttachmentController;
 use App\Http\Controllers\ImageAttachmentController;
+use App\Http\Controllers\VideoAttachmentController;
+use App\Http\Requests\StoreAudioAttachmentRequest;
 use App\Http\Requests\StoreDocumentAttachmentRequest;
 use App\Http\Requests\StoreImageAttachmentRequest;
+use App\Http\Requests\StoreVideoAttachmentRequest;
 use App\Models\ImageAttachment;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
@@ -65,6 +69,22 @@ trait  WhatsAppMedia
             $request = new StoreDocumentAttachmentRequest();
 
             return $document_attachment_controller->store($request, $sender_file, $file_content);
+        }
+
+        if ($type == 'audio') {
+            $audio_attachment_controller = new AudioAttachmentController();
+
+            $request = new StoreAudioAttachmentRequest();
+
+            return $audio_attachment_controller->store($request, $sender_file, $file_content);
+        }
+
+        if ($type == 'video') {
+            $video_attachment_controller = new VideoAttachmentController();
+
+            $request = new StoreVideoAttachmentRequest();
+
+            return $video_attachment_controller->store($request, $sender_file, $file_content);
         }
 
         if ($type == 'image') {

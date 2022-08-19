@@ -24,4 +24,10 @@ class SenderVideoMessages extends Model
     {
         return $this->belongsTo(WhatsAppSender::class, 'sender_message_id', 'id');
     }
+
+    public function video()
+    {
+        return $this->hasOne(VideoAttachment::class, 'sender_video_message_id', 'id');
+    }
+
 }

@@ -5,24 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ImageAttachment extends Model
+class AudioAttachment extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'image_url',
+        'audio_url',
         'is_url_expired',
         'mime_type',
         'hash_sha256',
         'file_size',
-        'image_id',
+        'audio_id',
         'messaging_product',
-        'sender_image_message_id',
+        'sender_audio_message_id',
+    ];
+
+    protected $casts = [
+        'is_url_expired' => 'boolean',
     ];
 
     public function senderMessage()
     {
-        return $this->belongsTo(SenderImageMessages::class, 'sender_image_message_id', 'id');
+        return $this->belongsTo(SenderAudioMessages::class, 'sender_audio_message_id', 'id');
     }
-
 }

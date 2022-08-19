@@ -5,24 +5,28 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ImageAttachment extends Model
+class VideoAttachment extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'image_url',
+        'video_url',
         'is_url_expired',
         'mime_type',
         'hash_sha256',
         'file_size',
-        'image_id',
+        'video_id',
         'messaging_product',
-        'sender_image_message_id',
+        'sender_video_message_id',
     ];
 
-    public function senderMessage()
+    protected $casts = [
+        'is_url_expired' => 'boolean',
+    ];
+
+    public function senderVideoMessage()
     {
-        return $this->belongsTo(SenderImageMessages::class, 'sender_image_message_id', 'id');
+        return $this->belongsTo(SenderVideoMessages::class, 'sender_video_message_id', 'id');
     }
 
 }
