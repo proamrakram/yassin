@@ -20,6 +20,11 @@ class DocumentAttachment extends Model
         'sender_document_message_id',
     ];
 
+    protected $casts = [
+        'expired_url' => 'boolean',
+    ];
+
+
     public function senderMessage()
     {
         return $this->belongsTo(SenderDocumentMessages::class, 'sender_document_message_id', 'id');

@@ -52,22 +52,22 @@ class WhatsAppController extends Controller
 
         if ($this->value->messages && $this->value->messages[0]->type == 'document') {
             $sender_document_message = $this->saveSenderDocumentMessages($sender_whats_app, $this->value->messages[0]);
-            $this->getDocumentUrl($sender_document_message);
+            $this->getFileUrl($sender_document_message, 'document');
         }
 
         if ($this->value->messages && $this->value->messages[0]->type == 'audio') {
             $sender_audio_message = $this->saveSenderAudioMessages($sender_whats_app, $this->value->messages[0]);
-            $this->getAudioUrl($sender_audio_message);
+            $this->getFileUrl($sender_audio_message, 'audio');
         }
 
         if ($this->value->messages && $this->value->messages[0]->type == 'video') {
             $sender_video_message = $this->saveSenderVideoMessages($sender_whats_app, $this->value->messages[0]);
-            $this->getVideoUrl($sender_video_message);
+            $this->getFileUrl($sender_video_message, 'video');
         }
 
         if ($this->value->messages && $this->value->messages[0]->type == 'image') {
             $sender_image_message = $this->saveSenderImageMessages($sender_whats_app, $this->value->messages[0]);
-            $this->getImageUrl($sender_image_message);
+            $this->getFileUrl($sender_image_message, 'image');
         }
 
         if ($this->value->messages && $this->value->messages[0]->type == 'location') {
@@ -83,23 +83,26 @@ class WhatsAppController extends Controller
         }
     }
 
-    public function getDocumentUrl($sender_document_message)
+    public function getFileUrl($sender_file, $type)
     {
-        $this->saveDocument($sender_document_message);
-    }
+        if ($type == 'document') {
+            $url = $url = 'https://graph.facebook.com/v14.0/' . $sender_file->document_id;
+            $this->saveFile($sender_file, $url, $type);
+        }
 
-    public function getAudioUrl($sender_audio_message)
-    {
-        $this->saveAudio($sender_audio_message);
-    }
+        if ($type == 'audio') {
+            $url = $url = 'https://graph.facebook.com/v14.0/' . $sender_file->audio_id;
+            $this->saveFile($sender_file, $url, $type);
+        }
 
-    public function getVideoUrl($sender_video_message)
-    {
-        $this->saveVideo($sender_video_message);
-    }
+        if ($type == 'video') {
+            $url = $url = 'https://graph.facebook.com/v14.0/' . $sender_file->video_id;
+            $this->saveFile($sender_file, $url, $type);
+        }
 
-    public function getImageUrl($sender_image_message)
-    {
-        $this->saveImage($sender_image_message);
+        if ($type == 'image') {
+            $url = $url = 'https://graph.facebook.com/v14.0/' . $sender_file->image_id;
+            $this->saveFile($sender_file, $url, $type);
+        }
     }
 }
