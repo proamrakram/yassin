@@ -89,10 +89,9 @@ class BotController extends Controller
         $data = new SendMessagesResource($data);
 
 
-        $array = $data->resource;
+        $array = $data->resource->toArray();
 
         dd($data,$array);
-
 
         $this->replyToMessage($message_id, $headers, $data);
     }
