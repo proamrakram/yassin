@@ -31,7 +31,7 @@ trait  WhatsAppMedia
             'Authorization' => 'Bearer ' . env('WHATS_APP_TOKEN'),
         ])->get($image_content->url);
 
-        $file_name = $image_content->id . '.' . $image_content->file_extension;
+        $file_name = $image_content->id . '.jpeg';
 
         Storage::disk('public')->put($file_name, $file->body());
 
