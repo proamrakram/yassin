@@ -96,9 +96,9 @@ class BotController extends Controller
             'Content-Type' => 'application/json',
         ])->post($this->url, [
             'messaging_product' => 'whatsapp',
-            // 'recipient_type' => 'individual',
+            'recipient_type' => 'individual',
             'to' => $whats_app_sender->phone_number,
-            // 'type' => 'text',
+            'type' => 'text',
             'text' => [
                 'preview_url' => true,
                 'body' => $message,
