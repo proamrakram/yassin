@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Bot;
 use App\Http\Requests\StoreBotRequest;
-use App\Http\Requests\UpdateBotRequest;
 use App\Http\Resources\SendMessagesResource;
 use App\Http\Traits\SendMessages;
 use App\Models\WhatsAppSender;
@@ -76,145 +75,139 @@ class BotController extends Controller
             'Content-Type' => 'application/json',
         ];
 
-        $data = new stdClass();
-
-        $data->messaging_product = 'whatsapp';
-        $data->recipient_type = 'individual';
-        $data->to = $whats_app_sender->phone_number;
-        $data->message_id = $message_id;
-        $data->type = 'text';
-        $data->preview_url = false;
-        $data->body = 'I am sorry for replying you in this time, Hello World';
-
-        $data = new SendMessagesResource($data);
-
-
-        $object = $data->resource;
-        $json = json_encode($object);
-        $array = json_decode($json, true);
-
-
-        dd($data,$array);
-
-        $this->replyToMessage($message_id, $headers, $data);
-    }
-
-
-
-
-
-    public function sendReplyToTextMessage()
-    {
-        $message_id = request()->query('message_id');
-
-        $whats_app_sender = WhatsAppSender::find(1);
-
-        $headers = [
-            'Authorization' => "Bearer "  . env('WHATS_APP_TOKEN'),
-            'Content-Type' => 'application/json',
-        ];
-
-        $data = new stdClass();
-
-        $data->messaging_product = 'whatsapp';
-        $data->recipient_type = 'individual';
-        $data->to = $whats_app_sender->phone_number;
-        $data->message_id = $message_id;
-        $data->type = 'text';
-        $data->preview_url = false;
-        $data->body = 'I am sorry for replying you in this time, Hello World';
-
-        $data = new SendMessagesResource($data);
-        dd($data);
-        $this->replyToMessage($message_id, $headers, $data);
-    }
-
-    public function sendRTextMessageWithPreviewUrl()
-    {
-        $message = "Hello I am Amr Akram https://www.youtube.com/watch?v=Mi696rhyvYI&list=RDMM&index=10";
-        $whats_app_sender = WhatsAppSender::find(1);
-
-
-
-
-        $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $this->token,
-            'Content-Type' => 'application/json',
-        ])->post($this->url, [
-            'messaging_product' => 'whatsapp',
-            'recipient_type' => 'individual',
-            'to' => $whats_app_sender->phone_number,
-            'type' => 'text',
-            'text' => [
-                'preview_url' => true,
-                'body' => $message,
-            ],
-        ]);
-    }
-
-    public function sendImageMessageById()
-    {
-        $message_image_id = request()->query('message_image_id');
-
-        $whats_app_sender = WhatsAppSender::find(1);
-
-        $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $this->token,
-            'Content-Type' => 'application/json',
-        ])->post($this->url, [
-            'messaging_product' => 'whatsapp',
+        $data = [
+            'messaging_product' => "whatsapp",
             "recipient_type" => "individual",
-            "to" => $whats_app_sender->phone_number,
-            "image" => [
-                "id" => $message_image_id,
-                "caption" => "This is an image",
-            ],
-            "type" => "image",
-        ]);
-    }
-
-    public function sendReplyToImageMessageById()
-    {
-        $message_id = request()->query('message_id');
-
-        $message_image_id = request()->query('message_image_id');
-
-        $whats_app_sender = WhatsAppSender::find(1);
-
-        $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $this->token,
-            'Content-Type' => 'application/json',
-        ])->post($this->url, [
-            'messaging_product' => 'whatsapp',
-            "recipient_type" => "individual",
-            "to" => $whats_app_sender->phone_number,
+            "to" =>  $whats_app_sender->phone_number,
             "context" => [
                 "message_id" => $message_id,
             ],
-            "image" => [
-                "id" => $message_image_id,
-                "caption" => "This is an image",
+            "type" => "text",
+            "text" => [
+                "preview_url" => false,
+                "body" => "Hello World",
             ],
-            "type" => "image",
-        ]);
+        ];
+
+        return $this->reply($headers, $data);
     }
 
-    public function sendImageMessageByURL()
-    {
-        $whats_app_sender = WhatsAppSender::find(1);
 
-        $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $this->token,
-            'Content-Type' => 'application/json',
-        ])->post($this->url, [
-            'messaging_product' => 'whatsapp',
-            "recipient_type" => "individual",
-            "to" => $whats_app_sender->phone_number,
-            "image" => [
-                "link" => "https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg",
-                "caption" => "Testing",
-            ],
-            "type" => "image",
-        ]);
-    }
+
+
+
+    // public function sendReplyToTextMessage()
+    // {
+    //     $message_id = request()->query('message_id');
+
+    //     $whats_app_sender = WhatsAppSender::find(1);
+
+    //     $headers = [
+    //         'Authorization' => "Bearer "  . env('WHATS_APP_TOKEN'),
+    //         'Content-Type' => 'application/json',
+    //     ];
+
+    //     $data = new stdClass();
+
+    //     $data->messaging_product = 'whatsapp';
+    //     $data->recipient_type = 'individual';
+    //     $data->to = $whats_app_sender->phone_number;
+    //     $data->message_id = $message_id;
+    //     $data->type = 'text';
+    //     $data->preview_url = false;
+    //     $data->body = 'I am sorry for replying you in this time, Hello World';
+
+    //     $data = new SendMessagesResource($data);
+    //     dd($data);
+    //     $this->replyToMessage($message_id, $headers, $data);
+    // }
+
+    // public function sendRTextMessageWithPreviewUrl()
+    // {
+    //     $message = "Hello I am Amr Akram https://www.youtube.com/watch?v=Mi696rhyvYI&list=RDMM&index=10";
+    //     $whats_app_sender = WhatsAppSender::find(1);
+
+
+
+
+    //     $response = Http::withHeaders([
+    //         'Authorization' => 'Bearer ' . $this->token,
+    //         'Content-Type' => 'application/json',
+    //     ])->post($this->url, [
+    //         'messaging_product' => 'whatsapp',
+    //         'recipient_type' => 'individual',
+    //         'to' => $whats_app_sender->phone_number,
+    //         'type' => 'text',
+    //         'text' => [
+    //             'preview_url' => true,
+    //             'body' => $message,
+    //         ],
+    //     ]);
+    // }
+
+    // public function sendImageMessageById()
+    // {
+    //     $message_image_id = request()->query('message_image_id');
+
+    //     $whats_app_sender = WhatsAppSender::find(1);
+
+    //     $response = Http::withHeaders([
+    //         'Authorization' => 'Bearer ' . $this->token,
+    //         'Content-Type' => 'application/json',
+    //     ])->post($this->url, [
+    //         'messaging_product' => 'whatsapp',
+    //         "recipient_type" => "individual",
+    //         "to" => $whats_app_sender->phone_number,
+    //         "image" => [
+    //             "id" => $message_image_id,
+    //             "caption" => "This is an image",
+    //         ],
+    //         "type" => "image",
+    //     ]);
+    // }
+
+    // public function sendReplyToImageMessageById()
+    // {
+    //     $message_id = request()->query('message_id');
+
+    //     $message_image_id = request()->query('message_image_id');
+
+    //     $whats_app_sender = WhatsAppSender::find(1);
+
+    //     $response = Http::withHeaders([
+    //         'Authorization' => 'Bearer ' . $this->token,
+    //         'Content-Type' => 'application/json',
+    //     ])->post($this->url, [
+    //         'messaging_product' => 'whatsapp',
+    //         "recipient_type" => "individual",
+    //         "to" => $whats_app_sender->phone_number,
+    //         "context" => [
+    //             "message_id" => $message_id,
+    //         ],
+    //         "image" => [
+    //             "id" => $message_image_id,
+    //             "caption" => "This is an image",
+    //         ],
+    //         "type" => "image",
+    //     ]);
+    // }
+
+    // public function sendImageMessageByURL()
+    // {
+    //     $whats_app_sender = WhatsAppSender::find(1);
+
+    //     $response = Http::withHeaders([
+    //         'Authorization' => 'Bearer ' . $this->token,
+    //         'Content-Type' => 'application/json',
+    //     ])->post($this->url, [
+    //         'messaging_product' => 'whatsapp',
+    //         "recipient_type" => "individual",
+    //         "to" => $whats_app_sender->phone_number,
+    //         "image" => [
+    //             "link" => "https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg",
+    //             "caption" => "Testing",
+    //         ],
+    //         "type" => "image",
+    //     ]);
+    // }
 }

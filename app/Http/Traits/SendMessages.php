@@ -10,7 +10,7 @@ trait SendMessages
     {
     }
 
-    public function replyToMessage($message_id, $headers, $data)
+    public function reply($headers, $data)
     {
         $url = 'https://graph.facebook.com/v14.0/' . env('PHONE_NUMBER_ID') . '/messages';
 
