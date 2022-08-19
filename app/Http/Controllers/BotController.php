@@ -153,12 +153,22 @@ class BotController extends Controller
         ]);
     }
 
+    public function sendImageMessageByURL()
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
 
-
-
-
-
-
-
-
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . $this->token,
+            'Content-Type' => 'application/json',
+        ])->post($this->url, [
+            'messaging_product' => 'whatsapp',
+            "recipient_type" => "individual",
+            "to" => $whats_app_sender->phone_number,
+            "image" => [
+                "link" => "https://lookaside.fbsbx.com/whatsapp_business/attachments/?mid=803527020859955&ext=1660941934&hash=ATuGcSKLP8jTsFAvO3JTV4qJ1Vt7jZJagv6A4HVz7WD2dA",
+                "caption" => "Testing",
+            ],
+            "type" => "image",
+        ]);
+    }
 }
