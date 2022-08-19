@@ -161,7 +161,7 @@ trait SenderWhatsApp
 
         $senderContactMessages = new SenderContactMessagesController();
 
-        // $senderContactMessages = $senderContactMessages->store($request, $sender, $message);
+        $senderContactMessages = $senderContactMessages->store($request, $sender, $message);
 
         return $senderContactMessages;
     }

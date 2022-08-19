@@ -47,9 +47,9 @@ class SenderContactMessagesController extends Controller
                 'first_name' => property_exists($message->contacts[0]->name, 'first_name') ?  $message->contacts[0]->name->first_name : null,
                 'last_name' =>  property_exists($message->contacts[0]->name, 'last_name') ? $message->contacts[0]->name->last_name : null,
                 'full_name' =>  property_exists($message->contacts[0]->name, 'formatted_name') ? $message->contacts[0]->name->formatted_name : null,
-                'phone_number' => $message->contacts[0]->phones[0]->phone,
-                'wa_contact_id' => $message->contacts[0]->phones[0]->wa_id,
-                'contact_type' => $message->contacts[0]->phones[0]->type,
+                'phone_number' => property_exists($message->contacts[0], "phones") ? $message->contacts[0]->phones[0]->phone : null,
+                'wa_contact_id' => property_exists($message->contacts[0], 'phones') ? $message->contacts[0]->phones[0]->wa_id : null,
+                'contact_type' => property_exists($message->contacts[0], 'phones') ? $message->contacts[0]->phones[0]->type : null,
                 'sender_message_id' => $sender->id,
             ]);
         }
