@@ -5,35 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\Bot;
 use App\Http\Requests\StoreBotRequest;
 use App\Http\Requests\UpdateBotRequest;
+use App\Models\WhatsAppSender;
+use Illuminate\Support\Facades\Http;
 
 class BotController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    private $url;
+    private $token;
+    private $bot;
+
+    private $url_message;
+
+    public function __construct()
     {
-        //
+        $this->bot = Bot::find(1);
+        $this->token = env('WHATS_APP_TOKEN');
+        $this->url = 'https://graph.facebook.com/v14.0/' . $this->bot->phone_number_id . '/messages';
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreBotsRequest  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(StoreBotRequest $request, $name = "whatsapp_business_account", $whats_app_business_account_id = null,  $phone_number = null, $phone_number_id = null, $messaging_product = "whatsapp")
     {
         $bot = Bot::create([
@@ -47,48 +36,23 @@ class BotController extends Controller
         return $bot;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Bots  $bots
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Bot $bots)
+    public function sendTextMessage($message)
     {
-        //
-    }
+        $message = "Hello I am Amr Akram From Gaza Strip";
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Bots  $bots
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Bot $bots)
-    {
-        //
-    }
+        $whats_app_sender = WhatsAppSender::find(1);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateBotsRequest  $request
-     * @param  \App\Models\Bots  $bots
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateBotRequest $request, Bot $bots)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Bots  $bots
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Bot $bots)
-    {
-        //
+        Http::withHeaders([
+            'Authorization' => 'Bearer ' . $this->token,
+        ])->post($this->url, [
+            "messaging_product" => $this->bot->messaging_product,
+            "recipient_type" => "PERSONAL",
+            "to" => $whats_app_sender->phone_number,
+            "type" => "text",
+            "text" => [
+                "preview_url" => false,
+                "body" => $message,
+            ],
+        ]);
     }
 }

@@ -27,9 +27,6 @@ use App\Models\WhatsAppSender;
 
 trait SenderWhatsApp
 {
-    // private $value;
-    // private $field;
-
     public function saveBotWhatsApp($data)
     {
         $value = $data->entry[0]->changes[0]->value;

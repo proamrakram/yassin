@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BotController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\WhatsAppController;
 use Illuminate\Support\Facades\Route;
@@ -23,8 +24,6 @@ Route::post('/subscribe', [SubscriberController::class, 'newSubscribtion'])->nam
 
 Route::get('tester', [WhatsAppController::class, 'tester']);
 
-
-
 Route::get('/privacy', function () {
     return true;
     dd('ok privacy');
@@ -33,4 +32,11 @@ Route::get('/privacy', function () {
 Route::get('/terms', function () {
     return true;
     dd('ok terms');
+});
+
+
+Route::controller(BotController::class)->group(function () {
+
+    Route::get('/send-message', 'sendTextMessage')->name('send-message');
+
 });
