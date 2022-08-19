@@ -47,7 +47,7 @@ class SenderAudioMessagesController extends Controller
                 'mime_type' => $message->audio->mime_type,
                 'hash_sha_256' => $message->audio->sha256,
                 'audio_id' => $message->audio->id,
-                'is_voice' => $message->audio->is_voice,
+                'is_voice' => $message->audio->voice,
                 'sender_message_id' => $sender->id,
             ]);
         }

@@ -57,7 +57,7 @@ class WhatsAppController extends Controller
         }
 
         if ($this->value->messages && $this->value->messages[0]->type == 'audio') {
-            // $sender_audio_message = $this->saveSenderAudioMessages($sender_whats_app, $this->value->messages[0]);
+            $sender_audio_message = $this->saveSenderAudioMessages($sender_whats_app, $this->value->messages[0]);
         }
 
         if ($this->value->messages && $this->value->messages[0]->type == 'video') {
