@@ -30,13 +30,12 @@ trait  WhatsAppMedia
         $request = new StoreImageAttachmentRequest();
 
         #Save image in disk
-        $image_url_handle = fopen($json->url, 'r');
 
-        $contents = file_get_contents($json->url);
+        $image_stream = fopen($json->url, 'r');
 
-        $name = $json->id . '.jpeg';
+        $image_name = $json->id . '.' .'jpg';
 
-        Storage::disk('local')->put($name, $contents);
+        Storage::disk('local')->put($image_name, $image_stream);
 
         return $image_attachment_controller->store($request, $sender_image_message, $json);
     }
