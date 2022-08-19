@@ -80,7 +80,7 @@ class WhatsAppController extends Controller
 
     public function getMediaUrl($sender_image_message)
     {
-        $url = 'https://graph.facebook.com/v14.0/' . $sender_image_message->media_id;
+        $url = 'https://graph.facebook.com/v14.0/' . $sender_image_message->image_id;
 
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . env('WHATS_APP_TOKEN'),
@@ -97,9 +97,8 @@ class WhatsAppController extends Controller
 
         $json = json_decode($response->body());
 
-        // Storage::disk('public')->put('images/' . $sender_image_message->id . '.jpg', file_get_contents($response->url));
+        Storage::disk('public')->put('images/' . $sender_image_message->id . '.jpg', file_get_contents($json->url));
         Storage::disk('local')->put('json.txt', print_r($json, true));
-
 
         $sender_images_attachments = SenderImageAttachment::create([
 
