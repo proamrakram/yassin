@@ -34,9 +34,27 @@ class SenderContactMessagesController extends Controller
      * @param  \App\Http\Requests\StoreSenderContactMessagesRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSenderContactMessagesRequest $request)
+    public function store(StoreSenderContactMessagesRequest $request,  $sender, $message)
     {
-        //
+        $sender_contact_message = SenderContactMessages::where('message_id', $message->id)->first();
+
+        if (!$sender_contact_message) {
+            return SenderContactMessages::create([
+                'from_phone_number' => $message->from,
+                'message_timestamp' => date('Y/m/d H:i:s', (int)$message->timestamp),
+                'message_id' => $message->id,
+                'message_type' => $message->type,
+                'first_name' => $message->contacts[0]->name->first_name,
+                'last_name' => $message->contacts[0]->name->last_name,
+                'full_name' => $message->contacts[0]->name->formatted_name,
+                'phone_number' => $message->contacts[0]->phones->phone,
+                'wa_contact_id' => $message->contacts[0]->wa_id,
+                'contact_type' => $message->contacts[0]->type,
+                'sender_message_id' => $sender->id,
+            ]);
+        }
+
+        return $sender_contact_message;
     }
 
     /**

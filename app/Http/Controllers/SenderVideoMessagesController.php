@@ -34,9 +34,23 @@ class SenderVideoMessagesController extends Controller
      * @param  \App\Http\Requests\StoreSenderVideoMessagesRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSenderVideoMessagesRequest $request)
+    public function store(StoreSenderVideoMessagesRequest $request,$sender, $message)
     {
-        //
+        $sender_video_message = SenderVideoMessages::where('video_id', $message->id)->first();
+        if (!$sender_video_message) {
+            return SenderVideoMessages::create([
+                'from_phone_number' => $message->from,
+                'message_timestamp' => date('Y/m/d H:i:s', (int)$message->timestamp),
+                'message_id' => $message->id,
+                'message_type' => $message->type,
+                'mime_type' => $message->video->mime_type,
+                'hash_sha_256' => $message->video->sha256,
+                'video_id' => $message->video->id,
+                'sender_message_id' => $sender->id,
+            ]);
+        }
+
+        return $sender_video_message;
     }
 
     /**

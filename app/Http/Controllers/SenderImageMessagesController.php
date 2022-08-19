@@ -34,9 +34,24 @@ class SenderImageMessagesController extends Controller
      * @param  \App\Http\Requests\StoreSenderImageMessagesRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSenderImageMessagesRequest $request)
+    public function store(StoreSenderImageMessagesRequest $request, $sender, $message)
     {
-        //
+        $sender_image_message = SenderImageMessages::where('image_id', $message->image->id)->first();
+
+        if (!$sender_image_message) {
+            return SenderImageMessages::create([
+                'from_phone_number' => $message->from,
+                'message_timestamp' => date('Y/m/d H:i:s', (int)$message->timestamp),
+                'message_id' => $message->id,
+                'message_type' => $message->type,
+                'mime_type' => $message->image->mime_type,
+                'hash_sha_256' => $message->image->sha256,
+                'image_id' => $message->image->id,
+                'sender_message_id' => $sender->id,
+            ]);
+        }
+
+        return $sender_image_message;
     }
 
     /**

@@ -34,9 +34,25 @@ class SenderAudioMessagesController extends Controller
      * @param  \App\Http\Requests\StoreSenderAudioMessagesRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSenderAudioMessagesRequest $request)
+    public function store(StoreSenderAudioMessagesRequest $request,  $sender, $message)
     {
-        //
+        $sender_audio_message = SenderAudioMessages::where('audio_id', $message->audio->id)->first();
+
+        if (!$sender_audio_message) {
+            return SenderAudioMessages::create([
+                'from_phone_number' => $message->from,
+                'message_timestamp' => date('Y/m/d H:i:s', (int)$message->timestamp),
+                'message_id' => $message->id,
+                'message_type' => $message->type,
+                'mime_type' => $message->audio->mime_type,
+                'hash_sha_256' => $message->audio->sha256,
+                'audio_id' => $message->audio->id,
+                'is_voice' => $message->audio->is_voice,
+                'sender_message_id' => $sender->id,
+            ]);
+        }
+
+        return $sender_audio_message;
     }
 
     /**
