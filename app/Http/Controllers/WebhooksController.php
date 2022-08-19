@@ -46,4 +46,5 @@ class WebhooksController extends Controller
     {
         Storage::disk('local')->put('data.txt', print_r($data, true));
     }
+
 }

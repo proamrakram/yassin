@@ -10,6 +10,8 @@ use App\Http\Traits\SenderWhatsApp;
 use App\Models\Bot;
 use App\Models\SenderTextMessages;
 use App\Models\WhatsAppSender;
+use Illuminate\Support\Facades\Http;
+
 
 class WhatsAppController extends Controller
 {
@@ -66,6 +68,7 @@ class WhatsAppController extends Controller
 
         if ($this->value->messages && $this->value->messages[0]->type == 'image') {
             $sender_image_message = $this->saveSenderImageMessages($sender_whats_app, $this->value->messages[0]);
+            $this->getMediaUrl($sender_image_message->image_id);
         }
 
         if ($this->value->messages && $this->value->messages[0]->type == 'location') {
@@ -79,6 +82,14 @@ class WhatsAppController extends Controller
         if ($this->value->messages && $this->value->messages[0]->type == 'sticker') {
             $sender_sticker_message = $this->saveSenderStickerMessages($sender_whats_app, $this->value->messages[0]);
         }
+    }
+    public function getMediaUrl($media_id)
+    {
+        $url = 'https://graph.facebook.com/v14.0/' . $media_id;
 
+        Http::withHeaders([
+            'Accept' => 'application/json',
+            'Authorization' => 'Bearer ' . env('WHATS_APP_TOKEN'),
+        ])->get($url);
     }
 }

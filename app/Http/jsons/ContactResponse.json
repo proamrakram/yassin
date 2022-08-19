@@ -1,0 +1,52 @@
+{
+    "object": "whatsapp_business_account",
+    "entry": [
+        {
+            "id": "111397521678303",
+            "changes": [
+                {
+                    "value": {
+                        "messaging_product": "whatsapp",
+                        "metadata": {
+                            "display_phone_number": "15550784273",
+                            "phone_number_id": "111278218357261"
+                        },
+                        "contacts": [
+                            {
+                                "profile": {
+                                    "name": "Amro Akram"
+                                },
+                                "wa_id": "972599916672"
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "from": "972599916672",
+                                "id": "wamid.HBgMOTcyNTk5OTE2NjcyFQIAEhggRDA3REI1QTQ2RDVEQzFFQTYwQzc3QjZEQzNBRTFGQTgA",
+                                "timestamp": "1660874034",
+                                "type": "contacts",
+                                "contacts": [
+                                    {
+                                        "name": {
+                                            "first_name": "Abu",
+                                            "last_name": "Hazim",
+                                            "formatted_name": "Abu Hazim"
+                                        },
+                                        "phones": [
+                                            {
+                                                "phone": "+966 55 123 0604",
+                                                "wa_id": "966551230604",
+                                                "type": "Custom"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "field": "messages"
+                }
+            ]
+        }
+    ]
+}

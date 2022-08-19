@@ -1,0 +1,42 @@
+{
+    "object": "whatsapp_business_account",
+    "entry": [
+        {
+            "id": "111397521678303",
+            "changes": [
+                {
+                    "value": {
+                        "messaging_product": "whatsapp",
+                        "metadata": {
+                            "display_phone_number": "15550784273",
+                            "phone_number_id": "111278218357261"
+                        },
+                        "contacts": [
+                            {
+                                "profile": {
+                                    "name": "Amro Akram"
+                                },
+                                "wa_id": "972599916672"
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "from": "972599916672",
+                                "id": "wamid.HBgMOTcyNTk5OTE2NjcyFQIAEhggMEYyRUQ2MThFMjJDODg0NEY5QTc2OUE0MkI5REE3MjYA",
+                                "timestamp": "1660874207",
+                                "location": {
+                                    "latitude": 31.348020725653,
+                                    "longitude": 34.303686814114,
+                                    "name": "Restaurant And Cafe Lateh",
+                                    "url": "https://foursquare.com/v/5533fce0498e4b74291aed52"
+                                },
+                                "type": "location"
+                            }
+                        ]
+                    },
+                    "field": "messages"
+                }
+            ]
+        }
+    ]
+}
