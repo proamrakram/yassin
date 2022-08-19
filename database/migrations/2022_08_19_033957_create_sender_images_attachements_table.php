@@ -15,14 +15,13 @@ return new class extends Migration
     {
         Schema::create('sender_images_attachements', function (Blueprint $table) {
             $table->id();
-            $table->string('image_url');
-            $table->string('mime_type');
-            $table->longText('hash_sha256');
-            $table->string('file_size');
-            $table->string('image_id');
-            $table->string('messaging_product');
+            $table->string('image_url')->nullable();
+            $table->string('mime_type')->nullable();
+            $table->longText('hash_sha256')->nullable();
+            $table->string('file_size')->nullable();
+            $table->string('image_id')->nullable();
+            $table->string('messaging_product')->nullable();
 
-            $table->foreignId('sender_message_id')->constrained('whats_app_senders');
             $table->foreignId('sender_image_message_id')->constrained('sender_image_messages');
             $table->timestamps();
         });

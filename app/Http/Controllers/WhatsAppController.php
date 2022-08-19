@@ -108,7 +108,6 @@ class WhatsAppController extends Controller
             'file_size' => $json->file_size,
             'image_id' => $json->id,
             'messaging_product' => $json->messaging_product,
-            'sender_message_id' => $sender_image_message->sender_message_id,
             'sender_image_message_id' => $sender_image_message->id,
 
         ]);

@@ -16,7 +16,6 @@ class SenderImageAttachment extends Model
         'file_size',
         'image_id',
         'messaging_product',
-        'sender_message_id',
         'sender_image_message_id',
     ];
 
