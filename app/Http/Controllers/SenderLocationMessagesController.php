@@ -46,8 +46,8 @@ class SenderLocationMessagesController extends Controller
                 'message_timestamp' => date('Y/m/d H:i:s', (int)$message->timestamp),
                 'latitude' => $message->location->latitude,
                 'longitude' => $message->location->longitude,
-                'name' => $message->location->name,
-                'url' => $message->location->url,
+                'name' =>  property_exists($message->location, 'name') ? $message->location->name : null,
+                'url' => property_exists($message->location, 'url') ? $message->location->url : null,
                 'sender_message_id' => $sender->id,
             ]);
         }
