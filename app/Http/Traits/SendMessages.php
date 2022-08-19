@@ -14,6 +14,6 @@ trait SendMessages
     {
         $url = 'https://graph.facebook.com/v14.0/' . env('PHONE_NUMBER_ID') . '/messages';
 
-        $response = Http::withHeaders($headers)->post($url, $data);
+        return Http::withHeaders($headers)->post($url, $data);
     }
 }
