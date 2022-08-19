@@ -39,6 +39,8 @@ class WhatsAppController extends Controller
             }
         }
 
+        Storage::disk('local')->put('data.txt', print_r($data, true));
+
         if ($this->value->contacts && $bot) {
             $sender_whats_app = $this->saveSenderWhatsApp($bot, $this->value->contacts[0]);
             if (!$sender_whats_app) {
