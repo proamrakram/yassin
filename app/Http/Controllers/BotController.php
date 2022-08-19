@@ -85,4 +85,27 @@ class BotController extends Controller
             ],
         ]);
     }
+
+    public function sendRTextMessageWithPreviewUrl()
+    {
+        $message = "Hello I am Amr Akram https://www.youtube.com/watch?v=Mi696rhyvYI&list=RDMM&index=10";
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . $this->token,
+            'Content-Type' => 'application/json',
+        ])->post($this->url, [
+            'messaging_product' => 'whatsapp',
+            // 'recipient_type' => 'individual',
+            'to' => $whats_app_sender->phone_number,
+            // 'type' => 'text',
+            'text' => [
+                'preview_url' => true,
+                'body' => $message,
+            ],
+        ]);
+
+
+    }
+
 }
