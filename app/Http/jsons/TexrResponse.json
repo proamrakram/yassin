@@ -1,0 +1,39 @@
+{
+    "object": "whatsapp_business_account",
+    "entry": [
+        {
+            "id": "111397521678303",
+            "changes": [
+                {
+                    "value": {
+                        "messaging_product": "whatsapp",
+                        "metadata": {
+                            "display_phone_number": "15550784273",
+                            "phone_number_id": "111278218357261"
+                        },
+                        "contacts": [
+                            {
+                                "profile": {
+                                    "name": "Amro Akram"
+                                },
+                                "wa_id": "972599916672"
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "from": "972599916672",
+                                "id": "wamid.HBgMOTcyNTk5OTE2NjcyFQIAEhggQTI1RjdCMUFFNTc5RkNGNkUyM0IxREEzNjAxREU1MEYA",
+                                "timestamp": "1660873169",
+                                "text": {
+                                    "body": "Ok"
+                                },
+                                "type": "text"
+                            }
+                        ]
+                    },
+                    "field": "messages"
+                }
+            ]
+        }
+    ]
+}
