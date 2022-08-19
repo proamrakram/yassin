@@ -47,24 +47,39 @@ class BotController extends Controller
 
         $whats_app_sender = WhatsAppSender::find(1);
 
-        $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, '`');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, "{ \"messaging_product\": \"whatsapp\", \"to\": \"972599916672\", \"type\": \"template\", \"template\": { \"name\": \"hello_world\", \"language\": { \"code\": \"en_US\" } } }");
 
-        $headers = array();
-        $headers[] = 'Authorization: Bearer EAAFJigKvv6cBAAqpIZCTlFOjcvZCBzHqX23UpZAZC3MFEnjt4kUWsq3e7CcpX6T1KT2cvbKWqEGPJmcOpikxZA84lvgIXU5JENMJs6zTyLADi9Ny0zBoAKnboCEZBiEkq3mKkWd74vRROO7S3c5pc2kyW7n8UqecIU2G3qMwQt5WTExBGAAAv5aeXaV7rww29ccfHIlp7UmZA9cFeh2guIV';
-        $headers[] = 'Content-Type: application/json';
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        $curl = curl_init();
 
-        $result = curl_exec($ch);
-        if (curl_errno($ch)) {
-            echo 'Error:' . curl_error($ch);
-        }
-        curl_close($ch);
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://graph.facebook.com/v14.0/111278218357261/messages',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => '{
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": "972599916672",
+            "type": "text",
+            "text": {
+                "preview_url": false,
+                "body": "text-message-content"
+            }
+        }',
+            CURLOPT_HTTPHEADER => array(
+                'Content-Type: application/json',
+                'Authorization: Bearer EAAFJigKvv6cBAETPslNSQcj8jYTkeaYwIiPcg7PEbkPvs79ztXKWSUlZCrCZCt2qxjcAe2kZAFOABciv88zkpZCq4F5UzfixiTphZBu7kWpFNZC5qKtjDSbIKWhmlsRyJHZAui8Pf5MOx3hbef6trYFnrzbT0ZA6TpfRhGLkl4KRNxALY56nb5EY7eibzlbIZA48gfudQGY3gh305rpUPcJ3b'
+            ),
+        ));
 
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        echo $response;
 
 
 
