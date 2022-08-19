@@ -91,8 +91,8 @@ class BotController extends Controller
 
         // $array = json_decode(json_encode($data), true);
 
-        $array = json_decode(json_encode($data), true);
-        dd($data,$array);
+        // $array = json_decode(json_encode($data), true);
+        dd($data);
 
 
         $this->replyToMessage($message_id, $headers, $data);
