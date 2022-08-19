@@ -90,7 +90,7 @@ class WhatsAppController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://graph.facebook.com/v14.0/' . $media_id,
+            CURLOPT_URL => 'https://graph.facebook.com/v14.0/1734170476947037',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
