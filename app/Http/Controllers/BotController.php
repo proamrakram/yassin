@@ -88,8 +88,11 @@ class BotController extends Controller
 
         $data = new SendMessagesResource($data);
 
+
+        // $array = json_decode(json_encode($data), true);
+
         $array = json_decode(json_encode($data), true);
-        dd($data, $array );
+        dd($data,$array);
 
 
         $this->replyToMessage($message_id, $headers, $data);
