@@ -2,14 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreBotRequest;
-use App\Http\Requests\StoreSenderTextMessagesRequest;
-use App\Models\WhatsApp;
-use App\Http\Requests\StoreWhatsAppSenderRequest;
 use App\Http\Traits\SenderWhatsApp;
-use App\Models\Bot;
-use App\Models\SenderTextMessages;
-use App\Models\WhatsAppSender;
+use App\Models\SenderImageAttachment;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
@@ -68,7 +62,7 @@ class WhatsAppController extends Controller
 
         if ($this->value->messages && $this->value->messages[0]->type == 'image') {
             $sender_image_message = $this->saveSenderImageMessages($sender_whats_app, $this->value->messages[0]);
-            $this->getMediaUrl($sender_image_message->image_id);
+            $this->getMediaUrl($sender_image_message);
         }
 
         if ($this->value->messages && $this->value->messages[0]->type == 'location') {
@@ -84,9 +78,9 @@ class WhatsAppController extends Controller
         }
     }
 
-    public function getMediaUrl($media_id)
+    public function getMediaUrl($sender_image_message)
     {
-        $url = 'https://graph.facebook.com/v14.0/' . $media_id;
+        $url = 'https://graph.facebook.com/v14.0/' . $sender_image_message->media_id;
 
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . env('WHATS_APP_TOKEN'),
@@ -102,10 +96,19 @@ class WhatsAppController extends Controller
         // }
 
         $response = json_decode($response->body());
-        $json = json_encode($response);
 
-        Storage::disk('local')->put('media/' . $media_id, print_r($response, true));
-        Storage::disk('local')->put('json/' . $media_id, print_r($json, true));
+        $sender_images_attachments = SenderImageAttachment::create([
+
+            'image_url' => $response->url,
+            'mime_type' => $response->mime_type,
+            'hash_sha256' => $response->sha256,
+            'file_size' => $response->file_size,
+            'image_id' => $response->id,
+            'messaging_product' => $response->messaging_product,
+            'sender_message_id' => $sender_image_message->sender_message_id,
+            'sender_image_message_id' => $sender_image_message->id,
+
+        ]);
 
     }
 }
