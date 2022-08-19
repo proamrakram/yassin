@@ -99,7 +99,7 @@ class WhatsAppController extends Controller
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'GET',
             CURLOPT_HTTPHEADER => array(
-                'Authorization: Bearer EAAFJigKvv6cBAL7JMYUdmQgyzIW4n4G4nu7Iu7kjzvovhX1Dkgxjfs04W3euyrK0GU3JmWgwgEJZBkGMITkIQ1JXUWQq4QZBVyFYFla6wQtAec2bVWVLJHczjgN3zIZBFw2Qs3VGv3CS3m3vIlX1nL78qlqOVtflM7jz3kSnlIZAA4vAOXDmTAoT8A2CrxjeBk5AkD6NCBAmKBk7xeGb'
+                'Authorization: Bearer EAAFJigKvv6cBAJieYJiuB7Wc09h8Fy14ZByw8ZBgdBXg8TFoGGuY1y9FAuwu6jHuZBeABW7LQ6TwiGoSZALW348YfCk8ddka5UeZCFN44c91SMHCtNgLh6My2JmIKEx1czGwoGPOtZBOkpnkV9Al6cQNTTv3entB9P8YxiZAhA4yuiCjoi5G0lFfqj4YtvUVBnVpcfbXeUVxe4oVQjaKGt5'
             ),
         ));
 
