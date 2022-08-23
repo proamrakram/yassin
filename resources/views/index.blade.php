@@ -660,10 +660,16 @@
                                     <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
                                 </span>
                                 The project implementation period is determined by the startup company.
-                                30% of the number of investors was reached within the first day of introducing the
-                                investment system
-                                (noting that the number of investors is very limited).
                             </p>
+
+                            <p class="before-icon align-items-start color-white py-3">
+                                <span class="icon-small">
+                                  <img src="./images/icon-before.svg" height="20" alt="icon">
+                                </span>
+
+                                30% of the number of investors was reached within the first day of introducing the investment system
+                                (noting that the number of investors is very limited).
+                              </p>
 
 
                         </div>
