@@ -73,7 +73,7 @@
                 <div class="col-12 py-3">
                     <div>
                         <p>
-                            © Copyright 2022 Yassin- All Rights Reserved
+                            © Copyright 2022 TGT GREEN TEKNOLOJI - All Rights Reserved
                         </p>
                     </div>
                 </div>
