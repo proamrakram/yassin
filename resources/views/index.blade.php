@@ -663,7 +663,7 @@
                                 30% of the number of investors was reached within the first day of introducing the
                                 investment system
                                 (noting that the number of investors is very limited).
-                            </p>س
+                            </p>
 
 
                         </div>
