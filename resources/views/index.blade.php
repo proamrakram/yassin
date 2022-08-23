@@ -407,7 +407,7 @@
 
     </div>
 
-    <div class="container-fluid px-lg-0 sec pb-0">
+    <div class="container-fluid px-lg-0 sec pb-0" id="faq">
 
         <div class="container">
             <div class="row">
