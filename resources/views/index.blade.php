@@ -593,13 +593,7 @@
                                 the more you
                                 play and win in wars, the more money you get.
                             </p>
-                            <p class="before-icon align-items-start color-white py-3 pb-4">
-                                <span class="icon-small">
-                                    <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
-                                </span>
-                                he game Fortnite comes in first place, with revenues of 5.5 billion dollars in two
-                                years.
-                            </p>
+
                         </div>
                     </div>
                 </div>
