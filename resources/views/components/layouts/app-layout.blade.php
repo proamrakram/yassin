@@ -42,9 +42,9 @@
                 <div class="over"></div>
 
                 <div class="col-auto">
-                    <a href="#Subscribe" class="btn-sm">
+                    {{-- <a href="#Subscribe" class="btn-sm">
                         Subscribe
-                    </a>
+                    </a> --}}
                     <a class="ms-3 d-lg-none toggle-menu" href="javascript:void(0)">
                         <svg id="Menu" xmlns="http://www.w3.org/2000/svg" width="22.177" height="15.246"
                             viewBox="0 0 22.177 15.246">
