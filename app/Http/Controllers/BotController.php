@@ -95,6 +95,23 @@ class BotController extends Controller
 
         return $this->send($this->headers, $data);
     }
+
+    public function sendFileUsingURL($url)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $data = [
+            "messaging_product" =>  "whatsapp",
+            "recipient_type" => "individual",
+            "to" => $whats_app_sender->phone_number,
+            "type" => "image",
+            "image" => [
+                "link" => $url
+            ]
+        ];
+
+        return $this->send($this->headers, $data);
+    }
 }
 
 
@@ -142,5 +159,27 @@ class BotController extends Controller
 //     "type": "image",
 //     "image": {
 //         "id": "<IMAGE_OBJECT_ID>"
+//     }
+// }
+
+#For replying on any message, just we are using context object
+// "messaging_product": "whatsapp",
+// "recipient_type": "individual",
+// "to": "{{Recipient-Phone-Number}}",
+// "context": {
+//     "message_id": "<MSGID_OF_PREV_MSG>"
+// },
+// "type": "image",
+// "image": {
+//     "id": "<IMAGE_OBJECT_ID>"
+// }
+
+// {
+//     "messaging_product": "whatsapp",
+//     "recipient_type": "individual",
+//     "to": "{{Recipient-Phone-Number}}",
+//     "type": "image",
+//     "image": {
+//         "link": "http(s)://image-url"
 //     }
 // }
