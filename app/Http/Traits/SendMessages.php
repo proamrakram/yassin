@@ -8,7 +8,7 @@ trait SendMessages
 {
     public function send($headers, $data)
     {
-        return  Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
+        return Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
     }
 
     public function reply($headers, $data)

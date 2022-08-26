@@ -58,7 +58,7 @@ class BotController extends Controller
         return $response;
     }
 
-    public function replyToMessage($message_id)
+    public function replyToUsingMessageID($message_id)
     {
         $whats_app_sender = WhatsAppSender::find(1);
 
@@ -78,4 +78,67 @@ class BotController extends Controller
 
         return $this->reply($this->headers, $data);
     }
+
+    public function sendFileUsingCloudAPIID($file_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $data = [
+            "messaging_product" => "whatsapp",
+            "recipient_type" => "individual",
+            "to" => $whats_app_sender->phone_number,
+            "type" => "image",
+            "image" => [
+                "id" => $file_id
+            ]
+        ];
+    }
 }
+
+
+
+
+// { Send Text Message
+//     "messaging_product": "whatsapp",
+//     "recipient_type": "individual",
+//     "to": "{{Recipient-Phone-Number}}",
+//     "type": "text",
+//     "text": {
+//         "preview_url": false,
+//         "body": "text-message-content"
+//     }
+// }
+
+// { Reply to Text Message
+//     "messaging_product": "whatsapp",
+//     "recipient_type": "individual",
+//     "to": "{{Recipient-Phone-Number}}",
+//     "context": {
+//         "message_id": "<MSGID_OF_PREV_MSG>"
+//     },
+//     "type": "text",
+//     "text": {
+//         "preview_url": false,
+//         "body": "<TEXT_MSG_CONTENT>"
+//     }
+// }
+
+
+// { Send Text Message with Link Preview
+//     "messaging_product": "whatsapp",
+//     "to": "{{Recipient-Phone-Number}}",
+//     "text": {
+//         "preview_url": true,
+//         "body": "Please visit https://youtu.be/hpltvTEiRrY to inspire your day!"
+//     }
+// }
+
+// { Send Image Using ID from Cloud API
+//     "messaging_product": "whatsapp",
+//     "recipient_type": "individual",
+//     "to": "{{Recipient-Phone-Number}}",
+//     "type": "image",
+//     "image": {
+//         "id": "<IMAGE_OBJECT_ID>"
+//     }
+// }
