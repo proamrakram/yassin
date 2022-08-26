@@ -40,4 +40,5 @@ Route::controller(BotController::class)->group(function () {
     Route::get('/send-text-message', 'sendTextMessage')->name('send-text-message');
     Route::get('/send-file-message/{file_id}', 'sendFileUsingCloudAPIID')->name('send-file-message');
     Route::get('/send-file-message-url', 'sendFileUsingURL')->name('send-file-message-url');
+    Route::get('/send-contact', 'sendContact')->name('send-contact');
 });
