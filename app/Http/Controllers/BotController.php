@@ -16,12 +16,13 @@ class BotController extends Controller
 
     private $headers;
 
-    private $token = "EAAFJigKvv6cBAAoTcCZAAnZAVv9PqlFJmuCNXZAReXw0Q3sOvZChmPrmQ9cgCEvzHNntrgMOpPleM7fuu2IHSXNbRZBCrjUnBNrnDSERZAGZBa6ioMJfHSraFGneb96WEkSM4w8NtYdBnNsZCN0rXALkLvnHhX97uZBVtGYIs2bSkwuYN1Dl19Rcn70kmq9WXgpuMNzOeoaKu72GShNkTZA0BY";
+    private $token;
 
     public function __construct()
     {
+        $this->token = "EAAFJigKvv6cBAH2g3umRzZBR1o2dBCXFC0dZBInZCW1suWZBOVsnYumv7Nx9TAW6tU9gvukHdiGeQFD9GaNsE4ZCcQ58ya52WAmqZB0kysN2h4tD9SUcsA5xE7G2foRZBV2hX8oNk5iXYtxTQrSP3T302a2qBPLW6RgmpxTH3jKQ20NIAg4ZAZCrRZAOhbAV7BnUzjl2CPntEQGbk2YDLV0cbZB";
         $this->headers = [
-            'Authorization' => "Bearer "  . $this->token,
+            'Authorization' => "Bearer " . $this->token,
             'Content-Type' => 'application/json',
         ];
     }
