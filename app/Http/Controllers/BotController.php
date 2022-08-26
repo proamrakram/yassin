@@ -7,6 +7,7 @@ use App\Http\Requests\StoreBotRequest;
 use App\Http\Resources\SendMessagesResource;
 use App\Http\Traits\SendMessages;
 use App\Models\WhatsAppSender;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use stdClass;
 
@@ -96,8 +97,10 @@ class BotController extends Controller
         return $this->send($this->headers, $data);
     }
 
-    public function sendFileUsingURL($url)
+    public function sendFileUsingURL(Request $request)
     {
+        $url = $request->query('url');
+
         $whats_app_sender = WhatsAppSender::find(1);
 
         $data = [

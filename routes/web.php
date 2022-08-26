@@ -39,5 +39,5 @@ Route::controller(BotController::class)->group(function () {
     Route::get('/reply-to-message/{message_id}', 'replyToMessage')->name('reply-to-message');
     Route::get('/send-text-message', 'sendTextMessage')->name('send-text-message');
     Route::get('/send-file-message/{file_id}', 'sendFileUsingCloudAPIID')->name('send-file-message');
-    Route::get('/send-file-message-url/{url}', 'sendFileUsingURL')->name('send-file-message-url');
+    Route::get('/send-file-message-url', 'sendFileUsingURL')->name('send-file-message-url');
 });
