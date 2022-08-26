@@ -11,8 +11,6 @@ return [
                 "filename" => "",
                 "provider" => ""
             ],
-
-
             "contacts" => [
                 "0" => [
                     "addresses" => [
@@ -61,10 +59,6 @@ return [
                     ],
                 ],
             ],
-
-
-
-
             "document" => [
                 "id" => "",
                 "link" => "",
@@ -80,7 +74,6 @@ return [
                 "filename" => "",
                 "provider" => ""
             ],
-
             "interactive" => [
 
                 "action" => [
@@ -128,16 +121,12 @@ return [
                     "button" => "Use it for Reply Buttons.",
                 ]
             ],
-
-
-
             "location" => [
                 "longitude" => "",
                 "latitude" => "",
                 "name" => "",
                 "address" => "",
             ],
-
             "messaging_product" => "whatsapp",
             "preview_url" => "false or true",
             "recipient_type" => "individual",
@@ -149,9 +138,6 @@ return [
                 "filename" => "",
                 "provider" => ""
             ],
-
-
-
             "template" => [
                 "name" => "",
                 "language" => [
@@ -174,9 +160,6 @@ return [
 
                 "namespace" => "",
             ],
-
-
-
             "text" => [
                 "body" => "The text of the message. 1024 characters max.",
                 "preview_url" => "false or true",

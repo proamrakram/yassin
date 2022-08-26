@@ -39,7 +39,7 @@ class BotController extends Controller
 
     public function sendTextMessage($message = "Hello World")
     {
-        $message = "Hello I am Amr Akram From Gaza Strip";
+        $message = "I am trying to do something in this world ^_^";
         $whats_app_sender = WhatsAppSender::find(1);
 
         $data = [
@@ -54,6 +54,8 @@ class BotController extends Controller
         ];
 
         $response = $this->send($this->headers, $data);
+
+        return $response;
     }
 
     public function replyToMessage($message_id)
