@@ -92,6 +92,8 @@ class BotController extends Controller
                 "id" => $file_id
             ]
         ];
+
+        return $this->send($this->headers, $data);
     }
 }
 
