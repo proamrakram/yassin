@@ -65,7 +65,7 @@ class BotController extends Controller
             $whats_app_sender->phone_number,
             [
                 "preview_url" => true,
-                "body" => "Hello World",
+                "body" => "Hello World\n\nhttps://www.youtube.com/watch?v=OTd28lXLEfc",
             ],
         );
 
@@ -101,7 +101,7 @@ class BotController extends Controller
 
 
 
-    
+
     public function sendImageMessagebyID($image_id)
     {
         $whats_app_sender = WhatsAppSender::find(1);
