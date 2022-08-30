@@ -36,9 +36,12 @@ Route::get('/terms', function () {
 
 
 Route::controller(BotController::class)->group(function () {
-    Route::get('/reply-to-message/{message_id}', 'replyToMessage')->name('reply-to-message');
+
     Route::get('/send-text-message', 'sendTextMessage')->name('send-text-message');
-    Route::get('/send-file-message/{file_id}', 'sendFileUsingCloudAPIID')->name('send-file-message');
-    Route::get('/send-file-message-url', 'sendFileUsingURL')->name('send-file-message-url');
-    Route::get('/send-contact', 'sendContact')->name('send-contact');
+
+    Route::get('/send-text-message-with-preview-url/{message_id}', 'sendTextMessagewithPreviewURL')->name('send-text-message-with-preview-url');
+
+    Route::get('/send-reply-to-tex-message/{message_id}','sendReplyToTextMessage')->name('send-reply-to-tex-message');
+
+
 });

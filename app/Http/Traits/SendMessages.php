@@ -11,8 +11,28 @@ trait SendMessages
         return Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
     }
 
-    public function reply($headers, $data)
+    public function sendMessageObject($type, $to, $message)
     {
-        return Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
+        return [
+            'messaging_product' => 'whatsapp',
+            'recipient_type' => 'individual',
+            'to' => $to,
+            'type' => $type,
+            $type => $message,
+        ];
+    }
+
+    public function replyToMessageObject($type, $to, $message, $message_id)
+    {
+        return [
+            'messaging_product' => 'whatsapp',
+            'recipient_type' => 'individual',
+            "context" => [
+                "message_id" => $message_id
+            ],
+            'to' => $to,
+            'type' => $type,
+            $type => $message,
+        ];
     }
 }

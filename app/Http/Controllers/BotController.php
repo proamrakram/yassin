@@ -6,6 +6,8 @@ use App\Models\Bot;
 use App\Http\Requests\StoreBotRequest;
 use App\Http\Resources\SendMessagesResource;
 use App\Http\Traits\SendMessages;
+use App\Models\SenderDocumentMessages;
+use App\Models\SenderVideoMessages;
 use App\Models\WhatsAppSender;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -38,483 +40,918 @@ class BotController extends Controller
         return $bot;
     }
 
-    public function sendTextMessage($message = "Hello World")
+    public function sendTextMessage()
     {
         $message = "I am trying to do something in this world ^_^";
+
         $whats_app_sender = WhatsAppSender::find(1);
 
-        $data = [
-            'messaging_product' => 'whatsapp',
-            'recipient_type' => 'individual',
-            'to' => $whats_app_sender->phone_number,
-            'type' => 'text',
-            'text' => [
-                'preview_url' => false,
-                'body' => $message,
-            ],
-        ];
+        $data = $this->sendMessageObject('text', $whats_app_sender->phone_number, [
+            'preview_url' => false,
+            'body' => $message,
+        ]);
 
         $response = $this->send($this->headers, $data);
 
         return $response;
     }
 
-    public function replyToUsingMessageID($message_id)
+    public function sendTextMessagewithPreviewURL($message_id)
     {
         $whats_app_sender = WhatsAppSender::find(1);
 
-        $data = [
-            'messaging_product' => "whatsapp",
-            "recipient_type" => "individual",
-            "to" =>  $whats_app_sender->phone_number,
-            "context" => [
-                "message_id" => $message_id,
-            ],
-            "type" => "text",
-            "text" => [
-                "preview_url" => false,
+        $data = $this->sendMessageObject(
+            'text',
+            $whats_app_sender->phone_number,
+            [
+                "preview_url" => true,
                 "body" => "Hello World",
             ],
-        ];
-
-        return $this->reply($this->headers, $data);
-    }
-
-    public function sendFileUsingCloudAPIID($file_id)
-    {
-        $whats_app_sender = WhatsAppSender::find(1);
-
-        $data = [
-            "messaging_product" => "whatsapp",
-            "recipient_type" => "individual",
-            "to" => $whats_app_sender->phone_number,
-            "type" => "image",
-            "image" => [
-                "id" => $file_id
-            ]
-        ];
+        );
 
         return $this->send($this->headers, $data);
     }
 
-    public function sendFileUsingURL(Request $request)
+    public function sendReplyToTextMessage($message_id)
     {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $message = "Hello I am amro from Gaza";
+
+        $data = $this->replyToMessageObject(
+            $type = 'text',
+            $whats_app_sender->phone_number,
+            [
+                'preview_url' => false,
+                'body' => $message,
+            ],
+            $message_id
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+
+
+
+
+
+
+
+
+
+
+    
+    public function sendImageMessagebyID($image_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $data = $this->sendMessageObject(
+            'image',
+            $whats_app_sender->phone_number,
+            [
+                'id' => $image_id
+            ],
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendReplyToImageMessageByID($message_id, $image_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $data = $this->replyToMessageObject(
+            'image',
+            $whats_app_sender->phone_number,
+            [
+                'id' => $image_id
+            ],
+
+            $message_id
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendImageMessageByURL(Request $request)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
         $url = $request->query('url');
 
-        $whats_app_sender = WhatsAppSender::find(1);
-
-        $data = [
-            "messaging_product" =>  "whatsapp",
-            "recipient_type" => "individual",
-            "to" => $whats_app_sender->phone_number,
-            "type" => "image",
-            "image" => [
-                "link" => $url
-            ]
-        ];
+        $data = $this->sendMessageObject(
+            'image',
+            $whats_app_sender->phone_number,
+            [
+                'link' => $url
+            ],
+        );
 
         return $this->send($this->headers, $data);
     }
 
-    public function sendContact()
+    public function sendReplyToImageMessageByURL(Request $request, $message_id)
     {
         $whats_app_sender = WhatsAppSender::find(1);
 
-        $data = [
-            "messaging_product" => "whatsapp",
-            "to" => $whats_app_sender->phone_number,
-            "type" => "contacts",
-            "contacts" => [
-                [
-                    "addresses" => [
-                        [
-                            "street" => "Jamal Abed Al-Nasser Street",
-                            "city" => "Gaza",
-                            "state" => "Khan Younis",
-                            "zip" => "9990300",
-                            "country" => "Palestine",
-                            "country_code" => "P30",
-                            "type" => "HOME"
-                        ]
-                    ],
-                    "birthday" => now(),
-                    "emails" => [
-                        [
-                            "email" => "amroaarsi@gmail.com",
-                            "type" => "HOME"
-                        ]
-                    ],
-                    "name" => [
-                        "formatted_name" => "Amr Akram",
-                        "first_name" => "Amr",
-                        "last_name" => "Akram",
-                        "middle_name" => "Akram",
-                        "suffix" => "pro",
-                        "prefix" => "amrakram"
-                    ],
-                    "org" => [
-                        "company" => "Spark Studio",
-                        "department" => "Software",
-                        "title" => "Spark Studio"
-                    ],
-                    "phones" => [
-                        [
-                            "phone" => $whats_app_sender->phone_number,
-                            "wa_id" => $whats_app_sender->phone_number,
-                            "type" => "HOME"
-                        ]
-                    ],
-                    "urls" => [
-                        [
-                            "url" => "https://developers.facebook.com/support/faq/",
-                            "type" => "WORK"
+        $url = $request->query('url');
+
+        $data = $this->replyToMessageObject(
+            'image',
+            $whats_app_sender->phone_number,
+            [
+                'link' => $url
+            ],
+            $message_id
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendAudioMessageByID($audio_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $data = $this->sendMessageObject(
+            'audio',
+            $whats_app_sender->phone_number,
+            [
+                'id' => $audio_id
+            ],
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendReplyToAudioMessageByID($message_id, $audio_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $data = $this->replyToMessageObject(
+            'audio',
+            $whats_app_sender->phone_number,
+            [
+                'id' => $audio_id
+            ],
+
+            $message_id
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendAudioMessageByURL(Request $request)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $url = $request->query('url');
+
+        $data = $this->sendMessageObject(
+            'audio',
+            $whats_app_sender->phone_number,
+            [
+                'link' => $url
+            ],
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendReplyToAudioMessageByURL(Request $request, $message_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $url = $request->query('url');
+
+        $data = $this->replyToMessageObject(
+            'audio',
+            $whats_app_sender->phone_number,
+            [
+                'link' => $url
+            ],
+            $message_id
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendDocumentMessageByID($document_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $document = SenderDocumentMessages::where('sender_message_id', $whats_app_sender)
+            ->where('document_id', $document_id)
+            ->first();
+
+        if ($document) {
+            $id = $document->document_id;
+            $caption = $document->caption;
+            $filename =  $document->file_name;
+        } else {
+            $id = $document_id;
+            $caption = "None";
+            $filename =  "None";
+        }
+
+        $data = $this->sendMessageObject(
+            'document',
+
+            $whats_app_sender->phone_number,
+            [
+                'id' => $id,
+                'caption' => $caption,
+                'filename' => $filename
+            ],
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendReplyToDocumentMessageByID($message_id, $document_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $document = SenderDocumentMessages::where('sender_message_id', $whats_app_sender)
+            ->where('document_id', $document_id)
+            ->first();
+
+        if ($document) {
+            $id = $document->document_id;
+            $caption = $document->caption;
+            $filename =  $document->file_name;
+        } else {
+            $id = $document_id;
+            $caption = "None";
+            $filename =  "None";
+        }
+
+        $data = $this->replyToMessageObject(
+            'document',
+            $whats_app_sender->phone_number,
+            [
+                'id' => $id,
+                'caption' => $caption,
+                'filename' => $filename
+            ],
+            $message_id
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendDocumentMessageByURL(Request $request)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $url = $request->query('url');
+
+        $data = $this->sendMessageObject(
+            'document',
+            $whats_app_sender->phone_number,
+            [
+                "link" => $url,
+                "caption" =>  "None"
+            ],
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendReplyToDocumentMessageByURL(Request $request, $message_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $url = $request->query('url');
+
+        $data = $this->replyToMessageObject(
+            'document',
+            $whats_app_sender->phone_number,
+            [
+                "link" => $url,
+                "caption" =>  "None"
+            ],
+            $message_id
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendStickerMessageByID($sticker_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $data = $this->sendMessageObject(
+            'sticker',
+            $whats_app_sender->phone_number,
+            [
+                'id' => $sticker_id,
+            ],
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendReplyToStickerMessageByID($message_id, $sticker_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $data = $this->replyToMessageObject(
+            'sticker',
+            $whats_app_sender->phone_number,
+            [
+                'id' => $sticker_id,
+            ],
+            $message_id
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendStickerMessageByURL(Request $request)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $url = $request->query('url');
+
+        $data = $this->sendMessageObject(
+            'sticker',
+            $whats_app_sender->phone_number,
+            [
+                "link" => $url,
+            ],
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendReplyToStickerMessageByURL(Request $request, $message_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $url = $request->query('url');
+
+        $data = $this->replyToMessageObject(
+            'sticker',
+            $whats_app_sender->phone_number,
+            [
+                "link" => $url,
+            ],
+
+            $message_id
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+
+
+    public function sendVideoMessageByID($video_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $video = SenderVideoMessages::where('sender_message_id', $whats_app_sender)
+            ->where('video_id', $video_id)
+            ->first();
+
+        if ($video) {
+            $id = $video->video_id;
+            $caption = "None";
+        } else {
+            $id = $video_id;
+            $caption = "None";
+        }
+
+        $data = $this->sendMessageObject(
+            'video',
+            $whats_app_sender->phone_number,
+            [
+                'id' => $id,
+                'caption' => $caption
+
+            ],
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendReplyToVideoMessageByID($message_id, $video_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $video = SenderVideoMessages::where('sender_message_id', $whats_app_sender)
+            ->where('video_id', $video_id)
+            ->first();
+
+        if ($video) {
+            $id = $video->video_id;
+            $caption = "None";
+        } else {
+            $id = $video_id;
+            $caption = "None";
+        }
+
+        $data = $this->replyToMessageObject(
+            'video',
+            $whats_app_sender->phone_number,
+            [
+                'id' => $id,
+                'caption' => $caption
+            ],
+            $message_id
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendVideoMessageByURL(Request $request)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $url = $request->query('url');
+
+        $data = $this->sendMessageObject(
+            'video',
+            $whats_app_sender->phone_number,
+            [
+                'link' => $url,
+                'caption' => "None"
+
+            ],
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendReplyToVideoMessageByURL(Request $request, $message_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $url = $request->query('url');
+
+        $data = $this->replyToMessageObject(
+            'video',
+            $whats_app_sender->phone_number,
+            [
+                'link' => $url,
+                'caption' => "None"
+            ],
+            $message_id
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendContactMessage()
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $data = $this->sendMessageObject(
+            'contacts',
+            $whats_app_sender->phone_number,
+
+            [
+                "contacts" =>  [
+                    [
+                        "addresses" =>  [
+                            [
+                                "street" =>  "<ADDRESS_STREET>",
+                                "city" =>  "<ADDRESS_CITY>",
+                                "state" =>  "<ADDRESS_STATE>",
+                                "zip" =>  "<ADDRESS_ZIP>",
+                                "country" =>  "<ADDRESS_COUNTRY>",
+                                "country_code" =>  "<ADDRESS_COUNTRY_CODE>",
+                                "type" =>  "<HOME|WORK>"
+                            ]
+                        ],
+                        "birthday" =>  "<CONTACT_BIRTHDAY>",
+                        "emails" =>  [
+                            [
+                                "email" =>  "<CONTACT_EMAIL>",
+                                "type" =>  "<WORK|HOME>"
+                            ]
+                        ],
+                        "name" =>  [
+                            "formatted_name" =>  "<CONTACT_FORMATTED_NAME>",
+                            "first_name" =>  "<CONTACT_FIRST_NAME>",
+                            "last_name" =>  "<CONTACT_LAST_NAME>",
+                            "middle_name" =>  "<CONTACT_MIDDLE_NAME>",
+                            "suffix" =>  "<CONTACT_SUFFIX>",
+                            "prefix" =>  "<CONTACT_PREFIX>"
+                        ],
+                        "org" =>  [
+                            "company" =>  "<CONTACT_ORG_COMPANY>",
+                            "department" =>  "<CONTACT_ORG_DEPARTMENT>",
+                            "title" =>  "<CONTACT_ORG_TITLE>"
+                        ],
+                        "phones" =>  [
+                            [
+                                "phone" =>  "<CONTACT_PHONE>",
+                                "wa_id" =>  "<CONTACT_WA_ID>",
+                                "type" =>  "<HOME|WORK>"
+                            ]
+                        ],
+                        "urls" =>  [
+                            [
+                                "url" =>  "<CONTACT_URL>",
+                                "type" =>  "<HOME|WORK>"
+                            ]
                         ]
                     ]
                 ]
-            ]
-        ];
+
+
+            ],
+        );
 
         return $this->send($this->headers, $data);
-
     }
+
+    public function sendReplyToContactMessage()
+    {
+    }
+
+    public function sendLocationMessage(Request $request, $message_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $url = $request->query('url');
+
+        $data = $this->sendMessageObject(
+            'location',
+            $whats_app_sender->phone_number,
+            [
+                "latitude" => "<LOCATION_LATITUDE>",
+                "longitude" => "<LOCATION_LONGITUDE>",
+                "name" => "<LOCATION_NAME>",
+                "address" => "<LOCATION_ADDRESS>"
+            ],
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendReplyToLocationMessage($message_id)
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $data = $this->sendMessageObject(
+            'location',
+            $whats_app_sender->phone_number,
+            [
+                "latitude" => "<LOCATION_LATITUDE>",
+                "longitude" => "<LOCATION_LONGITUDE>",
+                "name" => "<LOCATION_NAME>",
+                "address" => "<LOCATION_ADDRESS>"
+            ],
+            $message_id
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendMessageTemplateText()
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $data = $this->sendMessageObject(
+            'template',
+            $whats_app_sender->phone_number,
+            [
+                "name" => "template-name",
+                "language" => [
+                    "code" => "language-and-locale-code"
+                ],
+                "components" => [
+                    [
+                        "type" => "body",
+                        "parameters" => [
+                            [
+                                "type" => "text",
+                                "text" => "text-string"
+                            ],
+                            [
+                                "type" => "currency",
+                                "currency" => [
+                                    "fallback_value" => "$100.99",
+                                    "code" => "USD",
+                                    "amount_1000" => 100990
+                                ]
+                            ],
+                            [
+                                "type" => "date_time",
+                                "date_time" => [
+                                    "fallback_value" => "February 25, 1977",
+                                    "day_of_week" => 5,
+                                    "year" => 1977,
+                                    "month" => 2,
+                                    "day_of_month" => 25,
+                                    "hour" => 15,
+                                    "minute" => 33,
+                                    "calendar" => "GREGORIAN"
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendMessageTemplateMedia()
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $data = $this->sendMessageObject(
+            'template',
+            $whats_app_sender->phone_number,
+            [
+                "name" => "template-name",
+                "language" => [
+                    "code" => "language-and-locale-code"
+                ],
+                "components" => [
+                    [
+                        "type" => "header",
+                        "parameters" => [
+                            [
+                                "type" => "image",
+                                "image" => [
+                                    "link" => "http(s)://the-image-url"
+                                ]
+                            ]
+                        ]
+                    ],
+                    [
+                        "type" => "body",
+                        "parameters" => [
+                            [
+                                "type" => "text",
+                                "text" => "text-string"
+                            ],
+                            [
+                                "type" => "currency",
+                                "currency" => [
+                                    "fallback_value" => "$100.99",
+                                    "code" => "USD",
+                                    "amount_1000" => 100990
+                                ]
+                            ],
+                            [
+                                "type" => "date_time",
+                                "date_time" => [
+                                    "fallback_value" => "February 25, 1977",
+                                    "day_of_week" => 5,
+                                    "year" => 1977,
+                                    "month" => 2,
+                                    "day_of_month" => 25,
+                                    "hour" => 15,
+                                    "minute" => 33,
+                                    "calendar" => "GREGORIAN"
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendMessageTemplateInteractive()
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+        $data = $this->sendMessageObject(
+            'template',
+            $whats_app_sender->phone_number,
+            [
+                "name" => "template-name",
+                "language" => [
+                    "code" => "language-and-locale-code"
+                ],
+                "components" => [
+                    [
+                        "type" => "header",
+                        "parameters" => [
+                            [
+                                "type" => "image",
+                                "image" => [
+                                    "link" => "http(s)://the-image-url"
+                                ]
+                            ]
+                        ]
+                    ],
+                    [
+                        "type" => "body",
+                        "parameters" => [
+                            [
+                                "type" => "text",
+                                "text" => "text-string"
+                            ],
+                            [
+                                "type" => "currency",
+                                "currency" => [
+                                    "fallback_value" => "$100.99",
+                                    "code" => "USD",
+                                    "amount_1000" => 100990
+                                ]
+                            ],
+                            [
+                                "type" => "date_time",
+                                "date_time" => [
+                                    "fallback_value" => "February 25, 1977",
+                                    "day_of_week" => 5,
+                                    "year" => 1977,
+                                    "month" => 2,
+                                    "day_of_month" => 25,
+                                    "hour" => 15,
+                                    "minute" => 33,
+                                    "calendar" => "GREGORIAN"
+                                ]
+                            ]
+                        ]
+                    ],
+                    [
+                        "type" => "button",
+                        "sub_type" => "quick_reply",
+                        "index" => "0",
+                        "parameters" => [
+                            [
+                                "type" => "payload",
+                                "payload" => "aGlzIHRoaXMgaXMgY29v"
+                            ]
+                        ]
+                    ],
+                    [
+                        "type" => "button",
+                        "sub_type" => "quick_reply",
+                        "index" => "1",
+                        "parameters" => [
+                            [
+                                "type" => "payload",
+                                "payload" => "9rwnB8RbYmPF5t2Mn09x4h"
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+        );
+
+        return $this->send($this->headers, $data);
+    }
+
+    public function sendListMessage()
+    {
+        $whats_app_sender = WhatsAppSender::find(1);
+
+
+        //     "type": "interactive",
+        //     "interactive": {
+        //         "type": "list",
+        //         "header": {
+        //             "type": "text",
+        //             "text": "<HEADER_TEXT>"
+        //         },
+        //         "body": {
+        //             "text": "<BODY_TEXT>"
+        //         },
+        //         "footer": {
+        //             "text": "<FOOTER_TEXT>"
+        //         },
+        //         "action": {
+        //             "button": "<BUTTON_TEXT>",
+        //             "sections": [
+        //                 {
+        //                     "title": "<LIST_SECTION_1_TITLE>",
+        //                     "rows": [
+        //                         {
+        //                             "id": "<LIST_SECTION_1_ROW_1_ID>",
+        //                             "title": "<SECTION_1_ROW_1_TITLE>",
+        //                             "description": "<SECTION_1_ROW_1_DESC>"
+        //                         },
+        //                         {
+        //                             "id": "<LIST_SECTION_1_ROW_2_ID>",
+        //                             "title": "<SECTION_1_ROW_2_TITLE>",
+        //                             "description": "<SECTION_1_ROW_2_DESC>"
+        //                         }
+        //                     ]
+        //                 },
+        //                 {
+        //                     "title": "<LIST_SECTION_2_TITLE>",
+        //                     "rows": [
+        //                         {
+        //                             "id": "<LIST_SECTION_2_ROW_1_ID>",
+        //                             "title": "<SECTION_2_ROW_1_TITLE>",
+        //                             "description": "<SECTION_2_ROW_1_DESC>"
+        //                         },
+        //                         {
+        //                             "id": "<LIST_SECTION_2_ROW_2_ID>",
+        //                             "title": "<SECTION_2_ROW_2_TITLE>",
+        //                             "description": "<SECTION_2_ROW_2_DESC>"
+        //                         }
+        //                     ]
+        //                 }
+        //             ]
+        //         }
+        //     }
+        // }
+    }
+
+    public function sendReplyToListMessage()
+    {
+    //     "type": "interactive",
+    //     "interactive": {
+    //         "type": "list",
+    //         "header": {
+    //             "type": "text",
+    //             "text": "<HEADER_TEXT>"
+    //         },
+    //         "body": {
+    //             "text": "<BODY_TEXT>"
+    //         },
+    //         "footer": {
+    //             "text": "<FOOTER_TEXT>"
+    //         },
+    //         "action": {
+    //             "button": "<BUTTON_TEXT>",
+    //             "sections": [
+    //                 {
+    //                     "title": "<LIST_SECTION_1_TITLE>",
+    //                     "rows": [
+    //                         {
+    //                             "id": "<LIST_SECTION_1_ROW_1_ID>",
+    //                             "title": "<SECTION_1_ROW_1_TITLE>",
+    //                             "description": "<SECTION_1_ROW_1_DESC>"
+    //                         },
+    //                         {
+    //                             "id": "<LIST_SECTION_1_ROW_2_ID>",
+    //                             "title": "<SECTION_1_ROW_2_TITLE>",
+    //                             "description": "<SECTION_1_ROW_2_DESC>"
+    //                         }
+    //                     ]
+    //                 },
+    //                 {
+    //                     "title": "<LIST_SECTION_2_TITLE>",
+    //                     "rows": [
+    //                         {
+    //                             "id": "<LIST_SECTION_2_ROW_1_ID>",
+    //                             "title": "<SECTION_2_ROW_1_TITLE>",
+    //                             "description": "<SECTION_2_ROW_1_DESC>"
+    //                         },
+    //                         {
+    //                             "id": "<LIST_SECTION_2_ROW_2_ID>",
+    //                             "title": "<SECTION_2_ROW_2_TITLE>",
+    //                             "description": "<SECTION_2_ROW_2_DESC>"
+    //                         }
+    //                     ]
+    //                 }
+    //             ]
+    //         }
+    //     }
+    // }
+    }
+
+    public function sendReplyButton()
+    {
+    //     "interactive": {
+    //         "type": "button",
+    //         "body": {
+    //             "text": "<BUTTON_TEXT>"
+    //         },
+    //         "action": {
+    //             "buttons": [
+    //                 {
+    //                     "type": "reply",
+    //                     "reply": {
+    //                         "id": "<UNIQUE_BUTTON_ID_1>",
+    //                         "title": "<BUTTON_TITLE_1>"
+    //                     }
+    //                 },
+    //                 {
+    //                     "type": "reply",
+    //                     "reply": {
+    //                         "id": "<UNIQUE_BUTTON_ID_2>",
+    //                         "title": "<BUTTON_TITLE_2>"
+    //                     }
+    //                 }
+    //             ]
+    //         }
+    //     }
+    // }
+    }
+
+    public function markMessageAsRead()
+    {
+        // {
+        //     "messaging_product": "whatsapp",
+        //     "status": "read",
+        //     "message_id": "<INCOMING_MSG_ID>"
+        // }
+    }
+
+
 }
-
-
-
-
-// { Send Text Message
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "type" => "text",
-//     "text" => {
-//         "preview_url" => false,
-//         "body" => "text-message-content"
-//     }
-// }
-
-// { Reply to Text Message
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "context" => {
-//         "message_id" => "<MSGID_OF_PREV_MSG>"
-//     },
-//     "type" => "text",
-//     "text" => {
-//         "preview_url" => false,
-//         "body" => "<TEXT_MSG_CONTENT>"
-//     }
-// }
-
-
-// { Send Text Message with Link Preview
-//     "messaging_product" => "whatsapp",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "text" => {
-//         "preview_url" => true,
-//         "body" => "Please visit https://youtu.be/hpltvTEiRrY to inspire your day!"
-//     }
-// }
-
-// { Send Image Using ID from Cloud API
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "type" => "image",
-//     "image" => {
-//         "id" => "<IMAGE_OBJECT_ID>"
-//     }
-// }
-
-#For replying on any message, just we are using context object
-// "messaging_product" => "whatsapp",
-// "recipient_type" => "individual",
-// "to" => "{{Recipient-Phone-Number}}",
-// "context" => {
-//     "message_id" => "<MSGID_OF_PREV_MSG>"
-// },
-// "type" => "image",
-// "image" => {
-//     "id" => "<IMAGE_OBJECT_ID>"
-// }
-
-// {
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "type" => "image",
-//     "image" => {
-//         "link" => "http(s)://image-url"
-//     }
-// }
-
-// {
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "context" => {
-//         "message_id" => "<MSGID_OF_PREV_MSG>"
-//     },
-//     "type" => "image",
-//     "image" => {
-//         "link" => "http(s)://image-url"
-//     }
-// }
-
-// {
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "type" => "audio",
-//     "audio" => {
-//         "id" => "<AUDIO_OBJECT_ID>"
-//     }
-// }
-
-// { Reply to audio message
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "context" => {
-//         "message_id" => "<MSGID_OF_MSG_YOU_ARE_REPLYING_TO>"
-//     },
-//     "type" => "audio",
-//     "audio" => {
-//         "id" => "<AUDIO_OBJECT_ID>"
-//     }
-// }
-
-// { Send to message using audio file.
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "type" => "audio",
-//     "audio" => {
-//         "link" => "http(s)://audio-url"
-//     }
-// }
-
-// {  Reply to message using audio file.
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "context" => {
-//         "message_id" => "<MSGID_OF_MSG_YOU_ARE_REPLYING_TO>"
-//     },
-//     "type" => "audio",
-//     "audio" => {
-//         "link" => "http(s)://audio-url"
-//     }
-// }
-
-// { send docs from cloud API
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "type" => "document",
-//     "document" => {
-//         "id" => "<DOCUMENT_OBJECT_ID>",
-//         "caption" => "<DOCUMENT_CAPTION_TO_SEND>",
-//         "filename" => "<DOCUMENT_FILENAME>"
-//     }
-// }
-
-// {
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "context" => {
-//         "message_id" => "<MSGID_OF_MSG_YOU_ARE_REPLYING_TO>"
-//     },
-//     "type" => "document",
-//     "document" => {
-//         "id" => "<DOCUMENT_OBJECT_ID>",
-//         "caption" => "<DOCUMENT_CAPTION_TO_SEND>",
-//         "filename" => "<DOCUMENT_FILENAME>"
-//     }
-// }
-
-// {
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "type" => "document",
-//     "document" => {
-//         "link" => "<http(s)://document-url>",
-//         "caption" => "<DOCUMENT_CAPTION_TEXT>"
-//     }
-// }
-
-
-// {
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "context" => {
-//         "message_id" => "<MSGID_OF_MSG_YOU_ARE_REPLYING_TO>"
-//     },
-//     "type" => "document",
-//     "document" => {
-//         "link" => "<http(s)://document-url>",
-//         "caption" => "<DOCUMENT_CAPTION_TEXT>"
-//     }
-// }
-
-
-// {
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "type" => "sticker",
-//     "sticker" => {
-//         "id" => "<MEDIA_OBJECT_ID>"
-//     }
-// }
-
-
-// {
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "context" => {
-//         "message_id" => "<MSGID_OF_MSG_YOU_ARE_REPLYING_TO>"
-//     },
-//     "type" => "sticker",
-//     "sticker" => {
-//         "id" => "<MEDIA_OBJECT_ID>"
-//     }
-// }
-
-// {
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "type" => "sticker",
-//     "sticker" => {
-//         "link" => "<http(s)://sticker-url>"
-//     }
-// }
-
-
-// {
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "context" => {
-//         "message_id" => "<MSGID_OF_MSG_YOU_ARE_REPLYING_TO>"
-//     },
-//     "type" => "sticker",
-//     "sticker" => {
-//         "link" => "<http(s)://sticker-url>"
-//     }
-// }
-
-
-// {
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "type" => "video",
-//     "video" => {
-//         "caption" => "<VIDEO_CAPTION_TEXT>",
-//         "id" => "<VIDEO_OBJECT_ID>"
-//     }
-// }
-
-
-// {
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "context" => {
-//         "message_id" => "<MSGID_OF_MSG_YOU_ARE_REPLYING_TO>"
-//     },
-//     "type" => "video",
-//     "video" => {
-//         "caption" => "<VIDEO_CAPTION_TEXT>",
-//         "id" => "<VIDEO_OBJECT_ID>"
-//     }
-// }
-
-
-// {
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "type" => "video",
-//     "video" => {
-//         "link" => "<http(s)://video-url>",
-//         "caption" => "<VIDEO_CAPTION_TEXT>"
-//     }
-// }
-
-// {
-//     "messaging_product" => "whatsapp",
-//     "recipient_type" => "individual",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "context" => {
-//         "message_id" => "<MSGID_OF_MSG_YOU_ARE_REPLYING_TO>"
-//     },
-//     "type" => "video",
-//     "video" => {
-//         "link" => "<http(s)://video-url>",
-//         "caption" => "<VIDEO_CAPTION_TEXT>"
-//     }
-// }
-
-
-
-// {
-//     "messaging_product" => "whatsapp",
-//     "to" => "{{Recipient-Phone-Number}}",
-//     "type" => "contacts",
-//     "contacts" => [
-//         {
-//             "addresses" => [
-//                 {
-//                     "street" => "<ADDRESS_STREET>",
-//                     "city" => "<ADDRESS_CITY>",
-//                     "state" => "<ADDRESS_STATE>",
-//                     "zip" => "<ADDRESS_ZIP>",
-//                     "country" => "<ADDRESS_COUNTRY>",
-//                     "country_code" => "<ADDRESS_COUNTRY_CODE>",
-//                     "type" => "<HOME|WORK>"
-//                 }
-//             ],
-//             "birthday" => "<CONTACT_BIRTHDAY>",
-//             "emails" => [
-//                 {
-//                     "email" => "<CONTACT_EMAIL>",
-//                     "type" => "<WORK|HOME>"
-//                 }
-//             ],
-//             "name" => {
-//                 "formatted_name" => "<CONTACT_FORMATTED_NAME>",
-//                 "first_name" => "<CONTACT_FIRST_NAME>",
-//                 "last_name" => "<CONTACT_LAST_NAME>",
-//                 "middle_name" => "<CONTACT_MIDDLE_NAME>",
-//                 "suffix" => "<CONTACT_SUFFIX>",
-//                 "prefix" => "<CONTACT_PREFIX>"
-//             },
-//             "org" => {
-//                 "company" => "<CONTACT_ORG_COMPANY>",
-//                 "department" => "<CONTACT_ORG_DEPARTMENT>",
-//                 "title" => "<CONTACT_ORG_TITLE>"
-//             },
-//             "phones" => [
-//                 {
-//                     "phone" => "<CONTACT_PHONE>",
-//                     "wa_id" => "<CONTACT_WA_ID>",
-//                     "type" => "<HOME|WORK>"
-//                 }
-//             ],
-//             "urls" => [
-//                 {
-//                     "url" => "<CONTACT_URL>",
-//                     "type" => "<HOME|WORK>"
-//                 }
-//             ]
-//         }
-//     ]
-// }
