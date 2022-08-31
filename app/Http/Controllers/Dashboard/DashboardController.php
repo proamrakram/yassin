@@ -23,6 +23,11 @@ class DashboardController extends Controller
     public function users()
     {
         $wa_users = WhatsAppSender::all();
-        return view('whatsapp.dashboard.users', compact(['wa_users']));
+        return view('whatsapp.dashboard.users.users', compact(['wa_users']));
+    }
+
+    public function imagesUser($user)
+    {
+        return view('whatsapp.dashboard.users.images');
     }
 }

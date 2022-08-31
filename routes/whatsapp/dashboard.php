@@ -20,4 +20,5 @@ Route::controller(DashboardController::class)->prefix('admin')->as('admin.')->gr
     Route::get('home', 'home')->name('home');
     Route::get('bots', 'bots')->name('bots');
     Route::get('users', 'users')->name('users');
+    Route::get('user-images', 'imagesUser')->name('user-images');
 });
