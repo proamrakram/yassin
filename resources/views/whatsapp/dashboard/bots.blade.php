@@ -77,7 +77,7 @@
                                         @foreach ($bots as $bot)
                                             <tr>
                                                 <th scope="row">{{$bot->id}}</th>
-                                                <th scope="row"><img src="{{asset('whatsapp-assets/icons/smilebot.ico')}}" width="30" height="30" alt="smilebot.ico"></th>
+                                                <th scope="row"><a href="#"><img src="{{asset('whatsapp-assets/icons/smilebot.ico')}}" width="50" height="50" alt="smilebot.ico"></a></th>
                                                 <th scope="row">{{$bot->name}}</th>
                                                 <td>{{$bot->whats_app_business_account_id}}</td>
                                                 <td>{{$bot->phone_number}}</td>
