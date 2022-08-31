@@ -1,6 +1,5 @@
 <x-layouts.whatsapp>
 
-
     <!-- Counts Section -->
     <section class="py-5">
         <div class="container-fluid">

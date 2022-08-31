@@ -10,6 +10,21 @@
     <title>HORIZONS</title>
 </head>
 
+<style>
+    @media (max-width: 767.9px) {
+        .hero {
+            min-height: 70vh;
+        }
+
+        .hero .bg::after {
+            content: "";
+            width: calc(100% / 6);
+            background: linear-gradient(to right, #1616168c 50%, #00000000);
+        }
+    }
+</style>
+
+
 <body>
 
     <header class="container-fluid px-lg-0">
@@ -35,7 +50,7 @@
                     <a href="#InvestmentSystem" class="me-3 me-lg-4 mb-3 mb-lg-0">
                         Investment System
                     </a>
-                    <a href="#faq" >
+                    <a href="#faq">
                         FAQ
                     </a>
                 </div>
