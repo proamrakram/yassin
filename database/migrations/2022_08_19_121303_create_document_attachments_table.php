@@ -23,9 +23,9 @@ return new class extends Migration
             $table->string('document_id');
             $table->string('messaging_product');
             $table
-                ->foreignId('sender_document_message_id')
+                ->foreignId('document_message_id')
                 ->unique()
-                ->constrained('sender_document_messages');
+                ->constrained('documents');
             $table->timestamps();
         });
     }

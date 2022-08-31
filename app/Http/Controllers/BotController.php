@@ -76,7 +76,7 @@ class BotController extends Controller
     {
         $whats_app_sender = WhatsAppSender::find(1);
 
-        $message = "Hello I am amro from Gaza";
+        $message = "Hello I am amro from Gaza\n\nhttps://www.youtube.com/watch?v=OTd28lXLEfc";
 
         $data = $this->replyToMessageObject(
             $type = 'text',

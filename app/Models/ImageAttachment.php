@@ -17,12 +17,12 @@ class ImageAttachment extends Model
         'file_size',
         'image_id',
         'messaging_product',
-        'sender_image_message_id',
+        'image_message_id',
     ];
 
     public function senderMessage()
     {
-        return $this->belongsTo(SenderImageMessages::class, 'sender_image_message_id', 'id');
+        return $this->belongsTo(Image::class, 'image_message_id', 'id');
     }
 
 }

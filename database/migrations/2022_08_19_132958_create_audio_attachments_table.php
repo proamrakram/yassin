@@ -23,9 +23,9 @@ return new class extends Migration
             $table->string('audio_id');
             $table->string('messaging_product');
             $table
-                ->foreignId('sender_audio_message_id')
+                ->foreignId('audio_message_id')
                 ->unique()
-                ->constrained('sender_audio_messages');
+                ->constrained('audios');
             $table->timestamps();
         });
     }

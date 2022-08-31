@@ -17,7 +17,7 @@ class DocumentAttachment extends Model
         'file_size',
         'document_id',
         'messaging_product',
-        'sender_document_message_id',
+        'document_message_id',
     ];
 
     protected $casts = [
@@ -27,6 +27,6 @@ class DocumentAttachment extends Model
 
     public function senderMessage()
     {
-        return $this->belongsTo(SenderDocumentMessages::class, 'sender_document_message_id', 'id');
+        return $this->belongsTo(Document::class, 'document_message_id', 'id');
     }
 }

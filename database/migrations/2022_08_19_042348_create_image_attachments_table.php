@@ -23,9 +23,9 @@ return new class extends Migration
             $table->string('image_id');
             $table->string('messaging_product');
             $table
-                ->foreignId('sender_image_message_id')
+                ->foreignId('image_message_id')
                 ->unique()
-                ->constrained('sender_image_messages');
+                ->constrained('images');
             $table->timestamps();
         });
     }

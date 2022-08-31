@@ -20,44 +20,43 @@ class WhatsAppSender extends Model
         return $this->belongsTo(Bot::class, 'bot_id', 'id');
     }
 
-    public function senderTextMessages()
+    public function textMessages()
     {
-        return $this->hasMany(SenderTextMessages::class, 'sender_message_id', 'id');
+        return $this->hasMany(Text::class, 'sender_id', 'id');
     }
 
-    public function senderAudioMessages()
+    public function audioMessages()
     {
-        return $this->hasMany(SenderAudioMessages::class, 'sender_message_id', 'id');
+        return $this->hasMany(Audio::class, 'sender_id', 'id');
     }
 
-    public function senderImageMessages()
+    public function imageMessages()
     {
-        return $this->hasMany(SenderImageMessages::class, 'sender_message_id', 'id');
+        return $this->hasMany(Image::class, 'sender_id', 'id');
     }
 
-    public function senderVideoMessages()
+    public function videoMessages()
     {
-        return $this->hasMany(SenderVideoMessages::class, 'sender_message_id', 'id');
+        return $this->hasMany(Video::class, 'sender_id', 'id');
     }
 
-    public function senderDocumentMessages()
+    public function documentMessages()
     {
-        return $this->hasMany(SenderDocumentMessages::class, 'sender_message_id', 'id');
+        return $this->hasMany(Document::class, 'sender_id', 'id');
     }
 
-    public function senderLocationMessages()
+    public function locationMessages()
     {
-        return $this->hasMany(SenderLocationMessages::class, 'sender_message_id', 'id');
+        return $this->hasMany(Location::class, 'sender_id', 'id');
     }
 
-    public function senderContactMessages()
+    public function contactMessages()
     {
-        return $this->hasMany(SenderContactMessages::class, 'sender_message_id', 'id');
+        return $this->hasMany(Contact::class, 'sender_id', 'id');
     }
 
-    public function senderStickerMessages()
+    public function stickerMessages()
     {
-        return $this->hasMany(SenderStickerMessages::class, 'sender_message_id', 'id');
+        return $this->hasMany(Sticker::class, 'sender_id', 'id');
     }
-
 }

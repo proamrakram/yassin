@@ -17,7 +17,7 @@ class AudioAttachment extends Model
         'file_size',
         'audio_id',
         'messaging_product',
-        'sender_audio_message_id',
+        'audio_message_id',
     ];
 
     protected $casts = [
@@ -26,6 +26,6 @@ class AudioAttachment extends Model
 
     public function senderMessage()
     {
-        return $this->belongsTo(SenderAudioMessages::class, 'sender_audio_message_id', 'id');
+        return $this->belongsTo(Audio::class, 'audio_message_id', 'id');
     }
 }

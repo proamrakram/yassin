@@ -23,9 +23,9 @@ return new class extends Migration
             $table->string('video_id');
             $table->string('messaging_product');
             $table
-                ->foreignId('sender_video_message_id')
+                ->foreignId('video_message_id')
                 ->unique()
-                ->constrained('sender_video_messages');
+                ->constrained('videos');
             $table->timestamps();
         });
     }

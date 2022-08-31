@@ -13,7 +13,7 @@ class UpdateBotRequest extends FormRequest
      */
     public function authorize()
     {
-        return 1;
+        return true;
     }
 
     /**

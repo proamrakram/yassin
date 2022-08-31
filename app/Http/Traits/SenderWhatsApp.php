@@ -2,25 +2,25 @@
 
 namespace App\Http\Traits;
 
+use App\Http\Controllers\AudioController;
 use App\Http\Controllers\BotController;
-use App\Http\Controllers\SenderAudioMessagesController;
-use App\Http\Controllers\SenderContactMessagesController;
-use App\Http\Controllers\SenderDocumentMessagesController;
-use App\Http\Controllers\SenderImageMessagesController;
-use App\Http\Controllers\SenderLocationMessagesController;
-use App\Http\Controllers\SenderStickerMessagesController;
-use App\Http\Controllers\SenderTextMessagesController;
-use App\Http\Controllers\SenderVideoMessagesController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\LocationController;
+use App\Http\Controllers\StickerController;
+use App\Http\Controllers\TextController;
+use App\Http\Controllers\VideoController;
 use App\Http\Controllers\WhatsAppSenderController;
+use App\Http\Requests\StoreAudioRequest;
 use App\Http\Requests\StoreBotRequest;
-use App\Http\Requests\StoreSenderAudioMessagesRequest;
-use App\Http\Requests\StoreSenderContactMessagesRequest;
-use App\Http\Requests\StoreSenderDocumentMessagesRequest;
-use App\Http\Requests\StoreSenderImageMessagesRequest;
-use App\Http\Requests\StoreSenderLocationMessagesRequest;
-use App\Http\Requests\StoreSenderStickerMessagesRequest;
-use App\Http\Requests\StoreSenderTextMessagesRequest;
-use App\Http\Requests\StoreSenderVideoMessagesRequest;
+use App\Http\Requests\StoreContactRequest;
+use App\Http\Requests\StoreDocumentRequest;
+use App\Http\Requests\StoreImageRequest;
+use App\Http\Requests\StoreLocationRequest;
+use App\Http\Requests\StoreStickerRequest;
+use App\Http\Requests\StoreTextRequest;
+use App\Http\Requests\StoreVideoRequest;
 use App\Http\Requests\StoreWhatsAppSenderRequest;
 use App\Models\Bot;
 use App\Models\WhatsAppSender;
@@ -76,89 +76,89 @@ trait SenderWhatsApp
 
     public function saveSenderTextMessages($sender, $message)
     {
-        $request = new StoreSenderTextMessagesRequest();
+        $request = new StoreTextRequest();
 
-        $senderTextMessages = new SenderTextMessagesController();
+        $text_messages = new TextController();
 
-        $senderTextMessages = $senderTextMessages->store($request, $sender, $message);
+        $text_messages = $text_messages->store($request, $sender, $message);
 
-        return $senderTextMessages;
+        return $text_messages;
     }
 
     public function saveSenderDocumentMessages($sender, $message)
     {
-        $request = new StoreSenderDocumentMessagesRequest();
+        $request = new StoreDocumentRequest();
 
-        $senderDocumentMessages = new SenderDocumentMessagesController();
+        $document_messages = new DocumentController();
 
-        $senderDocumentMessages = $senderDocumentMessages->store($request, $sender, $message);
+        $document_messages = $document_messages->store($request, $sender, $message);
 
-        return $senderDocumentMessages;
+        return $document_messages;
     }
 
     public function saveSenderStickerMessages($sender, $message)
     {
-        $request = new StoreSenderStickerMessagesRequest();
+        $request = new StoreStickerRequest();
 
-        $senderStickerMessages = new SenderStickerMessagesController();
+        $sticker_messages = new StickerController();
 
-        $senderStickerMessages = $senderStickerMessages->store($request, $sender, $message);
+        $sticker_messages = $sticker_messages->store($request, $sender, $message);
 
-        return $senderStickerMessages;
+        return $sticker_messages;
     }
 
     public function saveSenderAudioMessages($sender, $message)
     {
-        $request = new StoreSenderAudioMessagesRequest();
+        $request = new StoreAudioRequest();
 
-        $senderAudioMessages = new SenderAudioMessagesController();
+        $audio_messages = new AudioController();
 
-        $senderAudioMessages = $senderAudioMessages->store($request, $sender, $message);
+        $audio_messages = $audio_messages->store($request, $sender, $message);
 
-        return $senderAudioMessages;
+        return $audio_messages;
     }
 
     public function saveSenderVideoMessages($sender, $message)
     {
-        $request = new StoreSenderVideoMessagesRequest();
+        $request = new StoreVideoRequest();
 
-        $senderVideoMessages = new SenderVideoMessagesController();
+        $video_messages = new VideoController();
 
-        $senderVideoMessages = $senderVideoMessages->store($request, $sender, $message);
+        $video_messages = $video_messages->store($request, $sender, $message);
 
-        return $senderVideoMessages;
+        return $video_messages;
     }
 
     public function saveSenderImageMessages($sender, $message)
     {
-        $request = new StoreSenderImageMessagesRequest();
+        $request = new StoreImageRequest();
 
-        $senderImageMessages = new SenderImageMessagesController();
+        $image_messages = new ImageController();
 
-        $senderImageMessages = $senderImageMessages->store($request, $sender, $message);
+        $image_messages = $image_messages->store($request, $sender, $message);
 
-        return $senderImageMessages;
+        return $image_messages;
     }
 
     public function saveSenderLocationMessages($sender, $message)
     {
-        $request = new StoreSenderLocationMessagesRequest();
+        $request = new StoreLocationRequest();
 
-        $senderLocationMessages = new SenderLocationMessagesController();
+        $location_messages = new LocationController();
 
-        $senderLocationMessages = $senderLocationMessages->store($request, $sender, $message);
+        $location_messages = $location_messages->store($request, $sender, $message);
 
-        return $senderLocationMessages;
+        return $location_messages;
     }
 
     public function saveSenderContactMessages($sender, $message)
     {
-        $request = new StoreSenderContactMessagesRequest();
+        $request = new StoreContactRequest();
 
-        $senderContactMessages = new SenderContactMessagesController();
+        $contact_messages = new ContactController();
 
-        $senderContactMessages = $senderContactMessages->store($request, $sender, $message);
+        $contact_messages = $contact_messages->store($request, $sender, $message);
 
-        return $senderContactMessages;
+        return $contact_messages;
     }
 }

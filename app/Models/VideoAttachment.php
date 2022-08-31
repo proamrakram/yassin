@@ -17,7 +17,7 @@ class VideoAttachment extends Model
         'file_size',
         'video_id',
         'messaging_product',
-        'sender_video_message_id',
+        'video_message_id',
     ];
 
     protected $casts = [
@@ -26,7 +26,7 @@ class VideoAttachment extends Model
 
     public function senderVideoMessage()
     {
-        return $this->belongsTo(SenderVideoMessages::class, 'sender_video_message_id', 'id');
+        return $this->belongsTo(Video::class, 'video_message_id', 'id');
     }
 
 }
