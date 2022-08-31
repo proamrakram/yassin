@@ -290,7 +290,7 @@
 
                 <div class="col-lg-8 cl-md-10 mx-auto mb-5">
                     <div class="text-center">
-                        <img class="img-chart" src="{{ asset('assets/images/img-chart.svg') }}" width="100"
+                        <img class="img-chart" src="{{ asset('assets/images/img-chart.png') }}" width="100"
                             height="100" alt="Percentage of players in the USA">
                     </div>
                 </div>
