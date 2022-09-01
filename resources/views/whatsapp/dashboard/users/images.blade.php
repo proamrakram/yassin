@@ -22,6 +22,6 @@
         </div>
     </header>
 
-    <x-portfolio.portfolio></x-portfolio.portfolio>
+    <x-portfolio></x-portfolio>
 
 </x-layouts.whatsapp>

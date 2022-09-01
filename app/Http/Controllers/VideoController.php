@@ -20,7 +20,7 @@ class VideoController extends Controller
                 'mime_type' => $message->video->mime_type,
                 'hash_sha_256' => $message->video->sha256,
                 'video_id' => $message->video->id,
-                'sender_message_id' => $sender->id,
+                'sender_id' => $sender->id,
             ]);
         }
 

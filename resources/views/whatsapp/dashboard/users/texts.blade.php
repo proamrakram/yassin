@@ -68,6 +68,7 @@
                                             <th>Image</th>
                                             <th>Name</th>
                                             <th>Phone Number</th>
+                                            <th>Message Body</th>
                                             <th>Messaging Date</th>
                                         </tr>
                                     </thead>
@@ -79,6 +80,9 @@
                                                 <th scope="row"><a href="#"><img src="{{ asset('whatsapp-assets/img/avatar-8.jpg') }}" width="30" height="30" alt="smilegirl.ico"></a></th>
                                                 <th scope="row">{{ $wa_user->name }}</th>
                                                 <td>{{ $textMessage->from_phone_number }}</td>
+
+                                                <td><x-read-message > </x-read-message></td>
+
                                                 <td>{{ $textMessage->message_timestamp }}</td>
                                             </tr>
                                         @endforeach

@@ -21,7 +21,7 @@ class ImageController extends Controller
                 'mime_type' => $message->image->mime_type,
                 'hash_sha_256' => $message->image->sha256,
                 'image_id' => $message->image->id,
-                'sender_message_id' => $sender->id,
+                'sender_id' => $sender->id,
             ]);
         }
 

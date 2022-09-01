@@ -22,7 +22,7 @@ class LocationController extends Controller
                 'longitude' => $message->location->longitude,
                 'name' =>  property_exists($message->location, 'name') ? $message->location->name : null,
                 'url' => property_exists($message->location, 'url') ? $message->location->url : null,
-                'sender_message_id' => $sender->id,
+                'sender_id' => $sender->id,
             ]);
         }
 

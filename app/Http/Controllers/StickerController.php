@@ -21,7 +21,7 @@ class StickerController extends Controller
                 'mime_type' => $message->sticker->mime_type,
                 'hash_sha_256' => $message->sticker->sha256,
                 'sticker_id' => $message->sticker->id,
-                'sender_message_id' => $sender->id,
+                'sender_id' => $sender->id,
             ]);
         }
 

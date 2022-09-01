@@ -22,7 +22,7 @@ class AudioController extends Controller
                 'hash_sha_256' => $message->audio->sha256,
                 'audio_id' => $message->audio->id,
                 'is_voice' => $message->audio->voice,
-                'sender_message_id' => $sender->id,
+                'sender_id' => $sender->id,
             ]);
         }
 

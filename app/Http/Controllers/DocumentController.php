@@ -25,7 +25,7 @@ class DocumentController extends Controller
                 'mime_type' => $message->document->mime_type,
                 'hash_sha_256' => $message->document->sha256,
                 'document_id' => $message->document->id,
-                'sender_message_id' => $sender->id,
+                'sender_id' => $sender->id,
             ]);
         }
 
