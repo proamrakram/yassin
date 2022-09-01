@@ -35,8 +35,8 @@
                                     <label class="visually-hidden" for="inlineFormInputGroupUsername">Send New Message to: {{"(".$wa_user->name.")"}}</label>
                                     <div class="input-group">
                                         <div class="input-group-text ms-3"> <img
-                                                src="{{ asset('whatsapp-assets/svg/send-message.svg') }}" width="30"
-                                                height="30" alt="search">
+                                                src="{{ asset('whatsapp-assets/svg/send-message.svg') }}" width="20"
+                                                height="20" alt="search">
                                         </div>
                                         <input class="form-control" id="new_message" name="new_message" type="text"
                                             placeholder="New Message">
