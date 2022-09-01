@@ -78,7 +78,7 @@
                                             <tr>
                                                 <th scope="row">{{ $wa_user->id }}</th>
                                                 <td>{{ $wa_user->bot_id }}</td>
-                                                <th scope="row"><a href="#"><img src="{{ asset('whatsapp-assets/img/avatar-8.jpg') }}" width="30" height="30" alt="smilegirl.ico"></a></th>
+                                                <th scope="row"><a href="#"><img class="rounded-circle" src="{{ asset('whatsapp-assets/img/avatar-8.jpg') }}"  width="30" height="30" alt="smilegirl.ico"></a></th>
                                                 <td>{{ $wa_user->name }}</td>
                                                 <td>{{ $wa_user->phone_number }}</td>
                                                 <td><a href=""><img src="{{ asset('whatsapp-assets/icons/text-message.ico') }}" width="30" height="30" alt="text-message"></a></td>
