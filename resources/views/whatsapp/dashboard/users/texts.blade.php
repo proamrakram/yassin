@@ -34,7 +34,7 @@
                                 <div class="col-lg">
                                     <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
                                     <div class="input-group">
-                                        <img src="{{ asset('whatsapp-assets/icons/search.ico') }}" width="30"
+                                        <img src="{{ asset('whatsapp-assets/svg/send-message.svg') }}" width="30"
                                             height="30" alt="search">
 
                                         <div class="input-group-text ms-3">@</div>

@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<svg id="Capa_1" style="enable-background:new 0 0 200 200;" version="1.1" viewBox="0 0 200 200" xml:space="preserve"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style type="text/css">
+	.st0{fill:#CAD568;}
+	.st1{opacity:0.55;fill:#9FA34F;}
+	.st2{fill:#D7D7D7;}
+	.st3{opacity:0.1;fill:#636363;}
+	.st4{fill:#EFEFEE;}
+	.st5{fill:#BA6363;}
+	.st6{opacity:0.55;fill:#924B4B;}
+	.st7{fill:#FFFFFF;}
+	.st8{fill:#A5639D;}
+	.st9{opacity:0.55;fill:#8F4B8F;}
+	.st10{fill:#78A7CA;}
+	.st11{fill:#6188AE;}
+	.st12{opacity:0.45;fill:#6A84B4;}
+	.st13{fill:#62A99D;}
+	.st14{opacity:0.55;fill:#498980;}
+	.st15{fill:#E1D64F;}
+	.st16{fill:#D2CB4D;}
+	.st17{opacity:0.55;fill:#AFA747;}
+	.st18{fill:#5D6BA2;}
+	.st19{opacity:0.55;fill:#464781;}
+	.st20{fill:#63A460;}
+	.st21{opacity:0.55;fill:#4E894A;}
+	.st22{fill:#BD7E34;}
+	.st23{opacity:0.55;fill:#985B1E;}
+	.st24{fill:#ACC567;}
+	.st25{opacity:0.55;fill:#799B4F;}
+	.st26{fill:#C23C3F;}
+	.st27{opacity:0.55;fill:#6D191B;}
+    </style>
+    <g>
+        <g>
+            <path class="st0" d="M161.8,61.2l35.3,40.2c0-0.7,0-1.4,0-2.1c0-53.9-43.7-97.6-97.6-97.6S1.9,45.4,1.9,99.3    c0,49.6,37,90.6,85,96.8L39,141.5L161.8,61.2z"/>
+            <path class="st0" d="M197.1,101.4l-35.3-40.2L39,141.5l47.9,54.6c4.1,0.5,8.3,0.8,12.6,0.8C152.7,196.9,196,154.3,197.1,101.4z"/>
+            <path class="st1" d="M197.1,101.4l-35.3-40.2L39,141.5l47.9,54.6c4.1,0.5,8.3,0.8,12.6,0.8C152.7,196.9,196,154.3,197.1,101.4z"/>
+        </g>
+        <g>
+            <rect class="st2" height="80.3" width="122.8" x="39" y="61.2"/>
+            <polygon class="st3" points="39,141.5 100.4,87.2 161.8,141.5   "/>
+            <polygon class="st4" points="39,61.2 100.4,123.7 161.8,61.2   "/>
+        </g>
+    </g>
+</svg>
