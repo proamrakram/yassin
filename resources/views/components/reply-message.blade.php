@@ -15,6 +15,8 @@
 
             <form method="POST" action="{{ route('admin.reply-to-message', $message->id) }}">
 
+                @csrf
+
                 <div class="modal-body">
                     <p>Whats App User Data and Replying Message</p>
 
@@ -22,7 +24,7 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label class="form-label" for="sender_message_name">Whats App's Name</label>
-                                <input class="form-control" id="sender_message_name" type="tel"
+                                <input class="form-control" name="sender_message_name" id="sender_message_name" type="tel"
                                     aria-describedby="emailHelp" value="{{ $message->senderMessage->name }}" disabled>
                                 <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
                                 </div>
@@ -32,7 +34,7 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label class="form-label" for="phone_number">Phone Number</label>
-                                <input class="form-control" id="phone_number" type="tel"
+                                <input class="form-control" name="phone_number" id="phone_number" type="tel"
                                     aria-describedby="emailHelp" value="{{ $message->from_phone_number }}" disabled>
                                 <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
                                 </div>
@@ -42,7 +44,7 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label class="form-label" for="message_date">Message Date</label>
-                                <input class="form-control" id="message_date" type="tel"
+                                <input class="form-control" name="message_date" id="message_date" type="tel"
                                     aria-describedby="emailHelp" value="{{ $message->message_timestamp }}" disabled>
                                 <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
                                 </div>
@@ -52,7 +54,7 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label class="form-label" for="whats_app_message_id">Whats App Message ID</label>
-                                <input class="form-control" id="whats_app_message_id" type="number"
+                                <input class="form-control" name="whats_app_message_id" id="whats_app_message_id" type="number"
                                     aria-describedby="emailHelp" value="{{ $message->message_id }}" disabled>
                                 <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
                                 </div>
