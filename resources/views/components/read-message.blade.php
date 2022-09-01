@@ -11,7 +11,7 @@
 
             <div class="modal-header">
                 <h5 class="modal-title" id="mainTitle{{ $message->id }}">Message from: </h5>
-                <span>   {{ $message->senderMessage->name }}</span>
+                <span class="ms-2">   {{ $message->senderMessage->name }}</span>
 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
