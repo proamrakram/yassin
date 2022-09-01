@@ -1,0 +1,14 @@
+{
+    "messaging_product": "whatsapp",
+    "contacts": [
+        {
+            "input": "972599916672",
+            "wa_id": "972599916672"
+        }
+    ],
+    "messages": [
+        {
+            "id": "wamid.HBgMOTcyNTk5OTE2NjcyFQIAERgSNjQ4RTY4ODVGRDk4OEZERUIyAA=="
+        }
+    ]
+}
