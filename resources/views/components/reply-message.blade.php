@@ -58,6 +58,11 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <label class="form-label" for="message_body">Message Body</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
                             <textarea name="message_body" id="message_body{{ $message->id }}" rows="5" disabled>{{ $message->body }}</textarea>
                         </div>
                     </div>
