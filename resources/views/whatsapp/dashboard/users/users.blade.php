@@ -81,10 +81,10 @@
                                                 <th scope="row"><a href="#"><img class="rounded-circle" src="{{ asset('whatsapp-assets/img/avatar-8.jpg') }}"  width="30" height="30" alt="smilegirl.ico"></a></th>
                                                 <td>{{ $wa_user->name }}</td>
                                                 <td>{{ $wa_user->phone_number }}</td>
-                                                <td><a href="{{route('admin.user-texts', $wa_user->id)}}"><img src="{{ asset('whatsapp-assets/icons/text-message.ico') }}" width="30" height="30" alt="text-message"></a></td>
-                                                <td><a href=""><img src="{{ asset('whatsapp-assets/icons/image-message.ico') }}" width="30" height="30" alt="image-message"></a></td>
-                                                <td><a href=""><img src="{{ asset('whatsapp-assets/icons/video-message.ico') }}" width="30" height="30" alt="video-message"></a></td>
-                                                <td><a href=""><img src="{{ asset('whatsapp-assets/icons/document-message.ico') }}" width="30" height="30" alt="document-message"></a></td>
+                                                <td><a href="{{route('admin.user-texts', $wa_user->id)}}"><img src="{{ asset('whatsapp-assets/icons/text-messages.svg') }}" width="30" height="30" alt="text-message"></a></td>
+                                                <td><a href=""><img src="{{ asset('whatsapp-assets/svg/image-messages.svg') }}" width="30" height="30" alt="image-message"></a></td>
+                                                <td><a href=""><img src="{{ asset('whatsapp-assets/svg/video-messages.svg') }}" width="30" height="30" alt="video-message"></a></td>
+                                                <td><a href=""><img src="{{ asset('whatsapp-assets/svg/document-messages.svg') }}" width="30" height="30" alt="document-message"></a></td>
                                             </tr>
                                         @endforeach
 
