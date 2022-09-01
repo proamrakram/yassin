@@ -53,14 +53,30 @@
                         </div>
                     </div>
 
+
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label class="form-label" for="message_body">Message Body</label>
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="col-lg-12">
+                            <div class="form-group">
+                                <textarea name="message_body" id="message_body" cols="20" rows="10" disabled>{{ $message->body }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    {{-- <div class="row">
+                        <div class="col-lg-12">
                             <div class="mb-3">
-                                <label class="form-label" for="message_body">Message</label>
                                 <textarea name="message_body" id="message_body" cols="30" rows="10" disabled>{{ $message->body }}</textarea>
                             </div>
                         </div>
-
                         <div class="col-lg-12">
                             <div class="mb-3">
                                 <label class="form-label" for="password">Your Replying to the Message</label>
@@ -68,7 +84,7 @@
                                     placeholder="Enter your text message to reply on the above message from whatsapp user!!"></textarea>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
 
