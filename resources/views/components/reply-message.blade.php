@@ -1,10 +1,10 @@
 <a class="btn btn-sm btn-primary" data-bs-toggle="modal" href="#replyMessage{{ $message->id }}" role="button">Reply</a>
 
-<div class="modal fade" id="replyMessage{{ $message->id }}" aria-hidden="true" aria-labelledby="replyMessageTitle{{ $message->id }}" tabindex="-1">
+<div class="modal fade" id="replyMessage{{ $message->id }}" aria-hidden="true"
+    aria-labelledby="replyMessageTitle{{ $message->id }}" tabindex="0">
 
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-
 
             <div class="modal-header">
                 <h5 class="modal-title" id="replyMessageTitle{{ $message->id }}">Reply to Message's </h5>
@@ -12,7 +12,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form method="POST" action="#" >
+            <form method="POST" action="#">
                 <div class="modal-body">
                     <p>Lorem ipsum dolor sit amet consectetur.</p>
                     <div class="row">
@@ -38,8 +38,9 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-sm btn-primary" >Reply</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                    <button type="submit" class="btn btn-sm btn-primary">Reply</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        aria-label="Close">Close</button>
                 </div>
             </form>
         </div>
