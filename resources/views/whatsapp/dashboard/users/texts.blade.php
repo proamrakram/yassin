@@ -52,7 +52,7 @@
                                                 <td>{{ $textMessage->from_phone_number }}</td>
 
                                                 <td>
-                                                    <x-read-message :message="$textMessage"></x-read-message>
+                                                    <x-reply-message :message="$textMessage"></x-reply-message>
                                                 </td>
 
                                                 <td>{{ $textMessage->message_timestamp }}</td>

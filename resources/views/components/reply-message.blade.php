@@ -1,5 +1,6 @@
-<a class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal"
-    data-bs-target="#replyMessage{{ $message->id }}">Reply</a>
+<a class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#replyMessage{{ $message->id }}">
+    <img src="{{ asset('whatsapp-assets/svg/read-message.svg') }}" width="30" height="20" alt="read-message.svg">
+</a>
 
 <div class="modal fade text-start" id="replyMessage{{ $message->id }}" tabindex="-1"
     aria-labelledby="replyMessageTitle{{ $message->id }}" aria-hidden="true">
@@ -18,11 +19,12 @@
                     <p>Lorem ipsum dolor sit amet consectetur.</p>
                     <div class="row">
 
+
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <label class="form-label" for="phonenumber">Phone Number</label>
-                                <input class="form-control" id="phonenumber" type="tel"
-                                    aria-describedby="emailHelp">
+                                <label class="form-label" for="sendermessagename">Whats App's Name</label>
+                                <input class="form-control" id="sendermessagename" type="tel"
+                                    aria-describedby="emailHelp" value="{{ $message->senderMessage->name }}" disabled>
                                 <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
                                 </div>
                             </div>
@@ -30,8 +32,36 @@
 
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <label class="form-label" for="password">Password</label>
-                                <input class="form-control" id="password" type="password">
+                                <label class="form-label" for="phone_number">Phone Number</label>
+                                <input class="form-control" id="phone_number" type="tel"
+                                    aria-describedby="emailHelp" value="{{ $message->from_phone_number }}" disabled>
+                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="message_date">Message Date</label>
+                                <input class="form-control" id="message_date" type="tel"
+                                    aria-describedby="emailHelp" value="{{ $message->from_phone_number }}" disabled>
+                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <label class="form-label" for="message_body">Message</label>
+                                <textarea name="message_body" id="message_body" cols="30" rows="10" disabled>{{ $message->body }}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <label class="form-label" for="password">Your Replying to the Message</label>
+                                <textarea name="message_reply" id="message_reply" cols="30" rows="10"
+                                    placeholder="Enter your text message to reply on the above message from whatsapp user!!"></textarea>
                             </div>
                         </div>
 
