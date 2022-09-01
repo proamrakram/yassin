@@ -1,7 +1,8 @@
 <a class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal"
     data-bs-target="#replyMessage{{ $message->id }}">Reply</a>
 
-<div class="modal fade text-start" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade text-start" id="replyMessage{{ $message->id }}" tabindex="-1"
+    aria-labelledby="replyMessageTitle{{ $message->id }}" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 
