@@ -23,4 +23,8 @@ Route::controller(DashboardController::class)->prefix('admin')->as('admin.')->gr
     Route::get('user-images/{user}', 'imagesUser')->name('user-images');
     Route::get('user-texts/{user}', 'textsUser')->name('user-texts');
 
+    #Post Data
+    Route::post('reply-to-message', 'replyToMessage')->name('reply-to-message');
 });
+
+

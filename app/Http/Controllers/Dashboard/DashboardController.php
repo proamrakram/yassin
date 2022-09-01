@@ -37,4 +37,9 @@ class DashboardController extends Controller
         $wa_user = WhatsAppSender::firstWhere('id', $user_id);
         return view('whatsapp.dashboard.users.texts', compact(['wa_user']));
     }
+
+    public function replyToMessage(Request $request, $message_id)
+    {
+        dd($request->all());
+    }
 }

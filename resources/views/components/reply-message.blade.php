@@ -13,19 +13,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form method="POST" action="#">
+            <form method="POST" action="{{ route('admin.reply-to-message', $message->id) }}">
 
                 <div class="modal-body">
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
-
+                    <p>Whats App User Data and Replying Message</p>
 
                     <div class="row">
-
-
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <label class="form-label" for="sendermessagename">Whats App's Name</label>
-                                <input class="form-control" id="sendermessagename" type="tel"
+                                <label class="form-label" for="sender_message_name">Whats App's Name</label>
+                                <input class="form-control" id="sender_message_name" type="tel"
                                     aria-describedby="emailHelp" value="{{ $message->senderMessage->name }}" disabled>
                                 <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
                                 </div>
@@ -51,9 +48,18 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="whats_app_message_id">Whats App Message ID</label>
+                                <input class="form-control" id="whats_app_message_id" type="number"
+                                    aria-describedby="emailHelp" value="{{ $message->message_id }}" disabled>
+                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-
-
 
                     <div class="row">
                         <div class="col-lg-6">
@@ -63,26 +69,23 @@
 
                     <div class="row">
                         <div class="col-lg-12">
-                            <textarea name="message_body" id="message_body{{ $message->id }}" rows="5" disabled>{{ $message->body }}</textarea>
+                            <textarea class="full-width" name="message_body" id="message_body{{ $message->id }}" rows="5" disabled>{{ $message->body }}</textarea>
                         </div>
                     </div>
 
-
-
-                    {{-- <div class="row">
-                        <div class="col-lg-12">
-                            <div class="mb-3">
-                                <textarea name="message_body" id="message_body" cols="30" rows="10" disabled>{{ $message->body }}</textarea>
-                            </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label class="form-label" for="message_reply{{ $message->id }}">Your Replying to the
+                                Message: </label>
                         </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-lg-12">
-                            <div class="mb-3">
-                                <label class="form-label" for="password">Your Replying to the Message</label>
-                                <textarea name="message_reply" id="message_reply" cols="30" rows="10"
-                                    placeholder="Enter your text message to reply on the above message from whatsapp user!!"></textarea>
-                            </div>
+                            <textarea class="full-width" name="message_reply" id="message_reply{{ $message->id }}" rows="5"
+                                placeholder="Enter your text message to reply on the above message from whatsapp user!!">{{ old('message_reply') }}</textarea>
                         </div>
-                    </div> --}}
+                    </div>
 
                 </div>
 
