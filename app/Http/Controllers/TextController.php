@@ -20,7 +20,7 @@ class TextController extends Controller
                 'message_type' => $message->type,
                 'from_phone_number' => $message->from,
                 'message_timestamp' =>  date('Y/m/d H:i:s', (int)$message->timestamp),
-                'sender_message_id' => $sender->id,
+                'sender_id' => $sender->id,
             ]);
         }
 
