@@ -7,7 +7,7 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
 
-            <div class="modal-header">
+            <div class="modal-header bg-success">
                 <h5 class="modal-title" id="replyMessageTitle{{ $message->id }}">Reply to Message's </h5>
                 <span class="ms-2"> {{ $message->senderMessage->name }}</span>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
