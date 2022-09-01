@@ -3,7 +3,7 @@
 </a>
 
 <div class="modal fade" id="mainButton{{ $message->id }}" aria-hidden="true"
-    aria-labelledby="mainTitle{{ $message->id }}" tabindex="0">
+    aria-labelledby="mainTitle{{ $message->id }}" tabindex="-1">
 
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -21,7 +21,7 @@
 
             <div class="modal-footer">
                 <x-reply-message :message="$message"></x-reply-message>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
             </div>
 
         </div>
