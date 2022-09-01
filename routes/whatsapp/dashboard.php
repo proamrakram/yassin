@@ -24,7 +24,7 @@ Route::controller(DashboardController::class)->prefix('admin')->as('admin.')->gr
     Route::get('user-texts/{user}', 'textsUser')->name('user-texts');
 
     #Post Data
-    Route::post('reply-to-message', 'replyToMessage')->name('reply-to-message');
+    Route::post('reply-to-message/{message_id}', 'replyToMessage')->name('reply-to-message');
 });
 
 
