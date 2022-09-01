@@ -10,7 +10,8 @@
 
 
             <div class="modal-header">
-                <h5 class="modal-title" id="mainTitle{{ $message->id }}">Modal 1</h5>
+                <h5 class="modal-title" id="mainTitle{{ $message->id }}">Name: <small style=" font-style: light;">{{$message->senderMessage->name}}</small></h5>
+
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
