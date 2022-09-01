@@ -38,43 +38,28 @@ class BotController extends Controller
         return $bot;
     }
 
-    public function sendTextMessage()
+    public function sendTextMessage(Request $request, WhatsAppSender $wa_user)
     {
-        $message = "I am trying to do something in this world ^_^";
-
-        $whats_app_sender = WhatsAppSender::find(1);
-
-        $data = $this->sendMessageObject('text', $whats_app_sender->phone_number, [
-            'preview_url' => false,
-            'body' => $message,
-        ]);
-
-        $response = $this->send($this->headers, $data);
-
-        return $response;
+        $message_body = ['preview_url' => false, 'body' => $request->message];
+        $data = $this->sendMessageObject('text', $wa_user->phone_number, $message_body);
+        $wa_response = $this->send($this->headers, $data);
+        return $wa_response;
     }
 
-    public function sendTextMessagewithPreviewURL($message_id)
+    public function sendTextMessagewithPreviewURL(Request $request, WhatsAppSender $wa_user)
     {
-        $whats_app_sender = WhatsAppSender::find(1);
-
-        $data = $this->sendMessageObject(
-            'text',
-            $whats_app_sender->phone_number,
-            [
-                "preview_url" => true,
-                "body" => "Hello World\n\nhttps://www.youtube.com/watch?v=OTd28lXLEfc",
-            ],
-        );
-
-        return $this->send($this->headers, $data);
+        $message_body = ["preview_url" => true, "body" => "Hello World\n\nhttps://www.youtube.com/watch?v=OTd28lXLEfc",];
+        $data = $this->sendMessageObject('text', $message_body, $wa_user->phone_number);
+        $wa_response = $this->send($this->headers, $data);
+        return $wa_response;
     }
 
     public function sendReplyToTextMessage(Request $request, WhatsAppSender $wa_user, $wa_message_id)
     {
-        $message_body = [ 'preview_url' => false, 'body' => $request->message_reply, ];
-        $data = $this->replyToMessageObject($type = 'text', $wa_user->phone_number, $message_body, "wamid.HBgMOTcyNTk5OTE2NjcyFQIAERgSNjQ4RTY4ODVGRDk4OEZERUIyAA==");
+        $message_body = ['preview_url' => false, 'body' => $request->message_reply,];
+        $data = $this->replyToMessageObject($type = 'text', $wa_user->phone_number, $message_body, $wa_message_id);
         $wa_response = $this->send($this->headers, $data);
+        return $wa_response;
     }
 
 

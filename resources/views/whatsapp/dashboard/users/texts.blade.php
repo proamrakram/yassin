@@ -27,6 +27,42 @@
 
                 <div class="col-lg-12">
                     <div class="card">
+
+
+                        <div class="card-header border-bottom">
+                            <form class="row g-3 align-items-center">
+                                <div class="col-lg">
+                                    <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+                                    <div class="input-group">
+                                        <img src="{{ asset('whatsapp-assets/icons/search.ico') }}" width="30"
+                                            height="30" alt="search">
+
+                                        <div class="input-group-text ms-3">@</div>
+                                        <input class="form-control" id="inlineFormInputGroupUsername" type="text"
+                                            placeholder="Username">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg">
+                                    <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                                    <select class="form-select" id="inlineFormSelectPref">
+                                        <option selected>Choose...</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-lg">
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                </div>
+
+                            </form>
+                        </div>
+
+
+
+
                         <div class="card-body">
                             <div class="table-responsive text-center">
                                 <table class="table text-sm mb-0 table-striped table-hover">
