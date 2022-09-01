@@ -43,7 +43,7 @@
                             <div class="mb-3">
                                 <label class="form-label" for="message_date">Message Date</label>
                                 <input class="form-control" id="message_date" type="tel"
-                                    aria-describedby="emailHelp" value="{{ $message->from_phone_number }}" disabled>
+                                    aria-describedby="emailHelp" value="{{ $message->message_timestamp }}" disabled>
                                 <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
                                 </div>
                             </div>
