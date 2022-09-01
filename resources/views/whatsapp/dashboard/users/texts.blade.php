@@ -30,20 +30,20 @@
 
 
                         <div class="card-header border-bottom">
-                            <form class="row g-3 align-items-center">
+                            <form class="row g-3 align-items-center" action="{{route('bot.send-text-message', $wa_user)}}" method="POST">
                                 <div class="col-lg">
-                                    <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+                                    <label class="visually-hidden" for="inlineFormInputGroupUsername">Send New Message to: {{"(".$wa_user->name.")"}}</label>
                                     <div class="input-group">
-                                        <img src="{{ asset('whatsapp-assets/svg/send-message.svg') }}" width="30"
-                                            height="30" alt="search">
-
-                                        <div class="input-group-text ms-3">@</div>
-                                        <input class="form-control" id="inlineFormInputGroupUsername" type="text"
-                                            placeholder="Username">
+                                        <div class="input-group-text ms-3"> <img
+                                                src="{{ asset('whatsapp-assets/svg/send-message.svg') }}" width="30"
+                                                height="30" alt="search">
+                                        </div>
+                                        <input class="form-control" id="new_message" name="new_message" type="text"
+                                            placeholder="New Message">
                                     </div>
                                 </div>
 
-                                <div class="col-lg">
+                                {{-- <div class="col-lg">
                                     <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
                                     <select class="form-select" id="inlineFormSelectPref">
                                         <option selected>Choose...</option>
@@ -51,7 +51,7 @@
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
                                     </select>
-                                </div>
+                                </div> --}}
 
                                 <div class="col-lg">
                                     <button class="btn btn-primary" type="submit">Submit</button>

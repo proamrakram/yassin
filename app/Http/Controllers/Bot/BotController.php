@@ -40,25 +40,22 @@ class BotController extends Controller
 
     public function sendTextMessage(Request $request, WhatsAppSender $wa_user)
     {
-        $message_body = ['preview_url' => false, 'body' => $request->message];
-        $data = $this->sendMessageObject('text', $wa_user->phone_number, $message_body);
-        $wa_response = $this->send($this->headers, $data);
+        $message_body = ['preview_url' => false, 'body' => $request->new_message];
+        $wa_response = $this->send($this->headers, 'text', $wa_user, $message_body);
         return $wa_response;
     }
 
     public function sendTextMessagewithPreviewURL(Request $request, WhatsAppSender $wa_user)
     {
-        $message_body = ["preview_url" => true, "body" => "Hello World\n\nhttps://www.youtube.com/watch?v=OTd28lXLEfc",];
-        $data = $this->sendMessageObject('text', $message_body, $wa_user->phone_number);
-        $wa_response = $this->send($this->headers, $data);
+        $message_body = ["preview_url" => true, "body" => "Hello World\n\nhttps://www.youtube.com/watch?v=OTd28lXLEfc"];
+        $wa_response = $this->send($this->headers, 'text', $wa_user, $message_body);
         return $wa_response;
     }
 
     public function sendReplyToTextMessage(Request $request, WhatsAppSender $wa_user, $wa_message_id)
     {
         $message_body = ['preview_url' => false, 'body' => $request->message_reply,];
-        $data = $this->replyToMessageObject($type = 'text', $wa_user->phone_number, $message_body, $wa_message_id);
-        $wa_response = $this->send($this->headers, $data);
+        $wa_response = $this->reply($this->headers, 'text', $wa_user, $message_body, $wa_message_id);
         return $wa_response;
     }
 
