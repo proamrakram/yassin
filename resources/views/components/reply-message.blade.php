@@ -4,7 +4,7 @@
 
 <div class="modal fade text-start" id="replyMessage{{ $message->id }}" tabindex="-1"
     aria-labelledby="replyMessageTitle{{ $message->id }}" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
 
             <div class="modal-header">
@@ -35,7 +35,7 @@
                             <div class="mb-3">
                                 <label class="form-label" for="phone_number">Phone Number</label>
                                 <input class="form-control" name="phone_number" id="phone_number" type="tel"
-                                    aria-describedby="emailHelp" value="{{ $message->from_phone_number }}">
+                                    aria-describedby="emailHelp" value="{{ $message->from_phone_number }}" disabled>
                                 <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
                                 </div>
                             </div>
