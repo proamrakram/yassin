@@ -69,7 +69,7 @@
 
                     <div class="row">
                         <div class="col-lg-12">
-                            <textarea class="full-width" name="message_body" id="message_body{{ $message->id }}" rows="5" disabled>{{ $message->body }}</textarea>
+                            <textarea style="width: inherit;" name="message_body" id="message_body{{ $message->id }}" rows="5" disabled>{{ $message->body }}</textarea>
                         </div>
                     </div>
 
@@ -82,7 +82,7 @@
 
                     <div class="row">
                         <div class="col-lg-12">
-                            <textarea class="full-width" name="message_reply" id="message_reply{{ $message->id }}" rows="5"
+                            <textarea style="width: inherit;" name="message_reply" id="message_reply{{ $message->id }}" rows="5"
                                 placeholder="Enter your text message to reply on the above message from whatsapp user!!">{{ old('message_reply') }}</textarea>
                         </div>
                     </div>
