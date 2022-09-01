@@ -17,17 +17,13 @@
             </div>
 
             <div class="modal-body">
-
                 {{ $message->body }}
-
             </div>
 
-
-
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-toggle="modal"data-bs-dismiss="modal">Reply Message</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                    aria-label="Close">Close</button>
+                <x-reply-message :message="$message"></x-reply-message>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal"data-bs-dismiss="modal">Reply</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
             </div>
 
         </div>
