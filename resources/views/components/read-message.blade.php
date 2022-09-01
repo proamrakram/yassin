@@ -10,8 +10,8 @@
                 {{ $message->body }}
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close"
-                    data-bs-target="#second{{ $message->id }}" data-bs-toggle="modal">Send
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                <button class="btn btn-primary" data-bs-target="#second{{ $message->id }}" data-bs-toggle="modal">Send
                     a reply message</button>
             </div>
         </div>
@@ -31,8 +31,9 @@
                 <input type="text" value="Enter your message here to send it ot the user">
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close"
-                    data-bs-target="#main{{ $message->id }}" data-bs-toggle="modal">Submit</button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                <button class="btn btn-primary" data-bs-target="#main{{ $message->id }}"
+                    data-bs-toggle="modal">Submit</button>
             </div>
         </div>
     </div>
