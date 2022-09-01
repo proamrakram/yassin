@@ -17,6 +17,8 @@
 
                 <div class="modal-body">
                     <p>Lorem ipsum dolor sit amet consectetur.</p>
+
+
                     <div class="row">
 
 
@@ -49,7 +51,9 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
 
+                    <div class="row">
                         <div class="col-lg-12">
                             <div class="mb-3">
                                 <label class="form-label" for="message_body">Message</label>
@@ -64,8 +68,8 @@
                                     placeholder="Enter your text message to reply on the above message from whatsapp user!!"></textarea>
                             </div>
                         </div>
-
                     </div>
+
                 </div>
 
                 <div class="modal-footer">
