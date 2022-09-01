@@ -70,21 +70,13 @@ class BotController extends Controller
         return $this->send($this->headers, $data);
     }
 
-    public function sendReplyToTextMessage(Request $request, WhatsAppSender $wa_user , $message_id)
+    public function sendReplyToTextMessage(Request $request, WhatsAppSender $wa_user, $wa_message_id)
     {
-        dd($wa_user);
+        $message_body = [ 'preview_url' => false, 'body' => $request->message_reply, ];
+        dd($request->all(), $wa_user, $wa_message_id);
+        $data = $this->replyToMessageObject($type = 'text', $wa_user->phone_number, $message_body, $wa_message_id);
 
-        // $data = $this->replyToMessageObject(
-        //     $type = 'text',
-        //     $whats_app_sender->phone_number,
-        //     [
-        //         'preview_url' => false,
-        //         'body' => $request->message_reply,
-        //     ],
-        //     $message_id
-        // );
-
-        // return $this->send($this->headers, $data);
+        return $this->send($this->headers, $data);
     }
 
 
