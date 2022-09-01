@@ -26,8 +26,15 @@ class DashboardController extends Controller
         return view('whatsapp.dashboard.users.users', compact(['wa_users']));
     }
 
-    public function imagesUser($user)
+    public function imagesUser($user_id)
     {
-        return view('whatsapp.dashboard.users.images');
+        $wa_user = WhatsAppSender::firstWhere('id', $user_id);
+        return view('whatsapp.dashboard.users.images', compact(['wa_user']));
+    }
+
+    public function textsUser($user_id)
+    {
+        $wa_user = WhatsAppSender::firstWhere('id', $user_id);
+        return view('whatsapp.dashboard.users.texts', compact(['wa_user']));
     }
 }
