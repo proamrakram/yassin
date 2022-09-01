@@ -10,8 +10,9 @@
                 {{ $message->body }}
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-target="#second{{ $message->id }}" data-bs-toggle="modal">Send
-                    a reply message</button>
+                <a class="btn btn-primary" data-bs-target="#second{{ $message->id }}" data-bs-toggle="modal"
+                    role="button">Send
+                    a reply message</a>
             </div>
         </div>
     </div>
@@ -30,8 +31,8 @@
                 <input type="text" value="Enter your message here to send it ot the user">
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-target="#main{{ $message->id }}"
-                    data-bs-toggle="modal">Submit</button>
+                <a class="btn btn-primary" data-bs-target="#main{{ $message->id }}" data-bs-toggle="modal"
+                    role="button">Submit</a>
             </div>
         </div>
     </div>
