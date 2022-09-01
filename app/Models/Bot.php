@@ -25,4 +25,9 @@ class Bot extends Model
     {
         return $this->hasMany(WhatsAppSender::class, 'bot_id', 'id');
     }
+
+    public function botMessages()
+    {
+        return $this->hasMany(BotMessage::class, 'bot_id', 'id');
+    }
 }
