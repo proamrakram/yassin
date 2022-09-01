@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Whatsapp;
 
+use App\Http\Controllers\Controller;
 use App\Models\Document;
 use App\Http\Requests\StoreDocumentRequest;
-use App\Http\Requests\UpdateDocumentRequest;
 
 class DocumentController extends Controller
 {

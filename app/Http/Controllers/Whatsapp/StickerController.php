@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Whatsapp;
 
+use App\Http\Controllers\Controller;
 use App\Models\Sticker;
 use App\Http\Requests\StoreStickerRequest;
 use App\Http\Requests\UpdateStickerRequest;

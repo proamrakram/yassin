@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Whatsapp;
 
+use App\Http\Controllers\Controller;
 use App\Models\WhatsAppSender;
 use App\Http\Requests\StoreWhatsAppSenderRequest;
 use App\Http\Requests\UpdateWhatsAppSenderRequest;

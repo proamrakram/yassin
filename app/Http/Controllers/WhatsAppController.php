@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Bot\BotController;
+use App\Http\Controllers\Whatsapp\WhatsAppSenderController;
 use App\Http\Traits\SenderWhatsApp;
 use App\Http\Traits\WhatsAppMedia;
-use App\Models\ImageAttachment;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
 class WhatsAppController extends Controller

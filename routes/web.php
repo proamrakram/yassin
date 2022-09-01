@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/whatsapp/dashboard.php';
 
+require __DIR__ . '/whatsapp/bot.php';
+
 
 Route::get('/', function () {
     return view('index');
@@ -37,13 +39,3 @@ Route::get('/terms', function () {
     dd('ok terms');
 });
 
-
-Route::controller(BotController::class)->group(function () {
-
-    Route::get('/send-text-message', 'sendTextMessage')->name('send-text-message');
-
-    Route::get('/send-text-message-with-preview-url/{message_id}', 'sendTextMessagewithPreviewURL')->name('send-text-message-with-preview-url');
-
-    Route::get('/send-reply-to-tex-message/{message_id}','sendReplyToTextMessage')->name('send-reply-to-tex-message');
-
-});

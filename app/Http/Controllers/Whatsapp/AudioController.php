@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Whatsapp;
 
+use App\Http\Controllers\Controller;
 use App\Models\Audio;
 use App\Http\Requests\StoreAudioRequest;
 use App\Http\Requests\UpdateAudioRequest;

@@ -13,7 +13,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form action="{{ route('admin.reply-to-message', $message->id) }}" method="POST">
+            <form action="{{ route('admin.reply-to-message', [ $message->senderMessage->id ,$message->id]) }}" method="POST">
 
                 @csrf
 
