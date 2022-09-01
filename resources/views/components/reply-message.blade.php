@@ -1,4 +1,4 @@
-<a class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#replyMessage{{ $message->id }}">
+<a type="button" data-bs-toggle="modal" data-bs-target="#replyMessage{{ $message->id }}">
     <img src="{{ asset('whatsapp-assets/svg/read-message.svg') }}" width="30" height="20" alt="read-message.svg">
 </a>
 
