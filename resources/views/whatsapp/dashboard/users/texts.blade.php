@@ -31,6 +31,7 @@
 
                         <div class="card-header border-bottom">
                             <form class="row g-3 align-items-center" action="{{route('bot.send-text-message', $wa_user)}}" method="POST">
+                                @csrf
                                 <div class="col-lg">
                                     <label class="visually-hidden" for="inlineFormInputGroupUsername">Send New Message to: {{"(".$wa_user->name.")"}}</label>
                                     <div class="input-group">
