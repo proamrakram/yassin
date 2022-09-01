@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
+
     <!-- Google fonts - Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <!-- Choices CSS-->
@@ -74,8 +75,8 @@
                         <use xlink:href="#browser-window-1"> </use>
                     </svg>Whats App </a>
                 <ul class="collapse list-unstyled " id="exampledropdownDropdown">
-                    <li><a class="sidebar-link" href="{{route('admin.bots')}}">Bots</a></li>
-                    <li><a class="sidebar-link" href="{{route('admin.users')}}">Users</a></li>
+                    <li><a class="sidebar-link" href="{{ route('admin.bots') }}">Bots</a></li>
+                    <li><a class="sidebar-link" href="{{ route('admin.users') }}">Users</a></li>
                     {{-- <li><a class="sidebar-link" href="#">Page</a></li> --}}
                 </ul>
             </li>
@@ -93,8 +94,7 @@
             </li> --}}
 
         </ul>
-{{--
-        <span class="text-uppercase text-gray-500 text-sm fw-bold letter-spacing-0 mx-lg-2 heading">Second menu</span>
+        {{-- <span class="text-uppercase text-gray-500 text-sm fw-bold letter-spacing-0 mx-lg-2 heading">Second menu</span>
         <ul class="list-unstyled py-4">
             <li class="sidebar-item"> <a class="sidebar-link" href="#!">
                     <svg class="svg-icon svg-icon-xs svg-icon-heavy me-xl-2">

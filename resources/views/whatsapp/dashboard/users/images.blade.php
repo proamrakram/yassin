@@ -1,4 +1,7 @@
 <x-layouts.whatsapp>
+
+
+
     <!-- Breadcrumb-->
     <div class="bg-gray-200 text-sm">
         <div class="container-fluid">
@@ -15,12 +18,10 @@
     <!-- Page Header-->
     <header class="py-4">
         <div class="container-fluid py-2">
-            <h1 class="h3 fw-normal mb-0">Whats App Users</h1>
+            <h1 class="h3 fw-normal mb-0">Whats App User Images Gallery</h1>
         </div>
     </header>
 
     <x-portfolio.portfolio></x-portfolio.portfolio>
-
-
 
 </x-layouts.whatsapp>
