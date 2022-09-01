@@ -35,7 +35,7 @@
                             <div class="mb-3">
                                 <label class="form-label" for="phone_number">Phone Number</label>
                                 <input class="form-control" name="phone_number" id="phone_number" type="tel"
-                                    aria-describedby="emailHelp" value="{{ $message->from_phone_number }}" disabled>
+                                    aria-describedby="emailHelp" value="{{ $message->from_phone_number }}">
                                 <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
                                 </div>
                             </div>
@@ -54,8 +54,7 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label class="form-label" for="whats_app_message_id">Whats App Message ID</label>
-                                <input class="form-control" name="whats_app_message_id" id="whats_app_message_id" type="number"
-                                    aria-describedby="emailHelp" value="{{ $message->message_id }}" disabled>
+                                <input class="form-control" name="whats_app_message_id" id="whats_app_message_id" type="text" aria-describedby="emailHelp" value="{{ $message->message_id }}" disabled>
                                 <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
                                 </div>
                             </div>
