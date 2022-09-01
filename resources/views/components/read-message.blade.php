@@ -1,5 +1,5 @@
 <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
-    <img src="{{ asset('whatsapp-assets/svg/read-message.svg') }}" alt="read-message.svg">
+    <img src="{{ asset('whatsapp-assets/svg/read-message.svg') }}" width="30" height="20" alt="read-message.svg">
 </a>
 
 
