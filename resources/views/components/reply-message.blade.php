@@ -63,9 +63,7 @@
 
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="form-group">
-                                <textarea name="message_body" id="message_body" rows="5" disabled>{{ $message->body }}</textarea>
-                            </div>
+                            <textarea name="message_body" id="message_body{{ $message->id }}" rows="5" disabled>{{ $message->body }}</textarea>
                         </div>
                     </div>
 
