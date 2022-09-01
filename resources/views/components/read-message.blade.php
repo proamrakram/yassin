@@ -16,8 +16,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" data-bs-target="#message{{ $message->id + 1 }}"
-                    data-bs-toggle="modal">Open second
-                    modal</button>
+                    data-bs-toggle="modal">Send a reply message</button>
             </div>
         </div>
     </div>
@@ -33,11 +32,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Hide this modal and show the first with the button below.
+                <input type="text" class="input-group-text" value="Enter your message here to send it ot the user">
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to
-                    first</button>
+                <button class="btn btn-primary" data-bs-target="#message{{ $message->id }}" data-bs-toggle="modal">Submit</button>
             </div>
         </div>
     </div>
