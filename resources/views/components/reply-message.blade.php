@@ -9,7 +9,7 @@
 
             <div class="modal-header bg-success">
                 <h5 class="modal-title" id="replyMessageTitle{{ $message->id }}">Reply to Message's </h5>
-                <span class="ms-2">{{ '('$message->senderMessage->name')' }}</span>
+                <span class="ms-2">{{ '('.$message->senderMessage->name.')' }}</span>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
