@@ -21,7 +21,7 @@ class BotController extends Controller
     public function __construct()
     {
         $this->headers = [
-            'Authorization' => "Bearer "  . "EAAFJigKvv6cBAAjosn35hgsNWbPO7iu45XwJaE7qNyHwCxNHhrPEzx9RZCp4WJji1klyNofAPVxX44A2aOOioUWLJsGMigVcRgH00qlxapnJaTgWzOgbmGmnigZBapriKxEsZCM6qFKfA43LxeogdnLAAtk8edtN4x4hH8P1BdAsHtDzcwbGzuZCqiBVvstWE2Eom7QEWgFKwlKppQnL",
+            'Authorization' => "Bearer "  . env('WHATS_APP_TOKEN', "EAAFJigKvv6cBAAjosn35hgsNWbPO7iu45XwJaE7qNyHwCxNHhrPEzx9RZCp4WJji1klyNofAPVxX44A2aOOioUWLJsGMigVcRgH00qlxapnJaTgWzOgbmGmnigZBapriKxEsZCM6qFKfA43LxeogdnLAAtk8edtN4x4hH8P1BdAsHtDzcwbGzuZCqiBVvstWE2Eom7QEWgFKwlKppQnL"),
             'Content-Type' => 'application/json',
         ];
     }
