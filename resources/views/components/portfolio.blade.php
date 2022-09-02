@@ -1,18 +1,22 @@
 <div class="container-fluid">
 
-    <div class="row mt-2">
-        <div class="col-12 col-md-3 mb-3">
-            <input type="text" class="form-control" placeholder="Search cards" aria-label="Search cards"
-                onkeyup="searchFilter()">
+    @if ($wauser->imageMessages->count() > 0)
+        <div class="row mt-2">
+            <div class="col-12 col-md-3 mb-3">
+                <input type="text" class="form-control" placeholder="Search cards" aria-label="Search cards"
+                    onkeyup="searchFilter()">
+            </div>
         </div>
-    </div>
+    @endif
+
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
         @foreach ($wauser->imageMessages as $image)
             <div class="col">
                 <div class="card h-100">
-                    <img src="https://source.unsplash.com/random?orientation=landscape&sig=123" class="card-img-top" style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <img src="https://source.unsplash.com/random?orientation=landscape&sig=123" class="card-img-top"
+                        style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
                     <div class="card-body  d-flex flex-column">
                         <h5 class="card-title">Name:</h5> <span>{{ '(' . $wauser->name . ')' }}</span>
                         <h5 class="card-title">Phone Number:</h5><span>{{ $image->from_phone_number }}</span>
