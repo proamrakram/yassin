@@ -54,35 +54,35 @@ class WhatsAppController extends Controller
                 $sender_text_message = $this->saveSenderTextMessages($sender_whats_app, $this->value->messages[0]);
             }
 
-            if ($this->value->messages && $this->value->messages[0]->type == 'document') {
+            if (isset($this->value->messages) && $this->value->messages[0]->type == 'document') {
                 $sender_document_message = $this->saveSenderDocumentMessages($sender_whats_app, $this->value->messages[0]);
                 $this->getFileUrl($sender_document_message, 'document');
             }
 
-            if ($this->value->messages && $this->value->messages[0]->type == 'audio') {
+            if (isset($this->value->messages) && $this->value->messages[0]->type == 'audio') {
                 $sender_audio_message = $this->saveSenderAudioMessages($sender_whats_app, $this->value->messages[0]);
                 $this->getFileUrl($sender_audio_message, 'audio');
             }
 
-            if ($this->value->messages && $this->value->messages[0]->type == 'video') {
+            if (isset($this->value->messages) && $this->value->messages[0]->type == 'video') {
                 $sender_video_message = $this->saveSenderVideoMessages($sender_whats_app, $this->value->messages[0]);
                 $this->getFileUrl($sender_video_message, 'video');
             }
 
-            if ($this->value->messages && $this->value->messages[0]->type == 'image') {
+            if (isset($this->value->messages) && $this->value->messages[0]->type == 'image') {
                 $sender_image_message = $this->saveSenderImageMessages($sender_whats_app, $this->value->messages[0]);
                 $this->getFileUrl($sender_image_message, 'image');
             }
 
-            if ($this->value->messages && $this->value->messages[0]->type == 'location') {
+            if (isset($this->value->messages) && $this->value->messages[0]->type == 'location') {
                 $sender_location_message = $this->saveSenderLocationMessages($sender_whats_app, $this->value->messages[0]);
             }
 
-            if ($this->value->messages && $this->value->messages[0]->type == 'contacts') {
+            if (isset($this->value->messages) && $this->value->messages[0]->type == 'contacts') {
                 $sender_contact_message = $this->saveSenderContactMessages($sender_whats_app, $this->value->messages[0]);
             }
 
-            if ($this->value->messages && $this->value->messages[0]->type == 'sticker') {
+            if (isset($this->value->messages) && $this->value->messages[0]->type == 'sticker') {
                 $sender_sticker_message = $this->saveSenderStickerMessages($sender_whats_app, $this->value->messages[0]);
             }
         }
