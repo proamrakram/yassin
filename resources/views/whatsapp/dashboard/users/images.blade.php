@@ -119,13 +119,14 @@
 
                 const list = document.createElement('ol');
                 list.style.marginLeft = "16px";
+                const br = document.createElement('br');
 
                 for (const file of curFiles) {
 
                     const para = document.createElement('p');
 
                     if (validFileType(file)) {
-                        para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}<br>.`;
+                        para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
                         para.style.color = "blue";
                         para.style.marginLeft = "16px";
 
@@ -133,6 +134,7 @@
                         // image.src = URL.createObjectURL(file);
                         // listItem.appendChild(image);
                         preview.appendChild(para);
+                        preview.appendChild(br);
                     } else {
                         para.textContent = `File name ${file.name}: Not a valid file type. Update your selection.`;
                         para.style.color = 'red';
