@@ -131,7 +131,7 @@ class BotController extends Controller
             "to" => $wa_user->phone_number,
             "type" => "template",
             "template" => [
-                "name" => "amrakram",
+                "name" => "hello_world",
                 "language" => [
                     "code" => "en_US"
                 ],
