@@ -20,6 +20,10 @@ Route::controller(BotController::class)->prefix('bot')->as('bot.')->group(functi
 
     Route::post('reply-to-message/{wa_user}/{message_id}', 'sendReplyToTextMessage')->name('reply-to-message');
     Route::post('send-text-message/{wa_user}', 'sendTextMessage')->name('send-text-message');
+
+    Route::post('send-new-image-message/{wa_user}', 'sendImageMessage')->name('send-new-image-message');
+    Route::post('send-image-message/{wa_user}', 'sendImageMessagebyID')->name('send-image-message');
+
 });
 
 

@@ -23,8 +23,8 @@
     </header>
 
     <div class="card-header border-bottom">
-        <form class="row g-3 align-items-center" action="{{ route('bot.send-text-message', $wa_user) }}" method="POST"
-            enctype="multipart/form-data">
+        <form class="row g-3 align-items-center" action="{{ route('bot.send-image-message', $wa_user) }}" method="POST" enctype="multipart/form-data">
+
             @csrf
 
             <div class="col-lg">

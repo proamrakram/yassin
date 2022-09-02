@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Bot;
 use App\Http\Requests\StoreBotRequest;
 use App\Http\Traits\SendMessages;
+use App\Http\Traits\uploadOne;
 use App\Models\SenderDocumentMessages;
 use App\Models\SenderVideoMessages;
 use App\Models\WhatsAppSender;
@@ -14,6 +15,7 @@ use Illuminate\Http\Request;
 class BotController extends Controller
 {
     use SendMessages;
+    use uploadOne;
 
     private $headers;
 
@@ -27,7 +29,7 @@ class BotController extends Controller
 
     public function testSending()
     {
-        $message_body = ['preview_url' => false, 'body' =>"Hello Amr Akram"];
+        $message_body = ['preview_url' => false, 'body' => "Hello Amr Akram"];
         return $this->sendTest($this->headers, 'text', '972599916672', $message_body);
     }
 
@@ -74,32 +76,35 @@ class BotController extends Controller
         return redirect()->back()->with('success', 'Message has been sent successfully!!');
     }
 
+    public function sendImageMessage(Request $request, WhatsAppSender $wa_user)
+    {
+        if ($request->hasFile('new_image_message')) {
+            $file = $request->file('new_image_message');
+            if ($file->isValid()) {
+                $folder = '/uploading';
+
+                $file_name = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+
+                $path = 'storage/app/public' . $folder . '/' . $file_name . '.' . $file->getClientOriginalExtension();
+
+                $this->uploadOne($file, $this->folder, 'uploads', $this->file_name);
+            }
+        }
+    }
+
+
+    public function sendImageMessagebyID(Request $request, WhatsAppSender $wa_user, $wa_image_id)
+    {
+        $message_body = ['id' => $wa_image_id];
+        $result = $this->send($this->headers, 'image', $wa_user, $message_body);
+        if (!$result) {
+            return redirect()->back()->with('success', 'Message has not been sent successfully!!');
+        }
+        return redirect()->back()->with('success', 'Message has been sent successfully!!');
+    }
 
 
 
-
-
-
-
-
-
-
-
-
-    // public function sendImageMessagebyID($image_id)
-    // {
-    //     $whats_app_sender = WhatsAppSender::find(1);
-
-    //     $data = $this->sendMessageObject(
-    //         'image',
-    //         $whats_app_sender->phone_number,
-    //         [
-    //             'id' => $image_id
-    //         ],
-    //     );
-
-    //     return $this->send($this->headers, $data);
-    // }
 
     // public function sendReplyToImageMessageByID($message_id, $image_id)
     // {
