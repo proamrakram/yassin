@@ -100,7 +100,7 @@ class BotController extends Controller
     {
         $message_body = ['id' => $wa_image_id];
         $result = $this->send($this->headers, 'image', $wa_user, $message_body);
-        sleep(5);
+
         if (!$result) {
             return redirect()->back()->with('success', 'Message has not been sent successfully!!');
         }
@@ -111,7 +111,7 @@ class BotController extends Controller
     {
         $message_body = ['link' => $url];
         $result = $this->send($this->headers, 'image', $wa_user, $message_body);
-
+        sleep(5);
         if (Storage::disk('public')->exists($path)) {
             Storage::disk('public')->delete($path);
         }
