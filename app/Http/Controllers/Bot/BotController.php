@@ -16,12 +16,11 @@ class BotController extends Controller
     use SendMessages;
 
     private $headers;
-    private $token;
 
     public function __construct()
     {
         $this->headers = [
-            'Authorization' => "Bearer "  . env('WHATS_APP_TOKEN', "EAAFJigKvv6cBAAjosn35hgsNWbPO7iu45XwJaE7qNyHwCxNHhrPEzx9RZCp4WJji1klyNofAPVxX44A2aOOioUWLJsGMigVcRgH00qlxapnJaTgWzOgbmGmnigZBapriKxEsZCM6qFKfA43LxeogdnLAAtk8edtN4x4hH8P1BdAsHtDzcwbGzuZCqiBVvstWE2Eom7QEWgFKwlKppQnL"),
+            'Authorization' => "Bearer "  . env('WHATS_APP_TOKEN'),
             'Content-Type' => 'application/json',
         ];
     }
