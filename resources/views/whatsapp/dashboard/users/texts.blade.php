@@ -16,7 +16,7 @@
     <!-- Page Header-->
     <header class="py-4">
         <div class="container-fluid py-2">
-            <h1 class="h3 fw-normal mb-0">Whats App User Texts Messages</h1>
+            <h1 class="h3 fw-normal mb-0">Whats App Texts Messages From {{"(".$wa_user->name.")"}} </h1>
         </div>
     </header>
 

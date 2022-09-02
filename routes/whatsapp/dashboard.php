@@ -20,8 +20,9 @@ Route::controller(DashboardController::class)->prefix('admin')->as('admin.')->gr
     Route::get('home', 'home')->name('home');
     Route::get('bots', 'bots')->name('bots');
     Route::get('users', 'users')->name('users');
-    Route::get('user-images/{user}', 'imagesUser')->name('user-images');
+
     Route::get('user-texts/{user}', 'textsUser')->name('user-texts');
+    Route::get('user-images/{user}', 'imagesUser')->name('user-images');
 
 });
 

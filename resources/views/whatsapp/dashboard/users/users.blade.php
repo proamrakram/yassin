@@ -82,7 +82,7 @@
                                                 <td>{{ $wa_user->name }}</td>
                                                 <td>{{ $wa_user->phone_number }}</td>
                                                 <td><a href="{{route('admin.user-texts', $wa_user->id)}}"><img src="{{ asset('whatsapp-assets/svg/text-messages.svg') }}" width="30" height="30" alt="text-message"></a></td>
-                                                <td><a href=""><img src="{{ asset('whatsapp-assets/svg/image-messages.svg') }}" width="30" height="30" alt="image-message"></a></td>
+                                                <td><a href="{{route('admin.user-images', $wa_user->id)}}"><img src="{{ asset('whatsapp-assets/svg/image-messages.svg') }}" width="30" height="30" alt="image-message"></a></td>
                                                 <td><a href=""><img src="{{ asset('whatsapp-assets/svg/video-messages.svg') }}" width="30" height="30" alt="video-message"></a></td>
                                                 <td><a href=""><img src="{{ asset('whatsapp-assets/svg/document-messages.svg') }}" width="30" height="30" alt="document-message"></a></td>
                                             </tr>
