@@ -40,7 +40,7 @@
                         class="form-control imageInput" multiple>
                 </div>
                 <div class="input-group preview">
-                    <p class="ms-3 text-danger">No Image File currently selected for upload</p>
+                    <span class="ms-3 text-danger">No Image File currently selected for upload</span>
                 </div>
             </div>
 
