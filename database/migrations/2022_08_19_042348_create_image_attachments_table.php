@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('image_attachments', function (Blueprint $table) {
             $table->id();
-            $table->text('image_url');
+            $table->text('wa_image_url');
+            $table->string('image_url', 500);
             $table->boolean('is_url_expired')->default(true);
             $table->string('mime_type');
             $table->string('hash_sha256');

@@ -91,22 +91,22 @@ class WhatsAppController extends Controller
     public function getFileUrl($sender_file, $type)
     {
         if ($type == 'document') {
-            $url = $url = 'https://graph.facebook.com/v14.0/' . $sender_file->document_id;
+            $url = 'https://graph.facebook.com/v14.0/' . $sender_file->document_id;
             return $this->saveFile($sender_file, $url, $type);
         }
 
         if ($type == 'audio') {
-            $url = $url = 'https://graph.facebook.com/v14.0/' . $sender_file->audio_id;
+            $url = 'https://graph.facebook.com/v14.0/' . $sender_file->audio_id;
             return $this->saveFile($sender_file, $url, $type);
         }
 
         if ($type == 'video') {
-            $url = $url = 'https://graph.facebook.com/v14.0/' . $sender_file->video_id;
+            $url = 'https://graph.facebook.com/v14.0/' . $sender_file->video_id;
             return $this->saveFile($sender_file, $url, $type);
         }
 
         if ($type == 'image') {
-            $url = $url = 'https://graph.facebook.com/v14.0/' . $sender_file->image_id;
+            $url = 'https://graph.facebook.com/v14.0/' . $sender_file->image_id;
             return $this->saveFile($sender_file, $url, $type);
         }
     }

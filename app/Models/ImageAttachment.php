@@ -10,6 +10,7 @@ class ImageAttachment extends Model
     use HasFactory;
 
     protected $fillable = [
+        'wa_image_url',
         'image_url',
         'is_url_expired',
         'mime_type',
