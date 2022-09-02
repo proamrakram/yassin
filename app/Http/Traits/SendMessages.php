@@ -10,14 +10,15 @@ trait SendMessages
     public function send($headers, $type, $wa_user, $message_body)
     {
         $data = $this->sendMessageObject($type, $wa_user->phone_number, $message_body);
-        $response =  Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
+        $response = Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
         return $this->saveResponse($response, $wa_user->bot_id);
     }
 
     public function reply($headers, $type, $wa_user, $message_body, $wa_message_id)
     {
         $data = $this->replyToMessageObject($type, $wa_user->phone_number, $message_body, $wa_message_id);
-        return Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
+        $response = Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
+        return $this->saveResponse($response, $wa_user->bot_id);
     }
 
     public function saveResponse($response)
