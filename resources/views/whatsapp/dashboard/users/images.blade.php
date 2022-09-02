@@ -36,7 +36,7 @@
                     <div class="input-group-text ms-3"> <img src="{{ asset('whatsapp-assets/svg/send-message.svg') }}"
                             width="20" height="20" alt="search"> </div>
                     <input type="file" id="new_image_message" name="new_image_message" accept=".jpg, .jpeg, .png"
-                        class="form-control">
+                        class="form-control imageInput">
                 </div>
 
                 <div class="input-group preview">
@@ -67,12 +67,12 @@
 
 
     <script>
-        const input = document.querySelector('input');
+        const input = document.querySelector('.imageInput');
         const preview = document.querySelector('.preview');
 
         input.style.opacity = 0;
 
-        input.addEventListener('change', updateImageDisplay);
+        // input.addEventListener('change', updateImageDisplay);
     </script>
 
 
