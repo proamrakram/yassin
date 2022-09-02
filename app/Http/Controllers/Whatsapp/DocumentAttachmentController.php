@@ -22,7 +22,7 @@ class DocumentAttachmentController extends Controller
                 'file_size' => $document->file_size,
                 'document_id' => $document->id,
                 'messaging_product' => $document->messaging_product,
-                'sender_document_message_id' => $sender_document_message->id,
+                'document_message_id' => $sender_document_message->id,
             ]);
             return $sender_document_attachments;
         }

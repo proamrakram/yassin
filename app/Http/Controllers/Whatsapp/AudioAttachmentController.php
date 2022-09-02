@@ -22,7 +22,7 @@ class AudioAttachmentController extends Controller
                 'file_size' => $audio->file_size,
                 'audio_id' => $audio->id,
                 'messaging_product' => $audio->messaging_product,
-                'sender_audio_message_id' => $sender_audio_message->id,
+                'audio_message_id' => $sender_audio_message->id,
             ]);
             return $sender_audio_attachments;
         }

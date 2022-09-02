@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Whatsapp;
 use App\Http\Controllers\Controller;
 use App\Models\VideoAttachment;
 use App\Http\Requests\StoreVideoAttachmentRequest;
-use App\Http\Requests\UpdateVideoAttachmentRequest;
 
 class VideoAttachmentController extends Controller
 {
@@ -21,7 +20,7 @@ class VideoAttachmentController extends Controller
                 'file_size' => $video->file_size,
                 'video_id' => $video->id,
                 'messaging_product' => $video->messaging_product,
-                'sender_video_message_id' => $sender_video_message->id,
+                'video_message_id' => $sender_video_message->id,
             ]);
             return $sender_video_attachments;
         }

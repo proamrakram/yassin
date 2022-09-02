@@ -23,7 +23,7 @@ class ImageAttachmentController extends Controller
                 'file_size' => $image->file_size,
                 'image_id' => $image->id,
                 'messaging_product' => $image->messaging_product,
-                'sender_image_message_id' => $sender_image_message->id,
+                'image_message_id' => $sender_image_message->id,
             ]);
 
             return $sender_images_attachments;
