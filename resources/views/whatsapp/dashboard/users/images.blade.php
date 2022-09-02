@@ -27,16 +27,21 @@
             enctype="multipart/form-data">
             @csrf
             <div class="col-lg">
-
-
-
-                <div class="input-group ms-3">
-                    <label for="inlineFormInputGroupUsername">Send New Message to: {{ '(' . $wa_user->name . ')' }}</label>
-                    <img src="{{ asset('whatsapp-assets/svg/send-message.svg') }}" width="20" height="20" alt="send-image">
-                    <input type="file" id="new_image_message" name="new_image_message" accept=".jpg, .jpeg, .png" class="form-control">
-                    <p>No files currently selected for upload</p>
+                <div>
+                    <label class="ms-3" for="inlineFormInputGroupUsername">Send New Message to:
+                        {{ '(' . $wa_user->name . ')' }}</label>
                 </div>
 
+                <div class="input-group">
+                    <div class="input-group-text ms-3"> <img src="{{ asset('whatsapp-assets/svg/send-message.svg') }}"
+                            width="20" height="20" alt="search"> </div>
+                    <input type="file" id="new_image_message" name="new_image_message" accept=".jpg, .jpeg, .png"
+                        class="form-control">
+                </div>
+
+                <div class="input-group preview">
+                    <p class="ms-3">No files currently selected for upload</p>
+                </div>
 
 
             </div>
