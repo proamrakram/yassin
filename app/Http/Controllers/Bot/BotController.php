@@ -41,33 +41,38 @@ class BotController extends Controller
     public function sendTextMessage(Request $request, WhatsAppSender $wa_user)
     {
         $message_body = ['preview_url' => false, 'body' => $request->new_message];
-        $result = $this->send($this->headers, 'text', $wa_user, $message_body);
-        if (!$result) {
-            return redirect()->back()->with('success', 'Message has not been sent successfully!!');
-        }
+        return $this->send($this->headers, 'text', $wa_user, $message_body);
 
-        return redirect()->back()->with('success', 'Message has been sent successfully!!');
+        // if (!$result) {
+        //     return redirect()->back()->with('success', 'Message has not been sent successfully!!');
+        // }
+
+        // return redirect()->back()->with('success', 'Message has been sent successfully!!');
     }
 
     public function sendTextMessagewithPreviewURL(Request $request, WhatsAppSender $wa_user)
     {
         $message_body = ["preview_url" => true, "body" => "Hello World\n\nhttps://www.youtube.com/watch?v=OTd28lXLEfc"];
-        $result = $this->send($this->headers, 'text', $wa_user, $message_body);
-        if (!$result) {
-            return redirect()->back()->with('success', 'Message has not been sent successfully!!');
-        }
+        return $this->send($this->headers, 'text', $wa_user, $message_body);
 
-        return redirect()->back()->with('success', 'Message has been sent successfully!!');
+        // if (!$result) {
+        //     return redirect()->back()->with('success', 'Message has not been sent successfully!!');
+        // }
+
+        // return redirect()->back()->with('success', 'Message has been sent successfully!!');
     }
 
     public function sendReplyToTextMessage(Request $request, WhatsAppSender $wa_user, $wa_message_id)
     {
         $message_body = ['preview_url' => false, 'body' => $request->message_reply,];
-        $result = $this->reply($this->headers, 'text', $wa_user, $message_body, $wa_message_id);
-        if (!$result) {
-            return redirect()->back()->with('success', 'Message has not been sent successfully!!');
-        }
-        return redirect()->back()->with('success', 'Message has been sent successfully!!');
+        return $this->reply($this->headers, 'text', $wa_user, $message_body, $wa_message_id);
+
+
+
+        // if (!$result) {
+        //     return redirect()->back()->with('success', 'Message has not been sent successfully!!');
+        // }
+        // return redirect()->back()->with('success', 'Message has been sent successfully!!');
     }
 
 
