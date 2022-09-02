@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(BotController::class)->prefix('bot')->as('bot.')->group(function () {
+
+    Route::get('sendTo', 'testSending')->name('send-to');
+
     Route::post('reply-to-message/{wa_user}/{message_id}', 'sendReplyToTextMessage')->name('reply-to-message');
     Route::post('send-text-message/{wa_user}', 'sendTextMessage')->name('send-text-message');
 });

@@ -25,6 +25,12 @@ class BotController extends Controller
         ];
     }
 
+    public function testSending()
+    {
+        $message_body = ['preview_url' => false, 'body' =>"Hello Amr Akram"];
+        $result = $this->send($this->headers, 'text', '972599916672', $message_body);
+    }
+
     public function store(StoreBotRequest $request, $name = "whatsapp_business_account", $whats_app_business_account_id = null,  $phone_number = null, $phone_number_id = null, $messaging_product = "whatsapp")
     {
         $bot = Bot::create([
