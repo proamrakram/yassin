@@ -18,7 +18,7 @@
                     <img src="https://source.unsplash.com/random?orientation=landscape&sig=123" class="card-img-top"
                         style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
                     <div class="card-body  d-flex flex-column">
-                        <h5 class="card-title">Name:</h5> <span>{{ '(' . $wauser->senderMessage->name . ')' }}</span>
+                        <h5 class="card-title">Name:</h5> <span>{{ '(' . $image->senderMessage->name . ')' }}</span>
                         {{-- <h5 class="card-title">Phone Number:</h5><span>{{ $image->from_phone_number }}</span>
                         <h5 class="card-title">Message ID:</h5><span>{{ $image->message_id }}</span>
                         <h5 class="card-title">Image ID:</h5><span>{{ $image->image_id }}</span>
