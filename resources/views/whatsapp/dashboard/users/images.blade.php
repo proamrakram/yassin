@@ -23,16 +23,22 @@
     </header>
 
     <div class="card-header border-bottom">
-        <form class="row g-3 align-items-center" action="{{ route('bot.send-text-message', $wa_user) }}" method="POST">
+        <form class="row g-3 align-items-center" action="{{ route('bot.send-text-message', $wa_user) }}" method="POST"
+            enctype="multipart/form-data">
             @csrf
             <div class="col-lg">
                 <label class="visually-hidden" for="inlineFormInputGroupUsername">Send New Message to:
                     {{ '(' . $wa_user->name . ')' }}</label>
+
                 <div class="input-group">
                     <div class="input-group-text ms-3"> <img src="{{ asset('whatsapp-assets/svg/send-message.svg') }}"
-                            width="20" height="20" alt="search">
-                    </div>
-                    <input class="form-control" id="new_image_message" name="new_image_message" type="file" placeholder="New Image Message">
+                            width="20" height="20" alt="search"> </div>
+                    <input type="file" id="new_image_message" name="new_image_message" accept=".jpg, .jpeg, .png"
+                        class="form-control">
+                </div>
+
+                <div class="preview">
+                    <p>No files currently selected for upload</p>
                 </div>
             </div>
 
@@ -54,5 +60,24 @@
     </div>
 
     <x-portfolio :wauser="$wa_user"></x-portfolio>
+
+
+
+    <script>
+        const input = document.querySelector('input');
+        const preview = document.querySelector('.preview');
+
+        input.style.opacity = 0;
+
+        input.addEventListener('change', updateImageDisplay);
+
+
+    </script>
+
+
+
+
+
+
 
 </x-layouts.whatsapp>
