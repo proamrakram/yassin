@@ -31,7 +31,7 @@ class WhatsAppController extends Controller
     {
         $this->value = $data->entry[0]->changes[0]->value;
         $this->field = $data->entry[0]->changes[0]->field;
-        dd($data);
+
         if ($this->value) {
             $bot = $this->saveBotWhatsApp($data);
             if (!$bot) {

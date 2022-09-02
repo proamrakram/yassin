@@ -18,6 +18,7 @@ trait SendMessages
     {
         $data = $this->sendMessageObject($type, $wa_user, $message_body);
         $response = Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
+        return $response;
         // return $this->saveResponse($response, $wa_user->bot_id);
     }
 
