@@ -84,11 +84,11 @@ class BotController extends Controller
 
                 $file_name = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
 
-                $path = 'storage' . $folder . '/' . $file_name . '.' . $file->getClientOriginalExtension();
+                $path = $folder . '/' . $file_name . '.' . $file->getClientOriginalExtension();
 
                 $this->uploadOne($file, $folder, 'public', $file_name);
 
-                $url = 'https://wwg.nserveu.com/' . $path;
+                $url = 'https://wwg.nserveu.com/storage/uploading/'  . $file_name . '.' . $file->getClientOriginalExtension();
 
                 return $this->sendImageMessageByURL($url, $wa_user, $path);
             }
@@ -108,7 +108,7 @@ class BotController extends Controller
 
     public function sendImageMessageByURL($url, $wa_user, $path)
     {
-        dd($url);
+        // https://wwg.nserveu.com/storage/uploading/test.jpg
         $message_body = ['link' => $url];
         $result = $this->send($this->headers, 'image', $wa_user, $message_body);
 
