@@ -62,7 +62,7 @@ class BotController extends Controller
     {
         $message_body = ['preview_url' => false, 'body' => $request->message_reply,];
         $result = $this->reply($this->headers, 'text', $wa_user, $message_body, $wa_message_id);
-        dd($result);
+        dd($result->json());
         if (!$result) {
             return redirect()->back()->with('success', 'Message has not been sent successfully!!');
         }
