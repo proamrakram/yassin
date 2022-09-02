@@ -26,7 +26,8 @@
         <form class="row g-3 align-items-center" action="{{ route('bot.send-text-message', $wa_user) }}" method="POST"
             enctype="multipart/form-data">
             @csrf
-            <div class="col-lg">
+
+            <div class="row-cols-lg-6">
                 <div>
                     <label class="ms-3" for="imageLable"><strong>Send New Message to:</strong>
                         {{ '(' . $wa_user->name . ')' }}</label>
@@ -38,15 +39,16 @@
                     <input type="file" id="new_image_message" name="new_image_message" accept=".jpg, .jpeg, .png"
                         class="form-control imageInput" multiple>
                 </div>
-
-                <div class="col-lg">
-                    <button class="btn btn-primary" type="submit">Submit</button>
+                <div class="input-group preview">
+                    <p class="ms-3 text-danger">No Image File currently selected for upload</p>
                 </div>
             </div>
 
-            <div class="input-group preview">
-                <p class="ms-3 text-danger">No Image File currently selected for upload</p>
+            <div class="row-cols-lg-6">
+                <button class="btn btn-primary" type="submit">Submit</button>
             </div>
+
+
 
 
             {{-- <div class="col-lg">
