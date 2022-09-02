@@ -99,11 +99,11 @@
                     const para = document.createElement('p');
                     if (validFileType(file)) {
                         para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
-                        const image = document.createElement('img');
-                        image.src = URL.createObjectURL(file);
+                        // const image = document.createElement('img');
+                        // image.src = URL.createObjectURL(file);
 
-                        listItem.appendChild(image);
-                        listItem.appendChild(para);
+                        // listItem.appendChild(image);
+                        // listItem.appendChild(para);
                     } else {
                         para.textContent = `File name ${file.name}: Not a valid file type. Update your selection.`;
                         listItem.appendChild(para);
