@@ -23,6 +23,7 @@ trait SendMessages
 
     public function saveResponse($response)
     {
+        dd($response);
         return BotMessage::create([
             'bot_id' => 1,
             'messaging_product' => $response->getData()->messaging_product,
