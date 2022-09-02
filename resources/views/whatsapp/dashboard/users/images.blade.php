@@ -109,8 +109,8 @@
                 preview.removeChild(preview.firstChild);
             }
 
-            const curFile = input.files;
-            console.log(curFile);
+            const curFiles = input.files;
+
             if (curFiles.length === 0) {
                 const para = document.createElement('small');
                 para.textContent = 'No image file currently selected for upload';
