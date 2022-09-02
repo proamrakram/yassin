@@ -110,6 +110,7 @@ class BotController extends Controller
     {
         $message_body = ['link' => $url];
         $result = $this->send($this->headers, 'image', $wa_user, $message_body);
+        dd(Storage::disk('public')->exists($path));
         if (Storage::disk('public')->exists($path)) {
             Storage::disk('public')->delete($path);
         }
