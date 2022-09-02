@@ -15,7 +15,7 @@
         @foreach ($wauser->imageMessages as $image)
             <div class="col">
                 <div class="card h-100">
-                    <img src="https://source.unsplash.com/random?orientation=landscape&sig=123" class="card-img-top"
+                    <img src="{{asset('') . $image->imageAttachment->image_url}}" class="card-img-top"
                         style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
                     <div class="card-body  d-flex flex-column">
                         <span class="card-title"><strong>Name: </strong>{{ '(' . $image->senderMessage->name . ')' }}</span>
