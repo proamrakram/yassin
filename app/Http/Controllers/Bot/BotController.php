@@ -87,7 +87,7 @@ class BotController extends Controller
 
                 $path = 'storage/app/public' . $folder . '/' . $file_name . '.' . $file->getClientOriginalExtension();
 
-                $this->uploadOne($file, $this->folder, 'uploads', $this->file_name);
+                $this->uploadOne($file, $folder, 'public', $file_name);
             }
         }
     }
