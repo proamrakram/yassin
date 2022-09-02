@@ -28,7 +28,7 @@
             @csrf
             <div class="col-lg">
                 <div>
-                    <label class="ms-3" for="inlineFormInputGroupUsername">Send New Message to:
+                    <label class="ms-3" for="imageLable"><strong>Send New Message to:</strong>
                         {{ '(' . $wa_user->name . ')' }}</label>
                 </div>
 
@@ -40,9 +40,8 @@
                 </div>
 
                 <div class="input-group preview">
-                    <p class="ms-3">No files currently selected for upload</p>
+                    <p class="ms-3 text-danger">No Image File currently selected for upload</p>
                 </div>
-
 
             </div>
 
