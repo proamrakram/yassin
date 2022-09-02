@@ -1,4 +1,4 @@
-<div class=" container-lg">
+<div class="container-xxl">
 
     @if ($wauser->imageMessages->count() > 0)
         <div class="row mt-2">
