@@ -35,11 +35,12 @@
                             width="20" height="20" alt="search"> </div>
                     <input type="file" id="new_image_message" name="new_image_message" accept=".jpg, .jpeg, .png"
                         class="form-control">
+                    <div class="preview">
+                        <p>No files currently selected for upload</p>
+                    </div>
                 </div>
 
-                <div class="preview">
-                    <p>No files currently selected for upload</p>
-                </div>
+
             </div>
 
             {{-- <div class="col-lg">
@@ -70,8 +71,6 @@
         input.style.opacity = 0;
 
         input.addEventListener('change', updateImageDisplay);
-
-
     </script>
 
 
