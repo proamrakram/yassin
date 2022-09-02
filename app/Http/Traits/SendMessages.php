@@ -23,12 +23,13 @@ trait SendMessages
 
     public function saveResponse($response)
     {
-        return $response;
+        $response = json_decode(json_encode($response->json()));
+
         return BotMessage::create([
             'bot_id' => 1,
-            'messaging_product' => $response->getData()->messaging_product,
-            'contacts' => $response->getData()->contacts,
-            'messages' => $response->getData()->messages
+            'messaging_product' => $response->messaging_product,
+            'contacts' => $response->contacts,
+            'messages' => $response->messages
         ]);
     }
 
