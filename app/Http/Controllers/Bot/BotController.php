@@ -9,6 +9,7 @@ use App\Http\Traits\SendMessages;
 use App\Http\Traits\uploadOne;
 use App\Models\WhatsAppSender;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
 class BotController extends Controller
@@ -122,41 +123,46 @@ class BotController extends Controller
 
     public function sendMessageTemplateText(Request $request, WhatsAppSender $wa_user)
     {
-        $message_body = [
-            "name" => "test_message",
 
-            "language" => [
-                "code" => "en_US"
-            ],
 
-            "components" => [
-                [
-                    "type" => "body",
-
-                    "parameters" => [
-                        [
-                            "type" => "text",
-                            "text" => "text-string"
-                        ],
-                        [
-                            "type" => "currency",
-                            "currency" => [
-                                "fallback_value" => "$100.99",
-                                "code" => "USD",
-                                "amount_1000" => 100990
-                            ]
-                        ],
-                        [
-                            "type" => "date_time",
-                            "date_time" => [
-                                "fallback_value" => "February 25, 1977",
-                                "day_of_week" => 5,
-                                "year" => 1977,
-                                "month" => 2,
-                                "day_of_month" => 25,
-                                "hour" => 15,
-                                "minute" => 33,
-                                "calendar" => "GREGORIAN"
+        $data = [
+            "messaging_product" => "whatsapp",
+            "recipient_type" => "individual",
+            "to" => $wa_user->phone_number,
+            "type" => "template",
+            "template" => [
+                "name" => "amrakram",
+                "language" => [
+                    "code" => "en_US"
+                ],
+                "components" => [
+                    [
+                        "type" => "body",
+                        "parameters" => [
+                            [
+                                "type" => "text",
+                                "text" => "text-string"
+                            ],
+                            [
+                                "type" => "currency",
+                                "currency" => [
+                                    "fallback_value" => "$100.99",
+                                    "code" => "USD",
+                                    "amount_1000" => 100990
+                                ]
+                            ],
+                            [
+                                "type" => "date_time",
+                                "date_time" => [
+                                    "fallback_value" => "February 25, 1977",
+                                    "day_of_week" => 5,
+                                    "year" => 1977,
+                                    "month" => 2,
+                                    "day_of_month" => 25,
+                                    "hour" => 15,
+                                    "minute" => 33,
+                                    "calendar" => "GREGORIAN"
+                                ]
                             ]
                         ]
                     ]
@@ -164,8 +170,9 @@ class BotController extends Controller
             ]
         ];
 
-
-        return $this->send($this->headers, 'template', $wa_user, $message_body);
+        $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $data);
+        return $response;
+        // return $this->send($this->headers, 'template', $wa_user, $message_body);
     }
 
 
