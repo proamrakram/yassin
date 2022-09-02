@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-xxl">
 
     @if ($wauser->imageMessages->count() > 0)
         <div class="row mt-2">
@@ -10,7 +10,7 @@
     @endif
 
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
 
         @foreach ($wauser->imageMessages as $image)
             <div class="col">
