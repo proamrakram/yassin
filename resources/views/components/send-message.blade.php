@@ -1,4 +1,4 @@
-<a type="button" class="btn btn-primary btn-dark align-self-end mt-auto " data-bs-toggle="modal"
+<a type="button" class="btn btn-warning btn-dark align-self-end mt-auto " data-bs-toggle="modal"
     data-bs-target="#replyMessage{{ $message->id }}">
     Reply
 </a>
