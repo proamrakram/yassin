@@ -110,6 +110,7 @@ class BotController extends Controller
     {
         $message_body = ['link' => $url];
         $result = $this->send($this->headers, 'image', $wa_user, $message_body);
+        $path = 'uploading/WhatsApp Image 2022-07-30 at 12.33.29 AM.jpeg';
         dd(Storage::disk('public')->exists($path), $path);
         if (Storage::disk('public')->exists($path)) {
             Storage::disk('public')->delete($path);
