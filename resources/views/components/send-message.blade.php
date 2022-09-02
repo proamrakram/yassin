@@ -1,4 +1,4 @@
-<a type="button" class="btn btn-warning btn-dark align-self-end mt-auto " data-bs-toggle="modal"
+<a type="button" class="btn btn-primary btn-dark align-self-end mt-auto " data-bs-toggle="modal"
     data-bs-target="#replyMessage{{ $message->id }}">
     Reply
 </a>
@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button class="btn btn-primary" type="submit">Reply</button>
+                    <button class="btn btn-warning" type="submit">Reply</button>
                     <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
                 </div>
 
