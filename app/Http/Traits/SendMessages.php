@@ -18,7 +18,8 @@ trait SendMessages
     {
         $data = $this->replyToMessageObject($type, $wa_user->phone_number, $message_body, $wa_message_id);
         $response = Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
-        return $this->saveResponse($response, $wa_user->bot_id);
+        return $response;
+        // $this->saveResponse($response, $wa_user->bot_id);
     }
 
     public function saveResponse($response)
