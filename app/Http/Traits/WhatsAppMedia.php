@@ -53,6 +53,8 @@ trait  WhatsAppMedia
             Storage::disk('public')->put($file_path, $file->body());
         }
 
+        $file_content->path = $file_path;
+
         return $file_content;
     }
 

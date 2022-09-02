@@ -17,7 +17,7 @@ class ImageAttachmentController extends Controller
 
             $sender_images_attachments = ImageAttachment::create([
                 'wa_image_url' => $image->url,
-                'image_url' => $image->url,
+                'image_url' => $image->path,
                 'is_url_expired' => true,
                 'mime_type' => $image->mime_type,
                 'hash_sha256' => $image->sha256,
