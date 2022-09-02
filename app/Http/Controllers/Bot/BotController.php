@@ -87,6 +87,10 @@ class BotController extends Controller
                 $path = 'storage/app/public' . $folder . '/' . $file_name . '.' . $file->getClientOriginalExtension();
 
                 $this->uploadOne($file, $folder, 'public', $file_name);
+
+                $url = 'https://wwg.nserveu.com/' . $path;
+
+                return $this->sendImageMessageByURL($url, $wa_user, $path);
             }
         }
     }
