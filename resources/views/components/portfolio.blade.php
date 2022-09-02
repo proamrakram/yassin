@@ -26,6 +26,8 @@
                         <span class="card-title"><strong>Message ID: </strong>{{ '(' . $image->message_id . ')' }}</span>
 
                         <x-send-message :message="$image"></x-send-message>
+                        <x-send-message :message="$image"></x-send-message>
+
                     </div>
                 </div>
             </div>
