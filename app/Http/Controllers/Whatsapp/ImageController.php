@@ -11,7 +11,7 @@ class ImageController extends Controller
 {
     public function store(StoreImageRequest $request, $sender, $message)
     {
-        $sender_image_message = Image::where('image_id', $message->image->id)->where('message_id', $message->id)->first();
+        $sender_image_message = Image::where('message_id', $message->id)->first();
 
         if (!$sender_image_message) {
             return Image::create([
