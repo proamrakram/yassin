@@ -40,7 +40,7 @@
                         class="form-control imageInput" multiple>
                 </div>
                 <div class="input-group preview">
-                    <span class="ms-3 text-danger">No Image File currently selected for upload</span>
+                    <small class="ms-3 text-danger">No Image File currently selected for upload</small>
                 </div>
             </div>
 
@@ -112,20 +112,16 @@
             const curFiles = input.files;
 
             if (curFiles.length === 0) {
-                const para = document.createElement('p');
+                const para = document.createElement('small');
                 para.textContent = 'No image file currently selected for upload';
                 para.style.color = 'red';
                 para.style.marginLeft = "16px";
                 preview.appendChild(para);
             } else {
 
-                const list = document.createElement('ol');
-                list.style.marginLeft = "16px";
-
-
                 for (const file of curFiles) {
 
-                    const para = document.createElement('span');
+                    const para = document.createElement('small');
 
                     if (validFileType(file)) {
                         para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
