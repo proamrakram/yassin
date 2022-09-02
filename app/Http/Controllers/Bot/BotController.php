@@ -9,6 +9,7 @@ use App\Http\Traits\SendMessages;
 use App\Http\Traits\uploadOne;
 use App\Models\WhatsAppSender;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BotController extends Controller
 {
@@ -101,6 +102,18 @@ class BotController extends Controller
         return redirect()->back()->with('success', 'Message has been sent successfully!!');
     }
 
+    public function sendImageMessageByURL($url, $wa_user, $path)
+    {
+        $message_body = ['link' => $url];
+        $result = $this->send($this->headers, 'image', $wa_user, $message_body);
+        if (Storage::disk('public')->exists($path)) {
+            Storage::disk('public')->delete($path);
+        }
+        if (!$result) {
+            return redirect()->back()->with('success', 'Message has not been sent successfully!!');
+        }
+        return redirect()->back()->with('success', 'Message has been sent successfully!!');
+    }
 
 
 
@@ -121,22 +134,7 @@ class BotController extends Controller
     //     return $this->send($this->headers, $data);
     // }
 
-    // public function sendImageMessageByURL(Request $request)
-    // {
-    //     $whats_app_sender = WhatsAppSender::find(1);
 
-    //     $url = $request->query('url');
-
-    //     $data = $this->sendMessageObject(
-    //         'image',
-    //         $whats_app_sender->phone_number,
-    //         [
-    //             'link' => $url
-    //         ],
-    //     );
-
-    //     return $this->send($this->headers, $data);
-    // }
 
     // public function sendReplyToImageMessageByURL(Request $request, $message_id)
     // {
