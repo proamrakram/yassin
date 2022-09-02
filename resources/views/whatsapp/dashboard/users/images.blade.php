@@ -27,7 +27,7 @@
             enctype="multipart/form-data">
             @csrf
 
-            <div class="row-cols-lg-6">
+            <div class="col-lg">
                 <div>
                     <label class="ms-3" for="imageLable"><strong>Send New Message to:</strong>
                         {{ '(' . $wa_user->name . ')' }}</label>
@@ -44,7 +44,7 @@
                 </div>
             </div>
 
-            <div class="row-cols-lg-6">
+            <div class="col-lg">
                 <button class="btn btn-primary" type="submit">Submit</button>
             </div>
 
