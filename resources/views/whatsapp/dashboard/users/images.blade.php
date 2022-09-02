@@ -96,15 +96,14 @@
 
                 preview.appendChild(list);
 
-                console.log(preview, list);
-
-
-
-
                 for (const file of curFiles) {
                     const listItem = document.createElement('li');
                     const para = document.createElement('p');
+
+
                     if (validFileType(file)) {
+                        console.log(file,preview, list,validFileType(file));
+
                         para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
                         // const image = document.createElement('img');
                         // image.src = URL.createObjectURL(file);
