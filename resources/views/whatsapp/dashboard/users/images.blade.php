@@ -110,6 +110,7 @@
             }
 
             const curFiles = input.files;
+            console.log(curFiles);
 
             if (curFiles.length === 0) {
                 const para = document.createElement('small');
