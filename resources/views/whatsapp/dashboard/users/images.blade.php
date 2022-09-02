@@ -79,6 +79,14 @@
             while (preview.firstChild) {
                 preview.removeChild(preview.firstChild);
             }
+
+            const curFile = input.file;
+            if (curFiles.length === 0) {
+                const para = document.createElement('p');
+                para.textContent = 'No image file currently selected for upload';
+                preview.appendChild(para);
+            }
+
         }
     </script>
 
