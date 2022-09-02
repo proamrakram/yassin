@@ -1,4 +1,4 @@
-<div class="container">
+<div class=" container-lg">
 
     @if ($wauser->imageMessages->count() > 0)
         <div class="row mt-2">
@@ -24,7 +24,7 @@
                         <h5 class="card-title">Image ID:</h5><span>{{ $image->image_id }}</span>
                         <h5 class="card-title">Mime Type:</h5><span>{{ $image->mime_type }}</span>
                         <h5 class="card-title">Message Date:</h5><span>{{ $image->message_timestamp }}</span> --}}
-                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Reply</a>
+                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto ">Reply</a>
                     </div>
                 </div>
             </div>
