@@ -85,6 +85,8 @@
             if (curFiles.length === 0) {
                 const para = document.createElement('p');
                 para.textContent = 'No image file currently selected for upload';
+                para.style.color = 'red';
+                para.style.marginLeft = "16px";
                 preview.appendChild(para);
             }
 
