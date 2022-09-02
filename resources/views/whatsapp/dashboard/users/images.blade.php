@@ -109,7 +109,7 @@
                 preview.removeChild(preview.firstChild);
             }
 
-            const curFile = input.file;
+            const curFile = input.files;
             console.log(curFile);
             if (curFiles.length === 0) {
                 const para = document.createElement('small');
