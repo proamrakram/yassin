@@ -37,7 +37,7 @@
                     <div class="input-group-text ms-3"> <img src="{{ asset('whatsapp-assets/svg/send-message.svg') }}"
                             width="20" height="20" alt="search"> </div>
                     <input type="file" id="new_image_message" name="new_image_message" accept=".jpg, .jpeg, .png"
-                        class="form-control imageInput" multiple>
+                        class="form-control imageInput">
                 </div>
                 <div class="input-group preview">
                     <small class="ms-3 text-danger">No Image File currently selected for upload</small>
@@ -109,8 +109,8 @@
                 preview.removeChild(preview.firstChild);
             }
 
-            const curFiles = input.files;
-
+            const curFile = input.file;
+            console.log(curFile);
             if (curFiles.length === 0) {
                 const para = document.createElement('small');
                 para.textContent = 'No image file currently selected for upload';
