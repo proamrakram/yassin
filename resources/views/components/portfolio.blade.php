@@ -25,7 +25,7 @@
                         <span class="card-title"><strong>Image ID: </strong>{{ '(' . $image->image_id . ')' }}</span>
                         <span class="card-title"><strong>Message ID: </strong>{{ '(' . $image->message_id . ')' }}</span>
 
-                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto ">Reply</a>
+                        <x-send-message :message="$image"></x-send-message>
                     </div>
                 </div>
             </div>

@@ -111,7 +111,7 @@ class BotController extends Controller
     {
         $message_body = ['link' => $url];
         $result = $this->send($this->headers, 'image', $wa_user, $message_body);
-        sleep(5);
+        sleep(3);
         if (Storage::disk('public')->exists($path)) {
             Storage::disk('public')->delete($path);
         }
@@ -120,8 +120,6 @@ class BotController extends Controller
         }
         return redirect()->back()->with('success', 'Message has been sent successfully!!');
     }
-
-
 
     // public function sendReplyToImageMessageByID($message_id, $image_id)
     // {
