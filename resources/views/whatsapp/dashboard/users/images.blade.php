@@ -72,7 +72,14 @@
 
         input.style.opacity = 0;
 
-        // input.addEventListener('change', updateImageDisplay);
+        input.addEventListener('change', updateImageDisplay);
+
+        function updateImageDisplay() {
+
+            while (preview.firstChild) {
+                preview.removeChild(preview.firstChild);
+            }
+        }
     </script>
 
 
