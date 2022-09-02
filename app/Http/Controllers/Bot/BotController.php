@@ -7,8 +7,6 @@ use App\Models\Bot;
 use App\Http\Requests\StoreBotRequest;
 use App\Http\Traits\SendMessages;
 use App\Http\Traits\uploadOne;
-use App\Models\SenderDocumentMessages;
-use App\Models\SenderVideoMessages;
 use App\Models\WhatsAppSender;
 use Illuminate\Http\Request;
 
