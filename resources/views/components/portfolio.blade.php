@@ -3,7 +3,7 @@
     @if ($wauser->imageMessages->count() > 0)
         <div class="row mt-2">
             <div class="col-12 col-md-3 mb-3">
-                <input type="text" class="form-control" placeholder="Search cards" aria-label="Search cards"
+                <input type="text" class="form-control search" placeholder="Search cards" aria-label="Search cards"
                     onkeyup="searchFilter()">
             </div>
         </div>
@@ -45,7 +45,7 @@
 <!-- this is javascript-->
 <script>
     var searchFilter = () => {
-        const input = document.querySelector(".form-control");
+        const input = document.querySelector(".search");
         const cards = document.getElementsByClassName("col");
         console.log(cards[1])
         let filter = input.value
