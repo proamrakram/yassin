@@ -36,7 +36,7 @@
                     <div class="input-group-text ms-3"> <img src="{{ asset('whatsapp-assets/svg/send-message.svg') }}"
                             width="20" height="20" alt="search"> </div>
                     <input type="file" id="new_image_message" name="new_image_message" accept=".jpg, .jpeg, .png"
-                        class="form-control imageInput">
+                        class="form-control imageInput" multiple>
                 </div>
 
                 <div class="input-group preview">
@@ -80,35 +80,41 @@
                 preview.removeChild(preview.firstChild);
             }
 
-            const curFile = input.file;
+            const curFiles = input.files;
+
             if (curFiles.length === 0) {
                 const para = document.createElement('p');
                 para.textContent = 'No image file currently selected for upload';
                 preview.appendChild(para);
-            } else {
-
-                const list = document.createElement('ol');
-
-                preview.appendChild(list);
-
-                for (const file of curFiles) {
-                    const listItem = document.createElement('li');
-                    const para = document.createElement('p');
-                    if (validFileType(file)) {
-                        para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
-                        const image = document.createElement('img');
-                        image.src = URL.createObjectURL(file);
-
-                        listItem.appendChild(image);
-                        listItem.appendChild(para);
-                    } else {
-                        para.textContent = `File name ${file.name}: Not a valid file type. Update your selection.`;
-                        listItem.appendChild(para);
-                    }
-
-                    list.appendChild(listItem);
-                }
             }
+
+
+
+
+            // else {
+
+            //     const list = document.createElement('ol');
+
+            //     preview.appendChild(list);
+
+            //     for (const file of curFiles) {
+            //         const listItem = document.createElement('li');
+            //         const para = document.createElement('p');
+            //         if (validFileType(file)) {
+            //             para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
+            //             const image = document.createElement('img');
+            //             image.src = URL.createObjectURL(file);
+
+            //             listItem.appendChild(image);
+            //             listItem.appendChild(para);
+            //         } else {
+            //             para.textContent = `File name ${file.name}: Not a valid file type. Update your selection.`;
+            //             listItem.appendChild(para);
+            //         }
+
+            //         list.appendChild(listItem);
+            //     }
+            // }
 
             const fileTypes = [
                 "image/apng",
