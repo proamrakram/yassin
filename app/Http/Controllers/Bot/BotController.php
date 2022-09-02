@@ -120,6 +120,57 @@ class BotController extends Controller
         return redirect()->back()->with('success', 'Message has been sent successfully!!');
     }
 
+    public function sendMessageTemplateText(Request $request, WhatsAppSender $wa_user)
+    {
+        $message_body = [
+            "name" => "test_message",
+
+            "language" => [
+                "code" => "en_US"
+            ],
+
+            "components" => [
+                [
+                    "type" => "body",
+
+                    "parameters" => [
+                        [
+                            "type" => "text",
+                            "text" => "text-string"
+                        ],
+                        [
+                            "type" => "currency",
+                            "currency" => [
+                                "fallback_value" => "$100.99",
+                                "code" => "USD",
+                                "amount_1000" => 100990
+                            ]
+                        ],
+                        [
+                            "type" => "date_time",
+                            "date_time" => [
+                                "fallback_value" => "February 25, 1977",
+                                "day_of_week" => 5,
+                                "year" => 1977,
+                                "month" => 2,
+                                "day_of_month" => 25,
+                                "hour" => 15,
+                                "minute" => 33,
+                                "calendar" => "GREGORIAN"
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ];
+
+
+        return $this->send($this->headers, 'template', $wa_user, $message_body);
+    }
+
+
+
+
     // public function sendReplyToImageMessageByID($message_id, $image_id)
     // {
     //     $whats_app_sender = WhatsAppSender::find(1);
@@ -598,55 +649,31 @@ class BotController extends Controller
     //     return $this->send($this->headers, $data);
     // }
 
-    // public function sendMessageTemplateText()
-    // {
-    //     $whats_app_sender = WhatsAppSender::find(1);
 
-    //     $data = $this->sendMessageObject(
-    //         'template',
-    //         $whats_app_sender->phone_number,
-    //         [
-    //             "name" => "template-name",
-    //             "language" => [
-    //                 "code" => "language-and-locale-code"
-    //             ],
-    //             "components" => [
-    //                 [
-    //                     "type" => "body",
-    //                     "parameters" => [
-    //                         [
-    //                             "type" => "text",
-    //                             "text" => "text-string"
-    //                         ],
-    //                         [
-    //                             "type" => "currency",
-    //                             "currency" => [
-    //                                 "fallback_value" => "$100.99",
-    //                                 "code" => "USD",
-    //                                 "amount_1000" => 100990
-    //                             ]
-    //                         ],
-    //                         [
-    //                             "type" => "date_time",
-    //                             "date_time" => [
-    //                                 "fallback_value" => "February 25, 1977",
-    //                                 "day_of_week" => 5,
-    //                                 "year" => 1977,
-    //                                 "month" => 2,
-    //                                 "day_of_month" => 25,
-    //                                 "hour" => 15,
-    //                                 "minute" => 33,
-    //                                 "calendar" => "GREGORIAN"
-    //                             ]
-    //                         ]
-    //                     ]
-    //                 ]
-    //             ]
-    //         ],
-    //     );
 
-    //     return $this->send($this->headers, $data);
-    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // public function sendMessageTemplateMedia()
     // {

@@ -27,6 +27,8 @@
 
                         <x-send-message :message="$image"></x-send-message>
                         <a  href="{{route('bot.send-imag-message-by-id', [ $wauser, $image->image_id])}}"><strong>Send this image</strong></a>
+                        <a  href="{{route('bot.send-message-template-text', [ $wauser])}}"><strong>Send Template</strong></a>
+
                     </div>
                 </div>
             </div>
