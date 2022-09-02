@@ -100,7 +100,6 @@ class BotController extends Controller
     {
         $message_body = ['id' => $wa_image_id];
         $result = $this->send($this->headers, 'image', $wa_user, $message_body);
-
         if (!$result) {
             return redirect()->back()->with('success', 'Message has not been sent successfully!!');
         }

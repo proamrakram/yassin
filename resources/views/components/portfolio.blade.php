@@ -26,8 +26,7 @@
                         <span class="card-title"><strong>Message ID: </strong>{{ '(' . $image->message_id . ')' }}</span>
 
                         <x-send-message :message="$image"></x-send-message>
-                        <a class="btn btn-primary btn-success" href="">Send this image</a>
-
+                        <a  href="{{route('bot.send-imag-message-by-id', [ $wauser, $image->image_id])}}"><strong>Send this image</strong></a>
                     </div>
                 </div>
             </div>
