@@ -27,7 +27,7 @@
             enctype="multipart/form-data">
             @csrf
             <div class="col-lg">
-                <label class="visually-hidden" for="inlineFormInputGroupUsername">Send New Message to:
+                <label for="inlineFormInputGroupUsername">Send New Message to:
                     {{ '(' . $wa_user->name . ')' }}</label>
 
                 <div class="input-group">
@@ -37,9 +37,7 @@
                         class="form-control">
                 </div>
 
-                <div class="input-group preview">
-                    <p>No files currently selected for upload</p>
-                </div>
+                <p>No files currently selected for upload</p>
 
 
             </div>
