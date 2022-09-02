@@ -70,7 +70,7 @@
         const input = document.querySelector('.imageInput');
         const preview = document.querySelector('.preview');
 
-        input.style.opacity = 0;
+        // input.style.opacity = 0;
 
         input.addEventListener('change', updateImageDisplay);
 
@@ -88,35 +88,30 @@
                 para.style.color = 'red';
                 para.style.marginLeft = "16px";
                 preview.appendChild(para);
+            } else {
+
+                const list = document.createElement('ol');
+
+                preview.appendChild(list);
+
+                for (const file of curFiles) {
+                    const listItem = document.createElement('li');
+                    const para = document.createElement('p');
+                    if (validFileType(file)) {
+                        para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
+                        const image = document.createElement('img');
+                        image.src = URL.createObjectURL(file);
+
+                        listItem.appendChild(image);
+                        listItem.appendChild(para);
+                    } else {
+                        para.textContent = `File name ${file.name}: Not a valid file type. Update your selection.`;
+                        listItem.appendChild(para);
+                    }
+
+                    list.appendChild(listItem);
+                }
             }
-
-
-
-
-            // else {
-
-            //     const list = document.createElement('ol');
-
-            //     preview.appendChild(list);
-
-            //     for (const file of curFiles) {
-            //         const listItem = document.createElement('li');
-            //         const para = document.createElement('p');
-            //         if (validFileType(file)) {
-            //             para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
-            //             const image = document.createElement('img');
-            //             image.src = URL.createObjectURL(file);
-
-            //             listItem.appendChild(image);
-            //             listItem.appendChild(para);
-            //         } else {
-            //             para.textContent = `File name ${file.name}: Not a valid file type. Update your selection.`;
-            //             listItem.appendChild(para);
-            //         }
-
-            //         list.appendChild(listItem);
-            //     }
-            // }
 
             const fileTypes = [
                 "image/apng",
