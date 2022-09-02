@@ -82,6 +82,8 @@
 
             const curFiles = input.files;
 
+            console.log(curFiles);
+
             if (curFiles.length === 0) {
                 const para = document.createElement('p');
                 para.textContent = 'No image file currently selected for upload';
