@@ -2,16 +2,16 @@
 
 namespace App\Http\Traits;
 
-use App\Http\Controllers\AudioController;
-use App\Http\Controllers\BotController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\DocumentController;
-use App\Http\Controllers\ImageController;
-use App\Http\Controllers\LocationController;
-use App\Http\Controllers\StickerController;
-use App\Http\Controllers\TextController;
-use App\Http\Controllers\VideoController;
-use App\Http\Controllers\WhatsAppSenderController;
+use App\Http\Controllers\Bot\BotController;
+use App\Http\Controllers\Whatsapp\AudioController;
+use App\Http\Controllers\Whatsapp\ContactController;
+use App\Http\Controllers\Whatsapp\DocumentController;
+use App\Http\Controllers\Whatsapp\ImageController;
+use App\Http\Controllers\Whatsapp\LocationController;
+use App\Http\Controllers\Whatsapp\StickerController;
+use App\Http\Controllers\Whatsapp\TextController;
+use App\Http\Controllers\Whatsapp\VideoController;
+use App\Http\Controllers\Whatsapp\WhatsAppSenderController;
 use App\Http\Requests\StoreAudioRequest;
 use App\Http\Requests\StoreBotRequest;
 use App\Http\Requests\StoreContactRequest;

@@ -1,17 +1,15 @@
 <?php
 
-
 namespace App\Http\Traits;
 
-use App\Http\Controllers\AudioAttachmentController;
-use App\Http\Controllers\DocumentAttachmentController;
-use App\Http\Controllers\ImageAttachmentController;
-use App\Http\Controllers\VideoAttachmentController;
+use App\Http\Controllers\Whatsapp\AudioAttachmentController;
+use App\Http\Controllers\Whatsapp\DocumentAttachmentController;
+use App\Http\Controllers\Whatsapp\ImageAttachmentController;
+use App\Http\Controllers\Whatsapp\VideoAttachmentController;
 use App\Http\Requests\StoreAudioAttachmentRequest;
 use App\Http\Requests\StoreDocumentAttachmentRequest;
 use App\Http\Requests\StoreImageAttachmentRequest;
 use App\Http\Requests\StoreVideoAttachmentRequest;
-use App\Models\ImageAttachment;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
