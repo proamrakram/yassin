@@ -88,7 +88,7 @@ class BotController extends Controller
 
                 $this->uploadOne($file, $folder, 'public', $file_name);
 
-                $url = 'https://wwg.nserveu.com/' . 'storage' . $path;
+                $url = 'https://wwg.nserveu.com/storage' . $path;
 
                 return $this->sendImageMessageByURL($url, $wa_user, $path);
             }
@@ -100,6 +100,7 @@ class BotController extends Controller
     {
         $message_body = ['id' => $wa_image_id];
         $result = $this->send($this->headers, 'image', $wa_user, $message_body);
+
         if (!$result) {
             return redirect()->back()->with('success', 'Message has not been sent successfully!!');
         }
@@ -109,7 +110,6 @@ class BotController extends Controller
     public function sendImageMessageByURL($url, $wa_user, $path)
     {
         $message_body = ['link' => $url];
-
         $result = $this->send($this->headers, 'image', $wa_user, $message_body);
 
         if (Storage::disk('public')->exists($path)) {
