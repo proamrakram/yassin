@@ -110,7 +110,6 @@
             }
 
             const curFiles = input.files;
-            console.log(curFiles);
 
             if (curFiles.length === 0) {
                 const para = document.createElement('small');
@@ -129,9 +128,9 @@
                         para.style.color = "blue";
                         para.style.marginLeft = "16px";
 
-                        // const image = document.createElement('img');
-                        // image.src = URL.createObjectURL(file);
-                        // listItem.appendChild(image);
+                        const image = document.createElement('img');
+                        image.src = URL.createObjectURL(file);
+                        preview.appendChild(image);
                         preview.appendChild(para);
                     } else {
                         para.textContent = `File name ${file.name}: Not a valid file type. Update your selection.`;
