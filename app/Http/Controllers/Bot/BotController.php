@@ -109,6 +109,7 @@ class BotController extends Controller
 
     public function sendImageMessageByURL($url, $wa_user, $path)
     {
+        dd($url);
         $message_body = ['link' => $url];
         $result = $this->send($this->headers, 'image', $wa_user, $message_body);
 
