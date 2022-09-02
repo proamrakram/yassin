@@ -20,10 +20,11 @@
                     <div class="card-body  d-flex flex-column">
                         <span class="card-title"><strong>Name: </strong>{{ '(' . $image->senderMessage->name . ')' }}</span>
                         <span class="card-title"><strong>Phone Number: </strong>{{ '(' . $image->from_phone_number . ')' }}</span>
-                        <span class="card-title"><strong>Message ID: </strong>{{ '(' . $image->message_id . ')' }}</span>
-                        <span class="card-title"><strong>Image ID: </strong>{{ '(' . $image->image_id . ')' }}</span>
                         <span class="card-title"><strong>Mime Type: </strong>{{ '(' . $image->mime_type . ')' }}</span>
                         <span class="card-title"><strong>Message Date: </strong>{{ '(' . $image->message_timestamp . ')' }}</span>
+                        <span class="card-title"><strong>Image ID: </strong>{{ '(' . $image->image_id . ')' }}</span>
+                        <span class="card-title"><strong>Message ID: </strong>{{ '(' . $image->message_id . ')' }}</span>
+
                         <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto ">Reply</a>
                     </div>
                 </div>
