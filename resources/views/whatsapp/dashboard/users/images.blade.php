@@ -39,11 +39,15 @@
                         class="form-control imageInput" multiple>
                 </div>
 
-                <div class="input-group preview">
-                    <p class="ms-3 text-danger">No Image File currently selected for upload</p>
+                <div class="col-lg">
+                    <button class="btn btn-primary" type="submit">Submit</button>
                 </div>
-
             </div>
+
+            <div class="input-group preview">
+                <p class="ms-3 text-danger">No Image File currently selected for upload</p>
+            </div>
+
 
             {{-- <div class="col-lg">
                 <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
@@ -54,10 +58,6 @@
                     <option value="3">Three</option>
                 </select>
             </div> --}}
-
-            <div class="col-lg">
-                <button class="btn btn-primary" type="submit">Submit</button>
-            </div>
 
         </form>
     </div>
@@ -123,7 +123,7 @@
 
                 for (const file of curFiles) {
 
-                    const para = document.createElement('p');
+                    const para = document.createElement('span');
 
                     if (validFileType(file)) {
                         para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
