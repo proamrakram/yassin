@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Whatsapp;
 use App\Http\Controllers\Controller;
 use App\Models\Text;
 use App\Http\Requests\StoreTextRequest;
-use App\Http\Requests\UpdateTextRequest;
 
 class TextController extends Controller
 {

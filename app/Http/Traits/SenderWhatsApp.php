@@ -22,8 +22,9 @@ use App\Http\Requests\StoreStickerRequest;
 use App\Http\Requests\StoreTextRequest;
 use App\Http\Requests\StoreVideoRequest;
 use App\Http\Requests\StoreWhatsAppSenderRequest;
-use App\Models\Bot;
+
 use App\Models\WhatsAppSender;
+use App\Models\Bot;
 
 trait SenderWhatsApp
 {
