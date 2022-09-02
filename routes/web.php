@@ -39,3 +39,4 @@ Route::get('/terms', function () {
     dd('ok terms');
 });
 
+
