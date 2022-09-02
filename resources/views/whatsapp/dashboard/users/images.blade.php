@@ -32,8 +32,7 @@
                     <div class="input-group-text ms-3"> <img src="{{ asset('whatsapp-assets/svg/send-message.svg') }}"
                             width="20" height="20" alt="search">
                     </div>
-                    <input class="form-control" id="new_message" name="new_message" type="text"
-                        placeholder="New Message">
+                    <input class="form-control" id="new_image_message" name="new_image_message" type="file" placeholder="New Image Message">
                 </div>
             </div>
 
