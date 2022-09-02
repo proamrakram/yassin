@@ -9,17 +9,23 @@
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://source.unsplash.com/random?orientation=landscape&sig=123" class="card-img-top"
-                    style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
-                <div class="card-body  d-flex flex-column">
-                    <h5 class="card-title">Random Card One {{$wauser->name}}</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet.</p>
-                    <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Details</a>
+        @foreach ($wauser->imageMessages as $image)
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://source.unsplash.com/random?orientation=landscape&sig=123" class="card-img-top" style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <div class="card-body  d-flex flex-column">
+                        <h5 class="card-title">Name:</h5> <span>{{ '(' . $wauser->name . ')' }}</span>
+                        <h5 class="card-title">Phone Number:</h5><span>{{ $image->from_phone_number }}</span>
+                        <h5 class="card-title">Message ID:</h5><span>{{ $image->message_id }}</span>
+                        <h5 class="card-title">Image ID:</h5><span>{{ $image->image_id }}</span>
+                        <h5 class="card-title">Mime Type:</h5><span>{{ $image->mime_type }}</span>
+                        <h5 class="card-title">Message Date:</h5><span>{{ $image->message_timestamp }}</span>
+                        <a href="#"
+                            class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Reply</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endforeach
 
     </div>
 </div>

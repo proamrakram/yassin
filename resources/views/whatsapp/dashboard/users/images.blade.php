@@ -18,9 +18,41 @@
     <!-- Page Header-->
     <header class="py-4">
         <div class="container-fluid py-2">
-            <h1 class="h3 fw-normal mb-0">Whats App Images Gallery From {{"(".$wa_user->name.")"}} </h1>
+            <h1 class="h3 fw-normal mb-0">Whats App Images Gallery From {{ '(' . $wa_user->name . ')' }} </h1>
         </div>
     </header>
+
+    <div class="card-header border-bottom">
+        <form class="row g-3 align-items-center" action="{{ route('bot.send-text-message', $wa_user) }}" method="POST">
+            @csrf
+            <div class="col-lg">
+                <label class="visually-hidden" for="inlineFormInputGroupUsername">Send New Message to:
+                    {{ '(' . $wa_user->name . ')' }}</label>
+                <div class="input-group">
+                    <div class="input-group-text ms-3"> <img src="{{ asset('whatsapp-assets/svg/send-message.svg') }}"
+                            width="20" height="20" alt="search">
+                    </div>
+                    <input class="form-control" id="new_message" name="new_message" type="text"
+                        placeholder="New Message">
+                </div>
+            </div>
+
+            {{-- <div class="col-lg">
+                <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                <select class="form-select" id="inlineFormSelectPref">
+                    <option selected>Choose...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div> --}}
+
+            <div class="col-lg">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+
+        </form>
+    </div>
 
     <x-portfolio :wauser="$wa_user"></x-portfolio>
 
