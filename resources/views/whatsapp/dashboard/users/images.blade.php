@@ -74,6 +74,33 @@
 
         input.addEventListener('change', updateImageDisplay);
 
+        const fileTypes = [
+            "image/apng",
+            "image/bmp",
+            "image/gif",
+            "image/jpeg",
+            "image/pjpeg",
+            "image/png",
+            "image/svg+xml",
+            "image/tiff",
+            "image/webp",
+            "image/x-icon"
+        ];
+
+        function validFileType(file) {
+            return fileTypes.includes(file.type);
+        }
+
+        function returnFileSize(number) {
+            if (number < 1024) {
+                return `${number} bytes`;
+            } else if (number >= 1024 && number < 1048576) {
+                return `${(number / 1024).toFixed(1)} KB`;
+            } else if (number >= 1048576) {
+                return `${(number / 1048576).toFixed(1)} MB`;
+            }
+        }
+
         function updateImageDisplay() {
 
             while (preview.firstChild) {
@@ -81,8 +108,6 @@
             }
 
             const curFiles = input.files;
-
-            console.log(curFiles);
 
             if (curFiles.length === 0) {
                 const para = document.createElement('p');
@@ -100,9 +125,10 @@
                     const listItem = document.createElement('li');
                     const para = document.createElement('p');
 
+                    console.log("Ok");
 
                     if (validFileType(file)) {
-                        console.log(file,preview, list,validFileType(file));
+                        console.log(file, preview, list, validFileType(file));
 
                         para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
                         // const image = document.createElement('img');
@@ -116,33 +142,6 @@
                     }
 
                     list.appendChild(listItem);
-                }
-            }
-
-            const fileTypes = [
-                "image/apng",
-                "image/bmp",
-                "image/gif",
-                "image/jpeg",
-                "image/pjpeg",
-                "image/png",
-                "image/svg+xml",
-                "image/tiff",
-                "image/webp",
-                "image/x-icon"
-            ];
-
-            function validFileType(file) {
-                return fileTypes.includes(file.type);
-            }
-
-            function returnFileSize(number) {
-                if (number < 1024) {
-                    return `${number} bytes`;
-                } else if (number >= 1024 && number < 1048576) {
-                    return `${(number / 1024).toFixed(1)} KB`;
-                } else if (number >= 1048576) {
-                    return `${(number / 1048576).toFixed(1)} MB`;
                 }
             }
         }
