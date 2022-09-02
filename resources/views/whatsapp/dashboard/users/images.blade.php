@@ -35,9 +35,10 @@
                             width="20" height="20" alt="search"> </div>
                     <input type="file" id="new_image_message" name="new_image_message" accept=".jpg, .jpeg, .png"
                         class="form-control">
-                    <div class="preview">
-                        <p>No files currently selected for upload</p>
-                    </div>
+                </div>
+
+                <div class="input-group preview">
+                    <p>No files currently selected for upload</p>
                 </div>
 
 
