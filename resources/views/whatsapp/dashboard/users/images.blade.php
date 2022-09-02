@@ -96,6 +96,11 @@
 
                 preview.appendChild(list);
 
+                console.log(preview, list);
+
+
+
+
                 for (const file of curFiles) {
                     const listItem = document.createElement('li');
                     const para = document.createElement('p');
