@@ -132,7 +132,7 @@ class BotController extends Controller
     public function getMessageTemplate()
     {
         $template_id = 1322939031572392;
-        $url = "https://graph.facebook.com/v14.0/1322939031572392";
+        $url = "https://graph.facebook.com/v14.0/3770059549784670";
 
         $res = Http::get($url, [
             "access_token" => env('WHATS_APP_TOKEN')
