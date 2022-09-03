@@ -33,6 +33,7 @@ trait SendMessages
     {
         $response = json_decode(json_encode($response->json()));
         dd($response);
+
         return BotMessage::create([
             'bot_id' => 1,
             'messaging_product' => $response->messaging_product,
