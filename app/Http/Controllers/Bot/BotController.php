@@ -96,7 +96,6 @@ class BotController extends Controller
         }
     }
 
-
     public function sendImageMessagebyID(Request $request, WhatsAppSender $wa_user, $wa_image_id)
     {
         $message_body = ['id' => $wa_image_id];
@@ -121,36 +120,26 @@ class BotController extends Controller
         return redirect()->back()->with('success', 'Message has been sent successfully!!');
     }
 
-    public function sendMessageTemplateText(Request $request, WhatsAppSender $wa_user)
+    public function getAllMessageTemplate()
     {
-        $data = [
-            "messaging_product" => "whatsapp",
-            "to" => $wa_user->phone_number,
-            "type" => "template",
-            "template" => [
-                "name" => "hello_world",
-                "language" => [
-                    "policy" => "deterministic",
-                    "code" => "en_US"
-                ],
-                "components" => [
-                    [
-                        "type" => "body",
-                        "parameters" => [
-                            [
-                                "type" => "text",
-                                "text" => "Hello Amr Akram"
-                            ],
-                        ]
-                    ]
-                ]
-            ]
-        ];
-
-        $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $data);
-        return $response;
-        // return $this->send($this->headers, 'template', $wa_user, $message_body);
+        $bot = Bot::find(1);
+        $url_template =  "https://graph.facebook.com/v14.0/$bot->whats_app_business_account_id/message_templates";
+        $res = Http::get($url_template);
+        dd($res);
     }
+
+
+    public function getMessageTemplate()
+    {
+    }
+
+
+
+
+
+
+
+
 
 
 
