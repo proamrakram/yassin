@@ -125,7 +125,7 @@ class BotController extends Controller
         $bot = Bot::find(1);
         $url_template =  "https://graph.facebook.com/v14.0/$bot->whats_app_business_account_id/message_templates";
         $res = Http::get($url_template);
-        dd($res);
+        return $res;
     }
 
 
