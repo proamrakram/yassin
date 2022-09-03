@@ -128,19 +128,19 @@ class BotController extends Controller
             "to" => $wa_user->phone_number,
             "type" => "template",
             "template" => [
-                "name" => "hello_world",
+                "name" => "myone",
                 "language" => [
                     "policy" => "deterministic",
                     "code" => "en_US"
                 ],
                 "components" => [
                     [
-                        "type" => "header",
+                        "type" => "body",
                         "parameters" => [
                             [
-                                "type" => "image",
+                                "type" => "text",
                                 "image" => [
-                                    "link" => "https://static.wixstatic.com/media/238025_5a62539ec79041e295c4d3ccff1c70e9~mv2.jpg/v1/fill/w_552,h_302,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Lit_BG38.jpg"
+                                    "link" => "Hello Amr Akram"
                                 ]
                             ]
                         ]
