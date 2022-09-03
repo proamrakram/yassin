@@ -140,7 +140,7 @@ class BotController extends Controller
                             [
                                 "type" => "image",
                                 "image" => [
-                                    "link" => "https://stackoverflow.com/questions/37646503/facebook-messenger-bot-error-the-parameter-recipient-is-required"
+                                    "link" => "https://static.wixstatic.com/media/238025_5a62539ec79041e295c4d3ccff1c70e9~mv2.jpg/v1/fill/w_552,h_302,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Lit_BG38.jpg"
                                 ]
                             ]
                         ]
