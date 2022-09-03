@@ -131,6 +131,10 @@ class BotController extends Controller
 
     public function getMessageTemplate()
     {
+        $template_id = 1322939031572392;
+        $url = "https://graph.facebook.com/v14.0/1322939031572392?access_token=EAAFJigKvv6cBABlIZB9UxZBIHUVT3oLVBX1KZCgsgGtR0mrZCUor2iyZCdz3I2wzVZBd7f0RI4oDraWmyHUlnmsvs3h8467LyiW4IJ5BDDDr0FbuFHlelJkNmOn7dUZAhZCaGDi4nzMs9cwVNewoqsKYWONS9jtBmEBWSrMCLPUKXUpFVgC8x2c2Tb3WIBoZAZAtNdTic794luUPadHUXjCx6b";
+        $res = Http::withHeaders($this->headers)->get($url);
+        dd($res->json());
     }
 
 
