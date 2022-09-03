@@ -127,21 +127,25 @@ class BotController extends Controller
 
         $data = [
             "messaging_product" => "whatsapp",
-            "recipient_type" => "individual",
+            // "recipient_type" => "individual",
             "to" => $wa_user->phone_number,
             "type" => "template",
             "template" => [
                 "name" => "hello_world",
                 "language" => [
-                    "code" => "en_US"
+                    "policy" => "deterministic",
+                    "code" => "en"
                 ],
+
                 "components" => [
                     [
-                        "type" => "body",
+                        "type" => "header",
                         "parameters" => [
                             [
-                                "type" => "text",
-                                "text" => "name"
+                                "type" => "image",
+                                "image" => [
+                                    "link" => "https://wwg.nserveu.com/telescope/logs"
+                                ]
                             ],
                         ]
                     ]
