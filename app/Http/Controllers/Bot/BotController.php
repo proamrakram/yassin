@@ -123,11 +123,9 @@ class BotController extends Controller
 
     public function sendMessageTemplateText(Request $request, WhatsAppSender $wa_user)
     {
-
-
+        dd($wa_user->phone_number);
         $data = [
             "messaging_product" => "whatsapp",
-            // "recipient_type" => "individual",
             "to" => $wa_user->phone_number,
             "type" => "template",
             "template" => [
