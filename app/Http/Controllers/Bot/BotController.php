@@ -128,11 +128,24 @@ class BotController extends Controller
             "to" => $wa_user->phone_number,
             "type" => "template",
             "template" => [
-                "name" => "hello_world",
+                "name" => "mytemplate",
                 "language" => [
                     "policy" => "deterministic",
                     "code" => "en_US"
                 ],
+                "components" => [
+                    [
+                        "type" => "header",
+                        "parameters" => [
+                            [
+                                "type" => "image",
+                                "image" => [
+                                    "link" => "https://stackoverflow.com/questions/37646503/facebook-messenger-bot-error-the-parameter-recipient-is-required"
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
             ]
         ];
 
