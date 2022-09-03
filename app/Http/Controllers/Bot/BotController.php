@@ -123,8 +123,8 @@ class BotController extends Controller
     public function getAllMessageTemplate()
     {
         $bot = Bot::find(1);
-        dd($bot);
-        $url_template =  "https://graph.facebook.com/v14.0/$bot->whats_app_business_account_id/message_templates";
+
+        $url_template =  "https://graph.facebook.com/v14.0/111397521678303/message_templates";
         $res = Http::get($url_template);
         return $res;
     }
