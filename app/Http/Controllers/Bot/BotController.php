@@ -135,7 +135,7 @@ class BotController extends Controller
         $url = "https://graph.facebook.com/v14.0/1322939031572392";
 
         $res = Http::get($url, [
-            'access_token' => "EAAFJigKvv6cBAHF3s0tmh6GUJoubmHdKYlQisXvPkk73zgdXH2RpZAgJj7kNwX2yclkgNVvpkquEKtuHJsjda6jGFmaNU8eTKFZCvAco0INrHW3QQ1qUahDZB5dlEanZAI2PzPRrn746YVkjGZCVDH2kujHBoe0Ml5sgDfdn9Ddt6pqrgstLvZAXwNjHMbHHqGdlPt16ZAct7QMBumI2eQQ"
+            'access_token' => "EAAFJigKvv6cBAC2kZCXlIStKsepwt3d62sOZCEj3DiAhtiRGGM0qseGSPCfy1tRZAg8zeosZAnIXZAWUy6Dj9rNiOzHr7Yqqv7gNpCAVkRt6NA3UYOSgv8pXewZBq2hUCw7kQY9FCCCJY8aLUu0DAzZBS1eviooJyZCbd7aTTjRBydyFRggckticM6svpCKO9fAlZA9ZB53IA3PsoiMZChvuzuI"
         ]);
 
         dd($res->json());
