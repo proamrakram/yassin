@@ -128,7 +128,7 @@ class BotController extends Controller
             "to" => $wa_user->phone_number,
             "type" => "template",
             "template" => [
-                "name" => "myone",
+                "name" => "hello_world",
                 "language" => [
                     "policy" => "deterministic",
                     "code" => "en_US"
