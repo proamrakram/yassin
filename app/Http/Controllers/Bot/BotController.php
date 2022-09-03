@@ -131,7 +131,7 @@ class BotController extends Controller
                 "name" => "hello_world",
                 "language" => [
                     "policy" => "deterministic",
-                    "code" => "en"
+                    "code" => "en_US"
                 ],
             ]
         ];
