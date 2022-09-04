@@ -38,7 +38,7 @@ class DashboardController extends Controller
     {
         $templates = $this->getTemplates($this->headers, $bot->whats_app_business_account_id);
         $templates_obj = json_decode(json_encode($templates));
-        dd($templates_obj[0]);
+        dd($templates_obj->data);
 
         $this->saveTemplates($bot, $templates_obj);
         $templates = $bot->templates;
