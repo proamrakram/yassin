@@ -214,15 +214,15 @@ class BotController extends Controller
                     ],
                 ]
             ],
-            [
-                "type" => "footer",
-                "parameters" => [
-                    [
-                        "type" => "text",
-                        "text" => "the last day on earth"
-                    ]
-                ]
-            ]
+            // [
+            //     "type" => "footer",
+            //     "parameters" => [
+            //         [
+            //             "type" => "text",
+            //             "text" => "the last day on earth"
+            //         ]
+            //     ]
+            // ]
 
         ];
 
