@@ -163,8 +163,8 @@ class BotController extends Controller
         ];
 
         $data = [
-            'name' => 'amrakram',
-            'category' => 'TRANSACTIONAL',
+            'name' => 'makenewone',
+            'category' => 'ACCOUNT_UPDATE',
             'components' => $components,
             'language' => 'en',
         ];
