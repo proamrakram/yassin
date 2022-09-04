@@ -19,6 +19,10 @@ class Template extends Model
         'bot_id',
     ];
 
+    protected $casts = [
+        'components' => 'array'
+    ];
+
     public function bot()
     {
         return $this->belongsTo(Bot::class, 'bot_id', 'id');
