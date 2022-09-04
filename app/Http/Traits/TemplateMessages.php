@@ -76,7 +76,7 @@ trait TemplateMessages
 
     public function makeComponents()
     {
-        $components = [
+        return [
             [
                 'type' => 'body', # header or body or footer
                 'parameters' => [
