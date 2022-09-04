@@ -125,7 +125,8 @@ class BotController extends Controller
     public function getAllMessageTemplate()
     {
         $bot = Bot::find(1);
-        return $this->getTemplates($bot->whats_app_business_account_id);
+        $templates = $this->getTemplates($bot->whats_app_business_account_id);
+        dd($templates);
     }
 
     public function getTemplateByID(Bot $bot, $template_id)
@@ -140,7 +141,6 @@ class BotController extends Controller
 
     public function getMessageTemplate()
     {
-
     }
 
     public function createMessageTemplate()
