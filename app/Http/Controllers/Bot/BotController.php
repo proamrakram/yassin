@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Bot;
 use App\Http\Requests\StoreBotRequest;
 use App\Http\Traits\SendMessages;
+use App\Http\Traits\TemplateMessages;
 use App\Http\Traits\uploadOne;
 use App\Models\WhatsAppSender;
 use Illuminate\Http\Request;
@@ -16,6 +17,7 @@ class BotController extends Controller
 {
     use SendMessages;
     use uploadOne;
+    use TemplateMessages;
 
     private $headers;
 
@@ -189,6 +191,10 @@ class BotController extends Controller
         dd($res->json());
     }
 
+    public function sendTemplateMessage()
+    {
+        return $this->sendTemplate();
+    }
 
 
 
