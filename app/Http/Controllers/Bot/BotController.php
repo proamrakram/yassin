@@ -156,7 +156,7 @@ class BotController extends Controller
 
         $data = [
             'category' => 'TRANSACTIONAL',
-            'components' => json_encode($components),
+            'components' => $components,
             'language' => 'en',
             'name' => 'amrakram'
         ];
