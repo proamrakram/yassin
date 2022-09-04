@@ -161,6 +161,7 @@ class BotController extends Controller
                 'text' => 'whatsappcalling'
             ],
             [
+                'type' => 'BUTTONS',
                 'buttons' => [
                     [
                         'type' => 'QUICK_REPLY',
