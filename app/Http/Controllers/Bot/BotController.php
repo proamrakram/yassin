@@ -259,7 +259,7 @@ class BotController extends Controller
             "type" => "template",
             "template" =>
             [
-                "name" => "sendingit",
+                "name" => "hello_world",
                 "language" => [
                     "code" => "en_US"
                 ],
