@@ -212,44 +212,18 @@ class BotController extends Controller
                         "type" => "text",
                         "text" => "It turns out this is a PHP 7.4 thing. To reproduce the warnings, you have to be using PHP 7.4 for cron, and have at least one update available for either WordPress, plugins, or themes, and have at least one of those without updates to generate the warning."
                     ],
-                    [
-                        "type" => "currency",
-                        "currency" => [
-                            "fallback_value" => "3",
-                            "code" => "USD",
-                            "amount_1000" => 500
-                        ]
-                    ],
-                    [
-                        "type" => "date_time",
-                        "date_time" => [
-                            "fallback_value" => "09 07, 2022",
-                        ]
-                    ]
                 ]
             ],
             [
-                "type" => "button",
-                "sub_type" => "quick_reply",
-                "index" => "0",
+                "type" => "footer",
                 "parameters" => [
                     [
                         "type" => "text",
-                        "text" => "Last"
-                    ]
-                ]
-            ],
-            [
-                "type" => "button",
-                "sub_type" => "quick_reply",
-                "index" => "1",
-                "parameters" => [
-                    [
-                        "type" => "text",
-                        "text" => "Next"
+                        "text" => "the last day on earth"
                     ]
                 ]
             ]
+
         ];
 
         $data = [
