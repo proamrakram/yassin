@@ -233,9 +233,9 @@ class BotController extends Controller
             "type" => "template",
             "template" =>
             [
-                "name" => "amirshadeowss",
+                "name" => "makenewone",
                 "language" => [
-                    "code" => "ar"
+                    "code" => "en"
                 ],
                 // "components" => $components,
 
