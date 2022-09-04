@@ -141,6 +141,37 @@ class BotController extends Controller
         dd($res->json());
     }
 
+    public function createMessageTemplate()
+    {
+
+        $data = [
+            'category' => 'TRANSACTIONAL',
+            'components' => [
+                'type' => 'HEADER',
+                'format' => 'TEXT',
+                'text' => 'I am amr akram making whatsapp bots',
+                'buttons' => [
+                    'type' => 'QUICK_REPLY',
+                    'text' => 'test',
+                    // 'url' =>
+                    // 'phone_number' =>
+                    // 'example' => [
+                    // 'header_text',
+                    // 'body_text',
+                    // 'header_url',
+                    // 'header_handle'
+                    // ]
+                ],
+            ],
+            'language' => 'en',
+            'name' => 'amrakram'
+        ];
+
+        $bot = Bot::find(1);
+        $url_template =  "https://graph.facebook.com/v14.0/111397521678303/message_templates";
+        $res = Http::withHeaders($this->headers)->post($url_template, $data);
+        dd($res->json());
+    }
 
 
 
@@ -805,49 +836,49 @@ class BotController extends Controller
     //     $whats_app_sender = WhatsAppSender::find(1);
 
 
-    //     //     "type": "interactive",
-    //     //     "interactive": {
-    //     //         "type": "list",
-    //     //         "header": {
-    //     //             "type": "text",
-    //     //             "text": "<HEADER_TEXT>"
+    //     //     "type" => "interactive",
+    //     //     "interactive" => {
+    //     //         "type" => "list",
+    //     //         "header" => {
+    //     //             "type" => "text",
+    //     //             "text" => "<HEADER_TEXT>"
     //     //         },
-    //     //         "body": {
-    //     //             "text": "<BODY_TEXT>"
+    //     //         "body" => {
+    //     //             "text" => "<BODY_TEXT>"
     //     //         },
-    //     //         "footer": {
-    //     //             "text": "<FOOTER_TEXT>"
+    //     //         "footer" => {
+    //     //             "text" => "<FOOTER_TEXT>"
     //     //         },
-    //     //         "action": {
-    //     //             "button": "<BUTTON_TEXT>",
-    //     //             "sections": [
+    //     //         "action" => {
+    //     //             "button" => "<BUTTON_TEXT>",
+    //     //             "sections" => [
     //     //                 {
-    //     //                     "title": "<LIST_SECTION_1_TITLE>",
-    //     //                     "rows": [
+    //     //                     "title" => "<LIST_SECTION_1_TITLE>",
+    //     //                     "rows" => [
     //     //                         {
-    //     //                             "id": "<LIST_SECTION_1_ROW_1_ID>",
-    //     //                             "title": "<SECTION_1_ROW_1_TITLE>",
-    //     //                             "description": "<SECTION_1_ROW_1_DESC>"
+    //     //                             "id" => "<LIST_SECTION_1_ROW_1_ID>",
+    //     //                             "title" => "<SECTION_1_ROW_1_TITLE>",
+    //     //                             "description" => "<SECTION_1_ROW_1_DESC>"
     //     //                         },
     //     //                         {
-    //     //                             "id": "<LIST_SECTION_1_ROW_2_ID>",
-    //     //                             "title": "<SECTION_1_ROW_2_TITLE>",
-    //     //                             "description": "<SECTION_1_ROW_2_DESC>"
+    //     //                             "id" => "<LIST_SECTION_1_ROW_2_ID>",
+    //     //                             "title" => "<SECTION_1_ROW_2_TITLE>",
+    //     //                             "description" => "<SECTION_1_ROW_2_DESC>"
     //     //                         }
     //     //                     ]
     //     //                 },
     //     //                 {
-    //     //                     "title": "<LIST_SECTION_2_TITLE>",
-    //     //                     "rows": [
+    //     //                     "title" => "<LIST_SECTION_2_TITLE>",
+    //     //                     "rows" => [
     //     //                         {
-    //     //                             "id": "<LIST_SECTION_2_ROW_1_ID>",
-    //     //                             "title": "<SECTION_2_ROW_1_TITLE>",
-    //     //                             "description": "<SECTION_2_ROW_1_DESC>"
+    //     //                             "id" => "<LIST_SECTION_2_ROW_1_ID>",
+    //     //                             "title" => "<SECTION_2_ROW_1_TITLE>",
+    //     //                             "description" => "<SECTION_2_ROW_1_DESC>"
     //     //                         },
     //     //                         {
-    //     //                             "id": "<LIST_SECTION_2_ROW_2_ID>",
-    //     //                             "title": "<SECTION_2_ROW_2_TITLE>",
-    //     //                             "description": "<SECTION_2_ROW_2_DESC>"
+    //     //                             "id" => "<LIST_SECTION_2_ROW_2_ID>",
+    //     //                             "title" => "<SECTION_2_ROW_2_TITLE>",
+    //     //                             "description" => "<SECTION_2_ROW_2_DESC>"
     //     //                         }
     //     //                     ]
     //     //                 }
@@ -859,49 +890,49 @@ class BotController extends Controller
 
     // public function sendReplyToListMessage()
     // {
-    // //     "type": "interactive",
-    // //     "interactive": {
-    // //         "type": "list",
-    // //         "header": {
-    // //             "type": "text",
-    // //             "text": "<HEADER_TEXT>"
+    // //     "type" => "interactive",
+    // //     "interactive" => {
+    // //         "type" => "list",
+    // //         "header" => {
+    // //             "type" => "text",
+    // //             "text" => "<HEADER_TEXT>"
     // //         },
-    // //         "body": {
-    // //             "text": "<BODY_TEXT>"
+    // //         "body" => {
+    // //             "text" => "<BODY_TEXT>"
     // //         },
-    // //         "footer": {
-    // //             "text": "<FOOTER_TEXT>"
+    // //         "footer" => {
+    // //             "text" => "<FOOTER_TEXT>"
     // //         },
-    // //         "action": {
-    // //             "button": "<BUTTON_TEXT>",
-    // //             "sections": [
+    // //         "action" => {
+    // //             "button" => "<BUTTON_TEXT>",
+    // //             "sections" => [
     // //                 {
-    // //                     "title": "<LIST_SECTION_1_TITLE>",
-    // //                     "rows": [
+    // //                     "title" => "<LIST_SECTION_1_TITLE>",
+    // //                     "rows" => [
     // //                         {
-    // //                             "id": "<LIST_SECTION_1_ROW_1_ID>",
-    // //                             "title": "<SECTION_1_ROW_1_TITLE>",
-    // //                             "description": "<SECTION_1_ROW_1_DESC>"
+    // //                             "id" => "<LIST_SECTION_1_ROW_1_ID>",
+    // //                             "title" => "<SECTION_1_ROW_1_TITLE>",
+    // //                             "description" => "<SECTION_1_ROW_1_DESC>"
     // //                         },
     // //                         {
-    // //                             "id": "<LIST_SECTION_1_ROW_2_ID>",
-    // //                             "title": "<SECTION_1_ROW_2_TITLE>",
-    // //                             "description": "<SECTION_1_ROW_2_DESC>"
+    // //                             "id" => "<LIST_SECTION_1_ROW_2_ID>",
+    // //                             "title" => "<SECTION_1_ROW_2_TITLE>",
+    // //                             "description" => "<SECTION_1_ROW_2_DESC>"
     // //                         }
     // //                     ]
     // //                 },
     // //                 {
-    // //                     "title": "<LIST_SECTION_2_TITLE>",
-    // //                     "rows": [
+    // //                     "title" => "<LIST_SECTION_2_TITLE>",
+    // //                     "rows" => [
     // //                         {
-    // //                             "id": "<LIST_SECTION_2_ROW_1_ID>",
-    // //                             "title": "<SECTION_2_ROW_1_TITLE>",
-    // //                             "description": "<SECTION_2_ROW_1_DESC>"
+    // //                             "id" => "<LIST_SECTION_2_ROW_1_ID>",
+    // //                             "title" => "<SECTION_2_ROW_1_TITLE>",
+    // //                             "description" => "<SECTION_2_ROW_1_DESC>"
     // //                         },
     // //                         {
-    // //                             "id": "<LIST_SECTION_2_ROW_2_ID>",
-    // //                             "title": "<SECTION_2_ROW_2_TITLE>",
-    // //                             "description": "<SECTION_2_ROW_2_DESC>"
+    // //                             "id" => "<LIST_SECTION_2_ROW_2_ID>",
+    // //                             "title" => "<SECTION_2_ROW_2_TITLE>",
+    // //                             "description" => "<SECTION_2_ROW_2_DESC>"
     // //                         }
     // //                     ]
     // //                 }
@@ -913,25 +944,25 @@ class BotController extends Controller
 
     // public function sendReplyButton()
     // {
-    // //     "interactive": {
-    // //         "type": "button",
-    // //         "body": {
-    // //             "text": "<BUTTON_TEXT>"
+    // //     "interactive" => {
+    // //         "type" => "button",
+    // //         "body" => {
+    // //             "text" => "<BUTTON_TEXT>"
     // //         },
-    // //         "action": {
-    // //             "buttons": [
+    // //         "action" => {
+    // //             "buttons" => [
     // //                 {
-    // //                     "type": "reply",
-    // //                     "reply": {
-    // //                         "id": "<UNIQUE_BUTTON_ID_1>",
-    // //                         "title": "<BUTTON_TITLE_1>"
+    // //                     "type" => "reply",
+    // //                     "reply" => {
+    // //                         "id" => "<UNIQUE_BUTTON_ID_1>",
+    // //                         "title" => "<BUTTON_TITLE_1>"
     // //                     }
     // //                 },
     // //                 {
-    // //                     "type": "reply",
-    // //                     "reply": {
-    // //                         "id": "<UNIQUE_BUTTON_ID_2>",
-    // //                         "title": "<BUTTON_TITLE_2>"
+    // //                     "type" => "reply",
+    // //                     "reply" => {
+    // //                         "id" => "<UNIQUE_BUTTON_ID_2>",
+    // //                         "title" => "<BUTTON_TITLE_2>"
     // //                     }
     // //                 }
     // //             ]
@@ -943,9 +974,9 @@ class BotController extends Controller
     // public function markMessageAsRead()
     // {
     //     // {
-    //     //     "messaging_product": "whatsapp",
-    //     //     "status": "read",
-    //     //     "message_id": "<INCOMING_MSG_ID>"
+    //     //     "messaging_product" => "whatsapp",
+    //     //     "status" => "read",
+    //     //     "message_id" => "<INCOMING_MSG_ID>"
     //     // }
     // }
 

@@ -27,6 +27,7 @@ Route::controller(BotController::class)->prefix('bot')->as('bot.')->group(functi
 
     Route::get('get-all-message-templates', 'getAllMessageTemplate')->name('get-all-message-template');
     Route::get('get-message-template', 'getMessageTemplate')->name('get-message-template');
+    Route::get('create-message-template', 'createMessageTemplate')->name('create-message-template');
 
 
     Route::get('send-message-template-text/{wa_user}', 'sendMessageTemplateText')->name('send-message-template-text');
