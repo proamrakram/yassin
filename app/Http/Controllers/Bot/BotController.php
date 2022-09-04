@@ -193,7 +193,10 @@ class BotController extends Controller
 
     public function sendTemplateMessage()
     {
-        return $this->sendTemplate();
+        $data = $this->sendTemplate();
+        $url = 'https://graph.facebook.com/v14.0/111278218357261/messages';
+        $res = Http::withHeaders($this->headers)->post($url, $data);
+        dd($res);
     }
 
 
