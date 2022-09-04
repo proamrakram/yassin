@@ -148,11 +148,19 @@ class BotController extends Controller
             [
                 'type' => 'HEADER',
                 'format' => 'TEXT',
-                'text' => 'I am amr akram making whatsapp bots',
-                'buttons' => [
-                    'type' => 'QUICK_REPLY',
-                    'text' => 'test'
-                ]
+                'text' => 'amr akram whats app',
+            ],
+
+            [
+                'type' => 'BODY',
+                'format' => 'TEXT',
+                'text' => 'I am amr akram using whats app bots'
+            ],
+
+            [
+                'type' => 'FOOTER',
+                'format' => 'TEXT',
+                'text' => 'amrakram 0599916672'
             ]
         ];
 
