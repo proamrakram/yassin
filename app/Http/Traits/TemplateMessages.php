@@ -2,6 +2,7 @@
 
 namespace App\Http\Traits;
 
+use App\Models\Template;
 use Illuminate\Support\Facades\Http;
 
 trait TemplateMessages
@@ -20,6 +21,21 @@ trait TemplateMessages
         return $response->json();
     }
 
+    public function saveTemplates($bot, $templates_obj)
+    {
+        foreach($templates_obj as $template_obj)
+        {
+            Template::create([
+                'name' => $template_obj->name,
+                'components' => $template_obj->components,
+                'language',
+                'status',
+                'category',
+                'template_id',
+                'bot_id',
+            ]);
+        }
+    }
 
 
 
