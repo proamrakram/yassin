@@ -74,7 +74,7 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($bot->templates as $template)
-                                            @dd($template->components)
+                                            @dd(json_decode(json_encode($template->components)) )
 
                                             <tr>
                                                 <th scope="row">{{ $template->id }}</th>
