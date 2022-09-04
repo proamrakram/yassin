@@ -149,6 +149,16 @@ class BotController extends Controller
                 'type' => 'HEADER',
                 'format' => 'text',
                 'text' => 'whats app',
+                'buttons' => [
+                    [
+                        'type' => 'QUICK_REPLY',
+                        'text' => 'Click Me'
+                    ],
+                    [
+                        'type' => 'QUICK_REPLY',
+                        'text' => 'Ok'
+                    ],
+                ]
             ],
 
             [
@@ -160,17 +170,6 @@ class BotController extends Controller
                 'type' => 'FOOTER',
                 'text' => 'whatsappcalling'
             ],
-
-            'buttons' => [
-                [
-                    'type' => 'QUICK_REPLY',
-                    'text' => 'Click Me'
-                ],
-                [
-                    'type' => 'QUICK_REPLY',
-                    'text' => 'Ok'
-                ],
-            ]
         ];
 
         $data = [
