@@ -161,6 +161,9 @@ class BotController extends Controller
             'name' => 'amrakram'
         ];
 
+        $json = json_encode(json_encode($data));
+        dd($json);
+
         $bot = Bot::find(1);
         $url_template =  "https://graph.facebook.com/v14.0/111397521678303/message_templates";
         $res = Http::withHeaders($this->headers)->post($url_template, $data);
