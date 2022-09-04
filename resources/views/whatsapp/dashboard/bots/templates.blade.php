@@ -79,7 +79,7 @@
                                             <tr>
                                                 <th scope="row">{{ $templates->id }}</th>
                                                 <th scope="row">{{ $templates->name }}</th>
-                                                <td>{{ $templates->components }}</td>
+                                                <td>components</td>
                                                 <td>{{ $templates->language }}</td>
                                                 <td>{{ $templates->status }}</td>
                                                 <td>{{ $templates->category }}</td>
