@@ -65,13 +65,12 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Image</th>
                                             <th>Name</th>
-                                            <th>Wa_Ba_ID</th>
-                                            <th>Phone Number</th>
-                                            <th>Phone Number ID</th>
-                                            <th>Messaging Product</th>
-                                            <th>Template Messages</th>
+                                            <th>Components</th>
+                                            <th>Language</th>
+                                            <th>Status</th>
+                                            <th>Category</th>
+                                            <th>Template ID</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -79,15 +78,12 @@
                                         @foreach ($bot->templates as $templates)
                                             <tr>
                                                 <th scope="row">{{ $templates->id }}</th>
-                                                <th scope="row"><a href="#"><img
-                                                            src="{{ asset('whatsapp-assets/icons/whatsapp.ico') }}"
-                                                            width="30" height="30" alt="smiletemplates.ico"></a>
-                                                </th>
                                                 <th scope="row">{{ $templates->name }}</th>
-                                                <td>{{ $templates->whats_app_business_account_id }}</td>
-                                                <td>{{ $templates->phone_number }}</td>
-                                                <td>{{ $templates->phone_number_id }}</td>
-                                                <td>{{ $templates->messaging_product }}</td>
+                                                <td>{{ $templates->components }}</td>
+                                                <td>{{ $templates->language }}</td>
+                                                <td>{{ $templates->status }}</td>
+                                                <td>{{ $templates->category }}</td>
+                                                <td>{{ $templates->template_id }}</td>
                                             </tr>
                                         @endforeach
 
