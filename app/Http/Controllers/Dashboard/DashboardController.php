@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Traits\TemplateMessages;
 use App\Models\Bot;
 use App\Models\WhatsAppSender;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    use TemplateMessages;
     public function home()
     {
         return view('whatsapp.dashboard.home');
@@ -22,6 +24,8 @@ class DashboardController extends Controller
 
     public function templates(Bot $bot)
     {
+        $templates = $this->getTemplates($bot->whats_app_business_account_id);
+        dd($templates);
         $templates = $bot->templates;
         return view('whatsapp.dashboard.bots.templates', compact(['templates']));
     }

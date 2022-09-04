@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Template extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'components',
+        'language',
+        'status',
+        'category',
+        'template_id',
+        'bot_id',
+    ];
+
+    public function bot()
+    {
+        return $this->belongsTo(Bot::class, 'bot_id', 'id');
+    }
 }

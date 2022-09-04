@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('templates', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->json('components');
+            $table->string('language');
+            $table->string('status');
+            $table->enum('category', ['TRANSACTIONAL', 'OTP', 'ACCOUNT_UPDATE']);
+            $table->bigIncrements('template_id')->unique();
+            $table->foreignId('bot_id')->constrained('bots')->cascadeOnDelete();
             $table->timestamps();
         });
     }

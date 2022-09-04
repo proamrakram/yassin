@@ -30,4 +30,9 @@ class Bot extends Model
     {
         return $this->hasMany(BotMessage::class, 'bot_id', 'id');
     }
+
+    public function templates()
+    {
+        return $this->hasMany(Template::class, 'bot_id', 'id');
+    }
 }

@@ -122,27 +122,6 @@ class BotController extends Controller
         return redirect()->back()->with('success', 'Message has been sent successfully!!');
     }
 
-    public function getAllMessageTemplate()
-    {
-        $bot = Bot::find(1);
-        $templates = $this->getTemplates($bot->whats_app_business_account_id);
-        dd($templates);
-    }
-
-    public function getTemplateByID(Bot $bot, $template_id)
-    {
-        return $this->getTemplate($bot, $template_id);
-    }
-
-
-
-
-
-
-    public function getMessageTemplate()
-    {
-    }
-
     public function createMessageTemplate()
     {
 
