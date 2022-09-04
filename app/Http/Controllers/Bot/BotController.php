@@ -144,25 +144,21 @@ class BotController extends Controller
     public function createMessageTemplate()
     {
 
+        $components = [
+            'type' => 'HEADER',
+            'format' => 'TEXT',
+            'text' => 'I am amr akram making whatsapp bots',
+            'buttons' => [
+                'type' => 'QUICK_REPLY',
+                'text' => 'test'
+            ]
+        ];
+
+        dd(json_encode($components));
+
         $data = [
             'category' => 'TRANSACTIONAL',
-            'components' => [
-                'type' => 'HEADER',
-                'format' => 'TEXT',
-                'text' => 'I am amr akram making whatsapp bots',
-                'buttons' => [
-                    'type' => 'QUICK_REPLY',
-                    'text' => 'test',
-                    // 'url' =>
-                    // 'phone_number' =>
-                    // 'example' => [
-                    // 'header_text',
-                    // 'body_text',
-                    // 'header_url',
-                    // 'header_handle'
-                    // ]
-                ],
-            ],
+            'components' => json_encode($components),
             'language' => 'en',
             'name' => 'amrakram'
         ];
