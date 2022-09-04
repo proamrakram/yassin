@@ -19,7 +19,6 @@
         </div>
     </header>
 
-
     <section class="tables">
         <div class="container-fluid">
             <div class="row">
@@ -74,16 +73,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($bot->templates as $template)
+                                            @dd($template->components)
 
-                                        @foreach ($bot->templates as $templates)
                                             <tr>
-                                                <th scope="row">{{ $templates->id }}</th>
-                                                <th scope="row">{{ $templates->name }}</th>
+                                                <th scope="row">{{ $template->id }}</th>
+                                                <th scope="row">{{ $template->name }}</th>
                                                 <td>components</td>
-                                                <td>{{ $templates->language }}</td>
-                                                <td>{{ $templates->status }}</td>
-                                                <td>{{ $templates->category }}</td>
-                                                <td>{{ $templates->template_id }}</td>
+                                                <td>{{ $template->language }}</td>
+                                                <td>{{ $template->status }}</td>
+                                                <td>{{ $template->category }}</td>
+                                                <td>{{ $template->template_id }}</td>
                                             </tr>
                                         @endforeach
 
