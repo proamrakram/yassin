@@ -11,6 +11,18 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     use TemplateMessages;
+
+
+    private $headers;
+
+    public function __construct()
+    {
+        $this->headers = [
+            'Authorization' => "Bearer "  . env('WHATS_APP_TOKEN'),
+            'Content-Type' => 'application/json',
+        ];
+    }
+
     public function home()
     {
         return view('whatsapp.dashboard.home');
@@ -24,7 +36,7 @@ class DashboardController extends Controller
 
     public function templates(Bot $bot)
     {
-        $templates = $this->getTemplates($bot->whats_app_business_account_id);
+        $templates = $this->getTemplates($this->headers, $bot->whats_app_business_account_id);
         dd($templates);
         $templates = $bot->templates;
         return view('whatsapp.dashboard.bots.templates', compact(['templates']));

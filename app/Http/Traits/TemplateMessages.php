@@ -6,10 +6,10 @@ use Illuminate\Support\Facades\Http;
 
 trait TemplateMessages
 {
-    public function getTemplates($whats_app_business_account_id)
+    public function getTemplates($headers, $whats_app_business_account_id)
     {
         $url =  "https://graph.facebook.com/v14.0/$whats_app_business_account_id/message_templates";
-        $response = Http::withHeaders($this->headers)->get($url);
+        $response = Http::withHeaders($headers)->get($url);
         return $response->json();
     }
 
