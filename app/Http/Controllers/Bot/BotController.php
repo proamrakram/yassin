@@ -154,8 +154,6 @@ class BotController extends Controller
             ]
         ];
 
-        dd(json_encode($components));
-
         $data = [
             'category' => 'TRANSACTIONAL',
             'components' => json_encode($components),
