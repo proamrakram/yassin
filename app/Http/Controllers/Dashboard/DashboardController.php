@@ -17,8 +17,15 @@ class DashboardController extends Controller
     public function bots()
     {
         $bots = Bot::all();
-        return view('whatsapp.dashboard.bots', compact(['bots']));
+        return view('whatsapp.dashboard.bots.bots', compact(['bots']));
     }
+
+    public function templates(Bot $bot)
+    {
+        $templates = $bot->templates;
+        return view('whatsapp.dashboard.bots.templates', compact(['templates']));
+    }
+
 
     public function users()
     {

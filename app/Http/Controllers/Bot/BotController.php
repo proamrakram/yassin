@@ -122,25 +122,24 @@ class BotController extends Controller
         return redirect()->back()->with('success', 'Message has been sent successfully!!');
     }
 
-    public function getAllMessageTemplate()
+    public function getAllMessageTemplate(Bot $bot)
     {
-        $bot = Bot::find(1);
-        $url_template =  "https://graph.facebook.com/v14.0/111397521678303/message_templates";
-        $res = Http::withHeaders($this->headers)->get($url_template);
-        dd($res->json());
+        return $this->getTemplates($bot->whats_app_business_account_id);
     }
+
+    public function getTemplateByID(Bot $bot, $template_id)
+    {
+        $this->getTemplate($bot, $template_id);
+    }
+
+
+
+
 
 
     public function getMessageTemplate()
     {
-        $template_id = 1322939031572392;
-        $url = "https://graph.facebook.com/v14.0/3770059549784670";
 
-        $res = Http::get($url, [
-            "access_token" => env('WHATS_APP_TOKEN')
-        ]);
-
-        dd($res->json());
     }
 
     public function createMessageTemplate()

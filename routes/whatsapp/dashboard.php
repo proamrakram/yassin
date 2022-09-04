@@ -21,6 +21,7 @@ Route::controller(DashboardController::class)->prefix('admin')->as('admin.')->gr
     Route::get('bots', 'bots')->name('bots');
     Route::get('users', 'users')->name('users');
 
+    Route::get('bot-templates/{bot}', 'templates')->name('bot-templates');
     Route::get('user-texts/{user}', 'textsUser')->name('user-texts');
     Route::get('user-images/{user}', 'imagesUser')->name('user-images');
 
