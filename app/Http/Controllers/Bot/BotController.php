@@ -148,17 +148,17 @@ class BotController extends Controller
             [
                 'type' => 'HEADER',
                 'format' => 'text',
-                'text' => 'amr akram whats app',
+                'text' => 'whats app',
             ],
 
             [
                 'type' => 'BODY',
-                'text' => 'I am amr akram using whats app bots'
+                'text' => 'See the following guides for information regarding the specific types of messages you can send: Text Messages, Media Messages, Contacts and Location Messages, Interactive Messages, Message Templates, Media Message Templates, and Interactive Message Templates.'
             ],
 
             [
                 'type' => 'FOOTER',
-                'text' => 'amrakram 0599916672'
+                'text' => 'whatsappcalling'
             ],
 
             'buttons' => [
