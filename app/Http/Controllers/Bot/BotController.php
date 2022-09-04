@@ -174,7 +174,7 @@ class BotController extends Controller
 
         $data = [
             'name' => 'makenewone',
-            'category' => 'ACCOUNT_UPDATE',
+            'category' => 'OTP',
             'components' => $components,
             'language' => 'en',
         ];
