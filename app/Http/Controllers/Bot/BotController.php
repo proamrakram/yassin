@@ -145,12 +145,14 @@ class BotController extends Controller
     {
 
         $components = [
-            'type' => 'HEADER',
-            'format' => 'TEXT',
-            'text' => 'I am amr akram making whatsapp bots',
-            'buttons' => [
-                'type' => 'QUICK_REPLY',
-                'text' => 'test'
+            [
+                'type' => 'HEADER',
+                'format' => 'TEXT',
+                'text' => 'I am amr akram making whatsapp bots',
+                'buttons' => [
+                    'type' => 'QUICK_REPLY',
+                    'text' => 'test'
+                ]
             ]
         ];
 
