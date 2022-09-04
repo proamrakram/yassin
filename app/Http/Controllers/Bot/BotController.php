@@ -159,6 +159,17 @@ class BotController extends Controller
             [
                 'type' => 'FOOTER',
                 'text' => 'amrakram 0599916672'
+            ],
+
+            'buttons' => [
+                [
+                    'type' => 'QUICK_REPLY',
+                    'text' => 'Click Me'
+                ],
+                [
+                    'type' => 'QUICK_REPLY',
+                    'text' => 'Ok'
+                ],
             ]
         ];
 
