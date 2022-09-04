@@ -193,7 +193,81 @@ class BotController extends Controller
 
     public function sendTemplateMessage()
     {
-        $data = $this->sendTemplate();
+
+
+        $components = [
+            [
+                "type" => "header",
+                "parameters" => [
+                    [
+                        "type" => "text",
+                        "text" => "the last day on earth"
+                    ]
+                ]
+            ],
+            [
+                "type" => "body",
+                "parameters" => [
+                    [
+                        "type" => "text",
+                        "text" => "It turns out this is a PHP 7.4 thing. To reproduce the warnings, you have to be using PHP 7.4 for cron, and have at least one update available for either WordPress, plugins, or themes, and have at least one of those without updates to generate the warning."
+                    ],
+                    [
+                        "type" => "currency",
+                        "currency" => [
+                            "fallback_value" => "3",
+                            "code" => "USD",
+                            "amount_1000" => 500
+                        ]
+                    ],
+                    [
+                        "type" => "date_time",
+                        "date_time" => [
+                            "fallback_value" => "09 07, 2022",
+                        ]
+                    ]
+                ]
+            ],
+            [
+                "type" => "button",
+                "sub_type" => "quick_reply",
+                "index" => "0",
+                "parameters" => [
+                    [
+                        "type" => "text",
+                        "text" => "Last"
+                    ]
+                ]
+            ],
+            [
+                "type" => "button",
+                "sub_type" => "quick_reply",
+                "index" => "1",
+                "parameters" => [
+                    [
+                        "type" => "text",
+                        "text" => "Next"
+                    ]
+                ]
+            ]
+        ];
+
+        $data = [
+            "messaging_product" => "whatsapp",
+            "recipient_type" => "individual",
+            "to" => "972599916672",
+            "type" => "template",
+            "template" =>
+            [
+                "name" => "sendingit",
+                "language" => [
+                    "code" => "en_US"
+                ],
+                "components" => $components,
+
+            ]
+        ];
+
         $url = 'https://graph.facebook.com/v14.0/111278218357261/messages';
         $res = Http::withHeaders($this->headers)->post($url, $data);
         dd($res->json());
