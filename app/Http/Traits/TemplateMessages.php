@@ -26,10 +26,17 @@ trait TemplateMessages
     public function buildObject($name, $language)
     {
         return $template = [
-            'name' => $name,
-            'components' => $this->makeComponents(),
-            'language' => $language,
-            // 'namespace' => $namespace
+            'messaging_product' => 'whatsapp',
+            "recipient_type" => "individual",
+            "to" => "972599916672",
+            "type" => 'template',
+            'language' => [
+                'code' =>  $language
+            ],
+            'template' => [
+                'name' => $name,
+                'components' => $this->makeComponents(),
+            ]
         ];
     }
 
