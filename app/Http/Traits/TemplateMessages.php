@@ -25,7 +25,6 @@ trait TemplateMessages
     {
         foreach ($templates_obj as $template_obj) {
             $template = Template::where('template_id', $template_obj->id)->first();
-            dd($template, $bot);
             if (!$template) {
                 Template::create([
                     'name' => $template_obj->name,
