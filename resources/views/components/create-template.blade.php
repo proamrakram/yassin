@@ -53,7 +53,7 @@
                             <div class="mb-3">
                                 <label class="form-label" for="header_text_template">Text</label>
                                 <input class="form-control" name="header_text_template" id="header_text_template"
-                                    type="tel" aria-describedby="emailHelp" value="body" disabled>
+                                    type="tel" aria-describedby="emailHelp" value="body">
                                 <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
                                 </div>
                             </div>
@@ -72,11 +72,11 @@
 
                     <div class="row">
                         <div class="col-lg-12">
-                            <textarea style="width: inherit;" name="body_message_template" id="body_message_template" rows="5" disabled>body</textarea>
+                            <textarea style="width: inherit;" name="body_message_template" id="body_message_template" rows="5">body</textarea>
                         </div>
                     </div>
 
-                    <hr style="border: 2px solid black; margin-top:0;">
+                    <hr style="border: 2px solid black;">
 
                     <div class="row">
                         <div class="col-lg-6">
@@ -89,7 +89,7 @@
                             <div class="mb-3">
                                 <label class="form-label" for="footer_text_template">Text</label>
                                 <input class="form-control" name="footer_text_template" id="footer_text_template"
-                                    type="tel" aria-describedby="emailHelp" value="body" disabled>
+                                    type="tel" aria-describedby="emailHelp" value="body">
                                 <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
                                 </div>
                             </div>
