@@ -73,6 +73,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+
                                         @foreach ($bot->templates as $template)
                                             <tr>
                                                 <th scope="row">{{ $template->id }}</th>
