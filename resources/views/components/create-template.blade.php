@@ -12,8 +12,8 @@
         <div class="modal-content">
 
             <div class="modal-header bg-warning">
-                <h5 class="modal-title" id="createTemplateTitle">Reply to Message's </h5>
-                <span class="ms-2">{{ '(' . 'body' . ')' }}</span>
+                <h5 class="modal-title" id="createTemplateTitle">Creating Message</h5>
+                {{-- <span class="ms-2">{{ '(' . 'body' . ')' }}</span> --}}
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -22,81 +22,77 @@
                 @csrf
 
                 <div class="modal-body">
-                    <p>Whats App User Data and Replying Message</p>
+                    <p>Creating Whats app template Messages</p>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label class="form-label" for="header_message">Header Message</label>
+                        </div>
+                    </div>
+
 
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <label class="form-label" for="sender_message_name">Whats App's Name</label>
-                                <input class="form-control" name="sender_message_name" id="sender_message_name"
+                                <label class="form-label" for="sender_message_name">Format Type</label>
+                                <select class="form-select" id="inlineFormSelectPref">
+                                    <option selected>Choose...</option>
+                                    <option value="text">Text</option>
+                                    <option value="image">Image</option>
+                                    <option value="video">Video</option>
+                                    <option value="document">Document</option>
+                                    <option value="location">Location</option>
+                                </select>
+                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="header_text_template">Text</label>
+                                <input class="form-control" name="header_text_template" id="header_text_template"
                                     type="tel" aria-describedby="emailHelp" value="body" disabled>
                                 <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-lg-6">
-                            <div class="mb-3">
-                                <label class="form-label" for="phone_number">Phone Number</label>
-                                <input class="form-control" name="phone_number" id="phone_number" type="tel"
-                                    aria-describedby="emailHelp" value="body" disabled>
-                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="mb-3">
-                                <label class="form-label" for="message_date">Message Date</label>
-                                <input class="form-control" name="message_date" id="message_date" type="tel"
-                                    aria-describedby="emailHelp" value="body" disabled>
-                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="mb-3">
-                                <label class="form-label" for="whats_app_message_id">Whats App Message ID</label>
-                                <input class="form-control" name="whats_app_message_id" id="whats_app_message_id"
-                                    type="text" aria-describedby="emailHelp" value="body" disabled>
-                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
 
                     <div class="row">
                         <div class="col-lg-6">
-                            <label class="form-label" for="message_body">Message Body</label>
+                            <label class="form-label" for="body_message_template">Body Message</label>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-lg-12">
-                            <textarea style="width: inherit;" name="message_body" id="message_body" rows="5" disabled>body</textarea>
+                            <textarea style="width: inherit;" name="body_message_template" id="body_message_template" rows="5" disabled>body</textarea>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-lg-6">
-                            <label class="form-label" for="message_reply">Your Replying to the
-                                Message: </label>
+                            <label class="form-label" for="footer_text_template">Footer Message</label>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-12">
-                            <textarea style="width: inherit;" name="message_reply" id="message_reply" rows="5"
-                                placeholder="Enter your text message to reply on the above message from whatsapp user!!">{{ old('message_reply') }}</textarea>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="footer_text_template">Text</label>
+                                <input class="form-control" name="footer_text_template" id="footer_text_template"
+                                    type="tel" aria-describedby="emailHelp" value="body" disabled>
+                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                 </div>
 
                 <div class="modal-footer">
-                    <button class="btn btn-primary" type="submit">Reply</button>
+                    <button class="btn btn-warning" type="submit">Create Template</button>
                     <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
                 </div>
 
