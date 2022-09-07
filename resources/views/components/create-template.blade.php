@@ -96,12 +96,49 @@
                         </div>
                     </div>
 
-                </div>
+                    <hr style="border: 2px solid black;">
 
-                <div class="modal-footer">
-                    <button class="btn btn-warning" type="submit">Create Template</button>
-                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
-                </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label class="form-label" for="body_message_template"><strong>Buttons
+                                    Message</strong></label>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="sender_message_name">Button Type</label>
+                                <select class="form-select" id="inlineFormSelectPref">
+                                    <option selected>Choose...</option>
+                                    <option value="QUICK_REPLY">Quick Reply</option>
+                                    <option value="URL">URL</option>
+                                    <option value="PHONE_NUMBER">Phone Number</option>
+                                </select>
+                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="button_text_template">Text</label>
+                                <input class="form-control" name="button_text_template" id="button_text_template"
+                                    type="text" aria-describedby="emailHelp" value="body">
+                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-warning" type="submit">Create Template</button>
+                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                    </div>
 
             </form>
         </div>
