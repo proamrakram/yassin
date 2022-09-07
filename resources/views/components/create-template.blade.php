@@ -3,7 +3,8 @@
 </a> --}}
 
 <div class="col-lg">
-    <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#createTemplate">Create Template</button>
+    <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#createTemplate">Create
+        Template</button>
 </div>
 
 <div class="modal fade text-start" id="createTemplate" tabindex="-1" aria-labelledby="createTemplateTitle"
@@ -22,11 +23,11 @@
                 @csrf
 
                 <div class="modal-body">
-                    <p>Creating Whats app template Messages</p>
+                    <p><strong>Creating Whats app template Messages</strong></p>
 
                     <div class="row">
                         <div class="col-lg-6">
-                            <label class="form-label" for="header_message">Header Message</label>
+                            <label class="form-label" for="header_message"><strong>Header Message</strong></label>
                         </div>
                     </div>
 
@@ -58,6 +59,12 @@
                             </div>
                         </div>
                     </div>
+
+                    <div>
+                        <hr class="bg-danger border-2 border-top border-danger">
+                    </div>
+
+
 
                     <div class="row">
                         <div class="col-lg-6">
