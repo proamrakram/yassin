@@ -11,7 +11,7 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
 
-            <div class="modal-header bg-success">
+            <div class="modal-header bg-warning">
                 <h5 class="modal-title" id="createTemplateTitle">Reply to Message's </h5>
                 <span class="ms-2">{{ '(' . 'body' . ')' }}</span>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
