@@ -60,7 +60,7 @@
                         </div>
                     </div>
 
-                    <hr class="bg-black border-4 border-top border-darkBlue">
+                    <hr style="3px solid black">
 
 
 
