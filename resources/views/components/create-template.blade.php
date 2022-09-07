@@ -60,9 +60,7 @@
                         </div>
                     </div>
 
-                    <div>
-                        <hr class="bg-danger border-2 border-top border-danger">
-                    </div>
+                    <hr class="bg-black border-4 border-top border-darkBlue">
 
 
 
