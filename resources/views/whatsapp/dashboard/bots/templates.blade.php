@@ -75,11 +75,10 @@
                                     <tbody>
 
                                         @foreach ($bot->templates as $template)
-                                        @dd($template->components)
                                             <tr>
                                                 <th scope="row">{{ $template->id }}</th>
                                                 <th scope="row">{{ $template->name }}</th>
-                                                <td>{{ json_encode($template->components) }}</td>
+                                                <td>components</td>
                                                 <td>{{ $template->language }}</td>
                                                 <td>{{ $template->status }}</td>
                                                 <td>{{ $template->category }}</td>
