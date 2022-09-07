@@ -3,8 +3,7 @@
 </a> --}}
 
 <div class="col-lg">
-    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#createTemplate">Create
-        Template</button>
+    <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#createTemplate">Create Template</button>
 </div>
 
 <div class="modal fade text-start" id="createTemplate" tabindex="-1" aria-labelledby="createTemplateTitle"

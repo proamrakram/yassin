@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg">
+                                <div class="col-lg-1">
                                     <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
                                     <select class="form-select" id="inlineFormSelectPref">
                                         <option selected>Choose...</option>
