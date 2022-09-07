@@ -60,13 +60,13 @@
                         </div>
                     </div>
 
-                    <hr style="3px solid black">
+                    <hr style="border: 2px solid black; margin-top:0;">
 
 
 
                     <div class="row">
                         <div class="col-lg-6">
-                            <label class="form-label" for="body_message_template">Body Message</label>
+                            <label class="form-label" for="body_message_template"><strong>Body Message</strong></label>
                         </div>
                     </div>
 
@@ -76,9 +76,11 @@
                         </div>
                     </div>
 
+                    <hr style="border: 2px solid black; margin-top:0;">
+
                     <div class="row">
                         <div class="col-lg-6">
-                            <label class="form-label" for="footer_text_template">Footer Message</label>
+                            <label class="form-label" for="footer_text_template"><strong>Footer Message</strong></label>
                         </div>
                     </div>
 
