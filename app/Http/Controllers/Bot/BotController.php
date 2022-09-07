@@ -122,6 +122,11 @@ class BotController extends Controller
         return redirect()->back()->with('success', 'Message has been sent successfully!!');
     }
 
+    public function createTemplate()
+    {
+
+    }
+
     public function createMessageTemplate()
     {
 
@@ -141,6 +146,7 @@ class BotController extends Controller
                 'type' => 'FOOTER',
                 'text' => 'whatsappcalling'
             ],
+
             [
                 'type' => 'BUTTONS',
                 'buttons' => [
@@ -170,61 +176,6 @@ class BotController extends Controller
         dd($res->json());
     }
 
-    public function sendTemplateMessage()
-    {
-
-
-        $components = [
-            [
-                "type" => "header",
-                "parameters" => [
-                    [
-                        "type" => "text",
-                        "text" => "the last day on earth"
-                    ]
-                ]
-            ],
-            [
-                "type" => "body",
-                "parameters" => [
-                    [
-                        "type" => "text",
-                        "text" => "It turns out this is a PHP 7.4 thing. To reproduce the warnings, you have to be using PHP 7.4 for cron, and have at least one update available for either WordPress, plugins, or themes, and have at least one of those without updates to generate the warning."
-                    ],
-                ]
-            ],
-            // [
-            //     "type" => "footer",
-            //     "parameters" => [
-            //         [
-            //             "type" => "text",
-            //             "text" => "the last day on earth"
-            //         ]
-            //     ]
-            // ]
-
-        ];
-
-        $data = [
-            "messaging_product" => "whatsapp",
-            "recipient_type" => "individual",
-            "to" => "972599916672",
-            "type" => "template",
-            "template" =>
-            [
-                "name" => "makenewone",
-                "language" => [
-                    "code" => "en"
-                ],
-                // "components" => $components,
-
-            ]
-        ];
-
-        $url = 'https://graph.facebook.com/v14.0/111278218357261/messages';
-        $res = Http::withHeaders($this->headers)->post($url, $data);
-        dd($res->json());
-    }
 
 
 

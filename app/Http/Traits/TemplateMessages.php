@@ -41,6 +41,7 @@ trait TemplateMessages
 
     public function createTemplate()
     {
+        
     }
 
     public function updateTemplate()
