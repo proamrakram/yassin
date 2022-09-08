@@ -49,7 +49,7 @@
         var footer_type_message = $('#footer_type_message');
         var footer_text_message = $('#footer_text_message');
         var footer_image_message = $('#footer_image_message');
-
+        body_text_message.css("border-color", "red");
 
         //Hide Messages
         header_type_message.hide();
