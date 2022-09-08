@@ -27,39 +27,43 @@
                     <div class="card">
                         <div class="card-header border-bottom">
 
-                            <form class="row g-3 align-items-center">
-                                <div class="col-lg">
-                                    <label class="visually-hidden" for="inlineFormInputGroupUsername">Template
-                                        Name</label>
-                                    <div class="input-group">
-                                        <img src="{{ asset('whatsapp-assets/icons/search.ico') }}" width="30"
-                                            height="30" alt="search">
+                            <div class="row g-2 align-items-center">
 
-                                        <div class="input-group-text ms-3">@</div>
-                                        <input class="form-control" id="inlineFormInputGroupUsername" type="text"
-                                            placeholder="Username">
+                                <form action="" class="row g-3 col-lg">
+                                    <div class="col-lg">
+                                        <label class="visually-hidden" for="inlineFormInputGroupUsername">Template
+                                            Name</label>
+                                        <div class="input-group">
+                                            <img src="{{ asset('whatsapp-assets/icons/search.ico') }}" width="30"
+                                                height="30" alt="search">
+
+                                            <div class="input-group-text ms-3">@</div>
+                                            <input class="form-control" id="inlineFormInputGroupUsername" type="text"
+                                                placeholder="Username">
+                                        </div>
                                     </div>
-                                </div>
+
+                                    <div class="col-lg">
+                                        <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                                        <select class="form-select" id="inlineFormSelectPref">
+                                            <option selected>Choose...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-lg-1">
+                                        <button class="btn btn-primary" type="submit">Submit</button>
+                                    </div>
+
+                                </form>
 
                                 <div class="col-lg">
-                                    <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-                                    <select class="form-select" id="inlineFormSelectPref">
-                                        <option selected>Choose...</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
+                                    <x-whatsapp-tools.create-template></x-whatsapp-tools.create-template>
                                 </div>
 
-                                <div class="col-lg-1">
-                                    <button class="btn btn-primary" type="submit">Submit</button>
-                                </div>
-                            </form>
-
-                            <div class="row g-3 align-items-center">
-                                <x-whatsapp-tools.create-template></x-whatsapp-tools.create-template>
                             </div>
-
 
                         </div>
                         <div class="card-body">

@@ -1,7 +1,6 @@
-<div class="col-lg">
-    <button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#createTemplate">Create Template
-        Message</button>
-</div>
+<button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#createTemplate">Create Template
+    Message</button>
+
 
 <div class="modal fade text-start" id="createTemplate" tabindex="-1" aria-labelledby="createTemplateTitle"
     aria-hidden="true">
