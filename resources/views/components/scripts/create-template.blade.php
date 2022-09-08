@@ -98,21 +98,21 @@
                 url: "{{ route('bot.create-template') }}",
                 method: 'POST',
                 data: {
-                    header_format: selectedHeaderType,
-                    body_format: selectedBodyType,
-                    footer_format: selectedFooterType,
+                    header_format: selectedHeaderType.val(),
+                    body_format: selectedBodyType.val(),
+                    footer_format: selectedFooterType.val(),
 
                     //Header
-                    header_text_template: headerTextField,
-                    header_image_template: headerTextField,
+                    header_text_template: headerTextField.val(),
+                    header_image_template: headerTextField.val(),
 
                     //Body
-                    body_text_template: bodyTextField,
-                    body_image_template: bodyImageField,
+                    body_text_template: bodyTextField.val(),
+                    body_image_template: bodyImageField.val(),
 
                     //Footer
-                    footer_text_template: footerTextField,
-                    footer_image_template: footerImageField,
+                    footer_text_template: footerTextField.val(),
+                    footer_image_template: footerImageField.val(),
 
                     _token: $('meta[name="csrf-token"]').attr('content'),
                     lang: "{{ app()->getLocale() }}"
