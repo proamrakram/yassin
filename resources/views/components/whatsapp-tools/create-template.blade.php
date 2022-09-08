@@ -7,7 +7,7 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
 
-            <div class="modal-header bg-secondary">
+            <div class="modal-header bg-dark">
                 <h5 class="modal-title text-white" id="createTemplateTitle">Creating Template Message</h5>
                 {{-- <span class="ms-2">{{ '(' . 'body' . ')' }}</span> --}}
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

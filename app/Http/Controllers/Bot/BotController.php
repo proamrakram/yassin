@@ -124,17 +124,20 @@ class BotController extends Controller
 
     public function createTemplate(Request $request)
     {
-        $request->validate([
-            "header_format" => ['required'],
-            "body_format" => ['required'],
-            "footer_format" => ['required'],
-            "header_text_template" => ['required'],
-            "header_image_template" => ['required'],
-            "body_text_template" => ['required'],
-            "body_image_template" => ['required'],
-            "footer_text_template" => ['required'],
-            "footer_image_template" => ['required'],
-        ]);
+        // $request->validate([
+        //     "header_format" => ['required'],
+        //     "body_format" => ['required'],
+        //     "footer_format" => ['required'],
+        //     "header_text_template" => ['required'],
+        //     "header_image_template" => ['required'],
+        //     "body_text_template" => ['required'],
+        //     "body_image_template" => ['required'],
+        //     "footer_text_template" => ['required'],
+        //     "footer_image_template" => ['required'],
+        // ]);
+
+        dd($request->all());
+
     }
 
     public function createMessageTemplate()
