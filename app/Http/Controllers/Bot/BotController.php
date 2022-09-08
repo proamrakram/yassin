@@ -125,7 +125,7 @@ class BotController extends Controller
     public function createTemplateMessage(Request $request)
     {
         $bot = Bot::find($request->bot_id);
-        $res = $this->createTemplate($request, $bot->whats_app_business_account_id, 'name');
+        $res = $this->createTemplate($request, $this->headers , $bot->whats_app_business_account_id);
         dd($res->json());
     }
 
