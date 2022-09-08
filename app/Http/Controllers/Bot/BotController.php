@@ -122,9 +122,9 @@ class BotController extends Controller
         return redirect()->back()->with('success', 'Message has been sent successfully!!');
     }
 
-    public function createTemplate()
+    public function createTemplate(Request $request)
     {
-
+        dd($request->all());
     }
 
     public function createMessageTemplate()

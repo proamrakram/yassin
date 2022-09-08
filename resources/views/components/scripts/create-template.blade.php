@@ -88,5 +88,49 @@
 
             return true;
         });
+
+
+        $("#create_template_form").submit(function(e) {
+
+            e.preventDefault();
+
+            $.ajax({
+                url: "{{ route('bot.create-template') }}",
+                method: 'POST',
+                data: {
+                    header_format: selectedHeaderType,
+                    body_format: selectedBodyType,
+                    footer_format: selectedFooterType,
+
+                    //Header
+                    header_text_template: headerTextField,
+                    header_image_template: headerTextField,
+
+                    //Body
+                    body_text_template: bodyTextField,
+                    body_image_template: bodyImageField,
+
+                    //Footer
+                    footer_text_template: footerTextField,
+                    footer_image_template: footerImageField,
+
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    lang: "{{ app()->getLocale() }}"
+                },
+
+                success: function(data) {
+                    location.reload(true);
+                },
+
+                error: function(reject) {
+
+                    var response = $.parseJSON(reject.responseText);
+
+                    $.each(response.errors, function(key, val) {
+                        console.log(response.errors);
+                    });
+                }
+            });
+        });
     });
 </script>

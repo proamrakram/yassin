@@ -14,7 +14,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form action="{{ route('bot.create-template') }}" method="POST">
+            <form id="create_template_form" method="POST">
 
                 @csrf
 
