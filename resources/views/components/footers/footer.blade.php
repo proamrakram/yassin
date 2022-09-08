@@ -55,9 +55,58 @@
     injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg');
 </script>
 
-<!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+
+<script>
+    $(document).ready(function() {
+
+        //Messages
+        $('#message_store_title').removeClass("invisible");
+
+        //Fields
+        var selectedHeader = $('#selectedHeader');
+        var textField = $('#header_text_template');
+        var imageField = $('#header_image_template');
+        console.log(textField);
+        if (selectedHeader.val() == "text") {
+            imageField.hide();
+            textField.show();
+        }
+
+        if (selectedHeader.val() == "image") {
+            textField.hide();
+            imageField.show();
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> --}}
 
 
 </body>
