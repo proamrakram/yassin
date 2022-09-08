@@ -70,11 +70,17 @@
             if (selectedHeader.val() == "text") {
                 imageField.hide();
                 textField.show();
+                return true;
             }
 
             if (selectedHeader.val() == "image") {
                 textField.hide();
                 imageField.show();
+                return true;
+            }
+
+            if (selectedHeader.val() == "image") {
+                console.log('234567890');
             }
         });
 
