@@ -56,7 +56,7 @@
                                     <button class="btn btn-primary" type="submit">Submit</button>
                                 </div>
 
-                                <x-whatsapp-tools.create-template></x-create-template>
+                                <x-whatsapp-tools.create-template></x-whatsapp-tools.create-template>
 
 
                             </form>

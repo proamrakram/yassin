@@ -89,7 +89,7 @@
                                                 <td>{{ $textMessage->from_phone_number }}</td>
 
                                                 <td>
-                                                    <x-reply-message :message="$textMessage"></x-reply-message>
+                                                    <x-whatsapp-tools.reply-message :message="$textMessage"></x-whatsapp-tools.reply-message>
                                                 </td>
 
                                                 <td>{{ $textMessage->message_timestamp }}</td>
