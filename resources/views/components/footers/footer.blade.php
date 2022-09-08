@@ -58,26 +58,23 @@
 
 <script>
     $(document).ready(function() {
-
         //Fields
         var selectedHeader = $('#selectedHeader').on();
         var textField = $('#text-div');
         var imageField = $('#image-div');
+        textField.hide();
+        imageField.hide();
 
         selectedHeader.on('change', function() {
 
             if (selectedHeader.val() == "text") {
-                imageField.removeClass("visible");
-                imageField.addClass("invisible");
-                textField.removeClass("invisible");
-                textField.addClass("visible");
+                imageField.hide();
+                textField.show();
             }
 
             if (selectedHeader.val() == "image") {
-                textField.removeClass("visible");
-                textField.addClass("invisible");
-                imageField.removeClass("invisible");
-                imageField.addClass("visible");
+                textField.hide();
+                imageField.show();
             }
         });
 
