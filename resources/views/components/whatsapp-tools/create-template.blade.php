@@ -1,5 +1,5 @@
 <div class="col-lg">
-    <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#createTemplate">Create Template
+    <button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#createTemplate">Create Template
         Message</button>
 </div>
 
