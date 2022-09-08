@@ -66,7 +66,8 @@
         var selectedHeader = $('#selectedHeader');
         var textField = $('#header_text_template');
         var imageField = $('#header_image_template');
-        console.log(textField);
+        console.log(selectedHeader.val());
+
         if (selectedHeader.val() == "text") {
             imageField.hide();
             textField.show();
