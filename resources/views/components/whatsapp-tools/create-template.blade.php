@@ -1,5 +1,5 @@
 <div class="col-lg">
-    <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#createTemplate">Create Template
+    <button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#createTemplate">Create Template
         Message</button>
 </div>
 
@@ -43,8 +43,8 @@
                                     <option value="location">Location</option>
                                 </select>
 
-                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
-                                </div>
+                                {{-- <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
+                                </div> --}}
 
                             </div>
                         </div>
@@ -98,8 +98,8 @@
                                     <option value="location">Location</option>
                                 </select>
 
-                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
-                                </div>
+                                {{-- <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
+                                </div> --}}
 
                             </div>
                         </div>
@@ -145,7 +145,7 @@
                                     <option value="location">Location</option>
                                 </select>
 
-                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.</div>
+                                {{-- <div class="form-text" id="emailHelp">We'll never share your email with anyone else.</div> --}}
 
                             </div>
                         </div>
