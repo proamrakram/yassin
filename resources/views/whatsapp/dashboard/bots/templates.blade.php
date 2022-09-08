@@ -31,7 +31,7 @@
 
                                 <div class="col-lg">
 
-                                    <form action="" class="row g-3">
+                                    <form class="row g-3 align-items-center">
                                         <div class="col-lg">
                                             <label class="visually-hidden" for="inlineFormInputGroupUsername">Template
                                                 Name</label>
@@ -55,7 +55,7 @@
                                             </select>
                                         </div>
 
-                                        <div class="col-lg-1">
+                                        <div class="col-lg">
                                             <button class="btn btn-primary" type="submit">Submit</button>
                                         </div>
 
