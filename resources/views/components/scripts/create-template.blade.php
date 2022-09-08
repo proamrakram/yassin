@@ -29,6 +29,31 @@
         footerTextField.hide();
         footerImageField.hide();
 
+        //Messages
+
+        var header_type_message = $('#header_type_message');
+        var header_text_message = $('#header_text_message');
+        var header_image_message = $('#header_image_message');
+        var body_type_message = $('#body_type_message');
+        var body_text_message = $('#body_text_message');
+        var body_image_message = $('#body_image_message');
+        var footer_type_message = $('#footer_type_message');
+        var footer_text_message = $('#footer_text_message');
+        var footer_image_message = $('#footer_image_message');
+
+
+        //Hide Messages
+        header_type_message.hide();
+        header_text_message.hide();
+        header_image_message.hide();
+        body_type_message.hide();
+        body_text_message.hide();
+        body_image_message.hide();
+        footer_type_message.hide();
+        footer_text_message.hide();
+        footer_image_message.hide();
+
+
         selectedHeaderType.on('change', function() {
 
             if (selectedHeaderType.val() == "text") {
@@ -128,14 +153,55 @@
                     var response = $.parseJSON(reject.responseText);
 
                     $.each(response.errors, function(key, val) {
-                        console.log(response.errors);
+
+                        if (key == "header_format") {
+                            header_type_message.show();
+                            header_type_message.text(val[0]);
+                        }
+
+                        if (key == "body_format") {
+                            body_type_message.show();
+                            body_type_message.text(val[0]);
+                        }
+
+                        if (key == "footer_format") {
+                            footer_type_message.show();
+                            footer_type_message.text(val[0]);
+                        }
+
+                        if (key == "header_text_template") {
+                            header_text_message.show();
+                            header_text_message.text(val[0]);
+                        }
+
+                        if (key == "header_image_template") {
+                            header_image_message.show();
+                            header_image_message.text(val[0]);
+                        }
+
+                        if (key == "body_text_template") {
+                            body_text_message.show();
+                            body_text_message.text(val[0]);
+                        }
+
+                        if (key == "body_image_template") {
+                            body_image_message.show();
+                            body_image_message.text(val[0]);
+                        }
+
+                        if (key == "footer_text_template") {
+                            footer_text_message.show();
+                            footer_text_message.text(val[0]);
+                        }
+
+                        if (key == "footer_image_template") {
+                            footer_image_message.show();
+                            footer_image_message.text(val[0]);
+                        }
+
                     });
                 }
             });
         });
-
-
-
-
     });
 </script>
