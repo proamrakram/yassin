@@ -73,7 +73,7 @@ trait TemplateMessages
     {
         return [
             "type" => "body",
-            "format" => $request->body_format,
+            // "format" => $request->body_format,
             "text" => $request->body_text_template,
 
         ];
