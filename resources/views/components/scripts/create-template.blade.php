@@ -29,6 +29,11 @@
         var footer_image_template = $("#footer_image_template");
 
 
+        selectedHeaderType.text("Choose...");
+        selectedBodyType.text("Choose...");
+        selectedFooterType.text("Choose...");
+
+
         //Hide Elements
         headerTextDiv.hide();
         headerImageDiv.hide();
