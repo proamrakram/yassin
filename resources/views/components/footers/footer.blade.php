@@ -65,10 +65,10 @@
         //Fields
         var selectedHeader = $('#selectedHeader').on();
         var textField = $('#text-div');
-        var imageField = $('#text-image');
+        var imageField = $('#image-div');
 
         selectedHeader.on('change', function() {
-            console.log(textField);
+
             if (selectedHeader.val() == "text") {
                 imageField.hide();
                 textField.show();
