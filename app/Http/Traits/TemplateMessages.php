@@ -51,7 +51,7 @@ trait TemplateMessages
             $footer_message
         ];
 
-        $data = $this->setTemplateObject($components, "createNewTemplate");
+        $data = $this->setTemplateObject($components, "create_new_template");
 
         $url =  "https://graph.facebook.com/v14.0/$whats_app_business_account_id/message_templates";
 
