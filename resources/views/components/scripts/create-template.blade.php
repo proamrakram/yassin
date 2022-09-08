@@ -129,7 +129,7 @@
 
                     //Header
                     header_text_template: headerTextField.val(),
-                    header_image_template: headerTextField.val(),
+                    header_image_template: headerImageField.val(),
 
                     //Body
                     body_text_template: bodyTextField.val(),
@@ -155,50 +155,58 @@
                     $.each(response.errors, function(key, val) {
                         console.log(key);
                         if (key == "header_format") {
+                            selectedHeaderType.css("border-color", "red");
                             header_type_message.show();
                             header_type_message.text(val[0]);
                         }
 
                         if (key == "body_format") {
+                            selectedBodyType.css("border-color", "red");
                             body_type_message.show();
                             body_type_message.text(val[0]);
                         }
 
                         if (key == "footer_format") {
+                            selectedFooterType.css("border-color", "red");
                             footer_type_message.show();
                             footer_type_message.text(val[0]);
                         }
 
                         if (key == "header_text_template") {
+                            headerTextField.css("border-color", "red");
                             header_text_message.show();
                             header_text_message.text(val[0]);
                         }
 
                         if (key == "header_image_template") {
+                            headerImageField.css("border-color", "red");
                             header_image_message.show();
                             header_image_message.text(val[0]);
                         }
 
                         if (key == "body_text_template") {
+                            bodyTextField.css("border-color", "red");
                             body_text_message.show();
                             body_text_message.text(val[0]);
                         }
 
                         if (key == "body_image_template") {
+                            bodyImageField.css("border-color", "red");
                             body_image_message.show();
                             body_image_message.text(val[0]);
                         }
 
                         if (key == "footer_text_template") {
+                            footerTextField.css("border-color", "red");
                             footer_text_message.show();
                             footer_text_message.text(val[0]);
                         }
 
                         if (key == "footer_image_template") {
+                            footerImageField.css("border-color", "red");
                             footer_image_message.show();
                             footer_image_message.text(val[0]);
                         }
-
                     });
                 }
             });
