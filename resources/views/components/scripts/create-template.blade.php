@@ -153,7 +153,7 @@
                     var response = $.parseJSON(reject.responseText);
 
                     $.each(response.errors, function(key, val) {
-
+                        console.log(key);
                         if (key == "header_format") {
                             header_type_message.show();
                             header_type_message.text(val[0]);
