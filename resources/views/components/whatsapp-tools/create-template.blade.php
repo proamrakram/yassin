@@ -14,7 +14,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form id="create_template_form" method="POST">
+            <form id="create_template_form" method="POST"  enctype="multipart/form-data" >
 
                 @csrf
 
@@ -133,7 +133,6 @@
                         <div class="col-lg-12">
                             <div class="mb-3">
                                 <label class="form-label" for="sender_message_name">Footer Format Type</label>
-
                                 <select class="form-select" id="selectedFooterType">
                                     <option selected>Choose...</option>
                                     <option value="text">Text</option>
