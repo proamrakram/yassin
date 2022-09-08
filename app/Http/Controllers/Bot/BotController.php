@@ -124,6 +124,8 @@ class BotController extends Controller
 
     public function createTemplate(Request $request)
     {
+        dd($request->all());
+
         // $request->validate([
         //     "header_format" => ['required'],
         //     "body_format" => ['required'],
@@ -136,7 +138,6 @@ class BotController extends Controller
         //     "footer_image_template" => ['required'],
         // ]);
 
-        dd($request->all());
 
     }
 
