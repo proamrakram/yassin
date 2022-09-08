@@ -14,7 +14,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form id="create_template_form" method="POST"  enctype="multipart/form-data" >
+            <form id="create_template_form" method="POST" enctype="multipart/form-data">
 
                 @csrf
 
