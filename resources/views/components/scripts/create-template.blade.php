@@ -19,10 +19,14 @@
 
         var header_text_template = $("#header_text_template");
         var header_image_template = $("#header_image_template");
-        var body_text_template = $("#body_message_template");
+
+        var body_text_template = $("#body_text_template");
         var body_image_template = $("#body_image_template");
+
         var footer_text_template = $("#footer_text_template");
         var footer_image_template = $("#footer_image_template");
+
+        body_text_template.css("border-color", "red");
 
 
 
@@ -49,7 +53,6 @@
         var footer_type_message = $('#footer_type_message');
         var footer_text_message = $('#footer_text_message');
         var footer_image_message = $('#footer_image_message');
-        body_text_message.css("border-color", "red");
 
         //Hide Messages
         header_type_message.hide();
