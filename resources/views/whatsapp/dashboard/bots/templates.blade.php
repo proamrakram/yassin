@@ -56,7 +56,9 @@
                                 </div>
                             </form>
 
-                            <x-whatsapp-tools.create-template></x-whatsapp-tools.create-template>
+                            <div class="row g-3 align-items-center">
+                                <x-whatsapp-tools.create-template></x-whatsapp-tools.create-template>
+                            </div>
 
 
                         </div>
