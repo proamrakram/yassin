@@ -1,5 +1,5 @@
 <div class="col-lg">
-    <button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#createTemplate">Create Template
+    <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#createTemplate">Create Template
         Message</button>
 </div>
 
@@ -8,7 +8,7 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
 
-            <div class="modal-header bg-warning">
+            <div class="modal-header bg-secondary">
                 <h5 class="modal-title" id="createTemplateTitle">Creating Template Message</h5>
                 {{-- <span class="ms-2">{{ '(' . 'body' . ')' }}</span> --}}
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -172,7 +172,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button class="btn btn-warning" type="submit">Create Template</button>
+                        <button class="btn btn-success" type="submit">Create Template</button>
                         <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
                     </div>
 
