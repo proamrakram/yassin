@@ -28,7 +28,6 @@
                         <div class="card-header border-bottom">
 
                             <form class="row g-3 align-items-center">
-
                                 <div class="col-lg">
                                     <label class="visually-hidden" for="inlineFormInputGroupUsername">Template
                                         Name</label>
@@ -55,11 +54,11 @@
                                 <div class="col-lg-1">
                                     <button class="btn btn-primary" type="submit">Submit</button>
                                 </div>
-
-                                <x-whatsapp-tools.create-template></x-whatsapp-tools.create-template>
-
-
                             </form>
+
+                            <x-whatsapp-tools.create-template></x-whatsapp-tools.create-template>
+
+
                         </div>
                         <div class="card-body">
                             <div class="table-responsive text-center">
