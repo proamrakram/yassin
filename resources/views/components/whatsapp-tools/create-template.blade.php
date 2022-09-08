@@ -53,9 +53,8 @@
                             <div class="mb-3">
                                 <label class="form-label" for="header_text_template">Text</label>
                                 <input class="form-control" name="header_text_template" id="header_text_template"
-                                    type="tel" aria-describedby="emailHelp" value="body">
-                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
-                                </div>
+                                    type="text" aria-describedby="emailHelp" value="body">
+                                {{-- <div class="form-text" id="emailHelp">We'll never share your email with anyone else. </div> --}}
                             </div>
                         </div>
 
@@ -64,8 +63,7 @@
                                 <label class="form-label" for="header_image_template">Image</label>
                                 <input class="form-control" name="header_image_template" id="header_image_template"
                                     type="file" aria-describedby="emailHelp">
-                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
-                                </div>
+                                {{-- <div class="form-text" id="emailHelp">We'll never share your email with anyone else. </div> --}}
                             </div>
                         </div>
                     </div>
@@ -105,6 +103,7 @@
                         </div>
 
                         <div class="col-lg-12" id="body-text-div">
+                            <label class="form-label" for="body_image_template">Body</label>
                             <textarea style="width: inherit;" name="body_message_template" id="body_message_template" rows="3">Enter Your Body Message</textarea>
                         </div>
 
@@ -113,8 +112,7 @@
                                 <label class="form-label" for="body_image_template">Image</label>
                                 <input class="form-control" name="body_image_template" id="body_image_template"
                                     type="file" aria-describedby="emailHelp">
-                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
-                                </div>
+                                {{-- <div class="form-text" id="emailHelp">We'll never share your email with anyone else.</div> --}}
                             </div>
                         </div>
                     </div>
@@ -154,9 +152,8 @@
                             <div class="mb-3">
                                 <label class="form-label" for="footer_text_template">Text</label>
                                 <input class="form-control" name="footer_text_template" id="footer_text_template"
-                                    type="tel" aria-describedby="emailHelp" value="body">
-                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
-                                </div>
+                                    type="text" aria-describedby="emailHelp" value="body">
+                                {{-- <div class="form-text" id="emailHelp">We'll never share your email with anyone else.</div> --}}
                             </div>
                         </div>
 
@@ -165,8 +162,7 @@
                                 <label class="form-label" for="footer_image_template">Image</label>
                                 <input class="form-control" name="footer_image_template" id="footer_image_template"
                                     type="file" aria-describedby="emailHelp">
-                                <div class="form-text" id="emailHelp">We'll never share your email with anyone else.
-                                </div>
+                                {{-- <div class="form-text" id="emailHelp">We'll never share your email with anyone else.</div> --}}
                             </div>
                         </div>
                     </div>
