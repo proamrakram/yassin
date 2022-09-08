@@ -3,6 +3,7 @@
 namespace App\Http\Traits;
 
 use App\Models\Template;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 trait TemplateMessages
@@ -39,21 +40,61 @@ trait TemplateMessages
         }
     }
 
-    public function createTemplate()
+    public function createTemplate(Request $request, $headers, $whats_app_business_account_id)
     {
-        
+        $header_message = $this->setHeaderMessageTemplate($request);
+        $body_message = $this->setBodyMessageTemplate($request);
+        $footer_message = $this->setFooterMessageTemplate($request);
+        $components = [
+            $header_message,
+            $body_message,
+            $footer_message
+        ];
+
+        $data = $this->setTemplateObject($components, "createNewTemplate");
+
+        $url =  "https://graph.facebook.com/v14.0/$whats_app_business_account_id/message_templates";
+
+        $response = Http::withHeaders($this->headers)->post($url, $data);
+
+        return $response;
     }
 
-    public function updateTemplate()
+    public function setHeaderMessageTemplate($request)
     {
+        return [
+            "type" => "header",
+            "format" => $request->header_format,
+            "text" => $request->header_text_template,
+        ];
     }
 
-    public function deleteTemplate()
+    public function setBodyMessageTemplate($request)
     {
+        return [
+            "type" => "body",
+            "format" => $request->body_format,
+            "text" => $request->body_text_template,
+
+        ];
     }
 
-    public function sendTemplate()
+    public function setFooterMessageTemplate($request)
     {
-        return $this->buildObject('newupdate', 'en');
+        return [
+            "type" => "footer",
+            "format" => $request->footer_format,
+            "text" => $request->footer_text_template,
+        ];
+    }
+
+    public function setTemplateObject($components, $name)
+    {
+        return [
+            'name' => $name,
+            'category' => 'OTP',
+            'components' => $components,
+            'language' => 'en',
+        ];
     }
 }

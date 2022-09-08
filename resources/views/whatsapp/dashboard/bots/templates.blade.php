@@ -63,7 +63,7 @@
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <x-whatsapp-tools.create-template></x-whatsapp-tools.create-template>
+                                    <x-whatsapp-tools.create-template :bot="$bot"></x-whatsapp-tools.create-template>
                                 </div>
 
                             </div>

@@ -122,74 +122,12 @@ class BotController extends Controller
         return redirect()->back()->with('success', 'Message has been sent successfully!!');
     }
 
-    public function createTemplate(Request $request)
+    public function createTemplateMessage(Request $request)
     {
-        dd($request->all());
-
-        // $request->validate([
-        //     "header_format" => ['required'],
-        //     "body_format" => ['required'],
-        //     "footer_format" => ['required'],
-        //     "header_text_template" => ['required'],
-        //     "header_image_template" => ['required'],
-        //     "body_text_template" => ['required'],
-        //     "body_image_template" => ['required'],
-        //     "footer_text_template" => ['required'],
-        //     "footer_image_template" => ['required'],
-        // ]);
-
-
-    }
-
-    public function createMessageTemplate()
-    {
-
-        $components = [
-            [
-                'type' => 'HEADER',
-                'format' => 'text',
-                'text' => 'whats app',
-            ],
-
-            [
-                'type' => 'BODY',
-                'text' => 'See the following guides for information regarding the specific types of messages you can send: Text Messages, Media Messages, Contacts and Location Messages, Interactive Messages, Message Templates, Media Message Templates, and Interactive Message Templates.'
-            ],
-
-            [
-                'type' => 'FOOTER',
-                'text' => 'whatsappcalling'
-            ],
-
-            [
-                'type' => 'BUTTONS',
-                'buttons' => [
-                    [
-                        'type' => 'QUICK_REPLY',
-                        'text' => 'Click Me'
-                    ],
-                    [
-                        'type' => 'QUICK_REPLY',
-                        'text' => 'Ok'
-                    ],
-                ]
-            ]
-        ];
-
-        $data = [
-            'name' => 'makenewone',
-            'category' => 'OTP',
-            'components' => $components,
-            'language' => 'en',
-        ];
-
-
-        $bot = Bot::find(1);
-        $url_template =  "https://graph.facebook.com/v14.0/111397521678303/message_templates";
-        $res = Http::withHeaders($this->headers)->post($url_template, $data);
+        $bot = Bot::find($request->bot_id);
+        $res = $this->createTemplate($request, $bot->whats_app_business_account_id, 'name');
         dd($res->json());
     }
-
 
 
 

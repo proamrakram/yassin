@@ -139,6 +139,7 @@
                 url: "{{ route('bot.create-template') }}",
                 method: 'POST',
                 data: {
+                    bot_id: $('#bot_id').val(),
                     header_format: selectedHeaderType.val(),
                     body_format: selectedBodyType.val(),
                     footer_format: selectedFooterType.val(),
