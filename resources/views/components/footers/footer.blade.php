@@ -79,9 +79,10 @@
                 return true;
             }
 
-            if (selectedHeader.val() == "image") {
-                console.log('234567890');
-            }
+            textField.hide();
+            imageField.hide();
+
+            return true;
         });
 
 
