@@ -63,20 +63,29 @@
         $('#message_store_title').removeClass("invisible");
 
         //Fields
-        var selectedHeader = $('#selectedHeader');
-        var textField = $('#header_text_template');
-        var imageField = $('#header_image_template');
-        console.log(selectedHeader.val());
+        var selectedHeader = $('#selectedHeader').on();
+        var textField = $('#text-div');
+        var imageField = $('#text-image');
 
-        if (selectedHeader.val() == "text") {
-            imageField.hide();
-            textField.show();
-        }
+        selectedHeader.on('change', function() {
+            console.log(textField);
+            if (selectedHeader.val() == "text") {
+                imageField.hide();
+                textField.show();
+            }
 
-        if (selectedHeader.val() == "image") {
-            textField.hide();
-            imageField.show();
-        }
+            if (selectedHeader.val() == "image") {
+                textField.hide();
+                imageField.show();
+            }
+        });
+
+
+
+
+
+
+
     });
 </script>
 
