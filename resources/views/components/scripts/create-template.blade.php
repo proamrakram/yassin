@@ -161,8 +161,7 @@
                 },
 
                 success: function(data) {
-
-                    // location.reload(true);
+                    location.reload(true);
                 },
 
                 error: function(reject) {
