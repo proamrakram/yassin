@@ -83,7 +83,7 @@ trait TemplateMessages
     {
         return [
             "type" => "footer",
-            "format" => $request->footer_format,
+            // "format" => $request->footer_format,
             "text" => $request->footer_text_template,
         ];
     }
