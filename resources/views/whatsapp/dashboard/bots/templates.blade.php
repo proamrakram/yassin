@@ -55,14 +55,14 @@
                                             </select>
                                         </div>
 
-                                        <div class="col-lg">
+                                        <div class="col-lg-1">
                                             <button class="btn btn-primary" type="submit">Submit</button>
                                         </div>
 
                                     </form>
                                 </div>
 
-                                <div class="col-lg">
+                                <div class="col-lg-1">
                                     <x-whatsapp-tools.create-template></x-whatsapp-tools.create-template>
                                 </div>
 
