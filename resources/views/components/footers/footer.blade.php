@@ -18,7 +18,7 @@
 
 <!-- JavaScript files-->
 <script src="{{ asset('whatsapp-assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('whatsapp-assets/vendor/chart.js/Chart.min.js') }}"></script>
+{{-- <script src="{{ asset('whatsapp-assets/vendor/chart.js/Chart.min.js') }}"></script> --}}
 <script src="{{ asset('whatsapp-assets/vendor/just-validate/js/just-validate.min.js') }}"></script>
 <script src="{{ asset('whatsapp-assets/vendor/choices.js/public/assets/scripts/choices.min.js') }}"></script>
 <script src="{{ asset('whatsapp-assets/vendor/overlayscrollbars/js/OverlayScrollbars.min.js') }}"></script>

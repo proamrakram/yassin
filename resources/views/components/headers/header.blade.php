@@ -23,7 +23,7 @@
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="{{ asset('whatsapp-assets/css/style.default.css') }}" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="{{ asset('whatsapp-assets/css/custom.css') }}css/custom.css">
+    <link rel="stylesheet" href="{{ asset('whatsapp-assets/css/custom.css') }}">
     <!-- Favicon-->
     <link rel="shortcut icon" href="{{ asset('whatsapp-assets/img/favicon.ico') }}">
 
