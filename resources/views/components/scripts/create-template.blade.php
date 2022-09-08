@@ -26,6 +26,7 @@
         var footer_text_template = $("#footer_text_template");
         var footer_image_template = $("#footer_image_template");
 
+        console.log(body_text_template);
         body_text_template.css("border-color", "red");
 
 
