@@ -133,7 +133,7 @@
             //     e.preventDefault();
 
             //     $.ajax({
-            //         url: "{{ route('register') }}",
+            //         url: "#",
             //         method: 'POST',
             //         data: {
             //             _token: $('meta[name="csrf-token"]').attr('content'),
