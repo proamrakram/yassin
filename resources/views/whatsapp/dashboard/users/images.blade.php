@@ -64,7 +64,7 @@
         </form>
     </div>
 
-    <x-portfolio :wauser="$wa_user"></x-portfolio>
+    <x-whatsapp-tools.portfolio :wauser="$wa_user"></x-portfolio>
 
 
 
