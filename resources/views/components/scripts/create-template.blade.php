@@ -29,9 +29,9 @@
         var footer_image_template = $("#footer_image_template");
 
 
-        selectedHeaderType.text("Choose...");
-        selectedBodyType.text("Choose...");
-        selectedFooterType.text("Choose...");
+        selectedHeaderType.val("null").change();
+        selectedBodyType.val("null").change();
+        selectedFooterType.val("null").change();
 
 
         //Hide Elements
