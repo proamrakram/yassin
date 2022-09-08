@@ -59,9 +59,6 @@
 <script>
     $(document).ready(function() {
 
-        //Messages
-        $('#message_store_title').removeClass("invisible");
-
         //Fields
         var selectedHeader = $('#selectedHeader').on();
         var textField = $('#text-div');
@@ -70,13 +67,17 @@
         selectedHeader.on('change', function() {
 
             if (selectedHeader.val() == "text") {
-                imageField.hide();
-                textField.show();
+                imageField.removeClass("visible");
+                imageField.addClass("invisible");
+                textField.removeClass("invisible");
+                textField.addClass("visible");
             }
 
             if (selectedHeader.val() == "image") {
-                textField.hide();
-                imageField.show();
+                textField.removeClass("visible");
+                textField.addClass("invisible");
+                imageField.removeClass("invisible");
+                imageField.addClass("visible");
             }
         });
 

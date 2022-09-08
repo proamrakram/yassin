@@ -52,7 +52,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-12" id="text-div">
+                        <div class="col-lg-12 invisible" id="text-div">
                             <div class="mb-3">
                                 <label class="form-label" for="header_text_template">Text</label>
                                 <input class="form-control" name="header_text_template" id="header_text_template"
@@ -62,7 +62,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-12" id="image-div">
+                        <div class="col-lg-12 invisible" id="image-div">
                             <div class="mb-3">
                                 <label class="form-label" for="header_image_template">Image</label>
                                 <input class="form-control" name="header_image_template" id="header_image_template"
