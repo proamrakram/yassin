@@ -5,18 +5,20 @@
         var selectedBodyType = $('#selectedBodyType');
         var selectedFooterType = $('#selectedFooterType');
 
-        //Fields Header
+        //Divs Header
         var headerTextDiv = $('#header-text-div');
         var headerImageDiv = $('#header-image-div');
 
-        //Fields Body
+        //Divs Body
         var bodyTextDiv = $("#body-text-div");
         var bodyImageDiv = $("#body-image-div");
 
-        //Fields Footer
+        //Divs Footer
         var footerTextDiv = $("#footer-text-div");
         var footerImageDiv = $("#footer-image-div");
 
+
+        //Fields
         var header_text_template = $("#header_text_template");
         var header_image_template = $("#header_image_template");
 
@@ -25,10 +27,6 @@
 
         var footer_text_template = $("#footer_text_template");
         var footer_image_template = $("#footer_image_template");
-
-        console.log(body_text_template);
-        body_text_template.css("border-color", "red");
-
 
 
         //Hide Elements
@@ -186,37 +184,37 @@
                         }
 
                         if (key == "header_text_template") {
-                            header_text_message.css("border-color", "red");
+                            header_text_template.css("border-color", "red");
                             header_text_message.show();
                             header_text_message.text(val[0]);
                         }
 
                         if (key == "header_image_template") {
-                            header_image_message.css("border-color", "red");
+                            header_image_template.css("border-color", "red");
                             header_image_message.show();
                             header_image_message.text(val[0]);
                         }
 
                         if (key == "body_text_template") {
-                            body_text_message.css("border-color", "red");
+                            body_text_template.css("border-color", "red");
                             body_text_message.show();
                             body_text_message.text(val[0]);
                         }
 
                         if (key == "body_image_template") {
-                            body_image_message.css("border-color", "red");
+                            body_image_template.css("border-color", "red");
                             body_image_message.show();
                             body_image_message.text(val[0]);
                         }
 
                         if (key == "footer_text_template") {
-                            footer_text_message.css("border-color", "red");
+                            footer_text_template.css("border-color", "red");
                             footer_text_message.show();
                             footer_text_message.text(val[0]);
                         }
 
                         if (key == "footer_image_template") {
-                            footer_image_message.css("border-color", "red");
+                            footer_image_template.css("border-color", "red");
                             footer_image_message.show();
                             footer_image_message.text(val[0]);
                         }
