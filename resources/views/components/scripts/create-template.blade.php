@@ -6,28 +6,35 @@
         var selectedFooterType = $('#selectedFooterType');
 
         //Fields Header
-        var headerTextField = $('#header-text-div');
-        var headerImageField = $('#header-image-div');
+        var headerTextDiv = $('#header-text-div');
+        var headerImageDiv = $('#header-image-div');
 
         //Fields Body
-        var bodyTextField = $("#body-text-div");
-        var bodyImageField = $("#body-image-div");
+        var bodyTextDiv = $("#body-text-div");
+        var bodyImageDiv = $("#body-image-div");
 
         //Fields Footer
-        var footerTextField = $("#footer-text-div");
-        var footerImageField = $("#footer-image-div");
+        var footerTextDiv = $("#footer-text-div");
+        var footerImageDiv = $("#footer-image-div");
+
+        var header_text_template = $("#header_text_template");
+        var header_image_template = $("#header_image_template");
+        var body_text_template = $("#body_message_template");
+        var body_image_template = $("#body_image_template");
+        var footer_text_template = $("#footer_text_template");
+        var footer_image_template = $("#footer_image_template");
 
 
 
         //Hide Elements
-        headerTextField.hide();
-        headerImageField.hide();
+        headerTextDiv.hide();
+        headerImageDiv.hide();
 
-        bodyTextField.hide();
-        bodyImageField.hide();
+        bodyTextDiv.hide();
+        bodyImageDiv.hide();
 
-        footerTextField.hide();
-        footerImageField.hide();
+        footerTextDiv.hide();
+        footerImageDiv.hide();
 
         //Messages
 
@@ -57,19 +64,19 @@
         selectedHeaderType.on('change', function() {
 
             if (selectedHeaderType.val() == "text") {
-                headerImageField.hide();
-                headerTextField.show();
+                headerImageDiv.hide();
+                headerTextDiv.show();
                 return true;
             }
 
             if (selectedHeaderType.val() == "image") {
-                headerTextField.hide();
-                headerImageField.show();
+                headerTextDiv.hide();
+                headerImageDiv.show();
                 return true;
             }
 
-            headerTextField.hide();
-            headerImageField.hide();
+            headerTextDiv.hide();
+            headerImageDiv.hide();
 
             return true;
         });
@@ -77,19 +84,19 @@
         selectedBodyType.on('change', function() {
 
             if (selectedBodyType.val() == "text") {
-                bodyImageField.hide();
-                bodyTextField.show();
+                bodyImageDiv.hide();
+                bodyTextDiv.show();
                 return true;
             }
 
             if (selectedBodyType.val() == "image") {
-                bodyTextField.hide();
-                bodyImageField.show();
+                bodyTextDiv.hide();
+                bodyImageDiv.show();
                 return true;
             }
 
-            bodyTextField.hide();
-            bodyImageField.hide();
+            bodyTextDiv.hide();
+            bodyImageDiv.hide();
 
             return true;
         });
@@ -97,19 +104,19 @@
         selectedFooterType.on('change', function() {
 
             if (selectedFooterType.val() == "text") {
-                footerImageField.hide();
-                footerTextField.show();
+                footerImageDiv.hide();
+                footerTextDiv.show();
                 return true;
             }
 
             if (selectedFooterType.val() == "image") {
-                footerTextField.hide();
-                footerImageField.show();
+                footerTextDiv.hide();
+                footerImageDiv.show();
                 return true;
             }
 
-            footerTextField.hide();
-            footerImageField.hide();
+            footerTextDiv.hide();
+            footerImageDiv.hide();
 
             return true;
         });
@@ -128,16 +135,16 @@
                     footer_format: selectedFooterType.val(),
 
                     //Header
-                    header_text_template: headerTextField.val(),
-                    header_image_template: headerImageField.val(),
+                    header_text_template: header_text_template.val(),
+                    header_image_template: header_image_template.val(),
 
                     //Body
-                    body_text_template: bodyTextField.val(),
-                    body_image_template: bodyImageField.val(),
+                    body_text_template: body_text_template.val(),
+                    body_image_template: body_image_template.val(),
 
                     //Footer
-                    footer_text_template: footerTextField.val(),
-                    footer_image_template: footerImageField.val(),
+                    footer_text_template: footer_text_template.val(),
+                    footer_image_template: footer_image_template.val(),
 
                     _token: $('meta[name="csrf-token"]').attr('content'),
                     lang: "{{ app()->getLocale() }}"
@@ -173,37 +180,37 @@
                         }
 
                         if (key == "header_text_template") {
-                            headerTextField.css("border-color", "red");
+                            headerTextDiv.css("border-color", "red");
                             header_text_message.show();
                             header_text_message.text(val[0]);
                         }
 
                         if (key == "header_image_template") {
-                            headerImageField.css("border-color", "red");
+                            headerImageDiv.css("border-color", "red");
                             header_image_message.show();
                             header_image_message.text(val[0]);
                         }
 
                         if (key == "body_text_template") {
-                            bodyTextField.css("border-color", "red");
+                            bodyTextDiv.css("border-color", "red");
                             body_text_message.show();
                             body_text_message.text(val[0]);
                         }
 
                         if (key == "body_image_template") {
-                            bodyImageField.css("border-color", "red");
+                            bodyImageDiv.css("border-color", "red");
                             body_image_message.show();
                             body_image_message.text(val[0]);
                         }
 
                         if (key == "footer_text_template") {
-                            footerTextField.css("border-color", "red");
+                            footerTextDiv.css("border-color", "red");
                             footer_text_message.show();
                             footer_text_message.text(val[0]);
                         }
 
                         if (key == "footer_image_template") {
-                            footerImageField.css("border-color", "red");
+                            footerImageDiv.css("border-color", "red");
                             footer_image_message.show();
                             footer_image_message.text(val[0]);
                         }
