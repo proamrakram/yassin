@@ -35,7 +35,7 @@
                                 <label class="form-label" for="sender_message_name">Header Format Type</label>
 
                                 <select class="form-select" id="selectedHeaderType">
-                                    <option selected>Choose...</option>
+                                    <option value="null" selected>Choose...</option>
                                     <option value="text">Text</option>
                                     <option value="image">Image</option>
                                     <option value="video">Video</option>
@@ -87,7 +87,7 @@
                                 <label class="form-label" for="sender_message_name">Body Format Type</label>
 
                                 <select class="form-select" id="selectedBodyType">
-                                    <option selected>Choose...</option>
+                                    <option value="null" selected>Choose...</option>
                                     <option value="text">Text</option>
                                     <option value="image">Image</option>
                                     <option value="video">Video</option>
@@ -134,7 +134,7 @@
                             <div class="mb-3">
                                 <label class="form-label" for="sender_message_name">Footer Format Type</label>
                                 <select class="form-select" id="selectedFooterType">
-                                    <option selected>Choose...</option>
+                                    <option value="null" selected>Choose...</option>
                                     <option value="text">Text</option>
                                     <option value="image">Image</option>
                                     <option value="video">Video</option>
@@ -225,7 +225,7 @@
         <div class="mb-3">
             <label class="form-label" for="sender_message_name">Button Type</label>
             <select class="form-select" id="inlineFormSelectPref">
-                <option selected>Choose...</option>
+                <option value="null" selected>Choose...</option>
                 <option value="QUICK_REPLY">Quick Reply</option>
                 <option value="URL">URL</option>
                 <option value="PHONE_NUMBER">Phone Number</option>

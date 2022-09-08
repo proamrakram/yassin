@@ -41,9 +41,11 @@
         var header_type_message = $('#header_type_message');
         var header_text_message = $('#header_text_message');
         var header_image_message = $('#header_image_message');
+
         var body_type_message = $('#body_type_message');
         var body_text_message = $('#body_text_message');
         var body_image_message = $('#body_image_message');
+
         var footer_type_message = $('#footer_type_message');
         var footer_text_message = $('#footer_text_message');
         var footer_image_message = $('#footer_image_message');
@@ -180,37 +182,37 @@
                         }
 
                         if (key == "header_text_template") {
-                            headerTextDiv.css("border-color", "red");
+                            header_text_message.css("border-color", "red");
                             header_text_message.show();
                             header_text_message.text(val[0]);
                         }
 
                         if (key == "header_image_template") {
-                            headerImageDiv.css("border-color", "red");
+                            header_image_message.css("border-color", "red");
                             header_image_message.show();
                             header_image_message.text(val[0]);
                         }
 
                         if (key == "body_text_template") {
-                            bodyTextDiv.css("border-color", "red");
+                            body_text_message.css("border-color", "red");
                             body_text_message.show();
                             body_text_message.text(val[0]);
                         }
 
                         if (key == "body_image_template") {
-                            bodyImageDiv.css("border-color", "red");
+                            body_image_message.css("border-color", "red");
                             body_image_message.show();
                             body_image_message.text(val[0]);
                         }
 
                         if (key == "footer_text_template") {
-                            footerTextDiv.css("border-color", "red");
+                            footer_text_message.css("border-color", "red");
                             footer_text_message.show();
                             footer_text_message.text(val[0]);
                         }
 
                         if (key == "footer_image_template") {
-                            footerImageDiv.css("border-color", "red");
+                            footer_image_message.css("border-color", "red");
                             footer_image_message.show();
                             footer_image_message.text(val[0]);
                         }
