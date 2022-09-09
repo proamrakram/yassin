@@ -207,9 +207,11 @@ class BotController extends Controller
                             [
                                 "title" => "your title here now",
                                 "rows" => [
-                                    "id" => "1",
-                                    "title" => "now good",
-                                    "description" => "row title test"
+                                    [
+                                        "id" => "1",
+                                        "title" => "now good",
+                                        "description" => "row title test"
+                                    ]
                                 ]
                             ]
                         ]
