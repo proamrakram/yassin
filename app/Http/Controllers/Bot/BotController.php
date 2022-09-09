@@ -202,7 +202,7 @@ class BotController extends Controller
                         "text" => "message footer here man"
                     ],
                     "action" => [
-                        "buttom" => "click me now",
+                        "button" => "click me now",
                         "section" => [
                             [
                                 "title" => "your title here now",
