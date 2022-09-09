@@ -95,7 +95,7 @@
         "debug": true,
         "newestOnTop": true,
         "progressBar": false,
-        "positionClass": "toast-auto",
+        "positionClass": "toast-center-center",
         "preventDuplicates": false,
         "onclick": null,
         "showDuration": "300",
