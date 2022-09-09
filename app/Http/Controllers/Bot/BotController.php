@@ -163,6 +163,16 @@ class BotController extends Controller
                                 "text" => "Hello World from the good life"
                             ]
                         ],
+                    ],
+
+                    [
+                        "type" => "footer",
+                        "parameters" => [
+                            [
+                                "type" => "text",
+                                "text" => "Hello World from the good life"
+                            ]
+                        ],
                     ]
                 ],
 
