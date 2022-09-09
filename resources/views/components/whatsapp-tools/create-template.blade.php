@@ -24,7 +24,7 @@
 
                     <div class="row">
                         <div class="col-lg-6">
-                            <label class="form-label" for="header_message"><strong>Template</strong></label>
+                            <label class="form-label" for="template_message"><strong>Template</strong></label>
                         </div>
                     </div>
 

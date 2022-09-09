@@ -1,11 +1,5 @@
 <script>
     $(document).ready(function() {
-
-        //Template Message
-        var template_name = $('#template_name');
-        var selectedTemplateType = $('#selectedTemplateType');
-        var selectedTemplateLanguage = $('#selectedTemplateLanguage');
-
         //Fields
         var selectedHeaderType = $('#selectedHeaderType');
         var selectedBodyType = $('#selectedBodyType');
@@ -34,6 +28,11 @@
         var footer_text_template = $("#footer_text_template");
         var footer_image_template = $("#footer_image_template");
 
+
+        //Template Message
+        var template_name = $('#template_name');
+        var selectedTemplateType = $('#selectedTemplateType');
+        var selectedTemplateLanguage = $('#selectedTemplateLanguage');
 
         selectedHeaderType.val("null").change();
         selectedBodyType.val("null").change();
@@ -80,6 +79,7 @@
         footer_type_message.hide();
         footer_text_message.hide();
         footer_image_message.hide();
+
         template_language_message.hide();
         template_name_message.hide();
         template_type_message.hide();
