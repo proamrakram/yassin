@@ -42,13 +42,10 @@ trait TemplateMessages
 
     public function createTemplate(Request $request, $headers, $whats_app_business_account_id)
     {
-        $header_message = $this->setHeaderMessageTemplate($request);
-        $body_message = $this->setBodyMessageTemplate($request);
-        $footer_message = $this->setFooterMessageTemplate($request);
         $components = [
-            $header_message,
-            $body_message,
-            $footer_message
+            $this->setHeaderMessageTemplate($request),
+            $this->setBodyMessageTemplate($request),
+            $this->setFooterMessageTemplate($request)
         ];
 
         $data = $this->setTemplateObject($components, "create_new_template");
@@ -64,8 +61,10 @@ trait TemplateMessages
     {
         return [
             "type" => "header",
-            "format" => $request->header_format,
-            "text" => $request->header_text_template,
+            // "format" => $request->header_format,
+            $request->header_format => [
+                "link" => "https://static.remove.bg/remove-bg-web/37843dee2531e43723b012aa78be4b91cc211fef/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg",
+            ]
         ];
     }
 
@@ -97,4 +96,5 @@ trait TemplateMessages
             'language' => 'en',
         ];
     }
+
 }

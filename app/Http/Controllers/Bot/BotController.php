@@ -129,7 +129,48 @@ class BotController extends Controller
         dd($res->json());
     }
 
+    public function sendTemplateTest()
+    {
+        $data = [
+            'messaging_product' => "whatsapp",
+            'recipient_type' => 'individual',
+            'to' => '972599916672',
+            'type' => 'template',
+            "template" => [
+                "name" => "new_template",
+                'language' => [
+                    'code' => 'en_US'
+                ],
+                'components' => [
+                    [
+                        "type" => "header",
+                        "parameters" => [
+                            [
+                                "type" => "image",
+                                "image" => [
+                                    "link" => "https://static.remove.bg/remove-bg-web/37843dee2531e43723b012aa78be4b91cc211fef/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg",
+                                ],
+                            ],
+                        ],
+                    ],
 
+                    [
+                        "type" => "body",
+                        "parameters" => [
+                            [
+                                "type" => "text",
+                                "text" => "Hello World from the good life"
+                            ]
+                        ],
+                    ]
+                ],
+
+            ]
+        ];
+
+        $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $data);
+        dd($response->json());
+    }
 
 
 
