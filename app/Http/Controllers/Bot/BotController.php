@@ -179,7 +179,46 @@ class BotController extends Controller
         dd($response->json());
     }
 
+    public function sendInteractive()
+    {
+        $bot = Bot::find(1);
 
+        $interactive =
+            [
+                "recipient_type" => "individual",
+                "to" => "972599916672",
+                "type" => "interactive",
+                "interactive" => [
+                    "type" => "list",
+                    "header" => [
+                        "type" => "text",
+                        "text" => "your text here"
+                    ],
+                    "body" => [
+                        "text" => "body message here man"
+                    ],
+                    "footer" => [
+                        "text" => "message footer here man"
+                    ],
+                    "action" => [
+                        "buttom" => "click me now",
+                        "section" => [
+                            [
+                                "title" => "your title here now",
+                                "rows" => [
+                                    "id" => "1",
+                                    "title" => "now good",
+                                    "description" => "row title test"
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ];
+
+        $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $interactive);
+        dd($response->json());
+    }
 
 
 
