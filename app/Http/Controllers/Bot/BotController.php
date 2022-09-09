@@ -145,7 +145,10 @@ class BotController extends Controller
                     [
                         "type" => "header",
                         "parameters" => [
-                            ["text" => "Hello World"]
+                            [
+                                "type" => "text",
+                                "text" => "Hello World",
+                            ]
                         ],
                     ],
 
