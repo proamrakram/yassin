@@ -166,11 +166,13 @@ class BotController extends Controller
                     ],
 
                     [
-                        "type" => "footer",
+                        "type" => "button",
+                        "sub_type" => "quick_reply",
+                        "index" => "1",
                         "parameters" => [
                             [
                                 "type" => "text",
-                                "text" => "Hello World from the good life"
+                                "text" => "Hello World"
                             ]
                         ],
                     ]
