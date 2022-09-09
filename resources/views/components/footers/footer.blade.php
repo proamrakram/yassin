@@ -90,29 +90,35 @@
 
     // Show at the bottom, top is the default.
 
+    toastr.options = {
+        "closeButton": true,
+        "debug": true,
+        "newestOnTop": true,
+        "progressBar": false,
+        "positionClass": "toast-top-center",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
+
     // Toaster Response
     @if (Session::has('success'))
-        toastr.options.newestOnTop = false;
-        toastr.options.newestOnBottom = true;
-        toastr.options.extendedTimeOut = 600;
-        toastr.options.timeOut = 5000;
-        toastr.options.showEasing = 'swing';
-        toastr.options.onclick = function() {
-            console.log('clicked');
-        }
-
-        toastr.options.onShown = function() {
-            console.log('hello');
-        }
         toastr.success("{{ Session::get('success') }}");
     @endif
 
-    @if (Session::has('success'))
-        toastr.info("{{ Session::get('success') }}");
+    @if (Session::has('info'))
+        toastr.info("{{ Session::get('info') }}");
     @endif
 
-    @if (Session::has('success'))
-        toastr.error("{{ Session::get('success') }}");
+    @if (Session::has('error'))
+        toastr.error("{{ Session::get('error') }}");
     @endif
 
 
