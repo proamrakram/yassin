@@ -138,7 +138,7 @@ class BotController extends Controller
             'type' => 'template',
             "template" => [
                 // "namespace" => "187c842b_5e53_40c2_8ef9_1bf667f42f40",
-                "name" => "newtest",
+                "name" => "newtest2",
                 'language' => [
                     'code' => 'en_US'
                 ],
