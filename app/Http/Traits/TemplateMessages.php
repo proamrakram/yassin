@@ -61,7 +61,7 @@ trait TemplateMessages
     {
         return [
             "type" => "header",
-            [
+            "media" => [
                 "type" => "image",
                 "image" => [
                     "link" => "http(s)://the-url",
