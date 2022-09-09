@@ -28,6 +28,9 @@
     <!-- Favicon-->
     <link rel="shortcut icon" href="{{ asset('whatsapp-assets/img/favicon.ico') }}">
 
+    <!-- Toastr -->
+    <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
+
     <!-- Tweaks for older IEs-->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>

@@ -29,8 +29,23 @@
 <!-- Main File-->
 <script src="{{ asset('whatsapp-assets/js/front.js') }}"></script>
 
+<!-- -->
+<script src="{{ asset('assets/js/toastr.min.js') }}"></script>
 
 <script>
+    // Toaster Response
+    @if (Session::has('success'))
+        toastr.success("{{ Session::get('success') }}");
+    @endif
+
+    @if (Session::has('info'))
+        toastr.info("{{ Session::get('info') }}");
+    @endif
+
+    @if (Session::has('error'))
+        toastr.error("{{ Session::get('error') }}");
+    @endif
+
     // ------------------------------------------------------- //
     //   Inject SVG Sprite -
     //   see more here
