@@ -29,13 +29,12 @@
 <!-- Main File-->
 <script src="{{ asset('whatsapp-assets/js/front.js') }}"></script>
 
-<!-- -->
+<!-- Toastr Js -->
 <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
 
 <script>
     // Toaster Response
     @if (Session::has('success'))
-        console.log("{{ Session::get('success') }}");
         toastr.success("{{ Session::get('success') }}");
     @endif
 
