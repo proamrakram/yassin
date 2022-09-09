@@ -93,8 +93,8 @@
     // Toaster Response
     @if (Session::has('success'))
         toastr.options.newestOnTop = false;
-        toastr.options.extendedTimeOut = 60;
-        toastr.options.timeOut = 30;
+        toastr.options.extendedTimeOut = 600;
+        toastr.options.timeOut = 5000;
         toastr.options.showEasing = 'swing';
         toastr.options.onclick = function() {
             console.log('clicked');
