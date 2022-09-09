@@ -160,10 +160,6 @@ class BotController extends Controller
                                 "type" => "text",
                                 "text" => "TestingBody"
                             ],
-                            [
-                                "type" => "text",
-                                "text" => "TestingBody"
-                            ]
                         ],
                     ],
                 ],
