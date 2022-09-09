@@ -1,5 +1,11 @@
 <script>
     $(document).ready(function() {
+
+        //Template Message
+        var template_name = $('#template_name');
+        var selectedTemplateType = $('#selectedTemplateType');
+        var selectedTemplateLanguage = $('#selectedTemplateLanguage');
+
         //Fields
         var selectedHeaderType = $('#selectedHeaderType');
         var selectedBodyType = $('#selectedBodyType');
@@ -32,7 +38,8 @@
         selectedHeaderType.val("null").change();
         selectedBodyType.val("null").change();
         selectedFooterType.val("null").change();
-
+        selectedTemplateType.val("null").change();
+        selectedTemplateLanguage.val("null").change();
 
         //Hide Elements
         headerTextDiv.hide();
@@ -58,6 +65,11 @@
         var footer_text_message = $('#footer_text_message');
         var footer_image_message = $('#footer_image_message');
 
+        var template_language_message = $('#template_language_message');
+        var template_name_message = $('#template_name_message');
+        var template_type_message $('#template_type_message');
+
+
         //Hide Messages
         header_type_message.hide();
         header_text_message.hide();
@@ -68,6 +80,9 @@
         footer_type_message.hide();
         footer_text_message.hide();
         footer_image_message.hide();
+        template_language_message.hide();
+        template_name_message.hide();
+        template_type_message.hide();
 
 
         selectedHeaderType.on('change', function() {
@@ -139,6 +154,10 @@
                 url: "{{ route('bot.create-template') }}",
                 method: 'POST',
                 data: {
+                    template_name: template_name.val(),
+                    template_category: selectedTemplateType.val(),
+                    template_language: selectedTemplateLanguage.val(),
+
                     bot_id: $('#bot_id').val(),
                     header_format: selectedHeaderType.val(),
                     body_format: selectedBodyType.val(),
@@ -169,7 +188,25 @@
                     var response = $.parseJSON(reject.responseText);
 
                     $.each(response.errors, function(key, val) {
-                        console.log(key);
+
+                        if (key == "template_name") {
+                            template_name.css("border-color", "red");
+                            template_name_message.show();
+                            template_name_message.text(val[0]);
+                        }
+
+                        if (key == "template_category") {
+                            template_category.css("border-color", "red");
+                            template_type_message.show();
+                            template_type_message.text(val[0]);
+                        }
+
+                        if (key == "template_language") {
+                            template_language.css("border-color", "red");
+                            template_language_message.show();
+                            template_language_message.text(val[0]);
+                        }
+
                         if (key == "header_format") {
                             selectedHeaderType.css("border-color", "red");
                             header_type_message.show();

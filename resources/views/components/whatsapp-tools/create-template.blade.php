@@ -21,15 +21,58 @@
 
                 <div class="modal-body">
 
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label class="form-label" for="header_message"><strong>Template</strong></label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12" id="template-name-div">
+                            <div class="mb-3">
+                                <label class="form-label" for="template_text_template">Template Name</label>
+                                <input class="form-control" name="template_name" id="template_name" type="text"
+                                    aria-describedby="emailHelp" value="body">
+                                <div class="form-text text-danger" id="template_name_message"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <label class="form-label" for="template_type">Template Type</label>
+                                <select class="form-select" id="selectedTemplateType">
+                                    <option value="null" selected>Choose...</option>
+                                    <option value="OTP">OTP</option>
+                                    <option value="TRANSACTIONAL">TRANSACTIONAL</option>
+                                    <option value="MARKETING">MARKETING</option>
+                                </select>
+                                <div class="form-text text-danger" id="template_type_message"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <label class="form-label" for="template_language">Template Language</label>
+                                <select class="form-select" id="selectedTemplateLanguage">
+                                    <option value="null" selected>Choose...</option>
+                                    <option value="en_US">En_Us</option>
+                                    <option value="ar">Ar</option>
+                                </select>
+                                <div class="form-text text-danger" id="template_language_message"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
                     <div class="row">
                         <div class="col-lg-6">
                             <label class="form-label" for="header_message"><strong>Header Style Message</strong></label>
                         </div>
                     </div>
 
-
                     {{-- Header Style --}}
-
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="mb-3">
