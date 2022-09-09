@@ -160,6 +160,14 @@ class BotController extends Controller
                                 "type" => "text",
                                 "text" => "TestingBody"
                             ],
+                            [
+                                "type" => "currency",
+                                "currency" => [
+                                    "fallback_value" => "$100.99",
+                                    "code" => "USD",
+                                    "amount_1000" => 100990
+                                ]
+                            ],
                         ],
                     ],
                 ],
