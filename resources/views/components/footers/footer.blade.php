@@ -95,7 +95,7 @@
         "debug": true,
         "newestOnTop": true,
         "progressBar": false,
-        "positionClass": "toast-bottom-full-width",
+        "positionClass": "toast-center",
         "preventDuplicates": false,
         "onclick": null,
         "showDuration": "300",
@@ -120,8 +120,6 @@
     @if (Session::has('error'))
         toastr.error("{{ Session::get('error') }}");
     @endif
-
-
 
 
 
