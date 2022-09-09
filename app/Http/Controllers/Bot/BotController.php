@@ -146,6 +146,12 @@ class BotController extends Controller
                         "type" => "header",
                         "parameters" => [
                             [
+                                "type" => "text"
+                            ],
+                            [
+                                "type" => "text"
+                            ],
+                            [
                                 "type" => "text",
                                 "text" => "Hello World There"
                             ],
@@ -156,23 +162,14 @@ class BotController extends Controller
                         "type" => "body",
                         "parameters" => [
                             [
+                                "type" => "text"
+                            ],
+                            [
                                 "type" => "text",
                                 "text" => "Hello World from the good life"
                             ]
                         ],
                     ],
-
-                    // [
-                    //     "type" => "button",
-                    //     "sub_type" => "quick_reply",
-                    //     "index" => "1",
-                    //     "parameters" => [
-                    //         [
-                    //             "type" => "text",
-                    //             "text" => "Hello World"
-                    //         ]
-                    //     ],
-                    // ]
                 ],
 
             ]
