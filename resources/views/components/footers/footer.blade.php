@@ -86,10 +86,9 @@
     // toastr.options.timeOut = 0;
     // toastr.options.extendedTimeOut = 0;
     // toastr.options.progressBar = true;
-    // toastr.options.rtl = true;
+    //
 
     // Show at the bottom, top is the default.
-    toastr.options.newestOnTop = true;
 
     // Toaster Response
     @if (Session::has('success'))
@@ -103,6 +102,13 @@
     @if (Session::has('error'))
         toastr.error("{{ Session::get('error') }}");
     @endif
+
+    toastr.options.newestOnTop = false;
+    toastr.options.rtl = false;
+
+    toastr.options.onShown = function() {
+        console.log('hello');
+    }
 
 
     // ------------------------------------------------------- //
