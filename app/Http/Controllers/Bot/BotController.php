@@ -137,7 +137,7 @@ class BotController extends Controller
             'to' => '972599916672',
             'type' => 'template',
             "template" => [
-                "namespace" => "187c842b_5e53_40c2_8ef9_1bf667f42f40",
+                // "namespace" => "187c842b_5e53_40c2_8ef9_1bf667f42f40",
                 "name" => "newtest",
                 'language' => [
                     'code' => 'en'
