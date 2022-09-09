@@ -93,18 +93,25 @@
     // Toaster Response
     @if (Session::has('success'))
         toastr.options.newestOnTop = false;
+        toastr.options.extendedTimeOut = 60;
+        toastr.options.timeOut = 30;
+        toastr.options.showEasing = 'swing';
+        toastr.options.onclick = function() {
+            console.log('clicked');
+        }
+
         toastr.options.onShown = function() {
             console.log('hello');
         }
         toastr.success("{{ Session::get('success') }}");
     @endif
 
-    @if (Session::has('info'))
-        toastr.info("{{ Session::get('info') }}");
+    @if (Session::has('success'))
+        toastr.info("{{ Session::get('success') }}");
     @endif
 
-    @if (Session::has('error'))
-        toastr.error("{{ Session::get('error') }}");
+    @if (Session::has('success'))
+        toastr.error("{{ Session::get('success') }}");
     @endif
 
 
