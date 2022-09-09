@@ -139,7 +139,7 @@ class BotController extends Controller
             "template" => [
                 "name" => "amirshadeowss",
                 'language' => [
-                    'code' => 'en_US'
+                    'code' => 'en'
                 ],
                 'components' => [
                     [
