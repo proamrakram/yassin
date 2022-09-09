@@ -89,7 +89,7 @@
     // toastr.options.rtl = true;
 
     // Show at the bottom, top is the default.
-    toastr.options.newestOnTop = false;
+    toastr.options.newestOnTop = true;
 
     // Toaster Response
     @if (Session::has('success'))
@@ -104,7 +104,7 @@
         toastr.error("{{ Session::get('error') }}");
     @endif
 
-    
+
     // ------------------------------------------------------- //
     //   Inject SVG Sprite -
     //   see more here
