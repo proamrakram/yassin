@@ -185,6 +185,7 @@ class BotController extends Controller
 
         $interactive =
             [
+                'messaging_product' => "whatsapp",
                 "recipient_type" => "individual",
                 "to" => "972599916672",
                 "type" => "interactive",
