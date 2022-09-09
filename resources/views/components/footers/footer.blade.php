@@ -104,6 +104,7 @@
         toastr.error("{{ Session::get('error') }}");
     @endif
 
+    
     // ------------------------------------------------------- //
     //   Inject SVG Sprite -
     //   see more here
