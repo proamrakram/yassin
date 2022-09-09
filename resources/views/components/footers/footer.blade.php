@@ -32,6 +32,13 @@
 <!-- Toastr Js -->
 <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
 
+<style>
+    .toast-center-center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
 <script>
     // Display an info toast with no title
     // toastr.info('Are you the 6 fingered man?')
