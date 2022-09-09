@@ -92,6 +92,10 @@
 
     // Toaster Response
     @if (Session::has('success'))
+        toastr.options.newestOnTop = false;
+        toastr.options.onShown = function() {
+            console.log('hello');
+        }
         toastr.success("{{ Session::get('success') }}");
     @endif
 
@@ -103,12 +107,8 @@
         toastr.error("{{ Session::get('error') }}");
     @endif
 
-    toastr.options.newestOnTop = false;
-    toastr.options.rtl = false;
 
-    toastr.options.onShown = function() {
-        console.log('hello');
-    }
+
 
 
     // ------------------------------------------------------- //
