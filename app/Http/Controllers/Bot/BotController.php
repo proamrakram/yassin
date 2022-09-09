@@ -165,17 +165,17 @@ class BotController extends Controller
                         ],
                     ],
 
-                    [
-                        "type" => "button",
-                        "sub_type" => "quick_reply",
-                        "index" => "1",
-                        "parameters" => [
-                            [
-                                "type" => "text",
-                                "text" => "Hello World"
-                            ]
-                        ],
-                    ]
+                    // [
+                    //     "type" => "button",
+                    //     "sub_type" => "quick_reply",
+                    //     "index" => "1",
+                    //     "parameters" => [
+                    //         [
+                    //             "type" => "text",
+                    //             "text" => "Hello World"
+                    //         ]
+                    //     ],
+                    // ]
                 ],
 
             ]
