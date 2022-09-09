@@ -66,7 +66,7 @@
 
         var template_language_message = $('#template_language_message');
         var template_name_message = $('#template_name_message');
-        var template_type_message $('#template_type_message');
+        var template_type_message = $('#template_type_message');
 
 
         //Hide Messages
