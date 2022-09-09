@@ -49,7 +49,7 @@ trait TemplateMessages
         ];
 
         $data = $this->setTemplateObject($components, $request);
-
+        dd($data);
         $url =  "https://graph.facebook.com/v14.0/$whats_app_business_account_id/message_templates";
 
         $response = Http::withHeaders($headers)->post($url, $data);
@@ -62,8 +62,9 @@ trait TemplateMessages
         return [
             "type" => "header",
             "format" => $request->header_format,
-            "text" => $request->header_text_template
-
+            $request->header_format => [
+                "link" =>  "https://static.remove.bg/remove-bg-web/37843dee2531e43723b012aa78be4b91cc211fef/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
+            ]
         ];
     }
 
@@ -71,7 +72,6 @@ trait TemplateMessages
     {
         return [
             "type" => "body",
-            // "format" => $request->body_format,
             "text" => $request->body_text_template,
 
         ];
@@ -81,7 +81,6 @@ trait TemplateMessages
     {
         return [
             "type" => "footer",
-            // "format" => $request->footer_format,
             "text" => $request->footer_text_template,
         ];
     }
