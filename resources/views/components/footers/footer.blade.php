@@ -35,6 +35,7 @@
 <script>
     // Toaster Response
     @if (Session::has('success'))
+        console.log("{{ Session::get('success') }}");
         toastr.success("{{ Session::get('success') }}");
     @endif
 
