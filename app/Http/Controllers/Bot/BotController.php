@@ -137,7 +137,8 @@ class BotController extends Controller
             'to' => '972599916672',
             'type' => 'template',
             "template" => [
-                "name" => "amirshadeowss",
+                "namespace" => "187c842b_5e53_40c2_8ef9_1bf667f42f40",
+                "name" => "newtest",
                 'language' => [
                     'code' => 'en'
                 ],
@@ -147,10 +148,6 @@ class BotController extends Controller
                         "parameters" => [
                             [
                                 "type" => "text",
-                                "text" => "name"
-                            ],
-                            [
-                                "type" => "text",
                                 "text" => "Hello World",
                             ]
                         ],
@@ -158,7 +155,16 @@ class BotController extends Controller
 
                     [
                         "type" => "body",
-                        "parameters" => [],
+                        "parameters" => [
+                            [
+                                "type" => "text",
+                                "text" => "TestingBody"
+                            ],
+                            [
+                                "type" => "text",
+                                "text" => "TestingBody"
+                            ]
+                        ],
                     ],
                 ],
 
