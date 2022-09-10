@@ -131,51 +131,39 @@ class BotController extends Controller
 
     public function sendTemplateTest()
     {
+        $bot = Bot::find(1)->whats_app_business_account_id;
+
         $data = [
             'messaging_product' => "whatsapp",
             'recipient_type' => 'individual',
             'to' => '972599916672',
             'type' => 'template',
             "template" => [
-                // "namespace" => "187c842b_5e53_40c2_8ef9_1bf667f42f40",
-                "name" => "newtest2",
+                "name" => "newtest4",
                 'language' => [
                     'code' => 'en_US'
                 ],
                 'components' => [
                     [
                         "type" => "header",
-                        "parameters" => [
-                            [
-                                "type" => "text",
-                                "text" => "Hello World",
-                            ]
-                        ],
+                        "format" => "image",
+                        "image" => [
+                            "link" => "https://static.remove.bg/remove-bg-web/37843dee2531e43723b012aa78be4b91cc211fef/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
+                        ]
+
                     ],
 
                     [
                         "type" => "body",
-                        "parameters" => [
-                            [
-                                "type" => "text",
-                                "text" => "TestingBody"
-                            ],
-                            [
-                                "type" => "currency",
-                                "currency" => [
-                                    "fallback_value" => "$100.99",
-                                    "code" => "USD",
-                                    "amount_1000" => 100990
-                                ]
-                            ],
-                        ],
+                        "text" => "We are now working on {{1}} platform"
+
                     ],
                 ],
 
             ]
         ];
-
-        $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $data);
+        $url =  "https://graph.facebook.com/v14.0/$bot/message_templates";
+        $response = Http::withHeaders($this->headers)->post($url, $data);
         dd($response->json());
     }
 
