@@ -15,7 +15,7 @@
     <!-- Page Header-->
     <header class="py-4">
         <div class="container-fluid py-2">
-            <h1 class="h3 fw-normal mb-0">Whats App Bots</h1>
+            <h1 class="h3 fw-normal mb-0">Whats App Bots with Me</h1>
         </div>
     </header>
 
@@ -36,7 +36,7 @@
                                             <label class="visually-hidden" for="inlineFormInputGroupUsername">Template
                                                 Name</label>
                                             <div class="input-group">
-                                                <img src="{{ asset('whatsapp-assets/icons/search.ico') }}"
+                                                <img src="/whatsapp-assets/icons/search.ico"
                                                     width="30" height="30" alt="search">
 
                                                 <div class="input-group-text ms-3">@</div>

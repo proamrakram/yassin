@@ -17,20 +17,20 @@
 
 
 <!-- JavaScript files-->
-<script src="{{ asset('whatsapp-assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-{{-- <script src="{{ asset('whatsapp-assets/vendor/chart.js/Chart.min.js') }}"></script> --}}
-<script src="{{ asset('whatsapp-assets/vendor/just-validate/js/just-validate.min.js') }}"></script>
-<script src="{{ asset('whatsapp-assets/vendor/choices.js/public/assets/scripts/choices.min.js') }}"></script>
-<script src="{{ asset('whatsapp-assets/vendor/overlayscrollbars/js/OverlayScrollbars.min.js') }}"></script>
-{{-- <script src="{{ asset('whatsapp-assets/js/charts-home.js') }}"></script> --}}
+<script src="/whatsapp-assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+{{-- <script src="whatsapp-assets/vendor/chart.js/Chart.min.js"></script> --}}
+<script src="/whatsapp-assets/vendor/just-validate/js/just-validate.min.js"></script>
+<script src="/whatsapp-assets/vendor/choices.js/public/assets/scripts/choices.min.js"></script>
+<script src="/whatsapp-assets/vendor/overlayscrollbars/js/OverlayScrollbars.min.js"></script>
+{{-- <script src="whatsapp-assets/js/charts-home.js"></script> --}}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 
 <!-- Main File-->
-<script src="{{ asset('whatsapp-assets/js/front.js') }}"></script>
+<script src="/whatsapp-assets/js/front.js"></script>
 
 <!-- Toastr Js -->
-<script src="{{ asset('assets/js/toastr.min.js') }}"></script>
+<script src="/assets/js/toastr.min.js"></script>
 
 <script>
     toastr.options = {

@@ -31,7 +31,7 @@
                                 <div class="col-lg">
                                     <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
                                     <div class="input-group">
-                                        <img src="{{ asset('whatsapp-assets/icons/search.ico') }}" width="30"
+                                        <img src="/whatsapp-assets/icons/search.ico" width="30"
                                             height="30" alt="search">
 
                                         <div class="input-group-text ms-3">@</div>
@@ -78,13 +78,13 @@
                                             <tr>
                                                 <th scope="row">{{ $wa_user->id }}</th>
                                                 <td>{{ $wa_user->bot_id }}</td>
-                                                <th scope="row"><a href="#"><img class="rounded-circle" src="{{ asset('whatsapp-assets/img/avatar-8.jpg') }}"  width="30" height="30" alt="smilegirl.ico"></a></th>
+                                                <th scope="row"><a href="#"><img class="rounded-circle" src="/whatsapp-assets/img/avatar-8.jpg"  width="30" height="30" alt="smilegirl.ico"></a></th>
                                                 <td>{{ $wa_user->name }}</td>
                                                 <td>{{ $wa_user->phone_number }}</td>
-                                                <td><a href="{{route('admin.user-texts', $wa_user->id)}}"><img src="{{ asset('whatsapp-assets/svg/text-messages.svg') }}" width="30" height="30" alt="text-message"></a></td>
-                                                <td><a href="{{route('admin.user-images', $wa_user->id)}}"><img src="{{ asset('whatsapp-assets/svg/image-messages.svg') }}" width="30" height="30" alt="image-message"></a></td>
-                                                <td><a href=""><img src="{{ asset('whatsapp-assets/svg/video-messages.svg') }}" width="30" height="30" alt="video-message"></a></td>
-                                                <td><a href=""><img src="{{ asset('whatsapp-assets/svg/document-messages.svg') }}" width="30" height="30" alt="document-message"></a></td>
+                                                <td><a href="{{route('admin.user-texts', $wa_user->id)}}"><img src="/whatsapp-assets/svg/text-messages.svg" width="30" height="30" alt="text-message"></a></td>
+                                                <td><a href="{{route('admin.user-images', $wa_user->id)}}"><img src="/whatsapp-assets/svg/image-messages.svg" width="30" height="30" alt="image-message"></a></td>
+                                                <td><a href=""><img src="/whatsapp-assets/svg/video-messages.svg" width="30" height="30" alt="video-message"></a></td>
+                                                <td><a href=""><img src="/whatsapp-assets/svg/document-messages.svg" width="30" height="30" alt="document-message"></a></td>
                                             </tr>
                                         @endforeach
 

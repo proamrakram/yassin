@@ -36,7 +36,7 @@
                                     <label class="visually-hidden" for="inlineFormInputGroupUsername">Send New Message to: {{"(".$wa_user->name.")"}}</label>
                                     <div class="input-group">
                                         <div class="input-group-text ms-3"> <img
-                                                src="{{ asset('whatsapp-assets/svg/send-message.svg') }}" width="20"
+                                                src="/whatsapp-assets/svg/send-message.svg" width="20"
                                                 height="20" alt="search">
                                         </div>
                                         <input class="form-control" id="new_message" name="new_message" type="text"
@@ -83,7 +83,7 @@
                                             <tr>
                                                 <th scope="row">{{ $textMessage->id }}</th>
                                                 <th scope="row"><a href="#"><img
-                                                            src="{{ asset('whatsapp-assets/img/avatar-8.jpg') }}"
+                                                            src="/whatsapp-assets/img/avatar-8.jpg"
                                                             width="30" height="30" alt="smilegirl.ico"></a></th>
                                                 <th scope="row">{{ $wa_user->name }}</th>
                                                 <td>{{ $textMessage->from_phone_number }}</td>

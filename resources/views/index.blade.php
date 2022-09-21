@@ -449,21 +449,24 @@
                         <div class="answer px-4">
                             <p class="before-icon align-items-start color-white py-3 pt-4">
                                 <span class="icon-small">
-                                    <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
                                 </span>
                                 he game Fortnite comes in first place, with revenues of 5.5 billion dollars in two
                                 years.
                             </p>
                             <p class="before-icon align-items-start color-white py-3">
                                 <span class="icon-small">
-                                    <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
                                 </span>
                                 In second place comes the Bubg game, with profits amounting to 4.3 billion dollars in
                                 two years.
                             </p>
                             <p class="before-icon align-items-start color-white py-3">
                                 <span class="icon-small">
-                                    <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
                                 </span>
                                 In third place comes the game of Call of Duty, where in the year 2020 its profits
                                 amounted to 3 billion
@@ -471,7 +474,8 @@
                             </p>
                             <p class="before-icon align-items-start color-white py-3 pb-4">
                                 <span class="icon-small">
-                                    <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
                                 </span>
                                 In fourth place comes the game Honor of kings, where in 2019 profits amounted to 2.5
                                 billion dollars.
@@ -509,7 +513,8 @@
                         <div class="answer px-4" style="display: none;">
                             <p class="before-icon align-items-start color-white py-3 pt-4">
                                 <span class="icon-small">
-                                    <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
                                 </span>
                                 The result of continuous work over 3 years of plans, strategies and features that will
                                 be within this
@@ -517,13 +522,15 @@
                             </p>
                             <p class="before-icon align-items-start color-white py-3">
                                 <span class="icon-small">
-                                    <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
                                 </span>
                                 More than one feasibility study has been done at the global level.
                             </p>
                             <p class="before-icon align-items-start color-white py-3">
                                 <span class="icon-small">
-                                    <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
                                 </span>
                                 After conducting a feasibility study, it was found that the annual profits are estimated
                                 at $7.2
@@ -531,7 +538,8 @@
                             </p>
                             <p class="before-icon align-items-start color-white py-3 pb-4">
                                 <span class="icon-small">
-                                    <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
                                 </span>
                                 Resulting from in-game purchases of weapons, clothes, cars and other completely new
                                 features.
@@ -569,7 +577,8 @@
                         <div class="answer px-4" style="display: none;">
                             <p class="before-icon align-items-start color-white py-3 pt-4">
                                 <span class="icon-small">
-                                    <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
                                 </span>
                                 The game is based on the principle that all profits are due to the investors and
                                 players, and a small
@@ -577,7 +586,8 @@
                             </p>
                             <p class="before-icon align-items-start color-white py-3">
                                 <span class="icon-small">
-                                    <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
                                 </span>
                                 A large percentage of the profits are attributable to the investors in the game, and a
                                 large percentage
@@ -587,7 +597,8 @@
                             </p>
                             <p class="before-icon align-items-start color-white py-3">
                                 <span class="icon-small">
-                                    <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
                                 </span>
                                 Adopting the game as a project and the players are employees within the project, meaning
                                 the more you
@@ -630,7 +641,8 @@
 
                             <p class="before-icon align-items-start color-white py-3 pt-4">
                                 <span class="icon-small">
-                                    <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
                                 </span>
                                 The investment system allows the purchase of a share or a share within the project,
                                 where an individual
@@ -641,7 +653,8 @@
 
                             <p class="before-icon align-items-start color-white py-3">
                                 <span class="icon-small">
-                                    <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
                                 </span>
                                 The investment amount will not be received until a short period after the launch of the
                                 project and the
@@ -651,19 +664,22 @@
 
                             <p class="before-icon align-items-start color-white py-3">
                                 <span class="icon-small">
-                                    <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
                                 </span>
                                 The project implementation period is determined by the startup company.
                             </p>
 
                             <p class="before-icon align-items-start color-white py-3">
                                 <span class="icon-small">
-                                  <img src="{{asset('assets/images/icon-before.svg')}}" height="20" alt="icon">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
                                 </span>
 
-                                30% of the number of investors was reached within the first day of introducing the investment system
+                                30% of the number of investors was reached within the first day of introducing the
+                                investment system
                                 (noting that the number of investors is very limited).
-                              </p>
+                            </p>
 
 
                         </div>

@@ -32,10 +32,9 @@ trait SendMessages
     public function saveResponse($response)
     {
         $response = json_decode(json_encode($response->json()));
-
         return BotMessage::create([
             'bot_id' => 1,
-            'messaging_product' => $response->messaging_product,
+            'messaging_product' => 'whatsapp',
             'contacts' => $response->contacts,
             'messages' => $response->messages
         ]);
