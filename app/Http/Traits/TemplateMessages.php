@@ -54,8 +54,9 @@ trait TemplateMessages
 
         $session_id = Http::withHeaders($headers)->post($url, $data);
         $upload_id = $session_id->json()['id'];
-        dd($upload_id, $session_id->json());
-        $url = "https://graph.facebook.com/v14.0/";
+
+        $url = "https://graph.facebook.com/v14.0/$upload_id";
+
         $uploading_id = Http::withHeaders($headers)->get($url);
         dd($uploading_id->json());
     }
