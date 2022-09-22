@@ -67,7 +67,7 @@ trait TemplateMessages
             ];
         }
         $img = file_get_contents(
-            'https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-22.png'
+            'https://tgtgreenteknoloji.com/whatsapp-assets/img/avatar-0.jpg'
         );
 
         // Encode the image string data into base64
