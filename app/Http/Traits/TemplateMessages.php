@@ -66,19 +66,13 @@ trait TemplateMessages
             ];
         }
         $string = "https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jpg";
-        $json = json_encode($string);
-        $get = json_decode($json);
-        $gett = json_decode(json_encode($json));
-
-        dd($json, $get, $gett);
-
+        $data = ["header_handle" => [$string]];
+        dd(json_encode($data));
         if ($request->header_format == 'image') {
             return [
                 "type" => "header",
                 "format" => "IMAGE",
-                'example' => [
-                    "header_handle" => []
-                ]
+                'example' => []
             ];
         }
     }
