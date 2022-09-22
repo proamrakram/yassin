@@ -41,7 +41,7 @@ trait TemplateMessages
         }
     }
 
-    public function createSessionUpload($whats_app_business_account_id, $headers)
+    public function createSessionUpload($headers, $whats_app_business_account_id)
     {
         $url =  "https://graph.facebook.com/v14.0/362332076097447/uploads";
 
@@ -49,10 +49,11 @@ trait TemplateMessages
             'file_length' => '181812',
             'file_name' => 'namenaem',
             'file_type' => 'image/jpeg',
-            'session_type' => 'attachment'
+            // 'session_type' => 'attachment'
         ];
 
         $session_id = Http::withHeaders($headers)->post($url, $data);
+        dd($session_id->json());
         $url = "https://graph.facebook.com/v14.0/$session_id";
         $uploading_id = Http::withHeaders($headers)->get($url);
         dd($uploading_id->json());
@@ -60,7 +61,7 @@ trait TemplateMessages
 
     public function createTemplate(Request $request, $headers, $whats_app_business_account_id)
     {
-
+        return $this->createSessionUpload($headers, $whats_app_business_account_id);
         $components = [
             $this->setHeaderMessageTemplate($request),
             $this->setBodyMessageTemplate($request),
@@ -77,6 +78,8 @@ trait TemplateMessages
 
     public function setHeaderMessageTemplate($request)
     {
+
+
         if ($request->header_format == 'text') {
             return [
                 "type" => "header",
