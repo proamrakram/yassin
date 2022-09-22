@@ -19,7 +19,7 @@
                 @csrf
 
                 <input type="hidden" id="bot_id" value="{{ $bot->id }}">
-
+                @dd($bot)
                 <div class="modal-body">
 
 
