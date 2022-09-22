@@ -29,7 +29,7 @@
 
                             <div class="row g-2 align-items-center">
 
-                                <div class="col-lg">
+                                {{-- <div class="col-lg">
 
                                     <form class="row g-3 align-items-center">
                                         <div class="col-lg">
@@ -60,7 +60,7 @@
                                         </div>
 
                                     </form>
-                                </div>
+                                </div> --}}
 
                                 <div class="col-lg-6">
                                     <x-whatsapp-tools.create-template :bot="$bot"></x-whatsapp-tools.create-template>
