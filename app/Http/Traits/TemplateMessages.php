@@ -58,11 +58,25 @@ trait TemplateMessages
 
     public function setHeaderMessageTemplate($request)
     {
-        return [
-            "type" => "header",
-            "format" => "TEXT",
-            'text' => $request->header_text_template
-        ];
+        if ($request->header_format == 'text') {
+            return [
+                "type" => "header",
+                "format" => "TEXT",
+                'text' => $request->header_text_template
+            ];
+        }
+
+        if ($request->header_format == 'image') {
+            return [
+                "type" => "header",
+                "format" => "IMAGE",
+                'example' => [
+                    "header_handle" => [
+                        ['https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jpg']
+                    ]
+                ]
+            ];
+        }
     }
 
     public function setBodyMessageTemplate($request)
