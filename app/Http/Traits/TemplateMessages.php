@@ -65,14 +65,14 @@ trait TemplateMessages
                 'text' => $request->header_text_template
             ];
         }
-        $string = "https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jpg";
-        $data = ["header_handle" => [$string]];
-        dd(json_encode($data));
+
         if ($request->header_format == 'image') {
             return [
                 "type" => "header",
                 "format" => "IMAGE",
-                'example' => []
+                'example' => [
+                    "header_handle" => ["{https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jp}"]
+                ]
             ];
         }
     }
