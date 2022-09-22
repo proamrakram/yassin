@@ -72,8 +72,8 @@ trait TemplateMessages
                 "type" => "header",
                 "format" => "IMAGE",
                 "example" => [
-                    "header_handle" => ["https://tgtgreenteknoloji.com/whatsapp-assets/img/avatar-0.jpg"],
-                    "header_url" => ["https://tgtgreenteknoloji.com/whatsapp-assets/img/avatar-0.jpg"]
+                    "header_handle" => ["https://media.geeksforgeeks.org/wp-content/uploads/20200205203241/gfg30.jpg"],
+                    "header_url" => ["https://media.geeksforgeeks.org/wp-content/uploads/20200205203241/gfg30.jpg"]
                 ]
             ];
         }
