@@ -61,8 +61,6 @@ trait TemplateMessages
     public function createTemplate(Request $request, $headers, $whats_app_business_account_id)
     {
 
-        return $this->createSessionUpload($whats_app_business_account_id, $headers);
-
         $components = [
             $this->setHeaderMessageTemplate($request),
             $this->setBodyMessageTemplate($request),
@@ -98,10 +96,10 @@ trait TemplateMessages
                 "type" => "header",
                 "format" => "IMAGE",
                 "example" => [
-                    "header_handle" => ["the image"],
+                    "header_handle" => ["wamid.HBgMOTcyNTk5OTE2NjcyFQIAEhgUM0VCMDc4Q0M5NjM5M0E0M0M4ODkA"],
                     "header_text" => ["Hello World"],
                     "body_text" => [["Amr Akkram"]],
-                    "header_url" => [$data]
+                    "header_url" => ["https://lookaside.fbsbx.com/whatsapp_business/attachments/?mid=1110896826469682&ext=1663857981&hash=ATsE-Z3jB3OxAI6VIgis48jYeAHSlUCmgmZomd14F_dUXg"]
                 ]
             ];
         }
