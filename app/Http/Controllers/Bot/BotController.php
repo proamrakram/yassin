@@ -165,15 +165,6 @@ class BotController extends Controller
                             ],
                         ]
                     ],
-                    [
-                        "type" => "footer",
-                        "parameters" => [
-                            [
-                                "type" => "text",
-                                "text" => "proamrakram"
-                            ],
-                        ]
-                    ]
                 ]
             ]
         ];
