@@ -130,10 +130,10 @@ class BotController extends Controller
         dd($res->json());
     }
 
-    public function sendTemplateTest()
+    public function createTemplateMessageTest()
     {
-        $bot = Bot::find(1)->whats_app_business_account_id;
-
+        $bot = Bot::find(2)->whats_app_business_account_id;
+        dd($bot);
         $data = [
             'messaging_product' => "whatsapp",
             'recipient_type' => 'individual',

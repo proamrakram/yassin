@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('image_url', 500);
             $table->boolean('is_url_expired')->default(true);
             $table->string('mime_type');
-            $table->string('hash_sha256');
+            $table->string('hash_sha_256');
             $table->string('file_size');
             $table->string('image_id');
             $table->string('messaging_product');
