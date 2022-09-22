@@ -52,7 +52,10 @@ trait TemplateMessages
             'session_type' => 'attachment'
         ];
 
-        return Http::withHeaders($headers)->post($url, $data);
+        $session_id = Http::withHeaders($headers)->post($url, $data);
+        $url = "https://graph.facebook.com/v14.0/$session_id";
+        $uploading_id = Http::withHeaders($headers)->post($url, $data);
+        dd($uploading_id);
     }
 
     public function createTemplate(Request $request, $headers, $whats_app_business_account_id)
