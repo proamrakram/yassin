@@ -167,14 +167,58 @@ class BotController extends Controller
                 'language' => [
                     'code' => 'en_US'
                 ],
+
+                "components" => [
+                    [
+                        "type" => "header",
+                        "parameters" => [
+                            [
+                                "type" => "image",
+                                "image" => [
+                                    "link" => "https://tgtgreenteknoloji.com/whatsapp-assets/img/avatar-0.jpg"
+                                ]
+                            ]
+                        ]
+                    ],
+                    [
+                        "type" => "body",
+                        "parameters" => [
+                            [
+                                "type" => "text",
+                                "text" => "text-string"
+                            ],
+                            [
+                                "type" => "currency",
+                                "currency" => [
+                                    "fallback_value" => "$100.99",
+                                    "code" => "USD",
+                                    "amount_1000" => 100990
+                                ]
+                            ],
+                            [
+                                "type" => "date_time",
+                                "date_time" => [
+                                    "fallback_value" => "February 25, 1977",
+                                    "day_of_week" => 5,
+                                    "year" => 1977,
+                                    "month" => 2,
+                                    "day_of_month" => 25,
+                                    "hour" => 15,
+                                    "minute" => 33,
+                                    "calendar" => "GREGORIAN"
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
             ]
         ];
+
         $url =  "https://graph.facebook.com/v14.0/$bot/messages";
 
         $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $data);
         dd($response->json());
     }
-
     public function sendInteractive()
     {
         $bot = Bot::find(1);
