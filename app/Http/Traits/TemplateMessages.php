@@ -42,6 +42,7 @@ trait TemplateMessages
 
     public function createTemplate(Request $request, $headers, $whats_app_business_account_id)
     {
+        dd($request->all());
         $components = [
             $this->setHeaderMessageTemplate($request),
             $this->setBodyMessageTemplate($request),
