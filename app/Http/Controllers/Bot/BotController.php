@@ -156,9 +156,6 @@ class BotController extends Controller
                             ]
                         ]
                     ],
-                    [
-                        "type" => "body",
-                    ],
                 ]
             ]
         ];
