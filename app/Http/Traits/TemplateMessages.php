@@ -71,7 +71,9 @@ trait TemplateMessages
                 "type" => "header",
                 "format" => "IMAGE",
                 'example' => [
-                    "header_handle" => ["{https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jp}"]
+                    "header_handle" => [
+                        "https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jp"
+                    ]
                 ]
             ];
         }
