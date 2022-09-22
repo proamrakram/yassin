@@ -73,7 +73,7 @@ trait TemplateMessages
                 "format" => "IMAGE",
                 "example" => [
                     "header_handle" => ["https://tgtgreenteknoloji.com/whatsapp-assets/img/avatar-0.jpg"],
-                    "header_url" => ["/whatsapp-assets/img/avatar-0.jpg"]
+                    "header_url" => ["https://tgtgreenteknoloji.com/whatsapp-assets/img/avatar-0.jpg"]
                 ]
             ];
         }
