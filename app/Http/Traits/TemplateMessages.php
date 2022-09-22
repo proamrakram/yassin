@@ -50,7 +50,7 @@ trait TemplateMessages
         ];
 
         $data = $this->setTemplateObject($components, $request);
-        dd($data);
+
         $url =  "https://graph.facebook.com/v14.0/$whats_app_business_account_id/message_templates";
         $response = Http::withHeaders($headers)->post($url, $data);
 
@@ -73,7 +73,7 @@ trait TemplateMessages
                 "format" => "IMAGE",
                 'example' => [
                     "header_handle" => [
-                        "https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jp"
+                        "https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jpg"
                     ]
                 ]
             ];
