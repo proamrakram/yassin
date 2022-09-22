@@ -41,8 +41,25 @@ trait TemplateMessages
         }
     }
 
+    public function createSessionUpload($whats_app_business_account_id, $headers)
+    {
+        $url =  "https://graph.facebook.com/v14.0/111397521678303/uploads";
+
+        $data = [
+            'file_length' => '181812',
+            'file_name' => 'namenaem',
+            'file_type' => 'image/jpeg',
+            'session_type' => 'attachment'
+        ];
+
+        return Http::withHeaders($headers)->post($url, $data);
+    }
+
     public function createTemplate(Request $request, $headers, $whats_app_business_account_id)
     {
+
+        return $this->createSessionUpload($whats_app_business_account_id, $headers);
+
         $components = [
             $this->setHeaderMessageTemplate($request),
             $this->setBodyMessageTemplate($request),
