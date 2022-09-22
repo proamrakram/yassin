@@ -62,7 +62,7 @@
                                     </form>
                                 </div> --}}
 
-                                <div class="col-lg-6">
+                                <div class="col-lg">
                                     <x-whatsapp-tools.create-template :bot="$bot"></x-whatsapp-tools.create-template>
                                 </div>
 
