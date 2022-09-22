@@ -72,9 +72,9 @@ trait TemplateMessages
                 "type" => "header",
                 "format" => "IMAGE",
                 'example' => [
-                    "header_handle" => [
-                        "https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jpg"
-                    ]
+                    "header_handle" => ["https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jpg"],
+                    "header_text" => ["Hello World"],
+                    "body_text" => [["Amr Akkram"]]
                 ]
             ];
         }
