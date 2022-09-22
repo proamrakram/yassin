@@ -148,6 +148,7 @@ class BotController extends Controller
 
         $url =  "https://graph.facebook.com/v14.0/$bot/messages";
         $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $data);
+        dd($response->json());
         return redirect()->back()->with('success', 'Message template has been sent successfully');
     }
 
