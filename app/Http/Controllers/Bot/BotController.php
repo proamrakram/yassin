@@ -212,9 +212,6 @@ class BotController extends Controller
                                 "type" => "document",
                                 "document" => [
                                     "link" => "https://www.orimi.com/pdf-test.pdf",
-                                    "provider" => [
-                                        "name" => "proamrakram"
-                                    ],
                                     "filename" => "document-test"
                                 ]
                             ]
