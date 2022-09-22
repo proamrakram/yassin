@@ -49,9 +49,7 @@ trait TemplateMessages
         ];
 
         $data = $this->setTemplateObject($components, $request);
-        dd($data, $request->all());
         $url =  "https://graph.facebook.com/v14.0/$whats_app_business_account_id/message_templates";
-
         $response = Http::withHeaders($headers)->post($url, $data);
 
         return $response;
