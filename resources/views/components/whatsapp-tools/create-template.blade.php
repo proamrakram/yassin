@@ -35,7 +35,7 @@
                             <div class="mb-3">
                                 <label class="form-label" for="template_text_template">Template Name</label>
                                 <input class="form-control" name="template_name" id="template_name" type="text"
-                                    aria-describedby="emailHelp" value="body">
+                                    aria-describedby="emailHelp">
                                 <div class="form-text text-danger" id="template_name_message"></div>
                             </div>
                         </div>
@@ -98,7 +98,7 @@
                             <div class="mb-3">
                                 <label class="form-label" for="header_text_template">Text</label>
                                 <input class="form-control" name="header_text_template" id="header_text_template"
-                                    type="text" aria-describedby="emailHelp" value="body">
+                                    type="text" aria-describedby="emailHelp">
                                 <div class="form-text text-danger" id="header_text_message"></div>
                             </div>
                         </div>
@@ -148,7 +148,7 @@
 
                         <div class="col-lg-12" id="body-text-div">
                             <label class="form-label" for="body_image_template">Body</label>
-                            <textarea style="width: inherit;" name="body_message_template" id="body_text_template" rows="3">Enter Your Body Message</textarea>
+                            <textarea style="width: inherit;" name="body_message_template" id="body_text_template" rows="3"></textarea>
 
                             <div class="form-text text-danger" id="body_text_message"></div>
                         </div>
