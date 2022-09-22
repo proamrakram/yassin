@@ -28,7 +28,9 @@ Route::controller(BotController::class)->prefix('bot')->as('bot.')->group(functi
     Route::get('send-imag-message-by-id/{wa_user}/{wa_image_id}', 'sendImageMessagebyID')->name('send-imag-message-by-id');
 
     //Templates
-    Route::post('create-template', 'createTemplateMessage')->name('create-template');
+    Route::get('/send-template-message-with-header-image', 'sendTemplateMessagewithHeaderImage');
 
+
+    Route::post('create-template', 'createTemplateMessage')->name('create-template');
     Route::get('send-template-test', 'sendTemplateMessageTest');
 });

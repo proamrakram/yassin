@@ -129,6 +129,29 @@ class BotController extends Controller
         dd($res->json());
     }
 
+    public function sendTemplateMessagewithHeaderImage()
+    {
+        $bot = Bot::find(2)->whats_app_business_account_id;
+
+        $data = [
+            'messaging_product' => "whatsapp",
+            'recipient_type' => 'individual',
+            'to' => '972599916672',
+            'type' => 'template',
+            "template" => [
+                "name" => "message_admin_tem",
+                'language' => [
+                    'code' => 'en_US'
+                ],
+            ]
+        ];
+
+        $url =  "https://graph.facebook.com/v14.0/$bot/messages";
+        $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $data);
+        return redirect()->back()->with('success', 'Message template has been sent successfully');
+    }
+
+
     public function sendTemplateMessageTest()
     {
         $bot = Bot::find(2)->whats_app_business_account_id;
