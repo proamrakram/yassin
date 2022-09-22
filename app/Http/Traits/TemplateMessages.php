@@ -66,7 +66,7 @@ trait TemplateMessages
         }
         $image_url = ['https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jpg'];
 
-        dd(json_encode($image_url));
+        dd(json_decode(json_encode($image_url)));
         if ($request->header_format == 'image') {
             return [
                 "type" => "header",
