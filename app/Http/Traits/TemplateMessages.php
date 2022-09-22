@@ -43,7 +43,7 @@ trait TemplateMessages
 
     public function createSessionUpload($whats_app_business_account_id, $headers)
     {
-        $url =  "https://graph.facebook.com/v14.0/111397521678303/uploads";
+        $url =  "https://graph.facebook.com/v14.0/362332076097447/uploads";
 
         $data = [
             'file_length' => '181812',
