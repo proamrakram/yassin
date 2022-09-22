@@ -30,6 +30,5 @@ Route::controller(BotController::class)->prefix('bot')->as('bot.')->group(functi
     //Templates
     Route::post('create-template', 'createTemplateMessage')->name('create-template');
 
-    Route::get('createTemplateTest', 'createTemplateMessageTest');
-
+    Route::get('send-template-test', 'sendTemplateMessageTest');
 });

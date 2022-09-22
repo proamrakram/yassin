@@ -130,7 +130,7 @@ class BotController extends Controller
         dd($res->json());
     }
 
-    public function createTemplateMessageTest()
+    public function sendTemplateMessageTest()
     {
         $bot = Bot::find(2)->whats_app_business_account_id;
 
