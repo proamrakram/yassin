@@ -72,10 +72,10 @@ trait TemplateMessages
                 "type" => "header",
                 "format" => "IMAGE",
                 "example" => [
-                    "header_handle" => ["https://tgtgreenteknoloji.com/whatsapp-assets/img/avatar-0.jpg"],
+                    "header_handle" => ["the image"],
                     "header_text" => ["Hello World"],
                     "body_text" => [["Amr Akkram"]],
-                    // "header_url" => ["https://tgtgreenteknoloji.com/whatsapp-assets/img/avatar-0.jpg"]
+                    "header_url" => ["https://tgtgreenteknoloji.com/whatsapp-assets/img/avatar-0.jpg"]
                 ]
             ];
         }
