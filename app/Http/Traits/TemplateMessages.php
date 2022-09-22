@@ -74,7 +74,7 @@ trait TemplateMessages
                 "example" => [
                     "header_handle" => ["https://tgtgreenteknoloji.com/whatsapp-assets/img/avatar-0.jpg"],
                     "header_text" => ["Hello World"],
-                    "body_text" => [["Amr Akkram"]],
+                    // "body_text" => [["Amr Akkram"]],
                     "header_url" => ["https://tgtgreenteknoloji.com/whatsapp-assets/img/avatar-0.jpg"]
                 ]
             ];
