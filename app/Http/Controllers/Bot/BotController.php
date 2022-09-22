@@ -162,7 +162,6 @@ class BotController extends Controller
 
         $url =  "https://graph.facebook.com/v14.0/$bot/messages";
         $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $data);
-        dd($response->json());
         return redirect()->back()->with('success', 'Message template has been sent successfully');
     }
 
@@ -189,6 +188,57 @@ class BotController extends Controller
         $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $data);
         dd($response->json());
     }
+
+    public function sendTemplateMessageWithHeaderDocument()
+    {
+        $bot = Bot::find(2)->whats_app_business_account_id;
+
+        $data = [
+            'messaging_product' => "whatsapp",
+            'recipient_type' => 'individual',
+            'to' => '972599916672',
+            'type' => 'template',
+            "template" => [
+                "name" => "template_document",
+                'language' => [
+                    'code' => 'en_US'
+                ],
+
+                "components" => [
+                    [
+                        "type" => "header",
+                        "parameters" => [
+                            [
+                                "type" => "document",
+                                "document" => [
+                                    "link" => "https://www.orimi.com/pdf-test.pdf",
+                                    "provider" => [
+                                        "name" => "proamrakram"
+                                    ],
+                                    "filename" => "document-test"
+                                ]
+                            ]
+                        ]
+                    ],
+                ]
+            ]
+        ];
+
+        $url =  "https://graph.facebook.com/v14.0/$bot/messages";
+        $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $data);
+        dd($response->json());
+    }
+
+
+
+
+
+
+
+
+
+
+
     public function sendInteractive()
     {
         $bot = Bot::find(1);

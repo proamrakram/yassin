@@ -29,6 +29,7 @@ Route::controller(BotController::class)->prefix('bot')->as('bot.')->group(functi
 
     //Templates
     Route::get('/send-template-message-with-header-image', 'sendTemplateMessagewithHeaderImage');
+    Route::get('/send-template-message-with-header-document', 'sendTemplateMessageWithHeaderDocument');
 
 
     Route::post('create-template', 'createTemplateMessage')->name('create-template');
