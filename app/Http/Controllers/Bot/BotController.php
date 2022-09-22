@@ -151,7 +151,7 @@ class BotController extends Controller
                             [
                                 "type" => "image",
                                 "image" => [
-                                    "link" => "https://tgtgreenteknoloji.com/whatsapp-assets/img/avatar-0.jpg"
+                                    "link" => "https://tgtgreenteknoloji.com/storage/images/1110896826469682.jpg"
                                 ]
                             ]
                         ]
@@ -196,10 +196,10 @@ class BotController extends Controller
         $data = [
             'messaging_product' => "whatsapp",
             'recipient_type' => 'individual',
-            'to' => '972599916672',
+            'to' => '972599064812',
             'type' => 'template',
             "template" => [
-                "name" => "template_document",
+                "name" => "message_admin_tem",
                 'language' => [
                     'code' => 'en_US'
                 ],
