@@ -5,6 +5,7 @@ namespace App\Http\Traits;
 use App\Models\Template;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use stdClass;
 
 trait TemplateMessages
 {
@@ -64,10 +65,10 @@ trait TemplateMessages
                 'text' => $request->header_text_template
             ];
         }
-        $image_url = ['https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jpg'];
-        $json = json_encode($image_url);
-        $jj = json_decode(json_encode($json));
-        dd($jj);
+
+        $object = new stdClass();
+        $object->image_url = ['https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jpg'];
+        dd($object);
         if ($request->header_format == 'image') {
             return [
                 "type" => "header",
