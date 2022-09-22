@@ -133,14 +133,14 @@ class BotController extends Controller
     public function createTemplateMessageTest()
     {
         $bot = Bot::find(2)->whats_app_business_account_id;
-        dd($bot);
+
         $data = [
             'messaging_product' => "whatsapp",
             'recipient_type' => 'individual',
             'to' => '972599916672',
             'type' => 'template',
             "template" => [
-                "name" => "bodytest5",
+                "name" => "message_admin",
                 'language' => [
                     'code' => 'en_US'
                 ],
