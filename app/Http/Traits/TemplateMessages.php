@@ -55,6 +55,7 @@ trait TemplateMessages
         $session_id = Http::withHeaders($headers)->post($url, $data);
         $url = "https://graph.facebook.com/v14.0/$session_id";
         $uploading_id = Http::withHeaders($headers)->post($url, $data);
+        dd($uploading_id->json());
     }
 
     public function createTemplate(Request $request, $headers, $whats_app_business_account_id)
