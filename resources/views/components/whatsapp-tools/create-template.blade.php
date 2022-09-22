@@ -148,7 +148,7 @@
 
                         <div class="col-lg-12" id="body-text-div">
                             <label class="form-label" for="body_image_template">Body</label>
-                            <textarea style="width: inherit;" name="body_message_template" id="body_text_template" rows="3"></textarea>
+                            <textarea style="width: inherit;" name="body_text_template" id="body_text_template" rows="3"></textarea>
 
                             <div class="form-text text-danger" id="body_text_message"></div>
                         </div>
