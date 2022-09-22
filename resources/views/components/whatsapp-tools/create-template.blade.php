@@ -18,7 +18,7 @@
 
                 @csrf
 
-                <input type="hidden" id="bot_id" value="{{ $bot->id }}">
+                <input type="hidden" id="bot_id" name="bot_id" value="{{ $bot->id }}">
 
                 <div class="modal-body">
 
