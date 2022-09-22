@@ -143,19 +143,6 @@ class BotController extends Controller
                 'language' => [
                     'code' => 'en_US'
                 ],
-
-                'components' => [
-                    [
-                        "type" => "header",
-                        "format" => "text",
-                        "text" => "Amr Akram is {{1}}"
-                    ],
-                    [
-                        "type" => "body",
-                        "text" => "We are now working on {{1}} platform"
-                    ],
-                ],
-
             ]
         ];
         $url =  "https://graph.facebook.com/v14.0/$bot/messages";
