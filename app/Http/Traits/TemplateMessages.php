@@ -73,8 +73,6 @@ trait TemplateMessages
         // Encode the image string data into base64
         $data = base64_encode($img);
 
-        dd($data);
-
         if ($request->header_format == 'image') {
             return [
                 "type" => "header",
@@ -83,7 +81,7 @@ trait TemplateMessages
                     "header_handle" => ["the image"],
                     "header_text" => ["Hello World"],
                     "body_text" => [["Amr Akkram"]],
-                    "header_url" => ["https://tgtgreenteknoloji.com/whatsapp-assets/img/avatar-0.jpg"]
+                    "header_url" => [$data]
                 ]
             ];
         }
