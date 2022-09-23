@@ -34,4 +34,8 @@ Route::controller(BotController::class)->prefix('bot')->as('bot.')->group(functi
 
     Route::post('create-template', 'createTemplateMessage')->name('create-template');
     Route::get('send-template-test', 'sendTemplateMessageTest');
+
+
+    //Interactive
+    Route::get('/send-interactive', 'sendInteractive');
 });
