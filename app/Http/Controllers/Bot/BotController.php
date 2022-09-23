@@ -325,8 +325,13 @@ class BotController extends Controller
                 "interactive" => [
                     "type" => "button",
                     "header" => [
-                        "type" => "text",
-                        "text" => "@proamrakram is the CEO"
+                        "type" => "video",
+                        "video" => [
+                            "link" => "https://www.youtube.com/watch?v=6TrPOrOlsMs&list=RDDCef2aeepO0&index=9",
+                            "provider" => [
+                                "name" => "Youtube"
+                            ]
+                        ]
                     ],
                     "body" => [
                         "text" => "Hi there! 👋 Thanks for your message! 😃\nIt’s just me and [insert names of other workers] running [insert business name]. We receive tons of messages every day and may not be able to get to you right away – so sorry!"
