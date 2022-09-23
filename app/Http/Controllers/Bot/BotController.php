@@ -249,24 +249,55 @@ class BotController extends Controller
                     "type" => "list",
                     "header" => [
                         "type" => "text",
-                        "text" => "your text here"
+                        "text" => "#111111111"
                     ],
                     "body" => [
-                        "text" => "body message here man"
+                        "text" => "Hi there! 👋 Thanks for your message! 😃\nIt’s just me and [insert names of other workers] running [insert business name]. We receive tons of messages every day and may not be able to get to you right away – so sorry!"
                     ],
                     "footer" => [
-                        "text" => "message footer here man"
+                        "text" => "Cheers!"
                     ],
                     "action" => [
-                        "button" => "click me now",
+                        "button" => "Accept Product",
                         "sections" => [
                             [
-                                "title" => "your title here now",
+                                "title" => "Products Items",
                                 "rows" => [
                                     [
                                         "id" => "1",
-                                        "title" => "now good",
-                                        "description" => "row title test"
+                                        "title" => "Jaspers Clapham",
+                                        "description" => "11-13 Battersea Rise, S11 1HG"
+                                    ],
+                                    [
+                                        "id" => "2",
+                                        "title" => "Jaspers Brixton",
+                                        "description" => "419 Coldharbour Ln, SW9 8LH"
+                                    ],
+                                    [
+                                        "id" => "3",
+                                        "title" => "Jaspers Shepherd's Bush",
+                                        "description" => "15 Goldhawk Rd, W12 8QQ"
+                                    ]
+                                ],
+
+                            ],
+                            [
+                                "title" => "Products Prices",
+                                "rows" => [
+                                    [
+                                        "id" => "1",
+                                        "title" => "Jaspers Clapham",
+                                        "description" => "$456"
+                                    ],
+                                    [
+                                        "id" => "2",
+                                        "title" => "Jaspers Brixton",
+                                        "description" => "$419"
+                                    ],
+                                    [
+                                        "id" => "3",
+                                        "title" => "Jaspers Shepherd's Bush",
+                                        "description" => "$41"
                                     ]
                                 ]
                             ]
