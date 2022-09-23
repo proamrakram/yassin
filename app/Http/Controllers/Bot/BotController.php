@@ -259,6 +259,22 @@ class BotController extends Controller
                     ],
                     "action" => [
                         "button" => "Accept Product",
+                        "buttons" => [
+                            [
+                                "type" => "reply",
+                                "reply" => [
+                                    "id" => "12",
+                                    "title" => "The First",
+                                ]
+                            ],
+                            [
+                                "type" => "reply",
+                                "reply" => [
+                                    "id" => "13",
+                                    "title" => "The Second",
+                                ]
+                            ]
+                        ],
                         "sections" => [
                             [
                                 "title" => "Products Items",
