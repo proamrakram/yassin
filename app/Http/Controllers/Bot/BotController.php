@@ -328,9 +328,6 @@ class BotController extends Controller
                         "type" => "video",
                         "video" => [
                             "link" => "https://www.youtube.com/watch?v=6TrPOrOlsMs&list=RDDCef2aeepO0&index=9",
-                            "provider" => [
-                                "name" => "Youtube"
-                            ]
                         ]
                     ],
                     "body" => [
