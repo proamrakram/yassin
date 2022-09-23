@@ -327,7 +327,7 @@ class BotController extends Controller
                     "header" => [
                         "type" => "video",
                         "video" => [
-                            "link" => "https://www.youtube.com/watch?v=6TrPOrOlsMs&list=RDDCef2aeepO0&index=9",
+                            "link" => "https://www.appsloveworld.com/wp-content/uploads/2018/10/Sample-Mp4-Videos.mp4",
                         ]
                     ],
                     "body" => [
