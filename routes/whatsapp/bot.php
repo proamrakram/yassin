@@ -38,4 +38,5 @@ Route::controller(BotController::class)->prefix('bot')->as('bot.')->group(functi
 
     //Interactive
     Route::get('/send-interactive', 'sendInteractive');
+    Route::get('/send-interactive-buttons', 'sendInteractiveButtons');
 });
