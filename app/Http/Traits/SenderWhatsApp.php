@@ -25,6 +25,7 @@ use App\Http\Requests\StoreWhatsAppSenderRequest;
 
 use App\Models\WhatsAppSender;
 use App\Models\Bot;
+use Illuminate\Support\Facades\Http;
 
 trait SenderWhatsApp
 {
@@ -161,5 +162,90 @@ trait SenderWhatsApp
         $contact_messages = $contact_messages->store($request, $sender, $message);
 
         return $contact_messages;
+    }
+
+    public function saveSenderInteractiveMessages($sender, $message)
+    {
+        $bot = Bot::find(1);
+
+        $headers =  [
+            'Authorization' => "Bearer "  . env('WHATS_APP_TOKEN'),
+            'Content-Type' => 'application/json',
+        ];
+
+        $interactive =
+            [
+                'messaging_product' => "whatsapp",
+                "recipient_type" => "individual",
+                "to" => "972599916672",
+                "type" => "interactive",
+                "interactive" => [
+                    "type" => "list",
+                    "header" => [
+                        "type" => "text",
+                        "text" => "#111111111"
+                    ],
+                    "body" => [
+                        "text" => "Hi there! 👋 Thanks for your message! 😃\nIt’s just me and [insert names of other workers] running [insert business name]. We receive tons of messages every day and may not be able to get to you right away – so sorry!"
+                    ],
+                    "footer" => [
+                        "text" => "Cheers!"
+                    ],
+                    "action" => [
+                        "button" => "Accept Product",
+                        "sections" => [
+                            [
+                                "title" => "Products Items",
+                                "rows" => [
+                                    [
+                                        "id" => "1",
+                                        "title" => "Jaspers Clapham",
+                                        "description" => "11-13 Battersea Rise, S11 1HG"
+                                    ],
+                                    [
+                                        "id" => "2",
+                                        "title" => "Jaspers Brixton",
+                                        "description" => "419 Coldharbour Ln, SW9 8LH"
+                                    ],
+                                    [
+                                        "id" => "3",
+                                        "title" => "Jaspers Shepherd's Bush",
+                                        "description" => "15 Goldhawk Rd, W12 8QQ"
+                                    ]
+                                ],
+
+                            ],
+                            [
+                                "title" => "Products Prices",
+                                "rows" => [
+                                    [
+                                        "id" => "1",
+                                        "title" => "Jaspers Clapham",
+                                        "description" => "$456"
+                                    ],
+                                    [
+                                        "id" => "2",
+                                        "title" => "Jaspers Brixton",
+                                        "description" => "$419"
+                                    ],
+                                    [
+                                        "id" => "3",
+                                        "title" => "Jaspers Shepherd's Bush",
+                                        "description" => "$41"
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ];
+
+        if ($message->interactive->type == 'button_reply'  && $message->interactive->button_reply->id == "12") {
+            $response = Http::withHeaders($headers)->post(env('URL_MESSAGING'), $interactive);
+            return true;
+        }
+
+
+        // dd($response->json());
     }
 }
