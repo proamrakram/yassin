@@ -312,7 +312,6 @@ class BotController extends Controller
 
 
 
-
     public function sendInteractiveButtons()
     {
         $bot = Bot::find(1);
@@ -358,10 +357,7 @@ class BotController extends Controller
                 ]
             ];
 
-        // $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $interactive);
-
-        $url = "https://graph.facebook.com/v15.0/K2q5h2L5JfX3CkjxoSWkjZ";
-        $response = Http::withHeaders($this->headers)->get($url);
+        $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $interactive);
         dd($response->json());
     }
 
