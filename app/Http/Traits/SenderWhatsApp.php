@@ -170,6 +170,10 @@ trait SenderWhatsApp
         if ($message->interactive->button_reply->id == "buy_now") {
             $this->confirmOrder();
         }
+
+        if ($message->interactive->button_reply->id == "confirm_order") {
+            $this->orderConfirmation();
+        }
     }
 
 
@@ -224,7 +228,7 @@ trait SenderWhatsApp
     }
 
 
-    public function OrderConfirmation()
+    public function orderConfirmation()
     {
 
         $bot = Bot::find(1);
