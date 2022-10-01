@@ -251,10 +251,7 @@ trait SenderWhatsApp
                         "text" => "Product Details"
                     ],
                     "body" => [
-                        "text" => "
-                        Woohoo🎉🎉🤩\n\n
-                        Your order *[Order No.] of *[Product name]* for *[Amount]* has been confirmed & will reach you shortly 🛳\n\n
-                        Thanks for shopping with us! 😇"
+                        "text" => "Woohoo🎉🎉🤩\n\nYour order *[Order No.] of *[Product name]* for *[Amount]* has been confirmed & will reach you shortly 🛳\n\nThanks for shopping with us! 😇"
 
                     ],
                     "footer" => [
