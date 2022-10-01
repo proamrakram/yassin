@@ -193,7 +193,7 @@ trait SenderWhatsApp
                 "to" => "972599916672",
                 "type" => "interactive",
                 "interactive" => [
-                    "type" => "list",
+                    "type" => "button",
                     "header" => [
                         "type" => "text",
                         "text" => "Product Details"
@@ -245,7 +245,7 @@ trait SenderWhatsApp
                 "to" => "972599916672",
                 "type" => "interactive",
                 "interactive" => [
-                    "type" => "list",
+                    "type" => "button",
                     "header" => [
                         "type" => "text",
                         "text" => "Product Details"
@@ -259,7 +259,17 @@ trait SenderWhatsApp
                     ],
                     "footer" => [
                         "text" => "proamrakram!"
-                    ],
+                    ],                    "action" =>  [
+                        "buttons" =>  [
+                            [
+                                "type" =>  "reply",
+                                "reply" =>  [
+                                    "id" =>  "thanks",
+                                    "title" =>  "Thank You!!"
+                                ]
+                            ],
+                        ]
+                    ]
                 ]
             ];
 
