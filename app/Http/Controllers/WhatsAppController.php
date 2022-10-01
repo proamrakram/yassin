@@ -92,7 +92,10 @@ class WhatsAppController extends Controller
 
             if (isset($this->value->messages) && $this->value->messages[0]->type == 'interactive') {
                 $sender_interactive_message = $this->saveSenderInteractiveMessages($sender_whats_app, $this->value->messages[0]);
-                return true;
+            }
+
+            if (isset($this->value->messages) && $this->value->messages[0]->type == 'button') {
+                $sender_button_message = $this->saveSenderButtoniveMessages($sender_whats_app, $this->value->messages[0]);
             }
         }
     }
