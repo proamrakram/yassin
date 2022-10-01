@@ -6,6 +6,7 @@ use App\Http\Controllers\Bot\BotController;
 use App\Http\Controllers\Whatsapp\WhatsAppSenderController;
 use App\Http\Traits\SenderWhatsApp;
 use App\Http\Traits\WhatsAppMedia;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
 class WhatsAppController extends Controller
@@ -88,7 +89,30 @@ class WhatsAppController extends Controller
 
             if (isset($this->value->messages) && $this->value->messages[0]->type == 'interactive') {
                 $sender_interactive_message = $this->saveSenderInteractiveMessages($sender_whats_app, $this->value->messages[0]);
+                return true;
             }
+
+            $headers =  [
+                'Authorization' => "Bearer "  . env('WHATS_APP_TOKEN'),
+                'Content-Type' => 'application/json',
+            ];
+
+            //Send Greeting Message
+            $data = [
+                'messaging_product' => "whatsapp",
+                'recipient_type' => 'individual',
+                'to' => '972599916672',
+                'type' => 'template',
+                "template" => [
+                    "name" => "greeting_message_v4",
+                    'language' => [
+                        'code' => 'ar'
+                    ],
+                ]
+            ];
+
+            $url =  "https://graph.facebook.com/v14.0/$bot->whats_app_business_account_id/messages";
+            $response = Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
         }
     }
 
