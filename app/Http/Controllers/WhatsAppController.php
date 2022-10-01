@@ -130,7 +130,7 @@ class WhatsAppController extends Controller
             ];
 
             $url =  "https://graph.facebook.com/v14.0/$bot->whats_app_business_account_id/messages";
-            $response = Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
+            // $response = Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
         }
     }
 
