@@ -106,12 +106,12 @@ class WhatsAppController extends Controller
                 "template" => [
                     "name" => "greeting_message_v4",
                     'language' => [
-                        'code' => 'ar'
+                        'code' => 'en_US'
                     ],
                 ]
             ];
 
-            $url =  "https://graph.facebook.com/v14.0/$bot->whats_app_business_account_id/messages";
+            $url =  "https://graph.facebook.com/v14.0/111278218357261/messages";
             $response = Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
         }
     }
