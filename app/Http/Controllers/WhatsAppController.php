@@ -92,8 +92,45 @@ class WhatsAppController extends Controller
 
             if (isset($this->value->messages) && $this->value->messages[0]->type == 'interactive') {
                 $sender_interactive_message = $this->saveSenderInteractiveMessages($sender_whats_app, $this->value->messages[0]);
-                // return true;
+                return true;
             }
+
+            //Sending Greeting Message
+            $headers =  [
+                'Authorization' => "Bearer "  . env('WHATS_APP_TOKEN'),
+                'Content-Type' => 'application/json',
+            ];
+
+            //Send Greeting Message
+            $data = [
+                'messaging_product' => "whatsapp",
+                'recipient_type' => 'individual',
+                'to' => '972599916672',
+                'type' => 'template',
+                "template" => [
+                    "name" => "greeting_message_v4",
+                    'language' => [
+                        'code' => 'en'
+                    ],
+
+                    "components" => [
+                        [
+                            "type" => "header",
+                            "parameters" => [
+                                [
+                                    "type" => "image",
+                                    "image" => [
+                                        "link" => "https://thumbs.dreamstime.com/b/photo-programmer-workaholic-lady-work-late-night-meet-newyear-alone-office-hold-telephone-texting-colleagues-greet-drink-163723619.jpg"
+                                    ]
+                                ]
+                            ]
+                        ],
+                    ]
+                ]
+            ];
+
+            $url =  "https://graph.facebook.com/v14.0/$bot->whats_app_business_account_id/messages";
+            $response = Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
         }
     }
 
