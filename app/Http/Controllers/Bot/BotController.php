@@ -149,6 +149,20 @@ class BotController extends Controller
                 'language' => [
                     'code' => 'en'
                 ],
+
+                "components" => [
+                    [
+                        "type" => "header",
+                        "parameters" => [
+                            [
+                                "type" => "image",
+                                "image" => [
+                                    "link" => "https://thumbs.dreamstime.com/b/photo-programmer-workaholic-lady-work-late-night-meet-newyear-alone-office-hold-telephone-texting-colleagues-greet-drink-163723619.jpg"
+                                ]
+                            ]
+                        ]
+                    ],
+                ]
             ]
         ];
 
