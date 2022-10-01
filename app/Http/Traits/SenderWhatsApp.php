@@ -355,10 +355,66 @@ trait SenderWhatsApp
         $response = Http::withHeaders($headers)->post(env('URL_MESSAGING'), $interactive);
     }
 
+
+    public function arinteractiveMessage()
+    {
+        $bot = Bot::find(1);
+
+        $headers =  [
+            'Authorization' => "Bearer "  . env('WHATS_APP_TOKEN'),
+            'Content-Type' => 'application/json',
+        ];
+
+        $interactive =
+            [
+                'messaging_product' => "whatsapp",
+                "recipient_type" => "individual",
+                "to" => "972599916672",
+                "type" => "interactive",
+                "interactive" => [
+                    "type" => "button",
+                    "header" => [
+                        "type" => "image",
+                        "image" =>  [
+                            "link" =>  "https://www.cve-advocats.com/wp-content/uploads/2017/04/whatsapp-banner.png",
+                        ],
+                    ],
+                    "body" => [
+                        "text" => "
+                        مرحبا عمرو اكرم! المنتجات الرائعة من المتاجر تنتظر أن تكون لك! احصل على منتجاتك هنا👇
+                        "
+                    ],
+                    "footer" => [
+                        "text" => "proamrakram shop!"
+                    ],
+
+                    "action" =>  [
+                        "buttons" =>  [
+                            [
+                                "type" =>  "reply",
+                                "reply" =>  [
+                                    "id" =>  "buy_now",
+                                    "title" =>  "شراء الان"
+                                ]
+                            ],
+                        ]
+                    ]
+
+                ]
+            ];
+
+        $response = Http::withHeaders($headers)->post(env('URL_MESSAGING'), $interactive);
+    }
+
+
     public function saveSenderButtoniveMessages($sender, $message)
     {
         if ($message->button->payload == "Programming Services") {
             $this->interactiveMessage();
+        }
+
+        if ($message->button->payload == "الخدمات البرمجية") {
+            $this->arinteractiveMessage();
         }
     }
 
