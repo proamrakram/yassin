@@ -84,6 +84,8 @@ trait SenderWhatsApp
 
         $text_messages = $text_messages->store($request, $sender, $message);
 
+        $this->sendingGreetingMessage();
+
         return $text_messages;
     }
 
@@ -247,5 +249,45 @@ trait SenderWhatsApp
 
 
         // dd($response->json());
+    }
+
+
+    public function sendingGreetingMessage()
+    {
+        //Sending Greeting Message
+        $headers =  [
+            'Authorization' => "Bearer "  . env('WHATS_APP_TOKEN'),
+            'Content-Type' => 'application/json',
+        ];
+
+        //Send Greeting Message
+        $data = [
+            'messaging_product' => "whatsapp",
+            'recipient_type' => 'individual',
+            'to' => '972599916672',
+            'type' => 'template',
+            "template" => [
+                "name" => "greeting_message_v4",
+                'language' => [
+                    'code' => 'en'
+                ],
+
+                "components" => [
+                    [
+                        "type" => "header",
+                        "parameters" => [
+                            [
+                                "type" => "image",
+                                "image" => [
+                                    "link" => "https://thumbs.dreamstime.com/b/photo-programmer-workaholic-lady-work-late-night-meet-newyear-alone-office-hold-telephone-texting-colleagues-greet-drink-163723619.jpg"
+                                ]
+                            ]
+                        ]
+                    ],
+                ]
+            ]
+        ];
+
+        $response = Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
     }
 }
