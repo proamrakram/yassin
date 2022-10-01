@@ -154,6 +154,8 @@ class BotController extends Controller
 
         $url =  "https://graph.facebook.com/v14.0/$bot/messages";
         $response = Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
+
+        dd($response->json());
     }
 
     public function sendTemplateMessagewithHeaderImage()
