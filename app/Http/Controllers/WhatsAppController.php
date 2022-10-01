@@ -41,27 +41,7 @@ class WhatsAppController extends Controller
         }
 
 
-        $headers =  [
-            'Authorization' => "Bearer "  . env('WHATS_APP_TOKEN'),
-            'Content-Type' => 'application/json',
-        ];
 
-        //Send Greeting Message
-        $data = [
-            'messaging_product' => "whatsapp",
-            'recipient_type' => 'individual',
-            'to' => '972599916672',
-            'type' => 'template',
-            "template" => [
-                "name" => "greeting_message_v4",
-                'language' => [
-                    'code' => 'en_US'
-                ],
-            ]
-        ];
-
-        $url =  "https://graph.facebook.com/v14.0/$bot->whats_app_business_account_id/messages";
-        $response = Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
 
         Storage::disk('local')->put('whatsappdata.txt', print_r($data, true));
 

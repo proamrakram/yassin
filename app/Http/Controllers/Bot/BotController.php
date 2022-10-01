@@ -133,13 +133,19 @@ class BotController extends Controller
     {
         $bot = Bot::find(2)->whats_app_business_account_id;
 
+        $headers =  [
+            'Authorization' => "Bearer "  . env('WHATS_APP_TOKEN'),
+            'Content-Type' => 'application/json',
+        ];
+
+        //Send Greeting Message
         $data = [
             'messaging_product' => "whatsapp",
             'recipient_type' => 'individual',
             'to' => '972599916672',
             'type' => 'template',
             "template" => [
-                "name" => "hello_world",
+                "name" => "greeting_message_v4",
                 'language' => [
                     'code' => 'en_US'
                 ],
@@ -147,9 +153,7 @@ class BotController extends Controller
         ];
 
         $url =  "https://graph.facebook.com/v14.0/$bot/messages";
-
-        $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $data);
-        dd($response->json());
+        $response = Http::withHeaders($headers)->post(env('URL_MESSAGING'), $data);
     }
 
     public function sendTemplateMessagewithHeaderImage()
