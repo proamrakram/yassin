@@ -267,63 +267,88 @@ trait SenderWhatsApp
                 "to" => "972599916672",
                 "type" => "interactive",
                 "interactive" => [
-                    "type" => "list",
+                    "type" => "button",
                     "header" => [
-                        "type" => "text",
-                        "text" => "#111111111"
+                        "type" => "image",
+                        "image" =>  [
+                            "link" =>  "https://www.cve-advocats.com/wp-content/uploads/2017/04/whatsapp-banner.png",
+                        ],
                     ],
                     "body" => [
-                        "text" => "Hi there! 👋 Thanks for your message! 😃\nIt’s just me and [insert names of other workers] running [insert business name]. We receive tons of messages every day and may not be able to get to you right away – so sorry!"
+                        "text" => "
+                        Hi Amr Akram!
+                        The awesome products😍 from shops are waiting to be yours!
+                        Get your products here👇
+                        "
                     ],
                     "footer" => [
-                        "text" => "Cheers!"
+                        "text" => "proamrakram shop!"
                     ],
-                    "action" => [
-                        "button" => "Accept Product",
-                        "sections" => [
-                            [
-                                "title" => "Products Items",
-                                "rows" => [
-                                    [
-                                        "id" => "1",
-                                        "title" => "Jaspers Clapham",
-                                        "description" => "11-13 Battersea Rise, S11 1HG"
-                                    ],
-                                    [
-                                        "id" => "2",
-                                        "title" => "Jaspers Brixton",
-                                        "description" => "419 Coldharbour Ln, SW9 8LH"
-                                    ],
-                                    [
-                                        "id" => "3",
-                                        "title" => "Jaspers Shepherd's Bush",
-                                        "description" => "15 Goldhawk Rd, W12 8QQ"
-                                    ]
-                                ],
 
-                            ],
+                    "action" =>  [
+                        "buttons" =>  [
                             [
-                                "title" => "Products Prices",
-                                "rows" => [
-                                    [
-                                        "id" => "1",
-                                        "title" => "Jaspers Clapham",
-                                        "description" => "$456"
-                                    ],
-                                    [
-                                        "id" => "2",
-                                        "title" => "Jaspers Brixton",
-                                        "description" => "$419"
-                                    ],
-                                    [
-                                        "id" => "3",
-                                        "title" => "Jaspers Shepherd's Bush",
-                                        "description" => "$41"
-                                    ]
+                                "type" =>  "reply",
+                                "reply" =>  [
+                                    "id" =>  "buy_now",
+                                    "title" =>  "Buy Now"
                                 ]
-                            ]
+                            ],
                         ]
                     ]
+
+
+
+
+
+
+
+                    // "action" => [
+                    //     "button" => "Accept Product",
+                    //     "sections" => [
+                    //         [
+                    //             "title" => "Products Items",
+                    //             "rows" => [
+                    //                 [
+                    //                     "id" => "1",
+                    //                     "title" => "Jaspers Clapham",
+                    //                     "description" => "11-13 Battersea Rise, S11 1HG"
+                    //                 ],
+                    //                 [
+                    //                     "id" => "2",
+                    //                     "title" => "Jaspers Brixton",
+                    //                     "description" => "419 Coldharbour Ln, SW9 8LH"
+                    //                 ],
+                    //                 [
+                    //                     "id" => "3",
+                    //                     "title" => "Jaspers Shepherd's Bush",
+                    //                     "description" => "15 Goldhawk Rd, W12 8QQ"
+                    //                 ]
+                    //             ],
+
+                    //         ],
+                    //         [
+                    //             "title" => "Products Prices",
+                    //             "rows" => [
+                    //                 [
+                    //                     "id" => "1",
+                    //                     "title" => "Jaspers Clapham",
+                    //                     "description" => "$456"
+                    //                 ],
+                    //                 [
+                    //                     "id" => "2",
+                    //                     "title" => "Jaspers Brixton",
+                    //                     "description" => "$419"
+                    //                 ],
+                    //                 [
+                    //                     "id" => "3",
+                    //                     "title" => "Jaspers Shepherd's Bush",
+                    //                     "description" => "$41"
+                    //                 ]
+                    //             ]
+                    //         ]
+                    //     ]
+                    // ]
                 ]
             ];
 
@@ -357,7 +382,7 @@ trait SenderWhatsApp
             "template" => [
                 "name" => "greeting_message_v4",
                 'language' => [
-                    'code' => 'en'
+                    'code' => 'ar'
                 ],
 
                 "components" => [
