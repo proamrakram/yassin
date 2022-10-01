@@ -145,7 +145,7 @@ class BotController extends Controller
             'to' => '972599916672',
             'type' => 'template',
             "template" => [
-                "name" => "greeting_message_v4",
+                "name" => "hello_world",
                 'language' => [
                     'code' => 'en_US'
                 ],
