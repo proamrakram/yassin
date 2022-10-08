@@ -33,8 +33,8 @@
                                 <div class="col-lg">
                                     <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
                                     <div class="input-group">
-                                        <img src="{{ asset('whatsapp-assets/icons/search.ico') }}" width="30"
-                                            height="30" alt="search">
+                                        <img src="/whatsapp-assets/icons/search.ico" width="30" height="30"
+                                            alt="search">
 
                                         <div class="input-group-text ms-3">@</div>
                                         <input class="form-control" id="inlineFormInputGroupUsername" type="text"
@@ -79,8 +79,8 @@
                                             <tr>
                                                 <th scope="row">{{ $bot->id }}</th>
                                                 <th scope="row"><a href="#"><img
-                                                            src="{{ asset('whatsapp-assets/icons/whatsapp.ico') }}"
-                                                            width="30" height="30" alt="smilebot.ico"></a></th>
+                                                            src="/whatsapp-assets/icons/whatsapp.ico" width="30"
+                                                            height="30" alt="smilebot.ico"></a></th>
                                                 <th scope="row">{{ $bot->name }}</th>
                                                 <td>{{ $bot->whats_app_business_account_id }}</td>
                                                 <td>{{ $bot->phone_number }}</td>
@@ -88,8 +88,8 @@
                                                 <td>{{ $bot->messaging_product }}</td>
                                                 <th scope="row"><a
                                                         href="{{ route('admin.bot-templates', $bot->id) }}"><img
-                                                            src="{{ asset('whatsapp-assets/icons/whatsapp.ico') }}"
-                                                            width="30" height="30" alt="smilebot.ico"></a></th>
+                                                            src="/whatsapp-assets/icons/whatsapp.ico" width="30"
+                                                            height="30" alt="smilebot.ico"></a></th>
                                             </tr>
                                         @endforeach
 

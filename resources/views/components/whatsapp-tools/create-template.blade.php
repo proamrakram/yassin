@@ -13,11 +13,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form id="create_template_form" method="POST" enctype="multipart/form-data">
+            <form id="create_template_form" action="{{ route('bot.create-template') }}" method="POST"
+                enctype="multipart/form-data">
 
                 @csrf
 
-                <input type="hidden" id="bot_id" value="{{ $bot->id }}">
+                <input type="hidden" id="bot_id" name="bot_id" value="{{ $bot->id }}">
 
                 <div class="modal-body">
 
@@ -29,11 +30,12 @@
                     </div>
 
                     <div class="row">
+
                         <div class="col-lg-12" id="template-name-div">
                             <div class="mb-3">
                                 <label class="form-label" for="template_text_template">Template Name</label>
                                 <input class="form-control" name="template_name" id="template_name" type="text"
-                                    aria-describedby="emailHelp" value="body">
+                                    aria-describedby="emailHelp">
                                 <div class="form-text text-danger" id="template_name_message"></div>
                             </div>
                         </div>
@@ -41,7 +43,7 @@
                         <div class="col-lg-12">
                             <div class="mb-3">
                                 <label class="form-label" for="template_type">Template Type</label>
-                                <select class="form-select" id="selectedTemplateType">
+                                <select class="form-select" name="template_category" id="selectedTemplateType">
                                     <option value="null" selected>Choose...</option>
                                     <option value="OTP">OTP</option>
                                     <option value="TRANSACTIONAL">TRANSACTIONAL</option>
@@ -54,7 +56,7 @@
                         <div class="col-lg-12">
                             <div class="mb-3">
                                 <label class="form-label" for="template_language">Template Language</label>
-                                <select class="form-select" id="selectedTemplateLanguage">
+                                <select class="form-select" name="template_language" id="selectedTemplateLanguage">
                                     <option value="null" selected>Choose...</option>
                                     <option value="en_US">En_Us</option>
                                     <option value="ar">Ar</option>
@@ -78,7 +80,7 @@
                             <div class="mb-3">
                                 <label class="form-label" for="sender_message_name">Header Format Type</label>
 
-                                <select class="form-select" id="selectedHeaderType">
+                                <select class="form-select" name="header_format" id="selectedHeaderType">
                                     <option value="null" selected>Choose...</option>
                                     <option value="text">Text</option>
                                     <option value="image">Image</option>
@@ -96,7 +98,7 @@
                             <div class="mb-3">
                                 <label class="form-label" for="header_text_template">Text</label>
                                 <input class="form-control" name="header_text_template" id="header_text_template"
-                                    type="text" aria-describedby="emailHelp" value="body">
+                                    type="text" aria-describedby="emailHelp">
                                 <div class="form-text text-danger" id="header_text_message"></div>
                             </div>
                         </div>
@@ -130,7 +132,7 @@
                             <div class="mb-3">
                                 <label class="form-label" for="sender_message_name">Body Format Type</label>
 
-                                <select class="form-select" id="selectedBodyType">
+                                <select class="form-select" name="body_format" id="selectedBodyType">
                                     <option value="null" selected>Choose...</option>
                                     <option value="text">Text</option>
                                     <option value="image">Image</option>
@@ -146,7 +148,7 @@
 
                         <div class="col-lg-12" id="body-text-div">
                             <label class="form-label" for="body_image_template">Body</label>
-                            <textarea style="width: inherit;" name="body_message_template" id="body_text_template" rows="3">Enter Your Body Message</textarea>
+                            <textarea style="width: inherit;" name="body_text_template" id="body_text_template" rows="3"></textarea>
 
                             <div class="form-text text-danger" id="body_text_message"></div>
                         </div>
@@ -177,7 +179,7 @@
                         <div class="col-lg-12">
                             <div class="mb-3">
                                 <label class="form-label" for="sender_message_name">Footer Format Type</label>
-                                <select class="form-select" id="selectedFooterType">
+                                <select class="form-select" name="footer_format" id="selectedFooterType">
                                     <option value="null" selected>Choose...</option>
                                     <option value="text">Text</option>
                                     <option value="image">Image</option>
@@ -219,74 +221,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{-- <hr style="border: 2px solid black;">
-
-<div class="row">
-    <div class="col-lg-6">
-        <label class="form-label" for="footer_text_template"><strong>Footer Message</strong></label>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-lg-6">
-        <div class="mb-3">
-            <label class="form-label" for="footer_text_template">Text</label>
-            <input class="form-control" name="footer_text_template" id="footer_text_template"
-                type="tel" aria-describedby="emailHelp" value="body">
-            <div class="form-text text-danger" id="emailHelp">We'll never share your email with anyone else.
-            </div>
-        </div>
-    </div>
-</div>
-
-<hr style="border: 2px solid black;">
-
-
-<div class="row">
-    <div class="col-lg-6">
-        <label class="form-label" for="body_message_template"><strong>Buttons
-                Message</strong></label>
-    </div>
-</div>
-
-
-<div class="row">
-
-    <div class="col-lg-6">
-        <div class="mb-3">
-            <label class="form-label" for="sender_message_name">Button Type</label>
-            <select class="form-select" id="inlineFormSelectPref">
-                <option value="null" selected>Choose...</option>
-                <option value="QUICK_REPLY">Quick Reply</option>
-                <option value="URL">URL</option>
-                <option value="PHONE_NUMBER">Phone Number</option>
-            </select>
-            <div class="form-text text-danger" id="emailHelp">We'll never share your email with anyone else.
-            </div>
-        </div>
-    </div>
-
-
-    <div class="col-lg-6">
-        <div class="mb-3">
-            <label class="form-label" for="button_text_template">Text</label>
-            <input class="form-control" name="button_text_template" id="button_text_template"
-                type="text" aria-describedby="emailHelp" value="body">
-            <div class="form-text text-danger" id="emailHelp">We'll never share your email with anyone else.
-            </div>
-        </div>
-    </div>
-</div> --}}

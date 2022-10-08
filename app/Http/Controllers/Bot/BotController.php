@@ -129,9 +129,9 @@ class BotController extends Controller
         dd($res->json());
     }
 
-    public function sendTemplateTest()
+    public function sendTemplateMessageTest()
     {
-        $bot = Bot::find(1)->whats_app_business_account_id;
+        $bot = Bot::find(2)->whats_app_business_account_id;
 
         $data = [
             'messaging_product' => "whatsapp",
@@ -139,31 +139,99 @@ class BotController extends Controller
             'to' => '972599916672',
             'type' => 'template',
             "template" => [
-                "name" => "newtest4",
+                "name" => "hello_world",
                 'language' => [
                     'code' => 'en_US'
                 ],
-                'components' => [
-                    [
-                        "type" => "header",
-                        "format" => "image",
-                        "image" => [
-                            "link" => "https://static.remove.bg/remove-bg-web/37843dee2531e43723b012aa78be4b91cc211fef/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
-                        ]
-
-                    ],
-
-                    [
-                        "type" => "body",
-                        "text" => "We are now working on {{1}} platform"
-
-                    ],
-                ],
-
             ]
         ];
-        $url =  "https://graph.facebook.com/v14.0/$bot/message_templates";
-        $response = Http::withHeaders($this->headers)->post($url, $data);
+
+        $url =  "https://graph.facebook.com/v14.0/$bot/messages";
+
+        $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $data);
+        dd($response->json());
+    }
+
+    public function sendTemplateMessagewithHeaderImage()
+    {
+        $bot = Bot::find(2)->whats_app_business_account_id;
+
+        $data = [
+            'messaging_product' => "whatsapp",
+            'recipient_type' => 'individual',
+            'to' => '972599916672',
+            'type' => 'template',
+            "template" => [
+                "name" => "message_admin_tem",
+                'language' => [
+                    'code' => 'en_US'
+                ],
+
+                "components" => [
+                    [
+                        "type" => "header",
+                        "parameters" => [
+                            [
+                                "type" => "image",
+                                "image" => [
+                                    "link" => "https://tgtgreenteknoloji.com/storage/images/1110896826469682.jpg"
+                                ]
+                            ]
+                        ]
+                    ],
+                ]
+            ]
+        ];
+
+        $url =  "https://graph.facebook.com/v14.0/$bot/messages";
+        $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $data);
+        dd($response);
+        // return redirect()->back()->with('success', 'Message template has been sent successfully');
+    }
+
+    public function sendTemplateMessageWithHeaderDocument()
+    {
+        $bot = Bot::find(2)->whats_app_business_account_id;
+
+        $data = [
+            'messaging_product' => "whatsapp",
+            'recipient_type' => 'individual',
+            'to' => '972599064812',
+            'type' => 'template',
+            "template" => [
+                "name" => "message_admin_tem",
+                'language' => [
+                    'code' => 'en_US'
+                ],
+
+                "components" => [
+                    [
+                        "type" => "header",
+                        "parameters" => [
+                            [
+                                "type" => "document",
+                                "document" => [
+                                    "link" => "https://www.orimi.com/pdf-test.pdf",
+                                    "filename" => "document-test"
+                                ]
+                            ]
+                        ]
+                    ],
+                    [
+                        "type" => "body",
+                        "parameters" => [
+                            [
+                                "type" => "text",
+                                "text" => "amrakram"
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ];
+
+        $url =  "https://graph.facebook.com/v14.0/$bot/messages";
+        $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $data);
         dd($response->json());
     }
 
@@ -181,24 +249,55 @@ class BotController extends Controller
                     "type" => "list",
                     "header" => [
                         "type" => "text",
-                        "text" => "your text here"
+                        "text" => "#111111111"
                     ],
                     "body" => [
-                        "text" => "body message here man"
+                        "text" => "Hi there! 👋 Thanks for your message! 😃\nIt’s just me and [insert names of other workers] running [insert business name]. We receive tons of messages every day and may not be able to get to you right away – so sorry!"
                     ],
                     "footer" => [
-                        "text" => "message footer here man"
+                        "text" => "Cheers!"
                     ],
                     "action" => [
-                        "button" => "click me now",
+                        "button" => "Accept Product",
                         "sections" => [
                             [
-                                "title" => "your title here now",
+                                "title" => "Products Items",
                                 "rows" => [
                                     [
                                         "id" => "1",
-                                        "title" => "now good",
-                                        "description" => "row title test"
+                                        "title" => "Jaspers Clapham",
+                                        "description" => "11-13 Battersea Rise, S11 1HG"
+                                    ],
+                                    [
+                                        "id" => "2",
+                                        "title" => "Jaspers Brixton",
+                                        "description" => "419 Coldharbour Ln, SW9 8LH"
+                                    ],
+                                    [
+                                        "id" => "3",
+                                        "title" => "Jaspers Shepherd's Bush",
+                                        "description" => "15 Goldhawk Rd, W12 8QQ"
+                                    ]
+                                ],
+
+                            ],
+                            [
+                                "title" => "Products Prices",
+                                "rows" => [
+                                    [
+                                        "id" => "1",
+                                        "title" => "Jaspers Clapham",
+                                        "description" => "$456"
+                                    ],
+                                    [
+                                        "id" => "2",
+                                        "title" => "Jaspers Brixton",
+                                        "description" => "$419"
+                                    ],
+                                    [
+                                        "id" => "3",
+                                        "title" => "Jaspers Shepherd's Bush",
+                                        "description" => "$41"
                                     ]
                                 ]
                             ]
@@ -213,7 +312,54 @@ class BotController extends Controller
 
 
 
+    public function sendInteractiveButtons()
+    {
+        $bot = Bot::find(1);
 
+        $interactive =
+            [
+                'messaging_product' => "whatsapp",
+                "recipient_type" => "individual",
+                "to" => "972599916672",
+                "type" => "interactive",
+                "interactive" => [
+                    "type" => "button",
+                    "header" => [
+                        "type" => "image",
+                        "image" => [
+                            "link" => "https://cdn.statusqueen.com/dpimages/thumbnail/whatsapp%20dp%20image6-601.jpg",
+                        ]
+                    ],
+                    "body" => [
+                        "text" => "Hi there! 👋 Thanks for your message! 😃\nIt’s just me and [insert names of other workers] running [insert business name]. We receive tons of messages every day and may not be able to get to you right away – so sorry!"
+                    ],
+                    "footer" => [
+                        "text" => "Cheers!"
+                    ],
+                    "action" => [
+                        "buttons" => [
+                            [
+                                "type" => "reply",
+                                "reply" => [
+                                    "id" => "12",
+                                    "title" => "The First",
+                                ]
+                            ],
+                            [
+                                "type" => "reply",
+                                "reply" => [
+                                    "id" => "13",
+                                    "title" => "The Second",
+                                ]
+                            ]
+                        ],
+                    ]
+                ]
+            ];
+
+        $response = Http::withHeaders($this->headers)->post(env('URL_MESSAGING'), $interactive);
+        dd($response->json());
+    }
 
 
     // public function sendReplyToImageMessageByID($message_id, $image_id)

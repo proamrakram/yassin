@@ -5,6 +5,7 @@ namespace App\Http\Traits;
 use App\Models\Template;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use stdClass;
 
 trait TemplateMessages
 {
@@ -40,6 +41,25 @@ trait TemplateMessages
         }
     }
 
+    public function createSessionUpload($headers, $whats_app_business_account_id)
+    {
+        $url =  "https://graph.facebook.com/v14.0/362332076097447/uploads";
+
+        $data = [
+            'file_length' => '181812',
+            'file_name' => 'namenaem',
+            'file_type' => 'image/jpeg',
+            // 'session_type' => 'attachment'
+        ];
+
+        $session_id = Http::withHeaders($headers)->post($url, $data);
+        $upload_id = $session_id->json()['id'];
+        $url = "https://graph.facebook.com/v14.0/$upload_id";
+        // $headers['file_name'] = "https://tgtgreenteknoloji.com/whatsapp-assets/img/avatar-0.jpg";
+        $uploading_id = Http::withHeaders($headers)->post($url);
+        dd($uploading_id->json());
+    }
+
     public function createTemplate(Request $request, $headers, $whats_app_business_account_id)
     {
         $components = [
@@ -51,7 +71,6 @@ trait TemplateMessages
         $data = $this->setTemplateObject($components, $request);
 
         $url =  "https://graph.facebook.com/v14.0/$whats_app_business_account_id/message_templates";
-
         $response = Http::withHeaders($headers)->post($url, $data);
 
         return $response;
@@ -59,18 +78,34 @@ trait TemplateMessages
 
     public function setHeaderMessageTemplate($request)
     {
-        return [
-            "type" => "header",
-            "format" => "IMAGE",
-            "example" => [
-                "header_text" => ["jpg image"],
-                "body_text" => [["sadfghjk"]],
-                "header_url" => [["https://static.remove.bg/remove-bg-web/37843dee2531e43723b012aa78be4b91cc211fef/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"]],
-                "header_handle" => ["https://static.remove.bg/remove-bg-web/37843dee2531e43723b012aa78be4b91cc211fef/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"]
 
 
-            ]
-        ];
+        if ($request->header_format == 'text') {
+            return [
+                "type" => "header",
+                "format" => "TEXT",
+                'text' => $request->header_text_template
+            ];
+        }
+        $img = file_get_contents(
+            'https://tgtgreenteknoloji.com/whatsapp-assets/img/avatar-0.jpg'
+        );
+
+        // Encode the image string data into base64
+        $data = base64_encode($img);
+
+        if ($request->header_format == 'image') {
+            return [
+                "type" => "header",
+                "format" => "IMAGE",
+                "example" => [
+                    "header_handle" => ["wamid.HBgMOTcyNTk5OTE2NjcyFQIAEhgUM0VCMDc4Q0M5NjM5M0E0M0M4ODkA"],
+                    "header_text" => ["Hello World"],
+                    "body_text" => [["Amr Akkram"]],
+                    "header_url" => ['https://tgtgreenteknoloji.com/storage/images/1110896826469682.jpg']
+                ]
+            ];
+        }
     }
 
     public function setBodyMessageTemplate($request)
@@ -78,7 +113,6 @@ trait TemplateMessages
         return [
             "type" => "body",
             "text" => $request->body_text_template,
-
         ];
     }
 

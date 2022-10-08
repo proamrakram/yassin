@@ -18,18 +18,18 @@
     <!-- Google fonts - Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <!-- Choices CSS-->
-    <link rel="stylesheet" href="{{ asset('whatsapp-assets/vendor/choices.js/public/assets/styles/choices.min.css') }}">
+    <link rel="stylesheet" href="/whatsapp-assets/vendor/choices.js/public/assets/styles/choices.min.css">
     <!-- Custom Scrollbar-->
-    <link rel="stylesheet" href="{{ asset('whatsapp-assets/vendor/overlayscrollbars/css/OverlayScrollbars.min.css') }}">
+    <link rel="stylesheet" href="/whatsapp-assets/vendor/overlayscrollbars/css/OverlayScrollbars.min.css">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="{{ asset('whatsapp-assets/css/style.default.css') }}" id="theme-stylesheet">
+    <link rel="stylesheet" href="/whatsapp-assets/css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="{{ asset('whatsapp-assets/css/custom.css') }}">
+    <link rel="stylesheet" href="/whatsapp-assets/css/custom.css">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="{{ asset('whatsapp-assets/img/favicon.ico') }}">
+    <link rel="shortcut icon" href="/whatsapp-assets/img/favicon.ico">
 
     <!-- Toastr CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}" />
+    <link rel="stylesheet" href="/assets/css/toastr.min.css" />
 
     <!-- Tweaks for older IEs-->
     <!--[if lt IE 9]>

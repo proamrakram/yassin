@@ -1,7 +1,5 @@
 <x-layouts.whatsapp>
 
-
-
     <!-- Breadcrumb-->
     <div class="bg-gray-200 text-sm">
         <div class="container-fluid">
@@ -34,7 +32,7 @@
                 </div>
 
                 <div class="input-group">
-                    <div class="input-group-text ms-3"> <img src="{{ asset('whatsapp-assets/svg/send-message.svg') }}"
+                    <div class="input-group-text ms-3"> <img src="/whatsapp-assets/svg/send-message.svg"
                             width="20" height="20" alt="search"> </div>
                     <input type="file" id="new_image_message" name="new_image_message" accept=".jpg, .jpeg, .png"
                         class="form-control imageInput">

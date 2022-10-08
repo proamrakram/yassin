@@ -29,14 +29,14 @@
 
                             <div class="row g-2 align-items-center">
 
-                                <div class="col-lg">
+                                {{-- <div class="col-lg">
 
                                     <form class="row g-3 align-items-center">
                                         <div class="col-lg">
                                             <label class="visually-hidden" for="inlineFormInputGroupUsername">Template
                                                 Name</label>
                                             <div class="input-group">
-                                                <img src="{{ asset('whatsapp-assets/icons/search.ico') }}"
+                                                <img src="/whatsapp-assets/icons/search.ico"
                                                     width="30" height="30" alt="search">
 
                                                 <div class="input-group-text ms-3">@</div>
@@ -60,9 +60,9 @@
                                         </div>
 
                                     </form>
-                                </div>
+                                </div> --}}
 
-                                <div class="col-lg-6">
+                                <div class="col-lg">
                                     <x-whatsapp-tools.create-template :bot="$bot"></x-whatsapp-tools.create-template>
                                 </div>
 

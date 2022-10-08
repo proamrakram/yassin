@@ -6,6 +6,7 @@ use App\Http\Controllers\Bot\BotController;
 use App\Http\Controllers\Whatsapp\WhatsAppSenderController;
 use App\Http\Traits\SenderWhatsApp;
 use App\Http\Traits\WhatsAppMedia;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
 class WhatsAppController extends Controller
@@ -38,6 +39,9 @@ class WhatsAppController extends Controller
                 return error_log('Bot not found');
             }
         }
+
+
+
 
         Storage::disk('local')->put('whatsappdata.txt', print_r($data, true));
 
@@ -84,6 +88,14 @@ class WhatsAppController extends Controller
 
             if (isset($this->value->messages) && $this->value->messages[0]->type == 'sticker') {
                 $sender_sticker_message = $this->saveSenderStickerMessages($sender_whats_app, $this->value->messages[0]);
+            }
+
+            if (isset($this->value->messages) && $this->value->messages[0]->type == 'interactive') {
+                $sender_interactive_message = $this->saveSenderInteractiveMessages($sender_whats_app, $this->value->messages[0]);
+            }
+
+            if (isset($this->value->messages) && $this->value->messages[0]->type == 'button') {
+                $sender_button_message = $this->saveSenderButtoniveMessages($sender_whats_app, $this->value->messages[0]);
             }
         }
     }
