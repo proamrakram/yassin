@@ -40,3 +40,6 @@ Route::get('/terms', function () {
 });
 
 
+Route::get('/test', function () {
+    return view('home');
+});

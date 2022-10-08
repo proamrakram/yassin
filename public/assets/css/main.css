@@ -15,8 +15,8 @@
 :root {
   font-size: 16px;
   --white: #fff;
-  --gray: #CCCCCC;
-  --main: #FAD50F;
+  --gray: #cccccc;
+  --main: #fad50f;
 }
 
 @media (min-width: 768px) and (max-width: 1199.9px) {
@@ -70,7 +70,7 @@ a {
 header {
   position: fixed;
   z-index: 99;
-  top: 0;
+  top: 50px;
   left: 0;
   width: 100%;
   transition: 0.3s;
@@ -78,6 +78,7 @@ header {
 
 header.down {
   background-color: #161616;
+  top: 0;
 }
 
 header img {
@@ -95,7 +96,7 @@ header .over {
 }
 
 .btn-sm {
-  background: #40B0BF;
+  background: #40b0bf;
   border-radius: 20px;
   color: var(--white);
   font-family: "SemiBold";
@@ -126,7 +127,7 @@ header .over {
     right: 0;
   }
 
-  header .links.show+.over {
+  header .links.show + .over {
     display: block;
     position: fixed;
     z-index: 99;
@@ -224,6 +225,18 @@ header .over {
   line-height: 1.75;
 }
 
+@media (max-width: 767.9px) {
+  .hero {
+    min-height: 70vh;
+  }
+
+  .hero .bg::after {
+    content: "";
+    width: calc(100% / 6);
+    background: linear-gradient(to right, #1616168c 50%, #00000000);
+  }
+}
+
 /* Another Sections */
 
 .sec {
@@ -234,7 +247,7 @@ header .over {
 .title-sec {
   font-size: 1.75rem;
   color: var(--white);
-  font-family: 'SemiBold';
+  font-family: "SemiBold";
   text-align: center;
 }
 
@@ -264,10 +277,10 @@ header .over {
   background-color: #363636;
 }
 
-.box-info .icon+span {
+.box-info .icon + span {
   color: var(--white);
   font-size: 1.125rem;
-  font-family: 'SemiBold';
+  font-family: "SemiBold";
 }
 
 .box-info .body-box-info p {
@@ -345,7 +358,7 @@ header .over {
 
 .box-question-answer h3 {
   color: var(--white);
-  font-family: 'SemiBold';
+  font-family: "SemiBold";
   font-size: 1.125rem;
 }
 
@@ -371,14 +384,14 @@ header .over {
 }
 
 .box-subscribe {
-  background-image: linear-gradient(240deg, #FAD50F, #40B0BF);
+  background-image: linear-gradient(240deg, #fad50f, #40b0bf);
   border-radius: 12px;
 }
 
 .box-subscribe h4 {
   font-size: 1.75rem;
   color: var(--white);
-  font-family: 'SemiBold';
+  font-family: "SemiBold";
 }
 
 .box-subscribe .btn-sm {
@@ -413,4 +426,83 @@ footer p {
   .box-subscribe p {
     flex: 0 0 100%;
   }
+}
+
+/* 14-9-2022 */
+
+.top-header {
+  background-color: #161616;
+}
+
+.top-header .row {
+  height: 50px;
+}
+
+.top-header * {
+  color: var(--gray);
+  font-size: 0.875rem;
+}
+
+header > div.container {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.links-social-media a {
+  display: inline-flex;
+}
+
+.links-social-media svg {
+  height: 1.25rem;
+  width: auto;
+}
+
+.top-header svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@media (max-width: 385px) {
+  .top-header svg {
+    width: 1rem;
+    height: 1rem;
+  }
+  .contact-info {
+    text-align: center;
+  }
+}
+
+.links-social-media a:nth-child(2) svg {
+  height: 1.5rem;
+}
+
+.links-social-media svg [fill],
+.top-header svg [fill] {
+  fill: var(--gray);
+}
+
+.about-company img {
+  height: 40px;
+}
+
+.about-company p,
+.site-map a,
+.info-company a {
+  font-size: 0.875rem !important;
+  color: var(--gray);
+  transition: 0.3s;
+}
+
+.site-map a:hover,
+.info-company a:hover {
+  transform: translateX(10px);
+}
+
+.info-company a svg {
+  width: 1.125rem;
+  height: auto;
+}
+
+.info-company a svg [fill] {
+  fill: var(--white)
 }
