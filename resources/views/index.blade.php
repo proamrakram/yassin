@@ -19,7 +19,7 @@
                             the owners of this project and this game.
                         </p>
                         <div class="btn">
-                            <a href="#whatis">Let’s start</a>
+                            <a href="#whatis">Let’s start together</a>
                         </div>
                     </div>
                 </div>
