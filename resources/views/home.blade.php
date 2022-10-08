@@ -533,14 +533,19 @@
                     <div class="col-lg-8 col-md-10 points mb-5">
                         <p class="mb-3">
                             <span class="me-2 color-main">
-                                Earnings:
+                                Shares:
                             </span>
-                            %5 Profit at year
+                            <br>
+
+                        <p> The total number of shares is 24 million shares.</p>
+                        <br>
+                        <p> The number of shares offered for sale is 18 million shares.</p>
+                        <br>
+                        <p>The price of one share is $150 with profits of 200% annually, which is equivalent to $300
+                            annually.
                         </p>
-                        <p>
-                            If you invested a certain amount, you will get the same value of the amount invested
-                            annually in addition
-                            to 5% of the amount invested monthly.
+                        <br>
+
                         </p>
                     </div>
 
@@ -551,13 +556,23 @@
                             </span>
                         </p>
                         <p>
-                            Invest with 3000$, you will get 3000$ + (5% * 3000$ per month) * 12 months. Total profits:
-                            3000$ + 150 *
-                            12 = 4800$ annually.
+                        <p>To increase the investor's comfort and guarantee, the full share price will not be received,
+                            but a portion of it, which is $20 per share, will be received.</p>
+                        <br>
+
+                        <p> The investor can own a maximum number of shares 5% of the number of shares offered for sale
+                            only.</p>
+                        <br>
+
+                        <p> The rest of the share price will be deducted from the investor's profits.</p>
+                        <br>
+
+                        <p> For more details, you can contact us.</p>
+                        <br>
                         </p>
                     </div>
 
-                    <div class="col-lg-8 col-md-10 points mb-5">
+                    {{-- <div class="col-lg-8 col-md-10 points mb-5">
                         <p class="mb-3">
                             <span class="me-2 color-main">
                                 Entry Fees:
@@ -566,7 +581,7 @@
                         <p>
                             The $500 subscription fee for this investment is non-refundable.
                         </p>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>
@@ -741,7 +756,10 @@
 
                             </span>
                         </h3>
+
+
                         <div class="answer px-4" style="display: none;">
+
                             <p class="before-icon align-items-start color-white py-3 pt-4">
                                 <span class="icon-small">
                                     <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
@@ -750,6 +768,7 @@
                                 he game Fortnite comes in first place, with revenues of 5.5 billion dollars in two
                                 years.
                             </p>
+
                             <p class="before-icon align-items-start color-white py-3">
                                 <span class="icon-small">
                                     <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
@@ -758,6 +777,7 @@
                                 In second place comes the Bubg game, with profits amounting to 4.3 billion dollars in
                                 two years.
                             </p>
+
                             <p class="before-icon align-items-start color-white py-3">
                                 <span class="icon-small">
                                     <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
@@ -767,6 +787,7 @@
                                 amounted to 3 billion
                                 dollars.
                             </p>
+
                             <p class="before-icon align-items-start color-white py-3 pb-4">
                                 <span class="icon-small">
                                     <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
@@ -774,6 +795,38 @@
                                 </span>
                                 In fourth place comes the game Honor of kings, where in 2019 profits amounted to 2.5
                                 billion dollars.
+                            </p>
+
+                            <p class="before-icon align-items-start color-white py-3 pb-4">
+                                <span class="icon-small">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
+                                </span>
+                                The full share price will not be received, only $20 of the share price will be received
+                                and
+                                the rest of the share price will be deducted from the profits. This is to guarantee the
+                                investor his money.
+
+                            </p>
+                            <p class="before-icon align-items-start color-white py-3 pb-4">
+                                <span class="icon-small">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
+                                </span>
+                                All this talk will be in an official contract between the two parties, the company and
+                                the investor, and certified by the notary (notary)
+
+                            </p>
+
+
+                            <p class="before-icon align-items-start color-white py-3">
+                                <span class="icon-small">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
+                                </span>
+                                The investment system allows the purchase of a maximum of 5% of the number of shares
+                                offered
+                                for sale.
                             </p>
                         </div>
                     </div>
