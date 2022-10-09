@@ -224,27 +224,27 @@
                     <div>
                         <div>
                             <div class="mb-3">
-                                <a href="">
+                                <a href="#home">
                                     Home
                                 </a>
                             </div>
                             <div class="mb-3">
-                                <a href="">
+                                <a href="#whatis">
                                     What is the game?
                                 </a>
                             </div>
                             <div class="mb-3">
-                                <a href="">
+                                <a href="#information">
                                     Information
                                 </a>
                             </div>
                             <div class="mb-3">
-                                <a href="">
+                                <a href="#InvestmentSystem">
                                     Investment System
                                 </a>
                             </div>
                             <div class="mb-3">
-                                <a href="">
+                                <a href="#faq">
                                     FAQ
                                 </a>
                             </div>
