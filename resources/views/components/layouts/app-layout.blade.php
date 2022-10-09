@@ -27,7 +27,7 @@
 
 <body>
 
-    <!-- 14-9-2022 -->
+    {{-- <!-- 14-9-2022 -->
     <div class="top-header py-2 container-fluid">
         <div class="container">
             <div class="row justify-content-center align-items-center justify-content-sm-between">
@@ -142,7 +142,7 @@
             </div>
         </div>
     </div>
-    <!-- 14-9-2022 -->
+    <!-- 14-9-2022 --> --}}
 
 
     <header class="container-fluid px-lg-0">
