@@ -255,7 +255,7 @@
                 <div class="col-md-4 info-company">
                     <div>
                         <div>
-                            <a href="" class="mb-3 d-inline-flex align-items-center">
+                            <a href="#" class="mb-3 d-inline-flex align-items-center">
                                 <svg class="me-3" xmlns="http://www.w3.org/2000/svg" width="12.805" height="21.85"
                                     viewBox="0 0 12.805 21.85">
                                     <g id="location-svgrepo-com" transform="translate(-54.643)">
