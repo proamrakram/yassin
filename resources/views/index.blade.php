@@ -1457,7 +1457,7 @@
 
                         <div class="answer px-4" style="display: none;">
 
-                            <p class="before-icon align-items-start color-white py-3 pt-4">
+                            {{-- <p class="before-icon align-items-start color-white py-3 pt-4">
                                 <span class="icon-small">
                                     <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
                                         alt="icon">
@@ -1492,7 +1492,7 @@
                                 </span>
                                 In fourth place comes the game Honor of kings, where in 2019 profits amounted to 2.5
                                 billion dollars.
-                            </p>
+                            </p> --}}
 
                             <p class="before-icon align-items-start color-white py-3 pb-4">
                                 <span class="icon-small">
