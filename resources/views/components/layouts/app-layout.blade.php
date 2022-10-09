@@ -81,7 +81,7 @@
                     </div>
                 </div> --}}
 
-                <div class="col-auto">
+                {{-- <div class="col-auto">
                     <div class="links-social-media d-flex align-items-center">
                         <a href="" class="me-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12.124" height="24"
@@ -130,7 +130,7 @@
                             </svg>
                         </a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
