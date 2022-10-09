@@ -1288,313 +1288,367 @@
 
     <div class="container-fluid px-lg-0 sec pb-0">
 
-        <div class="container">
-            <div class="row">
+        <div class="container-fluid px-lg-0 sec pb-0" id="faq">
 
-                <div class="col-12 mb-4 mb-lg-5">
-                    <div>
-                        <h2 class="title-sec">
-                            Frequently Answered Questions (FAQ)
-                        </h2>
-                    </div>
-                </div>
+            <div class="container">
+                <div class="row">
 
-                <div class="col-lg-10 col-md-12 mx-auto mb-4">
-                    <div class="box-question-answer">
-                        <h3 class="question active py-4 px-4 d-flex align-items-center justify-content-between">
-                            Some information about the most popular games in recent years!!
-                            <span class="ms-3 open-answer">
-
-                                <svg class="plus" id="Group_44" data-name="Group 44"
-                                    xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                    viewBox="0 0 14 14">
-                                    <line id="Line_2" data-name="Line 2" x1="14"
-                                        transform="translate(0 7)" fill="none" stroke="#fff"
-                                        stroke-width="1.5" />
-                                    <line id="Line_3" data-name="Line 3" y1="14" transform="translate(7)"
-                                        fill="none" stroke="#fff" stroke-width="1.5" />
-                                </svg>
-
-                                <svg class="minus" xmlns="http://www.w3.org/2000/svg" width="14" height="1.5"
-                                    viewBox="0 0 14 1.5">
-                                    <g id="Group_43" data-name="Group 43" transform="translate(0 0.75)">
-                                        <line id="Line_2" data-name="Line 2" x1="14" fill="none"
-                                            stroke="#000" stroke-width="1.5" />
-                                    </g>
-                                </svg>
-
-                            </span>
-                        </h3>
-                        <div class="answer px-4">
-                            <p class="before-icon align-items-start color-white py-3 pt-4">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
-                                </span>
-                                he game Fortnite comes in first place, with revenues of 5.5 billion dollars in two
-                                years.
-                            </p>
-                            <p class="before-icon align-items-start color-white py-3">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
-                                </span>
-                                In second place comes the Bubg game, with profits amounting to 4.3 billion dollars in
-                                two years.
-                            </p>
-                            <p class="before-icon align-items-start color-white py-3">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
-                                </span>
-                                In third place comes the game of Call of Duty, where in the year 2020 its profits
-                                amounted to 3 billion
-                                dollars.
-                            </p>
-                            <p class="before-icon align-items-start color-white py-3 pb-4">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
-                                </span>
-                                In fourth place comes the game Honor of kings, where in 2019 profits amounted to 2.5
-                                billion dollars.
-                            </p>
+                    <div class="col-12 mb-4 mb-lg-5">
+                        <div>
+                            <h2 class="title-sec">
+                                Frequently Answered Questions (FAQ)
+                            </h2>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-10 col-md-12 mx-auto mb-4">
-                    <div class="box-question-answer">
-                        <h3 class="question py-4 px-4 d-flex align-items-center justify-content-between">
-                            Expected profits from the game (World Wars) ?
-                            <span class="ms-3 open-answer">
+                    <div class="col-lg-10 col-md-12 mx-auto mb-4">
+                        <div class="box-question-answer">
+                            <h3 class="question active py-4 px-4 d-flex align-items-center justify-content-between">
+                                Some information about the most popular games in recent years!!
+                                <span class="ms-3 open-answer">
 
-                                <svg class="plus" id="Group_44" data-name="Group 44"
-                                    xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                    viewBox="0 0 14 14">
-                                    <line id="Line_2" data-name="Line 2" x1="14"
-                                        transform="translate(0 7)" fill="none" stroke="#fff"
-                                        stroke-width="1.5" />
-                                    <line id="Line_3" data-name="Line 3" y1="14" transform="translate(7)"
-                                        fill="none" stroke="#fff" stroke-width="1.5" />
-                                </svg>
+                                    <svg class="plus" id="Group_44" data-name="Group 44"
+                                        xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                        viewBox="0 0 14 14">
+                                        <line id="Line_2" data-name="Line 2" x1="14"
+                                            transform="translate(0 7)" fill="none" stroke="#fff"
+                                            stroke-width="1.5" />
+                                        <line id="Line_3" data-name="Line 3" y1="14"
+                                            transform="translate(7)" fill="none" stroke="#fff"
+                                            stroke-width="1.5" />
+                                    </svg>
 
-                                <svg class="minus" xmlns="http://www.w3.org/2000/svg" width="14" height="1.5"
-                                    viewBox="0 0 14 1.5">
-                                    <g id="Group_43" data-name="Group 43" transform="translate(0 0.75)">
-                                        <line id="Line_2" data-name="Line 2" x1="14" fill="none"
-                                            stroke="#000" stroke-width="1.5" />
-                                    </g>
-                                </svg>
+                                    <svg class="minus" xmlns="http://www.w3.org/2000/svg" width="14"
+                                        height="1.5" viewBox="0 0 14 1.5">
+                                        <g id="Group_43" data-name="Group 43" transform="translate(0 0.75)">
+                                            <line id="Line_2" data-name="Line 2" x1="14" fill="none"
+                                                stroke="#000" stroke-width="1.5" />
+                                        </g>
+                                    </svg>
 
-                            </span>
-                        </h3>
-                        <div class="answer px-4" style="display: none;">
-                            <p class="before-icon align-items-start color-white py-3 pt-4">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
                                 </span>
-                                he game Fortnite comes in first place, with revenues of 5.5 billion dollars in two
-                                years.
-                            </p>
-                            <p class="before-icon align-items-start color-white py-3">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
-                                </span>
-                                In second place comes the Bubg game, with profits amounting to 4.3 billion dollars in
-                                two years.
-                            </p>
-                            <p class="before-icon align-items-start color-white py-3">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
-                                </span>
-                                In third place comes the game of Call of Duty, where in the year 2020 its profits
-                                amounted to 3 billion
-                                dollars.
-                            </p>
-                            <p class="before-icon align-items-start color-white py-3 pb-4">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
-                                </span>
-                                In fourth place comes the game Honor of kings, where in 2019 profits amounted to 2.5
-                                billion dollars.
-                            </p>
+                            </h3>
+                            <div class="answer px-4">
+                                <p class="before-icon align-items-start color-white py-3 pt-4">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    he game Fortnite comes in first place, with revenues of 5.5 billion dollars in two
+                                    years.
+                                </p>
+                                <p class="before-icon align-items-start color-white py-3">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    In second place comes the Bubg game, with profits amounting to 4.3 billion dollars
+                                    in
+                                    two years.
+                                </p>
+                                <p class="before-icon align-items-start color-white py-3">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    In third place comes the game of Call of Duty, where in the year 2020 its profits
+                                    amounted to 3 billion
+                                    dollars.
+                                </p>
+                                <p class="before-icon align-items-start color-white py-3 pb-4">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    In fourth place comes the game Honor of kings, where in 2019 profits amounted to 2.5
+                                    billion dollars.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-10 col-md-12 mx-auto mb-4">
-                    <div class="box-question-answer">
-                        <h3 class="question py-4 px-4 d-flex align-items-center justify-content-between">
-                            The reason for these huge profits !!?
-                            <span class="ms-3 open-answer">
+                    <div class="col-lg-10 col-md-12 mx-auto mb-4">
+                        <div class="box-question-answer">
+                            <h3 class="question py-4 px-4 d-flex align-items-center justify-content-between">
+                                Expected profits from the game (World Wars) ?
+                                <span class="ms-3 open-answer">
 
-                                <svg class="plus" id="Group_44" data-name="Group 44"
-                                    xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                    viewBox="0 0 14 14">
-                                    <line id="Line_2" data-name="Line 2" x1="14"
-                                        transform="translate(0 7)" fill="none" stroke="#fff"
-                                        stroke-width="1.5" />
-                                    <line id="Line_3" data-name="Line 3" y1="14" transform="translate(7)"
-                                        fill="none" stroke="#fff" stroke-width="1.5" />
-                                </svg>
+                                    <svg class="plus" id="Group_44" data-name="Group 44"
+                                        xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                        viewBox="0 0 14 14">
+                                        <line id="Line_2" data-name="Line 2" x1="14"
+                                            transform="translate(0 7)" fill="none" stroke="#fff"
+                                            stroke-width="1.5" />
+                                        <line id="Line_3" data-name="Line 3" y1="14"
+                                            transform="translate(7)" fill="none" stroke="#fff"
+                                            stroke-width="1.5" />
+                                    </svg>
 
-                                <svg class="minus" xmlns="http://www.w3.org/2000/svg" width="14" height="1.5"
-                                    viewBox="0 0 14 1.5">
-                                    <g id="Group_43" data-name="Group 43" transform="translate(0 0.75)">
-                                        <line id="Line_2" data-name="Line 2" x1="14" fill="none"
-                                            stroke="#000" stroke-width="1.5" />
-                                    </g>
-                                </svg>
+                                    <svg class="minus" xmlns="http://www.w3.org/2000/svg" width="14"
+                                        height="1.5" viewBox="0 0 14 1.5">
+                                        <g id="Group_43" data-name="Group 43" transform="translate(0 0.75)">
+                                            <line id="Line_2" data-name="Line 2" x1="14" fill="none"
+                                                stroke="#000" stroke-width="1.5" />
+                                        </g>
+                                    </svg>
 
-                            </span>
-                        </h3>
-
-
-                        <div class="answer px-4" style="display: none;">
-
-                            <p class="before-icon align-items-start color-white py-3 pt-4">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
                                 </span>
-                                he game Fortnite comes in first place, with revenues of 5.5 billion dollars in two
-                                years.
-                            </p>
-
-                            <p class="before-icon align-items-start color-white py-3">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
-                                </span>
-                                In second place comes the Bubg game, with profits amounting to 4.3 billion dollars in
-                                two years.
-                            </p>
-
-                            <p class="before-icon align-items-start color-white py-3">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
-                                </span>
-                                In third place comes the game of Call of Duty, where in the year 2020 its profits
-                                amounted to 3 billion
-                                dollars.
-                            </p>
-
-                            <p class="before-icon align-items-start color-white py-3 pb-4">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
-                                </span>
-                                In fourth place comes the game Honor of kings, where in 2019 profits amounted to 2.5
-                                billion dollars.
-                            </p>
-                            {{--
-                            <p class="before-icon align-items-start color-white py-3 pb-4">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
-                                </span>
-                                The full share price will not be received, only $20 of the share price will be received
-                                and
-                                the rest of the share price will be deducted from the profits. This is to guarantee the
-                                investor his money.
-
-                            </p>
-                            <p class="before-icon align-items-start color-white py-3 pb-4">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
-                                </span>
-                                All this talk will be in an official contract between the two parties, the company and
-                                the investor, and certified by the notary (notary)
-
-                            </p>
-
-
-                            <p class="before-icon align-items-start color-white py-3">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
-                                </span>
-                                The investment system allows the purchase of a maximum of 5% of the number of shares
-                                offered
-                                for sale.
-                            </p> --}}
+                            </h3>
+                            <div class="answer px-4" style="display: none;">
+                                <p class="before-icon align-items-start color-white py-3 pt-4">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    The result of continuous work over 3 years of plans, strategies and features that
+                                    will
+                                    be within this
+                                    huge and global project.
+                                </p>
+                                <p class="before-icon align-items-start color-white py-3">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    More than one feasibility study has been done at the global level.
+                                </p>
+                                <p class="before-icon align-items-start color-white py-3">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    After conducting a feasibility study, it was found that the annual profits are
+                                    estimated
+                                    at $7.2
+                                    billion.
+                                </p>
+                                <p class="before-icon align-items-start color-white py-3 pb-4">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    Resulting from in-game purchases of weapons, clothes, cars and other completely new
+                                    features.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
+                    <div class="col-lg-10 col-md-12 mx-auto mb-4">
+                        <div class="box-question-answer">
+                            <h3 class="question py-4 px-4 d-flex align-items-center justify-content-between">
+                                The reason for these huge profits !!?
+                                <span class="ms-3 open-answer">
 
-                <div class="col-lg-10 col-md-12 mx-auto mb-4">
-                    <div class="box-question-answer">
-                        <h3 class="question py-4 px-4 d-flex align-items-center justify-content-between">
-                            Summary and How to get started!!
-                            <span class="ms-3 open-answer">
+                                    <svg class="plus" id="Group_44" data-name="Group 44"
+                                        xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                        viewBox="0 0 14 14">
+                                        <line id="Line_2" data-name="Line 2" x1="14"
+                                            transform="translate(0 7)" fill="none" stroke="#fff"
+                                            stroke-width="1.5" />
+                                        <line id="Line_3" data-name="Line 3" y1="14"
+                                            transform="translate(7)" fill="none" stroke="#fff"
+                                            stroke-width="1.5" />
+                                    </svg>
 
-                                <svg class="plus" id="Group_44" data-name="Group 44"
-                                    xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                    viewBox="0 0 14 14">
-                                    <line id="Line_2" data-name="Line 2" x1="14"
-                                        transform="translate(0 7)" fill="none" stroke="#fff"
-                                        stroke-width="1.5" />
-                                    <line id="Line_3" data-name="Line 3" y1="14" transform="translate(7)"
-                                        fill="none" stroke="#fff" stroke-width="1.5" />
-                                </svg>
+                                    <svg class="minus" xmlns="http://www.w3.org/2000/svg" width="14"
+                                        height="1.5" viewBox="0 0 14 1.5">
+                                        <g id="Group_43" data-name="Group 43" transform="translate(0 0.75)">
+                                            <line id="Line_2" data-name="Line 2" x1="14" fill="none"
+                                                stroke="#000" stroke-width="1.5" />
+                                        </g>
+                                    </svg>
 
-                                <svg class="minus" xmlns="http://www.w3.org/2000/svg" width="14" height="1.5"
-                                    viewBox="0 0 14 1.5">
-                                    <g id="Group_43" data-name="Group 43" transform="translate(0 0.75)">
-                                        <line id="Line_2" data-name="Line 2" x1="14" fill="none"
-                                            stroke="#000" stroke-width="1.5" />
-                                    </g>
-                                </svg>
-
-                            </span>
-                        </h3>
-                        <div class="answer px-4" style="display: none;">
-
-
-                            <p class="before-icon align-items-start color-white py-3 pb-4">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
                                 </span>
-                                The full share price will not be received, only $20 of the share price will be received
-                                and
-                                the rest of the share price will be deducted from the profits. This is to guarantee the
-                                investor his money.
+                            </h3>
+                            <div class="answer px-4" style="display: none;">
+                                <p class="before-icon align-items-start color-white py-3 pt-4">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    The game is based on the principle that all profits are due to the investors and
+                                    players, and a small
+                                    percentage to the project owner.
+                                </p>
+                                <p class="before-icon align-items-start color-white py-3">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    A large percentage of the profits are attributable to the investors in the game, and
+                                    a
+                                    large percentage
+                                    also belongs to the players within the game as a result of continuous playing and
+                                    winning within the
+                                    game.
+                                </p>
+                                <p class="before-icon align-items-start color-white py-3">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    Adopting the game as a project and the players are employees within the project,
+                                    meaning
+                                    the more you
+                                    play and win in wars, the more money you get.
+                                </p>
 
-                            </p>
-                            <p class="before-icon align-items-start color-white py-3 pb-4">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
-                                </span>
-                                All this talk will be in an official contract between the two parties, the company and
-                                the investor, and certified by the notary (notary)
-
-                            </p>
-
-
-                            <p class="before-icon align-items-start color-white py-3">
-                                <span class="icon-small">
-                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
-                                        alt="icon">
-                                </span>
-                                The investment system allows the purchase of a maximum of 5% of the number of shares
-                                offered
-                                for sale.
-                            </p>
+                            </div>
                         </div>
                     </div>
+
+
+                    {{-- <div class="col-lg-10 col-md-12 mx-auto mb-4">
+                        <div class="box-question-answer">
+                            <h3 class="question py-4 px-4 d-flex align-items-center justify-content-between">
+                                Summary and How to get started!!
+                                <span class="ms-3 open-answer">
+
+                                    <svg class="plus" id="Group_44" data-name="Group 44"
+                                        xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                        viewBox="0 0 14 14">
+                                        <line id="Line_2" data-name="Line 2" x1="14"
+                                            transform="translate(0 7)" fill="none" stroke="#fff"
+                                            stroke-width="1.5" />
+                                        <line id="Line_3" data-name="Line 3" y1="14"
+                                            transform="translate(7)" fill="none" stroke="#fff"
+                                            stroke-width="1.5" />
+                                    </svg>
+
+                                    <svg class="minus" xmlns="http://www.w3.org/2000/svg" width="14"
+                                        height="1.5" viewBox="0 0 14 1.5">
+                                        <g id="Group_43" data-name="Group 43" transform="translate(0 0.75)">
+                                            <line id="Line_2" data-name="Line 2" x1="14" fill="none"
+                                                stroke="#000" stroke-width="1.5" />
+                                        </g>
+                                    </svg>
+
+                                </span>
+                            </h3>
+                            <div class="answer px-4" style="display: none;">
+
+
+                                <p class="before-icon align-items-start color-white py-3 pt-4">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    The investment system allows the purchase of a share or a share within the project,
+                                    where an individual
+                                    is allowed to participate in a maximum of three shares, and the price of one share
+                                    is
+                                    $500.
+                                </p>
+
+
+                                <p class="before-icon align-items-start color-white py-3">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    The investment amount will not be received until a short period after the launch of
+                                    the
+                                    project and the
+                                    signing of an official contract between the project lawyer and the investor to
+                                    guarantee
+                                    his rights.
+                                </p>
+
+                                <p class="before-icon align-items-start color-white py-3">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    The project implementation period is determined by the startup company.
+                                </p>
+
+                                <p class="before-icon align-items-start color-white py-3">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+
+                                    30% of the number of investors was reached within the first day of introducing the
+                                    investment system
+                                    (noting that the number of investors is very limited).
+                                </p>
+
+
+                            </div>
+                        </div>
+                    </div> --}}
+                    <div class="col-lg-10 col-md-12 mx-auto mb-4">
+                        <div class="box-question-answer">
+                            <h3 class="question py-4 px-4 d-flex align-items-center justify-content-between">
+                                Summary and How to get started!!
+                                <span class="ms-3 open-answer">
+
+                                    <svg class="plus" id="Group_44" data-name="Group 44"
+                                        xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                        viewBox="0 0 14 14">
+                                        <line id="Line_2" data-name="Line 2" x1="14"
+                                            transform="translate(0 7)" fill="none" stroke="#fff"
+                                            stroke-width="1.5" />
+                                        <line id="Line_3" data-name="Line 3" y1="14"
+                                            transform="translate(7)" fill="none" stroke="#fff"
+                                            stroke-width="1.5" />
+                                    </svg>
+
+                                    <svg class="minus" xmlns="http://www.w3.org/2000/svg" width="14"
+                                        height="1.5" viewBox="0 0 14 1.5">
+                                        <g id="Group_43" data-name="Group 43" transform="translate(0 0.75)">
+                                            <line id="Line_2" data-name="Line 2" x1="14" fill="none"
+                                                stroke="#000" stroke-width="1.5" />
+                                        </g>
+                                    </svg>
+
+                                </span>
+                            </h3>
+                            <div class="answer px-4" style="display: none;">
+
+
+                                <p class="before-icon align-items-start color-white py-3 pb-4">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    The full share price will not be received, only $20 of the share price will be
+                                    received
+                                    and
+                                    the rest of the share price will be deducted from the profits. This is to guarantee
+                                    the
+                                    investor his money.
+
+                                </p>
+                                <p class="before-icon align-items-start color-white py-3 pb-4">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    All this talk will be in an official contract between the two parties, the company
+                                    and
+                                    the investor, and certified by the notary (notary)
+
+                                </p>
+
+
+                                <p class="before-icon align-items-start color-white py-3">
+                                    <span class="icon-small">
+                                        <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                            alt="icon">
+                                    </span>
+                                    The investment system allows the purchase of a maximum of 5% of the number of shares
+                                    offered
+                                    for sale.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </div>
-
-
             </div>
         </div>
 
