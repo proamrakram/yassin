@@ -270,7 +270,7 @@
                                             transform="translate(-36.749 -228.41)" fill="white" />
                                     </g>
                                 </svg>
-                                <span style="color: white;">City, Country</span>
+                                <span style="color: white;">Şehremini Mah.Velet Çelebi Sk. Şekeroğlu Ap. No: 9 A Fatih / İSTANBUL</span>
                             </a>
                         </div>
                         <div>
