@@ -1457,7 +1457,7 @@
 
                         <div class="answer px-4" style="display: none;">
 
-                            {{-- <p class="before-icon align-items-start color-white py-3 pt-4">
+                            <p class="before-icon align-items-start color-white py-3 pt-4">
                                 <span class="icon-small">
                                     <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
                                         alt="icon">
@@ -1492,7 +1492,72 @@
                                 </span>
                                 In fourth place comes the game Honor of kings, where in 2019 profits amounted to 2.5
                                 billion dollars.
+                            </p>
+                            {{--
+                            <p class="before-icon align-items-start color-white py-3 pb-4">
+                                <span class="icon-small">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
+                                </span>
+                                The full share price will not be received, only $20 of the share price will be received
+                                and
+                                the rest of the share price will be deducted from the profits. This is to guarantee the
+                                investor his money.
+
+                            </p>
+                            <p class="before-icon align-items-start color-white py-3 pb-4">
+                                <span class="icon-small">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
+                                </span>
+                                All this talk will be in an official contract between the two parties, the company and
+                                the investor, and certified by the notary (notary)
+
+                            </p>
+
+
+                            <p class="before-icon align-items-start color-white py-3">
+                                <span class="icon-small">
+                                    <img src="{{ asset('assets/images/icon-before.svg') }}" height="20"
+                                        alt="icon">
+                                </span>
+                                The investment system allows the purchase of a maximum of 5% of the number of shares
+                                offered
+                                for sale.
                             </p> --}}
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-10 col-md-12 mx-auto mb-4">
+                    <div class="box-question-answer">
+                        <h3 class="question py-4 px-4 d-flex align-items-center justify-content-between">
+                            Summary and How to get started!!
+                            <span class="ms-3 open-answer">
+
+                                <svg class="plus" id="Group_44" data-name="Group 44"
+                                    xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                    viewBox="0 0 14 14">
+                                    <line id="Line_2" data-name="Line 2" x1="14"
+                                        transform="translate(0 7)" fill="none" stroke="#fff"
+                                        stroke-width="1.5" />
+                                    <line id="Line_3" data-name="Line 3" y1="14" transform="translate(7)"
+                                        fill="none" stroke="#fff" stroke-width="1.5" />
+                                </svg>
+
+                                <svg class="minus" xmlns="http://www.w3.org/2000/svg" width="14" height="1.5"
+                                    viewBox="0 0 14 1.5">
+                                    <g id="Group_43" data-name="Group 43" transform="translate(0 0.75)">
+                                        <line id="Line_2" data-name="Line 2" x1="14" fill="none"
+                                            stroke="#000" stroke-width="1.5" />
+                                    </g>
+                                </svg>
+
+                            </span>
+                        </h3>
+                        <div class="answer px-4" style="display: none;">
+
 
                             <p class="before-icon align-items-start color-white py-3 pb-4">
                                 <span class="icon-small">
@@ -1529,12 +1594,13 @@
                     </div>
                 </div>
 
+
             </div>
         </div>
 
     </div>
 
-    <div class="subscribe container-fluid py-5">
+    {{-- <div class="subscribe container-fluid py-5">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -1549,7 +1615,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- 14-9-2022 -->
     <div class="footer-details container-fluid py-3 py-lg-5">
