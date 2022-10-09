@@ -224,27 +224,27 @@
                     <div>
                         <div>
                             <div class="mb-3">
-                                <a href="#home">
+                                <a style="color: white;" href="#home">
                                     Home
                                 </a>
                             </div>
                             <div class="mb-3">
-                                <a href="#whatis">
+                                <a style="color: white;" href="#whatis">
                                     What is the game?
                                 </a>
                             </div>
                             <div class="mb-3">
-                                <a href="#information">
+                                <a style="color: white;" href="#information">
                                     Information
                                 </a>
                             </div>
                             <div class="mb-3">
-                                <a href="#InvestmentSystem">
+                                <a style="color: white;" href="#InvestmentSystem">
                                     Investment System
                                 </a>
                             </div>
                             <div class="mb-3">
-                                <a href="#faq">
+                                <a style="color: white;" href="#faq">
                                     FAQ
                                 </a>
                             </div>
@@ -267,7 +267,7 @@
                                             transform="translate(-36.749 -228.41)" fill="#c71a1a" />
                                     </g>
                                 </svg>
-                                <span class="text-white">City, Country</span>
+                                <span style="color: white;" class="text-white">City, Country</span>
                             </a>
                         </div>
                         <div>
@@ -292,11 +292,11 @@
                                             transform="translate(-11.533 -2.543)" fill="#b51717" />
                                     </g>
                                 </svg>
-                                <span class="text-white">+972599123456</span>
+                                <span style="color: white;" class="text-white">+972599123456</span>
                             </a>
                         </div>
                         <div>
-                            <a href="mailto:mail@mail.com" class="mb-3 d-inline-flex align-items-center">
+                            <a style="color: white;" href="mailto:mail@mail.com" class="mb-3 d-inline-flex align-items-center">
                                 <svg class="me-3" xmlns="http://www.w3.org/2000/svg" width="21.565"
                                     height="14.444" viewBox="0 0 21.565 14.444">
                                     <g id="email-svgrepo-com" transform="translate(0 -80.9)">
@@ -318,7 +318,7 @@
                                         </g>
                                     </g>
                                 </svg>
-                                <span class="text-white">mail@mail.com</span>
+                                <span style="color: white;" class="text-white">mail@mail.com</span>
                             </a>
                         </div>
                     </div>
