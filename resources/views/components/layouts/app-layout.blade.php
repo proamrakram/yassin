@@ -192,6 +192,137 @@
 
     {{ $slot }}
 
+
+
+    <!-- 14-9-2022 -->
+    <div class="footer-details container-fluid py-3 py-lg-5">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 about-company">
+                    <div>
+                        <div>
+                            <a href="">
+                                <img src="{{ asset('assets/images/logo.svg') }}" alt="">
+                            </a>
+                        </div>
+                        <div class="mt-3">
+                            <p>TGT GREEN TEKNOLOJI</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 my-5 my-md-0 site-map">
+                    <div>
+                        <div>
+                            <div class="mb-3">
+                                <a href="">
+                                    Home
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <a href="">
+                                    What is the game?
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <a href="">
+                                    Information
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <a href="">
+                                    Investment System
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <a href="">
+                                    FAQ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 info-company">
+                    <div>
+                        <div>
+                            <a href="" class="mb-3 d-inline-flex align-items-center">
+                                <svg class="me-3" xmlns="http://www.w3.org/2000/svg" width="12.805" height="21.85"
+                                    viewBox="0 0 12.805 21.85">
+                                    <g id="location-svgrepo-com" transform="translate(-54.643)">
+                                        <path id="Path_39" data-name="Path 39"
+                                            d="M61.046,0a6.41,6.41,0,0,0-6.4,6.4,6.344,6.344,0,0,0,.62,2.751c.008.018.017.037.026.055l4.838,9.366a1.034,1.034,0,0,0,1.838,0L66.8,9.211c.008-.016.016-.032.024-.049A6.343,6.343,0,0,0,67.448,6.4,6.41,6.41,0,0,0,61.046,0Zm0,9.754A3.351,3.351,0,1,1,64.4,6.4,3.355,3.355,0,0,1,61.046,9.754Z"
+                                            fill="#c71a1a" />
+                                        <path id="Path_40" data-name="Path 40"
+                                            d="M100.261,249.018H95.329a.621.621,0,1,0,0,1.241h4.933a.621.621,0,1,0,0-1.241Z"
+                                            transform="translate(-36.749 -228.41)" fill="#c71a1a" />
+                                    </g>
+                                </svg>
+                                <span>City, Country</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="tel:+972599123456" class="mb-3 d-inline-flex align-items-center">
+                                <svg class="me-3" xmlns="http://www.w3.org/2000/svg" width="24.831" height="24"
+                                    viewBox="0 0 24.831 24">
+                                    <g id="phone-svgrepo-com" transform="translate(0 -1.003)">
+                                        <path id="Path_43" data-name="Path 43"
+                                            d="M18.258,18.6a2.3,2.3,0,0,0-1.121-.323,1.4,1.4,0,0,0-1.247.7,13.815,13.815,0,0,1-1.074,1.188,1.786,1.786,0,0,1-2.607-.261L7.451,15.138a1.793,1.793,0,0,1-.262-2.606,13.952,13.952,0,0,1,1.189-1.075,1.377,1.377,0,0,0,.64-.826,2.048,2.048,0,0,0-.27-1.546C8.677,8.962,6.971,6.073,5.4,5.241A2.044,2.044,0,0,0,3,5.6L1.947,6.654a5.745,5.745,0,0,0-1.79,5.6,11.847,11.847,0,0,0,3.431,5.413l6.092,6.092c2.38,2.38,4.65,3.587,6.745,3.587h0A5.966,5.966,0,0,0,20.693,25.4l1.051-1.051a2.033,2.033,0,0,0,.361-2.4C21.274,20.376,18.385,18.671,18.258,18.6Z"
+                                            transform="translate(0 -2.344)" fill="#b51717" />
+                                        <path id="Path_44" data-name="Path 44"
+                                            d="M53.85,33.5a2.776,2.776,0,0,1-2.773-2.773.414.414,0,1,0-.829,0,3.6,3.6,0,0,0,3.6,3.6.414.414,0,1,0,0-.828Z"
+                                            transform="translate(-29.434 -17.167)" fill="#b51717" />
+                                        <path id="Path_45" data-name="Path 45"
+                                            d="M56.084,32.965a.414.414,0,1,0,0-.828.665.665,0,0,1-.665-.665.414.414,0,1,0-.828,0A1.5,1.5,0,0,0,56.084,32.965Z"
+                                            transform="translate(-31.977 -17.604)" fill="#b51717" />
+                                        <path id="Path_46" data-name="Path 46"
+                                            d="M19.356,1.832A2.776,2.776,0,0,1,22.129,4.6a.414.414,0,0,0,.829,0,3.605,3.605,0,0,0-3.6-3.6.414.414,0,1,0,0,.829Z"
+                                            transform="translate(-11.096)" fill="#b51717" />
+                                        <path id="Path_47" data-name="Path 47"
+                                            d="M19.689,5.759a.414.414,0,0,0,.414.414.665.665,0,0,1,.664.665.414.414,0,0,0,.829,0A1.5,1.5,0,0,0,20.1,5.345.414.414,0,0,0,19.689,5.759Z"
+                                            transform="translate(-11.533 -2.543)" fill="#b51717" />
+                                    </g>
+                                </svg>
+                                <span>+972599123456</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="mailto:mail@mail.com" class="mb-3 d-inline-flex align-items-center">
+                                <svg class="me-3" xmlns="http://www.w3.org/2000/svg" width="21.565"
+                                    height="14.444" viewBox="0 0 21.565 14.444">
+                                    <g id="email-svgrepo-com" transform="translate(0 -80.9)">
+                                        <g id="Group_91" data-name="Group 91" transform="translate(0 80.9)">
+                                            <g id="Group_90" data-name="Group 90" transform="translate(0 0)">
+                                                <path id="Path_48" data-name="Path 48"
+                                                    d="M28.957,257.8l-1.928,1.637a.412.412,0,0,1-.528,0L24.573,257.8,16.7,264.459H36.795Z"
+                                                    transform="translate(-15.965 -250.015)" fill="red" />
+                                                <path id="Path_49" data-name="Path 49"
+                                                    d="M0,92.2v13.449l7.926-6.725Z" transform="translate(0 -91.703)"
+                                                    fill="red" />
+                                                <path id="Path_50" data-name="Path 50"
+                                                    d="M16.7,80.9l10.047,8.525L36.795,80.9Z"
+                                                    transform="translate(-15.965 -80.9)" fill="red" />
+                                                <path id="Path_51" data-name="Path 51"
+                                                    d="M309.9,98.925l7.926,6.725V92.2Z"
+                                                    transform="translate(-296.262 -91.703)" fill="red" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <span>mail@mail.com</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 14-9-2022 -->
+
+
     <footer class="container-fluid mt-5">
         <div class="container">
             <div class="row">
