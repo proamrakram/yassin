@@ -31,7 +31,7 @@
     <div class="top-header py-2 container-fluid">
         <div class="container">
             <div class="row justify-content-center align-items-center justify-content-sm-between">
-            {{-- <div class="col-auto">
+            <div class="col-auto">
                   <div class="contact-info">
                         <a href="tel:+972599123456" class="me-2 d-inline-flex align-items-center">
                             <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24.831" height="24"
@@ -79,7 +79,7 @@
                             <span>mail@mail.com</span>
                         </a>
                     </div>
-                </div> --}}
+                </div>
 
                 <div class="col-auto">
                     <div class="links-social-media d-flex align-items-center">
