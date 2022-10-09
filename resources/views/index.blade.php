@@ -1247,11 +1247,11 @@
                     </div>
 
                     <div class="col-lg-8 col-md-10 points mb-5">
-                        <p class="mb-3">
+                        {{-- <p class="mb-3">
                             <span class="me-2 color-main">
                                 Example
                             </span>
-                        </p>
+                        </p> --}}
                         <p>
                         <p>To increase the investor's comfort and guarantee, the full share price will not be received,
                             but a portion of it, which is $20 per share, will be received.</p>
